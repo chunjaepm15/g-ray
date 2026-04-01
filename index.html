@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>G-Ray Grammar Viewer Pro</title>
+  
+  <!-- Font and Library -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- External Styles -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="mode-teacher">
+
+  <div class="shell">
+    <!-- Header -->
+    <header class="hd">
+      <div class="logo-text">G-RAY <span>Grammar Viewer Pro</span></div>
+      <div class="hd-mode">
+        <button class="mode-btn on" data-mode="teacher" onclick="setMode('teacher')">교사 모드</button>
+        <button class="mode-btn" data-mode="student" onclick="setMode('student')">학생 모드</button>
+      </div>
+    </header>
+
+    <!-- Side Rail Navigation -->
+    <nav class="rail">
+      <button class="rail-btn active" data-screen="dashboard" onclick="goScreen('dashboard')">
+        <div class="rail-icon">📊</div>
+        <div class="rail-label">DASH</div>
+      </button>
+      <button class="rail-btn" data-screen="learn" onclick="goScreen('learn')">
+        <div class="rail-icon">📖</div>
+        <div class="rail-label">LEARN</div>
+      </button>
+      <button class="rail-btn" onclick="toggleBeamMode()">
+        <div class="rail-icon">🔦</div>
+        <div class="rail-label">BEAM</div>
+      </button>
+    </nav>
+
+    <!-- Sidebar: Unit & Sentence List -->
+    <aside class="sb">
+      <div class="sb-hd">
+        <input type="text" class="sb-search" id="sb-search" placeholder="단원 또는 문장 검색...">
+      </div>
+      <div id="unit-list" class="unit-list">
+        <!-- Units will be rendered here -->
+      </div>
+      <div id="sent-list-container" class="sb-hd" style="border-top:1px solid var(--bd);">
+        <div class="unit-sub" style="margin-bottom:8px; font-weight:700;">문장 목록</div>
+        <div id="sent-list" class="unit-list" style="height:200px;">
+          <!-- Sentences will be rendered here -->
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="mn">
+      
+      <!-- Dashboard Screen (Teacher Only) -->
+      <section id="screen-dashboard" class="screen on">
+        <div class="page-hd">
+          <h2 class="page-title">학습 현황 대시보드</h2>
+          <p class="page-desc">반 전체 학생들의 학습 진도와 성취도를 한눈에 확인하세요.</p>
+        </div>
+        <div class="dashboard-grid">
+          <div class="stat-card">
+            <div class="stat-label">평균 진도율</div>
+            <div class="stat-value">84%</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">오늘의 학습 완수</div>
+            <div class="stat-value">12 / 15</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">주요 오답 문법</div>
+            <div class="stat-value" style="font-size:20px;">상관접속사</div>
+          </div>
+        </div>
+        <div class="card" style="margin-top:24px;">
+          <div class="card-hd"><span class="card-title">학생별 성취도 상세</span></div>
+          <div id="wrong-list-container">
+            <!-- Wrong answers list for teacher view -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Learning Screen -->
+      <section id="screen-learn" class="screen">
+        <div class="page-hd">
+          <h2 class="page-title active-sent-en">Learning Sentence...</h2>
+          <p class="page-desc active-sent-ko">문장을 분석하고 학습합니다.</p>
+          <div id="current-diff-tag" class="badge-diff diff-low" style="width:fit-content;">난이도: 하</div>
+        </div>
+
+        <!-- Initial Quiz Panel -->
+        <div id="initial-quiz-box" class="card" style="margin-bottom:24px; display:none;">
+          <!-- Rendered by js/stages/stage0-initial.js -->
+        </div>
+
+        <!-- Stage Navigation Tabs -->
+        <div class="stage-tabs">
+          <button id="st-tab-0" class="stage-tab active" onclick="setStage(0)">Step 0: 읽기</button>
+          <button id="st-tab-1" class="stage-tab locked" onclick="setStage(1)">Step 1: 끊기</button>
+          <button id="st-tab-2" class="stage-tab locked" onclick="setStage(2)">Step 2: 배열</button>
+          <button id="st-tab-3" class="stage-tab locked" onclick="setStage(3)">Step 3: 빈칸</button>
+          <button id="st-tab-4" class="stage-tab locked" onclick="setStage(4)">Step 4: 쓰기</button>
+        </div>
+
+        <!-- Stage Learning Panes -->
+        <div class="learn-view card">
+          
+          <!-- Step 0: Read & Analysis -->
+          <div id="pane-stage-0" class="learn-pane">
+            <div id="read-box" class="sent-box x-ray">
+              <!-- Rendered by js/stages/stage0-initial.js -->
+            </div>
+          </div>
+
+          <!-- Step 1: Chop -->
+          <div id="pane-stage-1" class="learn-pane" style="display:none;">
+            <div class="unit-sub" style="text-align:center; margin-bottom:16px;">문장 성분 단위로 끊어보세요.</div>
+            <div id="chop-wrap" class="chip-container">
+              <!-- Rendered by js/stages/stage1-chop.js -->
+            </div>
+            <div style="text-align:center; margin-top:24px;">
+              <button id="chop-next-btn" class="mode-btn on locked" onclick="unlockNextStage()">다음 단계로</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Rearrange -->
+          <div id="pane-stage-2" class="learn-pane" style="display:none;">
+            <div class="unit-sub" style="text-align:center; margin-bottom:16px;">어순에 맞게 단어 타일을 드래그하여 배치하세요.</div>
+            <div id="rearrange-target" class="chip-container" style="min-height:100px; background:var(--bg); border-radius:12px; border:2px dashed var(--bd);">
+              <!-- Target area for tiles -->
+            </div>
+            <div id="rearrange-bank" class="chip-container">
+              <!-- Tiles to pick from -->
+            </div>
+            <div style="text-align:center; margin-top:24px;">
+              <button id="rearrange-next-btn" class="mode-btn on locked" onclick="unlockNextStage()">완료</button>
+            </div>
+          </div>
+
+          <!-- Step 3: Blank -->
+          <div id="pane-stage-3" class="learn-pane" style="display:none;">
+            <div id="blank-sent" class="sent-en" style="text-align:center;"></div>
+            <div style="max-width:400px; margin:24px auto;">
+              <input type="text" id="blank-input" class="sb-search" style="font-size:20px; text-align:center;" placeholder="빈칸을 채우세요">
+              <button class="mode-btn on" style="width:100%; margin-top:12px; padding:12px;" onclick="checkBlank()">정답 확인</button>
+            </div>
+          </div>
+
+          <!-- Step 4: Write -->
+          <div id="pane-stage-4" class="learn-pane" style="display:none;">
+            <div id="write-ko" class="sent-ko" style="text-align:center; font-size:24px; margin-bottom:24px;"></div>
+            <div style="max-width:600px; margin:0 auto;">
+              <textarea id="write-input" class="sb-search" style="height:120px; font-size:20px; padding:20px;" placeholder="전체 문장을 영어로 작성하세요"></textarea>
+              <button class="mode-btn on" style="width:100%; margin-top:12px; padding:12px;" onclick="checkWrite()">최종 제출</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+    <!-- Utility Footer Bar -->
+    <footer class="util-bar">
+      <div class="util-timer" id="util-timer">05:00</div>
+      <button id="timer-btn" class="btn-sm" onclick="toggleTimer()">⏱ 타이머 시작</button>
+      <div class="util-spacer"></div>
+      <div class="util-status" id="util-clock">00:00</div>
+      <div id="global-toast" class="badge-diff diff-mid" style="position:fixed; bottom:60px; right:20px; display:none; z-index:1000; opacity:0; transition:var(--trans);">
+        Message here
+      </div>
+    </footer>
+  </div>
+
+  <!-- External Scripts -->
+  <!-- 1. Data & State -->
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/app.js"></script>
+  
+  <!-- 2. UI Core -->
+  <script src="js/ui.js"></script>
+  
+  <!-- 3. Specialized Stage Modules -->
+  <script src="js/stages/stage0-initial.js"></script>
+  <script src="js/stages/stage1-chop.js"></script>
+  <script src="js/stages/stage2-rearrange.js"></script>
+  <script src="js/stages/stage3-blank.js"></script>
+  <script src="js/stages/stage4-write.js"></script>
+
+</body>
+</html>
