@@ -140,7 +140,6 @@
                 return { eng: sentence.english, kor: sentence.korean, target: w.slice(0, mid).join(' '), targetEnd: mid - 1, ceng: '', v: w.length>1 ? w[mid] : '', obj: w.slice(mid+1).join(' ') };
             };
             const structData = generateStructure(currentSentence);
-            const answerRange = { start: 0, end: structData.targetEnd }; // Target verified by Golden Data
 
             // 의미 단위(Chunk) 데이터 정의 - 교과서 예문 기준
             const CHUNK_DATA = {
@@ -148,35 +147,53 @@
                     {"en": "Thanks to Antonio,", "ko": "Antonio 덕분에,"},
                     {"en": "the islanders", "ko": "섬 주민들은"},
                     {"en": "could get", "ko": "얻을 수 있었다"},
-                    {"en": "what they needed.", "ko": "그들이 필요로 했던 것을."}
+                    {"en": "what they needed.", "ko": "그들이 필요로 했던 것을.", "isTarget": true}
                 ],
                 "L01-17": [
-                    {"en": "What the islanders here need", "ko": "여기 섬 주민들에게 필요한 것은"},
+                    {"en": "What the islanders here need", "ko": "여기 섬 주민들에게 필요한 것은", "isTarget": true},
                     {"en": "is", "ko": "이다"},
                     {"en": "not tools or books,", "ko": "도구나 책이 아니라,"},
                     {"en": "but cats.", "ko": "고양이다."}
                 ],
                 "L01-23": [
                     {"en": "That’s", "ko": "그것이 ~이다"},
-                    {"en": "what I want", "ko": "내가 원하는 것"},
+                    {"en": "what I want", "ko": "내가 원하는 것", "isTarget": true},
                     {"en": "to show you.", "ko": "당신에게 보여주고 싶은."}
                 ],
                 "L01-28": [
                     {"en": "I visited", "ko": "나는 방문했다"},
                     {"en": "a local hospital", "ko": "지역 병원을"},
                     {"en": "last Sunday", "ko": "지난주 일요일에"},
-                    {"en": "to help children.", "ko": "아이들을 돕기 위해."}
+                    {"en": "to help children.", "ko": "아이들을 돕기 위해.", "isTarget": true}
                 ],
                 "L01-29": [
                     {"en": "While I was there,", "ko": "내가 그곳에 있는 동안,"},
-                    {"en": "I saw some people", "ko": "나는 몇몇 사람들이 ~하는 것을 보았다"},
+                    {"en": "I saw some people", "ko": "나는 몇몇 사람들이 ~하는 것을 보았다", "isTarget": true},
                     {"en": "helping each other.", "ko": "서로 돕고 있는."}
                 ],
                 "L01-30": [
-                    {"en": "That’s what I want", "ko": "그것이 내가 원하는 것입니다"},
+                    {"en": "That’s what I want", "ko": "그것이 내가 원하는 것입니다", "isTarget": true},
                     {"en": "to show you today.", "ko": "오늘 당신에게 보여드리고 싶은."}
                 ]
             };
+
+            // 정답 범위 지정 로직 (Chunk 기반)
+            const getAnswerRange = () => {
+                const chunks = CHUNK_DATA[currentSentence?.id];
+                if (!chunks) return { start: 0, end: structData.targetEnd };
+                
+                let currentPos = 0;
+                for (const chunk of chunks) {
+                    const chunkWords = chunk.en.trim().split(/\s+/).length;
+                    if (chunk.isTarget) {
+                        return { start: currentPos, end: currentPos + chunkWords - 1 };
+                    }
+                    currentPos += chunkWords;
+                }
+                return { start: 0, end: structData.targetEnd };
+            };
+            
+            const answerRange = getAnswerRange();
 
             const getTranslation = (s, e) => {
                 if (s === null) return "드래그를 통해 문장 덩어리(구문)를 선택해주세요.";
