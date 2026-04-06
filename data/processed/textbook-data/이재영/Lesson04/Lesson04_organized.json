@@ -1,0 +1,4312 @@
+{
+  "lesson_metadata": {
+    "source": "Middle School English 3 (Lee Jae-young)",
+    "lesson_id": "L04",
+    "title": "Opening a Window to the World",
+    "curriculum_version": "2015 Revised"
+  },
+  "sections": [
+    {
+      "section_name": "Listen & Talk",
+      "description": "Expressing Wonder & Offering Help",
+      "items": [
+        {
+          "id": "L04-LT-001",
+          "english": "I wonder if there’s a bank around here.",
+          "korean": "이 근처에 은행이 있는지 궁금해요.",
+          "tags": [
+            "Wondering",
+            "if/whether"
+          ]
+        },
+        {
+          "id": "L04-LT-002",
+          "english": "Do you want me to play baduk with you?",
+          "korean": "제가 당신과 바둑을 둬 드릴까요?",
+          "tags": [
+            "Offering Help"
+          ]
+        },
+        {
+          "id": "L04-LT-003",
+          "english": "Do you want me to give you something to drink?",
+          "korean": "마실 것 좀 드릴까요?",
+          "tags": [
+            "Offering Help"
+          ]
+        }
+      ]
+    },
+    {
+      "section_name": "Reading: Must-Visit Markets Around the World",
+      "description": "Information about global markets: Turkey, Thailand, Netherlands",
+      "items": [
+        {
+          "id": "L04-RD-001",
+          "english": "Turkey is a country where East meets West.",
+          "korean": "터키는 동양과 서양이 만나는 나라이다.",
+          "context": "Turkey",
+          "grammar": [
+            "Relative Adverb where"
+          ]
+        },
+        {
+          "id": "L04-RD-002",
+          "english": "Ask shop owners if they carry nazar boncuğu, a symbol for good luck.",
+          "korean": "상점 주인들에게 행운의 상징인 '나자르 본주우'가 있는지 물어보라.",
+          "context": "Turkey",
+          "grammar": [
+            "if/whether noun clause"
+          ]
+        }
+      ]
+    },
+    {
+      "section_name": "Focus In",
+      "description": "Key Grammar Points",
+      "items": [
+        {
+          "id": "L04-GR-001",
+          "english": "This is the bakery where Uncle Ben buys bread every Saturday.",
+          "korean": "이곳은 벤 삼촌이 매주 토요일에 빵을 사는 빵집이다.",
+          "grammar_point": "Relative Adverb where"
+        },
+        {
+          "id": "L04-GR-002",
+          "english": "Friday evening is the time when my family likes to go for a walk.",
+          "korean": "금요일 저녁은 우리 가족이 산책하러 나가는 시간이다.",
+          "grammar_point": "Relative Adverb when"
+        },
+        {
+          "id": "L04-GR-003",
+          "english": "I wonder if / whether they are angry.",
+          "korean": "그들이 화가 났는지 궁금하다.",
+          "grammar_point": "Conjunction if/whether"
+        }
+      ]
+    },
+    {
+      "section_name": "Extended Contexts (Auto-Generated)",
+      "items": [
+        {
+          "id": "L04-01",
+          "english": "I don’t know if it will rain tomorrow.",
+          "korean": "내일 비가 올지 안 올지 모르겠어.",
+          "grammar": "접속사 if/whether (명사절)",
+          "structure": "if + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "I don’t know if",
+              "kor": "내일 비가 올지",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "it will rain tomorrow.",
+              "kor": "안 올지 모르겠어.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사 if/whether (명사절)",
+            "target_pattern": "if + S + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-02",
+          "english": "This is the place where I first met my best friend.",
+          "korean": "이곳은 내가 나의 가장 친한 친구를 처음 만난 곳이야.",
+          "grammar": "관계부사(where)",
+          "structure": "N(place) + where + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "This is the place where",
+              "kor": "이곳은 내가 나의 가장",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "I first met my best friend.",
+              "kor": "친한 친구를 처음 만난 곳이야.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "관계부사(where)",
+            "target_pattern": "N(place) + where + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-03",
+          "english": "Tell me the reason why you are late.",
+          "korean": "네가 늦은 이유를 나에게 말해줘.",
+          "grammar": "관계부사(why)",
+          "structure": "N(reason) + why + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "Tell me the reason",
+              "kor": "네가 늦은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "why you are late.",
+              "kor": "이유를 나에게 말해줘.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "관계부사(why)",
+            "target_pattern": "N(reason) + why + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-04",
+          "english": "I’m curious whether she will come to the party.",
+          "korean": "그녀가 파티에 올지 궁금해.",
+          "grammar": "접속사 if/whether (명사절)",
+          "structure": "whether + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "I’m curious whether she",
+              "kor": "그녀가 파티에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "will come to the party.",
+              "kor": "올지 궁금해.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사 if/whether (명사절)",
+            "target_pattern": "whether + S + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-05",
+          "english": "This is the way they solve the problem.",
+          "korean": "이것이 그들이 문제를 해결하는 방식이다.",
+          "grammar": "관계부사(how)",
+          "structure": "the way / how",
+          "syntax_chunks": [
+            {
+              "eng": "This is the way",
+              "kor": "이것이 그들이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "they solve the problem.",
+              "kor": "문제를 해결하는 방식이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "관계부사(how)",
+            "target_pattern": "the way / how"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-006",
+          "english": "This is the place where we keep our important documents.",
+          "korean": "이곳은 우리가 중요한 서류들을 보관하는 장소입니다.",
+          "grammar": "관계부사 / if 명사절",
+          "structure": "N + where + S + V / if + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "This is the place where",
+              "kor": "이곳은 우리가 중요한",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "we keep our important documents.",
+              "kor": "서류들을 보관하는 장소입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "관계부사 / if 명사절",
+            "target_pattern": "N + where + S + V / if + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-007",
+          "english": "Tell me the reason why you are looking for this place.",
+          "korean": "왜 이 장소를 찾고 있는지 그 이유를 제게 말해 주세요.",
+          "grammar": "관계부사 / if 명사절",
+          "structure": "N + where + S + V / if + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "Tell me the reason why",
+              "kor": "왜 이 장소를 찾고 있는지",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "you are looking for this place.",
+              "kor": "그 이유를 제게 말해 주세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "관계부사 / if 명사절",
+            "target_pattern": "N + where + S + V / if + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-008",
+          "english": "I wonder if he knows the truth.",
+          "korean": "그가 진실을 알고 있는지 궁금합니다.",
+          "grammar": "관계부사 / if 명사절",
+          "structure": "N + where + S + V / if + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "I wonder if",
+              "kor": "그가 진실을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "he knows the truth.",
+              "kor": "알고 있는지 궁금합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "관계부사 / if 명사절",
+            "target_pattern": "N + where + S + V / if + S + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-009",
+          "english": "in vitamins A and C well Gondre I wonder if spiders are insects, too.",
+          "korean": "비타민 A와 C가 잘 들어있는 곤드레 거미도 곤충인지 궁금하네요.",
+          "grammar": "조건의 접속사 / 비교급",
+          "structure": "If/Unless + S + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "in vitamins A and C well Gondre",
+              "kor": "비타민 A와 C가 잘",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "I wonder if spiders are insects, too.",
+              "kor": "들어있는 곤드레 거미도 곤충인지 궁금하네요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 비교급",
+            "target_pattern": "If/Unless + S + V / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-010",
+          "english": "Do you want me to ask Mr.",
+          "korean": "미스터 아저씨한테 물어볼까?",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Do you want",
+              "kor": "미스터",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "me to ask Mr.",
+              "kor": "아저씨한테 물어볼까?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-011",
+          "english": "\u000f׮Dialog 1 Script 4.1 She needs a(n) because she wants to try some food.",
+          "korean": "׮Dialog 1 스크립트 4.1 그녀는 음식을 먹어보고 싶어서 a(n)가 필요합니다.",
+          "grammar": "이유의 접속사 / to부정사",
+          "structure": "Because/Since + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "\u000f׮Dialog 1 Script 4.1 She needs a(n)",
+              "kor": "׮Dialog 1 스크립트 4.1 그녀는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "because she wants to try some food.",
+              "kor": "음식을 먹어보고 싶어서 a(n)가 필요합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / to부정사",
+            "target_pattern": "Because/Since + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-012",
+          "english": "೧\u0001 Sell by MILK Listen More Look and think.\u000f׮1 Script 4.3 Listen and complete.",
+          "korean": "೧ Sell by MILK 자세히 보기 ׮1 스크립트 4.3 듣고 완성하세요.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "೧\u0001 Sell by MILK Listen More Look",
+              "kor": "೧ Sell by MILK 자세히",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and think.\u000f׮1 Script 4.3 Listen and complete.",
+              "kor": "보기 ׮1 스크립트 4.3 듣고 완성하세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-013",
+          "english": "\u0001\u000f׮ I forgot my , so I can’t read the date.",
+          "korean": "׮ 을 잊어버려서 날짜를 읽을 수 없습니다.",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "\u0001\u000f׮ I forgot my ,",
+              "kor": "׮ 을 잊어버려서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "so I can’t read the date.",
+              "kor": "날짜를 읽을 수 없습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-014",
+          "english": "The fruit is rich in vitamin C.",
+          "korean": "과일에는 비타민C가 풍부하다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "The fruit is",
+              "kor": "과일에는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "rich in vitamin C.",
+              "kor": "비타민C가 풍부하다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-015",
+          "english": "Do you want me to get you some water?",
+          "korean": "물 좀 갖다 드릴까요?",
+          "grammar": "to부정사 / 비교급",
+          "structure": "to + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Do you want me",
+              "kor": "물 좀",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to get you some water?",
+              "kor": "갖다 드릴까요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 비교급",
+            "target_pattern": "to + V / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-016",
+          "english": "Script 4.4 All Ears Can You Help Me with This Milk?",
+          "korean": "스크립트 4.4 이 우유 좀 도와주실 수 있나요?",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Script 4.4 All Ears Can",
+              "kor": "스크립트 4.4 이 우유",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "You Help Me with This Milk?",
+              "kor": "좀 도와주실 수 있나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-017",
+          "english": "\u000f׮2 I'm sorry, but w e don't have one near here.",
+          "korean": "׮2 죄송하지만 이 근처에는 그런 곳이 없습니다.",
+          "grammar": "사역동사",
+          "structure": "make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "\u000f׮2 I'm sorry, but w",
+              "kor": "׮2 죄송하지만 이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "e don't have one near here.",
+              "kor": "근처에는 그런 곳이 없습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사",
+            "target_pattern": "make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-018",
+          "english": "I wonder if there's a bank around here.",
+          "korean": "이 근처에 은행이 있는지 궁금해요.",
+          "grammar": "조건의 접속사 / 비교급",
+          "structure": "If/Unless + S + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "I wonder if there's",
+              "kor": "이 근처에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "a bank around here.",
+              "kor": "은행이 있는지 궁금해요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 비교급",
+            "target_pattern": "If/Unless + S + V / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-019",
+          "english": "I Wonder If There’s a Bank Get ready.п೧\u0001 4QFBLCommunicate: A My cow is sick.",
+          "korean": "은행이 있는지 궁금합니다. 준비하세요.п೧ 4QFBLCommunicate: A 소가 아프네요.",
+          "grammar": "조건의 접속사 / 비교급",
+          "structure": "If/Unless + S + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "I Wonder If There’s a Bank Get",
+              "kor": "은행이 있는지 궁금합니다. 준비하세요.п೧",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "ready.п೧\u0001 4QFBLCommunicate: A My cow is sick.",
+              "kor": "4QFBLCommunicate: A 소가 아프네요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 비교급",
+            "target_pattern": "If/Unless + S + V / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-020",
+          "english": "I wonder if you can visit my farm now.",
+          "korean": "지금 제 농장을 방문해 주실 수 있는지 궁금합니다.",
+          "grammar": "조건의 접속사 / 조동사",
+          "structure": "If/Unless + S + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "I wonder if you",
+              "kor": "지금 제 농장을 방문해",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "can visit my farm now.",
+              "kor": "주실 수 있는지 궁금합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 조동사",
+            "target_pattern": "If/Unless + S + V / Modal + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-021",
+          "english": "I can go and see your cow.",
+          "korean": "나는 가서 당신의 소를 볼 수 있습니다.",
+          "grammar": "조동사 / 지각동사",
+          "structure": "Modal + V / see/hear + O + V(ing)",
+          "syntax_chunks": [
+            {
+              "eng": "I can go",
+              "kor": "나는 가서 당신의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and see your cow.",
+              "kor": "소를 볼 수 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사 / 지각동사",
+            "target_pattern": "Modal + V / see/hear + O + V(ing)"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-022",
+          "english": "A I wonder if I can make an appointment with him at eleven.",
+          "korean": "A 11시에 그 사람과 약속을 잡을 수 있을지 궁금해요.",
+          "grammar": "조건의 접속사 / 조동사",
+          "structure": "If/Unless + S + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "A I wonder if I can",
+              "kor": "A 11시에 그 사람과",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "make an appointment with him at eleven.",
+              "kor": "약속을 잡을 수 있을지 궁금해요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 조동사",
+            "target_pattern": "If/Unless + S + V / Modal + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-023",
+          "english": "You can see him anytime after seven.",
+          "korean": "7시 이후에는 언제든지 그를 볼 수 있어요.",
+          "grammar": "시간의 접속사 / 조동사",
+          "structure": "When/While + S + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "You can see",
+              "kor": "7시 이후에는 언제든지",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "him anytime after seven.",
+              "kor": "그를 볼 수 있어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 조동사",
+            "target_pattern": "When/While + S + V / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-024",
+          "english": "\u000f׮2 A Do you want me to give you something to drink, Jake?",
+          "korean": "׮2 A 제이크, 마실 것 좀 드릴까요?",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "\u000f׮2 A Do you want me",
+              "kor": "׮2 A 제이크,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to give you something to drink, Jake?",
+              "kor": "마실 것 좀 드릴까요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-025",
+          "english": "I’d love a milkshake.",
+          "korean": "나는 밀크셰이크를 좋아합니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "I’d love",
+              "kor": "나는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "a milkshake.",
+              "kor": "밀크셰이크를 좋아합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-026",
+          "english": "A Do you want me to get some tourist information?",
+          "korean": "A 관광 정보 좀 얻을까요?",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "A Do you want me",
+              "kor": "A 관광",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to get some tourist information?",
+              "kor": "정보 좀 얻을까요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-027",
+          "english": "B Thanks, but I got enough information at the station.",
+          "korean": "B 고마워요. 그런데 역에서 충분한 정보를 얻었어요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "B Thanks, but I got",
+              "kor": "B 고마워요. 그런데",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "enough information at the station.",
+              "kor": "역에서 충분한 정보를 얻었어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-028",
+          "english": "Do You Want Me to Play Baduk with You?",
+          "korean": "나랑 바둑 쳐줄래?",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Do You Want Me",
+              "kor": "나랑",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to Play Baduk with You?",
+              "kor": "바둑 쳐줄래?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-029",
+          "english": "What's wrong, Grandpa?",
+          "korean": "무슨 일이에요, 할아버지?",
+          "grammar": "의문사 구문",
+          "structure": "Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "What's",
+              "kor": "무슨",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "wrong, Grandpa?",
+              "kor": "일이에요, 할아버지?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문",
+            "target_pattern": "Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-030",
+          "english": "visit museums / markets travel by bus / train :PVS\u00010XO Talk and  find.\u000f׮Step How do you want to travel?",
+          "korean": "박물관/시장 방문 버스/기차로 여행 :PVS 0XO 이야기하고 찾으세요. ׮Step 어떻게 여행하고 싶으신가요?",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "visit museums / markets travel by bus / train :PVS\u00010XO",
+              "kor": "박물관/시장 방문 버스/기차로 여행 :PVS 0XO",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Talk and  find.\u000f׮Step How do you want to travel?",
+              "kor": "이야기하고 찾으세요. ׮Step 어떻게 여행하고 싶으신가요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-031",
+          "english": "I wonder if you want to travel with friends or family.",
+          "korean": "친구나 가족과 함께 여행하고 싶은지 궁금합니다.",
+          "grammar": "조건의 접속사 / to부정사",
+          "structure": "If/Unless + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "I wonder if you want",
+              "kor": "친구나 가족과 함께",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to travel with friends or family.",
+              "kor": "여행하고 싶은지 궁금합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / to부정사",
+            "target_pattern": "If/Unless + S + V / to + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-032",
+          "english": "Well, I want to travel with my friends.",
+          "korean": "글쎄요, 저는 친구들과 여행을 가고 싶어요.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Well, I want to",
+              "kor": "글쎄요, 저는 친구들과",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "travel with my friends.",
+              "kor": "여행을 가고 싶어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-033",
+          "english": "Do you want to visit museums or markets?",
+          "korean": "박물관이나 시장을 방문하고 싶나요?",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Do you want to",
+              "kor": "박물관이나 시장을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "visit museums or markets?",
+              "kor": "방문하고 싶나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-034",
+          "english": "I want to visit museums.",
+          "korean": "나는 박물관을 방문하고 싶다.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "I want",
+              "kor": "나는 박물관을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to visit museums.",
+              "kor": "방문하고 싶다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-035",
+          "english": "It’s a great way to learn about the local culture.",
+          "korean": "현지 문화를 배울 수 있는 좋은 방법입니다.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "It’s a great way to",
+              "kor": "현지 문화를 배울",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "learn about the local culture.",
+              "kor": "수 있는 좋은 방법입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-036",
+          "english": "Present and share.\u0001\u000f׮ Step When it comes to traveling, unji and I have some things in common.",
+          "korean": "발표하고 공유하세요 ׮ Step 여행에 있어서 저와 운지는 공통점이 있습니다.",
+          "grammar": "시간의 접속사 / to부정사",
+          "structure": "When/While + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Present and share.\u0001\u000f׮ Step When it comes to",
+              "kor": "발표하고 공유하세요 ׮ Step 여행에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "traveling, unji and I have some things in common.",
+              "kor": "있어서 저와 운지는 공통점이 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / to부정사",
+            "target_pattern": "When/While + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-037",
+          "english": "First, we want to travel with friends.",
+          "korean": "첫째, 친구들과 여행을 가고 싶습니다.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "First, we want",
+              "kor": "첫째, 친구들과",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to travel with friends.",
+              "kor": "여행을 가고 싶습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-038",
+          "english": "We‛re different in some ways.",
+          "korean": "우리는 어떤 면에서는 다릅니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "We‛re different",
+              "kor": "우리는 어떤",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "in some ways.",
+              "kor": "면에서는 다릅니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-039",
+          "english": "unji likes to go to museums, but I ....",
+          "korean": "운지는 박물관 가는 걸 좋아하는데 나는....",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "unji likes to go",
+              "kor": "운지는 박물관 가는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to museums, but I ....",
+              "kor": "걸 좋아하는데 나는....",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-040",
+          "english": "We have two local newspapers in our town.",
+          "korean": "우리 마을에는 두 개의 지역 신문이 있습니다.",
+          "grammar": "사역동사",
+          "structure": "make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "We have two local",
+              "kor": "우리 마을에는 두",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "newspapers in our town.",
+              "kor": "개의 지역 신문이 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사",
+            "target_pattern": "make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-041",
+          "english": "The museum is always crowded with tourists.",
+          "korean": "박물관은 항상 관광객들로 붐빈다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "The museum is",
+              "kor": "박물관은 항상",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "always crowded with tourists.",
+              "kor": "관광객들로 붐빈다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-042",
+          "english": "The toy is floating on the water.",
+          "korean": "장난감이 물 위에 떠 있어요.",
+          "grammar": "현재분사/동명사 / 비교급",
+          "structure": "V-ing / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "The toy is",
+              "kor": "장난감이 물",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "floating on the water.",
+              "kor": "위에 떠 있어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사 / 비교급",
+            "target_pattern": "V-ing / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-043",
+          "english": "HOME ABOUT TRAVEL REVIEWS & TIPS CONTACT FOOD GUIDES *\u0001BN\u0001-FBI\u000f\u0001*\u0001IBWF\u0001CFFO\u0001XSJUJOH\u0001B\u0001USBWFM\u0001CMPH\u0001TJODF\u0001*\u0001XBT\u0001\u0012\u0019\u000f\u0001 *\u0001HP\u0001QMBDFT\u0001BOE\u0001TIBSF\u0001NZ\u0001FYQFSJFODFT\u0001XJUI\u0001NZ\u0001SFBEFST\u000f\u0001 5SBWFM\u00014UPSZ 5SBWFM\u00014UPSZ -FBIsT\u0001 Must-Visit Markets Around the World July 15, 20 ↝↝ Visiting markets is a good way to learn about the culture of a country.",
+          "korean": "홈 여행 리뷰 및 팁 연락처 음식 가이드 * BN -FBI * IBWF CFFO XSJUJOH B USBWFM CMPH TJODF * XBT * HP QMBDFT BOE TIBSF NZ FYQFSJFODFT XJUI NZ SFBEFST 5SBWFM 4UPSZ 5SBWFM 4UPSZ -FBIsT 꼭 방문해야 할 전 세계 시장 7월 15, 20 ↝↝ 시장을 방문하는 것은 그 나라의 문화를 배울 수 있는 좋은 방법입니다.",
+          "grammar": "to부정사 / 조동사",
+          "structure": "to + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "HOME ABOUT TRAVEL REVIEWS & TIPS CONTACT FOOD GUIDES *\u0001BN\u0001-FBI\u000f\u0001*\u0001IBWF\u0001CFFO\u0001XSJUJOH\u0001B\u0001USBWFM\u0001CMPH\u0001TJODF\u0001*\u0001XBT\u0001\u0012\u0019\u000f\u0001 *\u0001HP\u0001QMBDFT\u0001BOE\u0001TIBSF\u0001NZ\u0001FYQFSJFODFT\u0001XJUI\u0001NZ\u0001SFBEFST\u000f\u0001 5SBWFM\u00014UPSZ 5SBWFM\u00014UPSZ -FBIsT\u0001 Must-Visit Markets Around the",
+              "kor": "홈 여행 리뷰 및 팁 연락처 음식 가이드 * BN -FBI * IBWF CFFO XSJUJOH B USBWFM CMPH TJODF * XBT * HP QMBDFT BOE TIBSF NZ FYQFSJFODFT",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "World July 15, 20 ↝↝ Visiting markets is a good way to learn about the culture of a country.",
+              "kor": "XJUI NZ SFBEFST 5SBWFM 4UPSZ 5SBWFM 4UPSZ -FBIsT 꼭 방문해야 할 전 세계 시장 7월 15, 20 ↝↝ 시장을 방문하는 것은 그 나라의 문화를 배울 수 있는 좋은 방법입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 조동사",
+            "target_pattern": "to + V / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-044",
+          "english": "Markets are places where you can meet people, learn history, and taste local food.",
+          "korean": "시장은 사람들을 만나고, 역사를 배우고, 현지 음식을 맛볼 수 있는 곳입니다.",
+          "grammar": "의문사 구문 / 조동사",
+          "structure": "Wh-word / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Markets are places where you can meet",
+              "kor": "시장은 사람들을 만나고, 역사를 배우고,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "people, learn history, and taste local food.",
+              "kor": "현지 음식을 맛볼 수 있는 곳입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문 / 조동사",
+            "target_pattern": "Wh-word / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-045",
+          "english": "I wonder whether there is any better way to discover another culture.",
+          "korean": "다른 문화를 발견할 수 있는 더 좋은 방법이 있는지 궁금합니다.",
+          "grammar": "to부정사 / 비교급",
+          "structure": "to + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "I wonder whether there is any",
+              "kor": "다른 문화를 발견할 수 있는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "better way to discover another culture.",
+              "kor": "더 좋은 방법이 있는지 궁금합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 비교급",
+            "target_pattern": "to + V / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-046",
+          "english": "It is a natural place for large markets like the Grand Bazaar.",
+          "korean": "그랜드바자르 같은 대규모 시장이 있기에 자연스러운 곳이다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "It is a natural place for",
+              "kor": "그랜드바자르 같은 대규모",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "large markets like the Grand Bazaar.",
+              "kor": "시장이 있기에 자연스러운 곳이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-047",
+          "english": "The market was built in 1455 in Istanbul.",
+          "korean": "시장은 이스탄불에서 1455년에 지어졌습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "The market was built",
+              "kor": "시장은 이스탄불에서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "in 1455 in Istanbul.",
+              "kor": "1455년에 지어졌습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-048",
+          "english": "Back then, the market had two big buildings, and people traded goods like cloth and gold there.",
+          "korean": "당시 시장에는 큰 건물이 두 채 있었고, 사람들은 그곳에서 옷감이나 금 같은 물건을 거래했습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Back then, the market had two big buildings,",
+              "kor": "당시 시장에는 큰 건물이 두 채 있었고,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and people traded goods like cloth and gold there.",
+              "kor": "사람들은 그곳에서 옷감이나 금 같은 물건을 거래했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-049",
+          "english": "Today the Grand Bazaar is much bigger, and it is the largest covered market in the world.",
+          "korean": "오늘날 그랜드 바자르는 훨씬 더 크고, 세계에서 가장 큰 지붕이 있는 시장입니다.",
+          "grammar": "비교급 / 최상급",
+          "structure": "Comparative / Superlative",
+          "syntax_chunks": [
+            {
+              "eng": "Today the Grand Bazaar is much bigger, and",
+              "kor": "오늘날 그랜드 바자르는 훨씬 더 크고,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "it is the largest covered market in the world.",
+              "kor": "세계에서 가장 큰 지붕이 있는 시장입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 / 최상급",
+            "target_pattern": "Comparative / Superlative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-050",
+          "english": "It has 64 streets and more than 4,000 shops under one roof.",
+          "korean": "64개의 거리와 한 지붕 아래 4,000개 이상의 상점이 있습니다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "It has 64 streets and more",
+              "kor": "64개의 거리와 한 지붕",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "than 4,000 shops under one roof.",
+              "kor": "아래 4,000개 이상의 상점이 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-051",
+          "english": "The market attracts over 250,000 visitors every day.",
+          "korean": "이 시장은 매일 250,000명 이상의 방문객을 끌어 모으고 있습니다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "The market attracts over",
+              "kor": "이 시장은 매일 250,000명",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "250,000 visitors every day.",
+              "kor": "이상의 방문객을 끌어 모으고 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-052",
+          "english": "You can buy almost any imaginable item there.",
+          "korean": "그곳에서는 상상할 수 있는 거의 모든 품목을 구입할 수 있습니다.",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "You can buy almost",
+              "kor": "그곳에서는 상상할 수 있는 거의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "any imaginable item there.",
+              "kor": "모든 품목을 구입할 수 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-053",
+          "english": "Extra Tip Ask shop owners if they carry nazar boncu ğu , a traditional Turkish symbol for good luck.",
+          "korean": "추가 팁 상점 주인에게 행운을 상징하는 터키 전통 상징인 nazar boncu ğu를 가지고 있는지 물어보세요.",
+          "grammar": "조건의 접속사",
+          "structure": "If/Unless + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "Extra Tip Ask shop owners if they carry nazar",
+              "kor": "추가 팁 상점 주인에게 행운을 상징하는 터키",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "boncu ğu , a traditional Turkish symbol for good luck.",
+              "kor": "전통 상징인 nazar boncu ğu를 가지고 있는지 물어보세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사",
+            "target_pattern": "If/Unless + S + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-054",
+          "english": "Also, if you want a nice snack, make sure to try lokum, a traditional Turkish candy.",
+          "korean": "또한, 맛있는 간식을 먹고 싶다면 터키 전통 사탕인 로쿰(lokum)을 꼭 드셔보세요.",
+          "grammar": "조건의 접속사 / to부정사",
+          "structure": "If/Unless + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Also, if you want a nice snack, make",
+              "kor": "또한, 맛있는 간식을 먹고 싶다면",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "sure to try lokum, a traditional Turkish candy.",
+              "kor": "터키 전통 사탕인 로쿰(lokum)을 꼭 드셔보세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / to부정사",
+            "target_pattern": "If/Unless + S + V / to + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-055",
+          "english": "na-zar bon-ju-u The Grand Bazaar started with buildings in the 15th century.",
+          "korean": "na-zar bon-ju-u 그랜드 바자르는 15세기에 건물로 시작되었습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "na-zar bon-ju-u The Grand Bazaar started",
+              "kor": "na-zar bon-ju-u 그랜드",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "with buildings in the 15th century.",
+              "kor": "바자르는 15세기에 건물로 시작되었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-056",
+          "english": "This was the beginning of floating markets in Thailand.",
+          "korean": "이것이 태국 수상시장의 시작이었습니다.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "This was the beginning",
+              "kor": "이것이 태국",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "of floating markets in Thailand.",
+              "kor": "수상시장의 시작이었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-057",
+          "english": "With better road transportation, many floating markets disappeared.",
+          "korean": "도로 교통이 좋아지면서 많은 수상 시장이 사라졌습니다.",
+          "grammar": "현재분사/동명사 / 비교급",
+          "structure": "V-ing / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "With better road transportation,",
+              "kor": "도로 교통이 좋아지면서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "many floating markets disappeared.",
+              "kor": "많은 수상 시장이 사라졌습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사 / 비교급",
+            "target_pattern": "V-ing / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-058",
+          "english": "Since the late 1960s, however, some of them have come back and kept the tradition alive.",
+          "korean": "그러나 1960년대 후반부터 그들 중 일부는 다시 돌아와 전통을 유지해 왔습니다.",
+          "grammar": "이유의 접속사 / 비교급",
+          "structure": "Because/Since + S + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Since the late 1960s, however, some of them",
+              "kor": "그러나 1960년대 후반부터 그들 중",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "have come back and kept the tradition alive.",
+              "kor": "일부는 다시 돌아와 전통을 유지해 왔습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 비교급",
+            "target_pattern": "Because/Since + S + V / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-059",
+          "english": "Today, one of the most popular floating markets is Damnoen Saduak Floating Market.",
+          "korean": "오늘날 가장 인기 있는 수상시장 중 하나는 담넌사두억 수상시장입니다.",
+          "grammar": "수동태 / 현재분사/동명사",
+          "structure": "be + p.p. / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Today, one of the most popular",
+              "kor": "오늘날 가장 인기 있는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "floating markets is Damnoen Saduak Floating Market.",
+              "kor": "수상시장 중 하나는 담넌사두억 수상시장입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / 현재분사/동명사",
+            "target_pattern": "be + p.p. / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-060",
+          "english": "It is always crowded with tourists from all over the world.",
+          "korean": "항상 전 세계의 관광객들로 붐비고 있습니다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "It is always crowded with",
+              "kor": "항상 전 세계의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "tourists from all over the world.",
+              "kor": "관광객들로 붐비고 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-061",
+          "english": "You can buy local foods and traditional gift items directly from boats.",
+          "korean": "보트에서 직접 현지 음식과 전통 선물 품목을 구입할 수 있습니다.",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "You can buy local foods and",
+              "kor": "보트에서 직접 현지 음식과 전통",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "traditional gift items directly from boats.",
+              "kor": "선물 품목을 구입할 수 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-062",
+          "english": "Extra Tip I wonder if you have ever had a meal on water.",
+          "korean": "추가 팁 물 위에서 식사를 해본 적이 있는지 궁금합니다.",
+          "grammar": "조건의 접속사 / 비교급",
+          "structure": "If/Unless + S + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Extra Tip I wonder if you",
+              "kor": "추가 팁 물 위에서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "have ever had a meal on water.",
+              "kor": "식사를 해본 적이 있는지 궁금합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 비교급",
+            "target_pattern": "If/Unless + S + V / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-063",
+          "english": "If not, try noodles like pad thai .",
+          "korean": "그렇지 않다면 팟타이 같은 국수를 먹어보세요.",
+          "grammar": "조건의 접속사",
+          "structure": "If/Unless + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "If not, try noodles",
+              "kor": "그렇지 않다면 팟타이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "like pad thai .",
+              "kor": "같은 국수를 먹어보세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사",
+            "target_pattern": "If/Unless + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-064",
+          "english": "The sellers will cook them on their boats and pass them to you with a long fishing pole.",
+          "korean": "판매자가 배에서 요리한 후 긴 낚싯대와 함께 건네줍니다.",
+          "grammar": "to부정사 / 조동사",
+          "structure": "to + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "The sellers will cook them on their boats and",
+              "kor": "판매자가 배에서 요리한 후",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "pass them to you with a long fishing pole.",
+              "kor": "긴 낚싯대와 함께 건네줍니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 조동사",
+            "target_pattern": "to + V / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-065",
+          "english": "Derm-nern Sa-duak phat thai Many floating markets appeared because of better road conditions.",
+          "korean": "Derm-nern Sa-duak phat thai 도로 상황이 좋아지면서 수상시장이 많이 생겼습니다.",
+          "grammar": "이유의 접속사 / 현재분사/동명사",
+          "structure": "Because/Since + S + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Derm-nern Sa-duak phat thai Many floating",
+              "kor": "Derm-nern Sa-duak phat thai 도로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "markets appeared because of better road conditions.",
+              "kor": "상황이 좋아지면서 수상시장이 많이 생겼습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 현재분사/동명사",
+            "target_pattern": "Because/Since + S + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-066",
+          "english": "Thus, the Dutch built up the land, and one effective way to use it was to grow flowers and sell them.",
+          "korean": "그리하여 네덜란드인들은 땅을 건설했고, 그 땅을 효과적으로 활용하는 한 가지 방법은 꽃을 재배하여 파는 것이었다.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Thus, the Dutch built up the land, and one effective",
+              "kor": "그리하여 네덜란드인들은 땅을 건설했고, 그 땅을 효과적으로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "way to use it was to grow flowers and sell them.",
+              "kor": "활용하는 한 가지 방법은 꽃을 재배하여 파는 것이었다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-067",
+          "english": "It is, therefore, no surprise that the country has the largest flower market in the world: the Aalsmeer Flower Market.",
+          "korean": "따라서 이 나라에 세계에서 가장 큰 꽃 시장인 알스메르 꽃 시장이 있다는 것은 놀라운 일이 아닙니다.",
+          "grammar": "접속사/관계대명사 that / 비교급",
+          "structure": "that + S + V / N + that / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "It is, therefore, no surprise that the country has the",
+              "kor": "따라서 이 나라에 세계에서 가장 큰 꽃 시장인",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "largest flower market in the world: the Aalsmeer Flower Market.",
+              "kor": "알스메르 꽃 시장이 있다는 것은 놀라운 일이 아닙니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사/관계대명사 that / 비교급",
+            "target_pattern": "that + S + V / N + that / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-068",
+          "english": "The building where the market is housed is bigger than 120 soccer fields.",
+          "korean": "시장이 있는 건물은 축구장 120개보다 크다.",
+          "grammar": "수동태 / 의문사 구문",
+          "structure": "be + p.p. / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "The building where the market is",
+              "kor": "시장이 있는 건물은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "housed is bigger than 120 soccer fields.",
+              "kor": "축구장 120개보다 크다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / 의문사 구문",
+            "target_pattern": "be + p.p. / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-069",
+          "english": "The market is busy with thousands of flower-filled carts.",
+          "korean": "시장은 수천 개의 꽃이 가득한 카트로 분주합니다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "The market is busy",
+              "kor": "시장은 수천 개의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "with thousands of flower-filled carts.",
+              "kor": "꽃이 가득한 카트로 분주합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-070",
+          "english": "They are moved mostly by electric-powered trucks.",
+          "korean": "그들은 주로 전기 트럭으로 이동합니다.",
+          "grammar": "수동태",
+          "structure": "be + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "They are moved",
+              "kor": "그들은 주로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "mostly by electric-powered trucks.",
+              "kor": "전기 트럭으로 이동합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태",
+            "target_pattern": "be + p.p."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-071",
+          "english": "Every day, around 20 million flowers are traded and shipped to all corners of the world.",
+          "korean": "매일 약 2천만 송이의 꽃이 거래되어 세계 곳곳으로 배송됩니다.",
+          "grammar": "수동태 / to부정사",
+          "structure": "be + p.p. / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Every day, around 20 million flowers are traded",
+              "kor": "매일 약 2천만 송이의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and shipped to all corners of the world.",
+              "kor": "꽃이 거래되어 세계 곳곳으로 배송됩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / to부정사",
+            "target_pattern": "be + p.p. / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-072",
+          "english": "Extra Tip  You may wonder whether you can buy just a few flowers at the market.",
+          "korean": "추가 팁 시장에서 꽃 몇 개만 살 수 있는지 궁금할 수도 있습니다.",
+          "grammar": "조동사 / 비교급",
+          "structure": "Modal + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Extra Tip  You may wonder whether you",
+              "kor": "추가 팁 시장에서 꽃 몇 개만",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "can buy just a few flowers at the market.",
+              "kor": "살 수 있는지 궁금할 수도 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사 / 비교급",
+            "target_pattern": "Modal + V / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-073",
+          "english": "Sadly, you cannot, but you can see how wholesale flower trading works.",
+          "korean": "안타깝게도 그렇게 할 수는 없지만 꽃 도매 거래가 어떻게 이루어지는지 볼 수 있습니다.",
+          "grammar": "의문사 구문 / 조동사",
+          "structure": "Wh-word / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Sadly, you cannot, but you can",
+              "kor": "안타깝게도 그렇게 할 수는 없지만 꽃",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "see how wholesale flower trading works.",
+              "kor": "도매 거래가 어떻게 이루어지는지 볼 수 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문 / 조동사",
+            "target_pattern": "Wh-word / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-074",
+          "english": "The Dutch built up the land below sea level and have grown since then.",
+          "korean": "네덜란드인들은 해수면 아래 땅을 건설했고 그 이후로 성장해 왔습니다.",
+          "grammar": "이유의 접속사 / 사역동사",
+          "structure": "Because/Since + S + V / make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "The Dutch built up the land below",
+              "kor": "네덜란드인들은 해수면 아래 땅을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "sea level and have grown since then.",
+              "kor": "건설했고 그 이후로 성장해 왔습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 사역동사",
+            "target_pattern": "Because/Since + S + V / make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-075",
+          "english": "This is a country where trading on boats has a long history.",
+          "korean": "배를 이용한 무역이 오랜 역사를 지닌 나라다.",
+          "grammar": "의문사 구문 / 현재분사/동명사",
+          "structure": "Wh-word / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "This is a country where trading",
+              "kor": "배를 이용한 무역이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "on boats has a long history.",
+              "kor": "오랜 역사를 지닌 나라다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문 / 현재분사/동명사",
+            "target_pattern": "Wh-word / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-076",
+          "english": "Around one-third of the country is below sea level.",
+          "korean": "국토의 약 3분의 1이 해수면보다 낮습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Around one-third of the",
+              "kor": "국토의 약 3분의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "country is below sea level.",
+              "kor": "1이 해수면보다 낮습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-077",
+          "english": "This country is a place where East meets West and has a long tradition of trade.",
+          "korean": "이 나라는 동서양이 만나는 곳으로 오랜 무역의 전통을 가지고 있습니다.",
+          "grammar": "의문사 구문 / 최상급",
+          "structure": "Wh-word / Superlative",
+          "syntax_chunks": [
+            {
+              "eng": "This country is a place where East meets",
+              "kor": "이 나라는 동서양이 만나는 곳으로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "West and has a long tradition of trade.",
+              "kor": "오랜 무역의 전통을 가지고 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문 / 최상급",
+            "target_pattern": "Wh-word / Superlative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-078",
+          "english": "What can you buy for one dollar in ...?",
+          "korean": "...에서 1달러에 무엇을 살 수 있나요?",
+          "grammar": "의문사 구문 / 조동사",
+          "structure": "Wh-word / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "What can you buy",
+              "kor": "...에서 1달러에 무엇을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "for one dollar in ...?",
+              "kor": "살 수 있나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문 / 조동사",
+            "target_pattern": "Wh-word / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-079",
+          "english": "Then try a jjimjilbang.",
+          "korean": "그렇다면 찜질방을 드셔보세요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Then try",
+              "kor": "그렇다면",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "a jjimjilbang.",
+              "kor": "찜질방을 드셔보세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-080",
+          "english": "It is a place where you can experience a traditional Korean way to relax.",
+          "korean": "한국의 전통적인 휴식 방식을 경험할 수 있는 곳입니다.",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "It is a place where you can",
+              "kor": "한국의 전통적인 휴식 방식을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "experience a traditional Korean way to relax.",
+              "kor": "경험할 수 있는 곳입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-081",
+          "english": "It can easily be found in any big city.",
+          "korean": "어느 대도시에서나 쉽게 찾을 수 있습니다.",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "It can easily be",
+              "kor": "어느 대도시에서나 쉽게",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "found in any big city.",
+              "kor": "찾을 수 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-082",
+          "english": "You can rest on a hot floor or take a nap.",
+          "korean": "뜨거운 바닥에서 쉬거나 낮잠을 잘 수 있습니다.",
+          "grammar": "조동사 / 최상급",
+          "structure": "Modal + V / Superlative",
+          "syntax_chunks": [
+            {
+              "eng": "You can rest on a",
+              "kor": "뜨거운 바닥에서 쉬거나",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "hot floor or take a nap.",
+              "kor": "낮잠을 잘 수 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사 / 최상급",
+            "target_pattern": "Modal + V / Superlative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-083",
+          "english": "Also, you can read a book or chat with friends as you lie on the floor.",
+          "korean": "또한, 바닥에 누워서 책을 읽거나 친구들과 대화를 나눌 수도 있습니다.",
+          "grammar": "이유의 접속사 / 조동사",
+          "structure": "Because/Since + S + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Also, you can read a book or chat",
+              "kor": "또한, 바닥에 누워서 책을 읽거나",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "with friends as you lie on the floor.",
+              "kor": "친구들과 대화를 나눌 수도 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 조동사",
+            "target_pattern": "Because/Since + S + V / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-084",
+          "english": "The best food you can try here is boiled eggs.",
+          "korean": "이곳에서 맛볼 수 있는 최고의 음식은 삶은 계란입니다.",
+          "grammar": "수동태 / 조동사",
+          "structure": "be + p.p. / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "The best food you can",
+              "kor": "이곳에서 맛볼 수 있는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "try here is boiled eggs.",
+              "kor": "최고의 음식은 삶은 계란입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / 조동사",
+            "target_pattern": "be + p.p. / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-085",
+          "english": "The place is easy on your wallet because it only costs about 13,000 won.",
+          "korean": "가격은 13,000원 ​​정도로 지갑이 편한 곳입니다.",
+          "grammar": "이유의 접속사",
+          "structure": "Because/Since + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "The place is easy on your wallet",
+              "kor": "가격은 13,000원 ​​정도로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "because it only costs about 13,000 won.",
+              "kor": "지갑이 편한 곳입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사",
+            "target_pattern": "Because/Since + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-086",
+          "english": "It is usually open 24 hours a day.",
+          "korean": "보통 하루 24시간 열려있습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "It is usually open",
+              "kor": "보통 하루",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "24 hours a day.",
+              "kor": "24시간 열려있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-087",
+          "english": "Friday evening is the time when my family likes to go for a walk.",
+          "korean": "금요일 저녁은 우리 가족이 산책하기를 좋아하는 시간입니다.",
+          "grammar": "시간의 접속사 / to부정사",
+          "structure": "When/While + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Friday evening is the time when my",
+              "kor": "금요일 저녁은 우리",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "family likes to go for a walk.",
+              "kor": "가족이 산책하기를 좋아하는 시간입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / to부정사",
+            "target_pattern": "When/While + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-088",
+          "english": "Lake Park is the place where ী\u0001XIFO੉ ա \u0001\u0001 We want to know if he likes the baker.",
+          "korean": "Lake Park는 ী XIFO੉ ڡ 그가 제빵사를 좋아하는지 알고 싶습니다.",
+          "grammar": "조건의 접속사 / to부정사",
+          "structure": "If/Unless + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Lake Park is the place where ী\u0001XIFO੉ ա \u0001\u0001",
+              "kor": "Lake Park는 ী XIFO੉ ڡ",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "We want to know if he likes the baker.",
+              "kor": "그가 제빵사를 좋아하는지 알고 싶습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / to부정사",
+            "target_pattern": "If/Unless + S + V / to + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-089",
+          "english": "I wonder if / whether they are angry.",
+          "korean": "나는 궁금하다 / 그들이 화가 났는지 여부.",
+          "grammar": "조건의 접속사 / 비교급",
+          "structure": "If/Unless + S + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "I wonder if /",
+              "kor": "나는 궁금하다 /",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "whether they are angry.",
+              "kor": "그들이 화가 났는지 여부.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 비교급",
+            "target_pattern": "If/Unless + S + V / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-090",
+          "english": "Can you tell me they speak Chinese?",
+          "korean": "그 사람들이 중국어를 한다고 말해줄 수 있나요?",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Can you tell",
+              "kor": "그 사람들이 중국어를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "me they speak Chinese?",
+              "kor": "한다고 말해줄 수 있나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-091",
+          "english": "Do they speak Chinese?",
+          "korean": "그 사람들은 중국어를 할 수 있나요?",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Do they",
+              "kor": "그 사람들은 중국어를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "speak Chinese?",
+              "kor": "할 수 있나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-092",
+          "english": "choose the best clothes for me clean my room in 30 seconds translate every language make delicious ramyeon take me to school notice what I feel do my homework play basketball May 5 is the day when I go hiking with my family.",
+          "korean": "나에게 가장 좋은 옷 고르기 30초 안에 방 청소하기 모든 언어 번역하기 맛있는 라면 만들기 학교에 데려다주기 내 기분 알아차리기 숙제하기 농구하기 5월 5일은 가족들과 함께 하이킹을 가는 날이다.",
+          "grammar": "시간의 접속사 / to부정사",
+          "structure": "When/While + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "choose the best clothes for me clean my room in 30 seconds translate every language make delicious ramyeon take me to",
+              "kor": "나에게 가장 좋은 옷 고르기 30초 안에 방 청소하기 모든 언어 번역하기 맛있는 라면",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "school notice what I feel do my homework play basketball May 5 is the day when I go hiking with my family.",
+              "kor": "만들기 학교에 데려다주기 내 기분 알아차리기 숙제하기 농구하기 5월 5일은 가족들과 함께 하이킹을 가는 날이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / to부정사",
+            "target_pattern": "When/While + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-093",
+          "english": "is the place where  I like to go with my friends.",
+          "korean": "친구들과 함께 가고 싶은 곳이에요.",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "is the place where  I",
+              "kor": "친구들과 함께",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "like to go with my friends.",
+              "kor": "가고 싶은 곳이에요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-094",
+          "english": "ABC Pizza is the restaurant where I like to go with my friends.",
+          "korean": "ABC 피자는 친구들과 함께 가고 싶은 레스토랑이에요.",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "ABC Pizza is the restaurant where",
+              "kor": "ABC 피자는 친구들과",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "I like to go with my friends.",
+              "kor": "함께 가고 싶은 레스토랑이에요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-095",
+          "english": "I wonder if your robot can translate every language.",
+          "korean": "당신의 로봇이 모든 언어를 번역할 수 있는지 궁금합니다.",
+          "grammar": "조건의 접속사 / 조동사",
+          "structure": "If/Unless + S + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "I wonder if your",
+              "kor": "당신의 로봇이 모든 언어를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "robot can translate every language.",
+              "kor": "번역할 수 있는지 궁금합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 조동사",
+            "target_pattern": "If/Unless + S + V / Modal + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-096",
+          "english": "He did not follow the ways of designing buildings.",
+          "korean": "그는 건물을 설계하는 방식을 따르지 않았습니다.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "He did not follow",
+              "kor": "그는 건물을 설계하는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the ways of designing buildings.",
+              "kor": "방식을 따르지 않았습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-097",
+          "english": "He thought in ways, and for his works he tried things not used by other architects.",
+          "korean": "그는 여러 가지 방식으로 생각했고, 자신의 작품을 위해 다른 건축가들이 사용하지 않았던 것들을 시도했습니다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "He thought in ways, and for his works",
+              "kor": "그는 여러 가지 방식으로 생각했고, 자신의 작품을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "he tried things not used by other architects.",
+              "kor": "위해 다른 건축가들이 사용하지 않았던 것들을 시도했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-098",
+          "english": "Also, he got his design ideas from plants and other things he could find in the environment.",
+          "korean": "또한 그는 주변 환경에서 찾을 수 있는 식물과 기타 사물로부터 디자인 아이디어를 얻었습니다.",
+          "grammar": "조동사 / 비교급",
+          "structure": "Modal + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Also, he got his design ideas from plants",
+              "kor": "또한 그는 주변 환경에서 찾을 수",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and other things he could find in the environment.",
+              "kor": "있는 식물과 기타 사물로부터 디자인 아이디어를 얻었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사 / 비교급",
+            "target_pattern": "Modal + V / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-099",
+          "english": "No wonder his works are still popular and to visitors from all over the world.",
+          "korean": "그의 작품이 여전히 인기가 있고 전 세계 방문객들에게 인기가 있다는 것은 놀라운 일이 아닙니다.",
+          "grammar": "to부정사 / 비교급",
+          "structure": "to + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "No wonder his works are still popular",
+              "kor": "그의 작품이 여전히 인기가 있고 전 세계",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and to visitors from all over the world.",
+              "kor": "방문객들에게 인기가 있다는 것은 놀라운 일이 아닙니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 비교급",
+            "target_pattern": "to + V / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-100",
+          "english": "discover transportation tourist last Are you a 1 in a new city?",
+          "korean": "마지막으로 교통 관광객을 발견하십시오. 당신은 새로운 도시의 1입니까?",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "discover transportation tourist last Are you",
+              "kor": "마지막으로 교통 관광객을 발견하십시오.",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "a 1 in a new city?",
+              "kor": "당신은 새로운 도시의 1입니까?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-101",
+          "english": "Do you want to 2 its beauty?",
+          "korean": "2 그 아름다움을 원하십니까?",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Do you want",
+              "kor": "2 그",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to 2 its beauty?",
+              "kor": "아름다움을 원하십니까?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-102",
+          "english": "Your memory of the new place will 4 longer.",
+          "korean": "새로운 장소에 대한 기억력이 4 더 길어집니다.",
+          "grammar": "조동사 / 비교급",
+          "structure": "Modal + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Your memory of the",
+              "kor": "새로운 장소에 대한",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "new place will 4 longer.",
+              "kor": "기억력이 4 더 길어집니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사 / 비교급",
+            "target_pattern": "Modal + V / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-103",
+          "english": "LISTENING & SPEAKING Listen and role play.",
+          "korean": "듣기 및 말하기 듣기와 역할극을 해보세요.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "LISTENING & SPEAKING",
+              "kor": "듣기 및 말하기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Listen and role play.",
+              "kor": "듣기와 역할극을 해보세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-104",
+          "english": "READING Read and answer.",
+          "korean": "읽기 읽고 대답하세요.",
+          "grammar": "현재분사/동명사 / 비교급",
+          "structure": "V-ing / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "READING Read",
+              "kor": "읽기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and answer.",
+              "kor": "읽고 대답하세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사 / 비교급",
+            "target_pattern": "V-ing / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-105",
+          "english": "Every Saturday, I go to Oakville Farmers’ Market.",
+          "korean": "매주 토요일에는 오크빌 파머스 마켓에 갑니다.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Every Saturday, I go",
+              "kor": "매주 토요일에는 오크빌",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to Oakville Farmers’ Market.",
+              "kor": "파머스 마켓에 갑니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-106",
+          "english": "That is the place where I buy food for the coming week.",
+          "korean": "그곳은 내가 다음 주에 먹을 음식을 사는 곳이다.",
+          "grammar": "접속사/관계대명사 that / 의문사 구문",
+          "structure": "that + S + V / N + that / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "That is the place where I",
+              "kor": "그곳은 내가 다음 주에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "buy food for the coming week.",
+              "kor": "먹을 음식을 사는 곳이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사/관계대명사 that / 의문사 구문",
+            "target_pattern": "that + S + V / N + that / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-107",
+          "english": "There I find all kinds of fresh vegetables.",
+          "korean": "거기에서 나는 온갖 종류의 신선한 야채를 발견합니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "There I find all",
+              "kor": "거기에서 나는 온갖",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "kinds of fresh vegetables.",
+              "kor": "종류의 신선한 야채를 발견합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-108",
+          "english": "They are usually picked only a few hours before I buy them.",
+          "korean": "보통 구입하기 몇 시간 전에 수확됩니다.",
+          "grammar": "시간의 접속사",
+          "structure": "When/While + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "They are usually picked only a",
+              "kor": "보통 구입하기 몇",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "few hours before I buy them.",
+              "kor": "시간 전에 수확됩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사",
+            "target_pattern": "When/While + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-109",
+          "english": "I also find bread, meat, and home-made jam.",
+          "korean": "빵과 고기, 집에서 만든 잼도 찾아요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "I also find bread,",
+              "kor": "빵과 고기, 집에서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "meat, and home-made jam.",
+              "kor": "만든 잼도 찾아요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-110",
+          "english": "Because I can buy the items directly from the producers, they are usually much cheaper than at other stores.",
+          "korean": "생산자로부터 직접 물건을 구매할 수 있기 때문에 일반적으로 다른 상점보다 훨씬 저렴합니다.",
+          "grammar": "이유의 접속사 / 조동사",
+          "structure": "Because/Since + S + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Because I can buy the items directly from the",
+              "kor": "생산자로부터 직접 물건을 구매할 수 있기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "producers, they are usually much cheaper than at other stores.",
+              "kor": "때문에 일반적으로 다른 상점보다 훨씬 저렴합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 조동사",
+            "target_pattern": "Because/Since + S + V / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-111",
+          "english": "The local farmers are always kind and ready to share gardening tips and recipes with visitors, too.",
+          "korean": "현지 농부들은 항상 친절하며 방문객들에게 원예 팁과 조리법을 공유할 준비가 되어 있습니다.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "The local farmers are always kind and ready",
+              "kor": "현지 농부들은 항상 친절하며 방문객들에게 원예",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to share gardening tips and recipes with visitors, too.",
+              "kor": "팁과 조리법을 공유할 준비가 되어 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-112",
+          "english": "I love going to the farmers’ market.",
+          "korean": "나는 농산물 직거래 장터에 가는 것을 좋아합니다.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I love going",
+              "kor": "나는 농산물 직거래",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to the farmers’ market.",
+              "kor": "장터에 가는 것을 좋아합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-113",
+          "english": "7  Th  e items at the farmers’ market are and cheap.",
+          "korean": "7 농산물 직거래 장터에 파는 물건은 가격도 저렴해요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "7  Th  e items",
+              "kor": "7 농산물 직거래 장터에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "at the farmers’ market are and cheap.",
+              "kor": "파는 물건은 가격도 저렴해요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-114",
+          "english": "8 \u0001 Ӗॵ੉о\u0001Oakville Farmers’ Market\u000f׮ GRAMMAR & WRITING Choose and write.",
+          "korean": "8 Җॵ੉о Oakville Farmers' Market ׮ 문법 및 쓰기 선택하고 작성하세요.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "8 \u0001 Ӗॵ੉о\u0001Oakville Farmers’ Market\u000f׮",
+              "kor": "8 Җॵ੉о Oakville Farmers' Market",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "GRAMMAR & WRITING Choose and write.",
+              "kor": "׮ 문법 및 쓰기 선택하고 작성하세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-115",
+          "english": "9  Penguin Snack is the place (when / where) students in my school like to go.",
+          "korean": "9 Penguin Snack은 우리 학교 학생들이 가고 싶어하는 장소입니다.",
+          "grammar": "시간의 접속사 / to부정사",
+          "structure": "When/While + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "9  Penguin Snack is the place (when",
+              "kor": "9 Penguin Snack은 우리",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "/ where) students in my school like to go.",
+              "kor": "학교 학생들이 가고 싶어하는 장소입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / to부정사",
+            "target_pattern": "When/While + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-116",
+          "english": "\u0001Penguin Snack is 10  I am not sure (if / what) it is open on Sundays.",
+          "korean": "Penguin Snack은 10시입니다. 일요일에 영업하는지 잘 모르겠습니다.",
+          "grammar": "조건의 접속사 / 수동태",
+          "structure": "If/Unless + S + V / be + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "\u0001Penguin Snack is 10  I am not",
+              "kor": "Penguin Snack은 10시입니다.",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "sure (if / what) it is open on Sundays.",
+              "kor": "일요일에 영업하는지 잘 모르겠습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 수동태",
+            "target_pattern": "If/Unless + S + V / be + p.p."
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-117",
+          "english": "Script Check Y ourself\u0001\u000f׮ Do you ...",
+          "korean": "스크립트 확인 스스로 ׮ 당신은 ...",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Script Check Y",
+              "kor": "스크립트 확인 스스로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "ourself\u0001\u000f׮ Do you ...",
+              "kor": "׮ 당신은 ...",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-118",
+          "english": "Let’s go in and check.",
+          "korean": "들어가서 확인해 보자.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Let’s go",
+              "kor": "들어가서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "in and check.",
+              "kor": "확인해 보자.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-119",
+          "english": "Though you may disagree on the best toppings, you will agree that it is now a global food.",
+          "korean": "최고의 토핑에 대해서는 의견이 다를 수 있지만, 그것이 이제 세계적인 식품이라는 점에는 동의할 것입니다.",
+          "grammar": "양보의 접속사 / 접속사/관계대명사 that",
+          "structure": "Though + S + V / that + S + V / N + that",
+          "syntax_chunks": [
+            {
+              "eng": "Though you may disagree on the best toppings, you",
+              "kor": "최고의 토핑에 대해서는 의견이 다를 수 있지만,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "will agree that it is now a global food.",
+              "kor": "그것이 이제 세계적인 식품이라는 점에는 동의할 것입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "양보의 접속사 / 접속사/관계대명사 that",
+            "target_pattern": "Though + S + V / that + S + V / N + that"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-120",
+          "english": "It is sold in fast- food restaurants or on the street in most parts of the world.",
+          "korean": "패스트푸드점이나 세계 대부분 지역의 거리에서 판매됩니다.",
+          "grammar": "최상급",
+          "structure": "Superlative",
+          "syntax_chunks": [
+            {
+              "eng": "It is sold in fast- food restaurants or",
+              "kor": "패스트푸드점이나 세계 대부분",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "on the street in most parts of the world.",
+              "kor": "지역의 거리에서 판매됩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "최상급",
+            "target_pattern": "Superlative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-121",
+          "english": "How has pizza become such a favorite food around the world?",
+          "korean": "피자는 어떻게 전 세계적으로 사랑받는 음식이 되었나요?",
+          "grammar": "의문사 구문",
+          "structure": "Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "How has pizza become such",
+              "kor": "피자는 어떻게 전",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "a favorite food around the world?",
+              "kor": "세계적으로 사랑받는 음식이 되었나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문",
+            "target_pattern": "Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-122",
+          "english": "ince the Stone Age, people have been eating pizza in one form or another.",
+          "korean": "석기 시대부터 사람들은 어떤 형태로든 피자를 먹어왔습니다.",
+          "grammar": "완료시제 / 현재분사/동명사",
+          "structure": "have + p.p. / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "ince the Stone Age, people have been",
+              "kor": "석기 시대부터 사람들은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "eating pizza in one form or another.",
+              "kor": "어떤 형태로든 피자를 먹어왔습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "완료시제 / 현재분사/동명사",
+            "target_pattern": "have + p.p. / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-123",
+          "english": "Stone Age people baked flat bread on hot rocks.",
+          "korean": "석기시대 사람들은 뜨거운 바위 위에 납작한 빵을 굽었습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Stone Age people baked",
+              "kor": "석기시대 사람들은 뜨거운 바위",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "flat bread on hot rocks.",
+              "kor": "위에 납작한 빵을 굽었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-124",
+          "english": "Records show that the Greeks and the Romans started to put meat and vegetables on flat bread.",
+          "korean": "기록에 따르면 그리스인과 로마인은 평평한 빵에 고기와 야채를 넣기 시작했습니다.",
+          "grammar": "to부정사 / 접속사/관계대명사 that",
+          "structure": "to + V / that + S + V / N + that",
+          "syntax_chunks": [
+            {
+              "eng": "Records show that the Greeks and the Romans",
+              "kor": "기록에 따르면 그리스인과 로마인은 평평한",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "started to put meat and vegetables on flat bread.",
+              "kor": "빵에 고기와 야채를 넣기 시작했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 접속사/관계대명사 that",
+            "target_pattern": "to + V / that + S + V / N + that"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-125",
+          "english": "It is believed that the word “pizza” was first used in Italy to name the food over 1,000 years ago.",
+          "korean": "\"피자\"라는 단어는 1000년 전에 이탈리아에서 음식 이름을 지정하기 위해 처음 사용된 것으로 추정됩니다.",
+          "grammar": "수동태 / to부정사",
+          "structure": "be + p.p. / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "It is believed that the word “pizza” was first used",
+              "kor": "\"피자\"라는 단어는 1000년 전에 이탈리아에서 음식",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "in Italy to name the food over 1,000 years ago.",
+              "kor": "이름을 지정하기 위해 처음 사용된 것으로 추정됩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / to부정사",
+            "target_pattern": "be + p.p. / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-126",
+          "english": "T here were no tomatoes in Italy before Christopher Columbus and other Europeans brought them from the New World.",
+          "korean": "크리스토퍼 콜럼버스와 다른 유럽인들이 신세계에서 토마토를 가져오기 전에는 이탈리아에 토마토가 없었습니다.",
+          "grammar": "시간의 접속사 / 비교급",
+          "structure": "When/While + S + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "T here were no tomatoes in Italy before Christopher",
+              "kor": "크리스토퍼 콜럼버스와 다른 유럽인들이 신세계에서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Columbus and other Europeans brought them from the New World.",
+              "kor": "토마토를 가져오기 전에는 이탈리아에 토마토가 없었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 비교급",
+            "target_pattern": "When/While + S + V / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-127",
+          "english": "When they were first introduced to Europe, people  thought that tomatoes would make them sick.",
+          "korean": "토마토가 유럽에 처음 소개되었을 때 사람들은 토마토가 자신을 아프게 할 것이라고 생각했습니다.",
+          "grammar": "시간의 접속사 / to부정사",
+          "structure": "When/While + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "When they were first introduced to Europe, people",
+              "kor": "토마토가 유럽에 처음 소개되었을 때 사람들은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "thought that tomatoes would make them sick.",
+              "kor": "토마토가 자신을 아프게 할 것이라고 생각했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / to부정사",
+            "target_pattern": "When/While + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-128",
+          "english": "In time, people learned that tomatoes were delicious and healthy.",
+          "korean": "시간이 지나면서 사람들은 토마토가 맛있고 건강에 좋다는 사실을 알게 되었습니다.",
+          "grammar": "접속사/관계대명사 that",
+          "structure": "that + S + V / N + that",
+          "syntax_chunks": [
+            {
+              "eng": "In time, people learned that",
+              "kor": "시간이 지나면서 사람들은 토마토가 맛있고",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "tomatoes were delicious and healthy.",
+              "kor": "건강에 좋다는 사실을 알게 되었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사/관계대명사 that",
+            "target_pattern": "that + S + V / N + that"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-129",
+          "english": "n the 18 th century, Naples was a large city where there were many jobs.",
+          "korean": "18세기 나폴리는 일자리가 많은 대도시였다.",
+          "grammar": "의문사 구문",
+          "structure": "Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "n the 18 th century, Naples was",
+              "kor": "18세기 나폴리는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "a large city where there were many jobs.",
+              "kor": "일자리가 많은 대도시였다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문",
+            "target_pattern": "Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-130",
+          "english": "Workers from near and far came to the city, and what they needed in their busy lives was food they could  eat quickly at any time.",
+          "korean": "도시 곳곳에서 노동자들이 찾아왔고, 바쁜 일상 속에서 그들에게 필요한 것은 언제든지 빨리 먹을 수 있는 음식이었다.",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "Workers from near and far came to the city, and what they needed",
+              "kor": "도시 곳곳에서 노동자들이 찾아왔고, 바쁜 일상 속에서 그들에게",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "in their busy lives was food they could  eat quickly at any time.",
+              "kor": "필요한 것은 언제든지 빨리 먹을 수 있는 음식이었다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-131",
+          "english": "Cooks in Naples began to put tomato and other toppings on flat bread and sold slices of pizza on the street.",
+          "korean": "나폴리의 요리사들은 평평한 빵에 토마토와 다른 토핑을 ​​얹고 거리에서 피자 조각을 팔기 시작했습니다.",
+          "grammar": "to부정사 / 비교급",
+          "structure": "to + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Cooks in Naples began to put tomato and other toppings",
+              "kor": "나폴리의 요리사들은 평평한 빵에 토마토와 다른",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "on flat bread and sold slices of pizza on the street.",
+              "kor": "토핑을 ​​얹고 거리에서 피자 조각을 팔기 시작했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 비교급",
+            "target_pattern": "to + V / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-132",
+          "english": "The street food was so cheap and delicious that workers ate it for breakfast, lunch, and dinner.",
+          "korean": "길거리 음식은 너무 저렴하고 맛있어서 직장인들이 아침, 점심, 저녁으로 먹었습니다.",
+          "grammar": "접속사/관계대명사 that / 비교급",
+          "structure": "that + S + V / N + that / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "The street food was so cheap and delicious",
+              "kor": "길거리 음식은 너무 저렴하고 맛있어서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "that workers ate it for breakfast, lunch, and dinner.",
+              "kor": "직장인들이 아침, 점심, 저녁으로 먹었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사/관계대명사 that / 비교급",
+            "target_pattern": "that + S + V / N + that / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-133",
+          "english": "They could buy slices of pizza and eat them as they walked on the street.",
+          "korean": "그들은 피자 한 조각을 사서 거리를 걸으면서 먹을 수 있었습니다.",
+          "grammar": "이유의 접속사 / 조동사",
+          "structure": "Because/Since + S + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "They could buy slices of pizza and",
+              "kor": "그들은 피자 한 조각을 사서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "eat them as they walked on the street.",
+              "kor": "거리를 걸으면서 먹을 수 있었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 조동사",
+            "target_pattern": "Because/Since + S + V / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-134",
+          "english": "In 1830, the world’s first pizza shop opened in Naples.",
+          "korean": "1830년, 세계 최초의 피자 가게가 나폴리에 문을 열었습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "In 1830, the world’s first",
+              "kor": "1830년, 세계 최초의 피자",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "pizza shop opened in Naples.",
+              "kor": "가게가 나폴리에 문을 열었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-135",
+          "english": "n 1889, Queen Margherita of Italy visited Naples and tried pizza.",
+          "korean": "1889년 이탈리아의 마르게리타 여왕이 나폴리를 방문하여 피자를 맛보았습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "n 1889, Queen Margherita of",
+              "kor": "1889년 이탈리아의 마르게리타 여왕이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Italy visited Naples and tried pizza.",
+              "kor": "나폴리를 방문하여 피자를 맛보았습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-136",
+          "english": "Th  e type of pizza that she loved most had tomato, cheese, and green leaf toppings that showed the three colors on Italy’s national flag -red, white, and green.",
+          "korean": "그녀가 가장 좋아하는 피자는 이탈리아 국기의 세 가지 색인 빨간색, 흰색, 녹색을 표현한 토마토, 치즈, 녹색 잎 토핑이 포함된 피자였습니다.",
+          "grammar": "접속사/관계대명사 that / 최상급",
+          "structure": "that + S + V / N + that / Superlative",
+          "syntax_chunks": [
+            {
+              "eng": "Th  e type of pizza that she loved most had tomato, cheese, and green",
+              "kor": "그녀가 가장 좋아하는 피자는 이탈리아 국기의 세 가지 색인 빨간색,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "leaf toppings that showed the three colors on Italy’s national flag -red, white, and green.",
+              "kor": "흰색, 녹색을 표현한 토마토, 치즈, 녹색 잎 토핑이 포함된 피자였습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사/관계대명사 that / 최상급",
+            "target_pattern": "that + S + V / N + that / Superlative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-137",
+          "english": "After the queen’s visit, pizza went on to become a truly national dish.",
+          "korean": "여왕의 방문 이후 피자는 진정한 국민 요리가 되었습니다.",
+          "grammar": "시간의 접속사 / to부정사",
+          "structure": "When/While + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "After the queen’s visit, pizza went",
+              "kor": "여왕의 방문 이후 피자는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "on to become a truly national dish.",
+              "kor": "진정한 국민 요리가 되었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / to부정사",
+            "target_pattern": "When/While + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-138",
+          "english": "Italians brought pizza with them, and Americans loved the flat bread topped with meat and vegetables because they could eat bread, meat, and vegetables at the same time.",
+          "korean": "이탈리아인들은 피자를 가지고 왔고, 미국인들은 빵과 고기, 야채를 동시에 먹을 수 있기 때문에 고기와 야채를 얹은 납작한 빵을 좋아했습니다.",
+          "grammar": "이유의 접속사 / 조동사",
+          "structure": "Because/Since + S + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Italians brought pizza with them, and Americans loved the flat bread topped with meat",
+              "kor": "이탈리아인들은 피자를 가지고 왔고, 미국인들은 빵과 고기, 야채를 동시에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and vegetables because they could eat bread, meat, and vegetables at the same time.",
+              "kor": "먹을 수 있기 때문에 고기와 야채를 얹은 납작한 빵을 좋아했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 조동사",
+            "target_pattern": "Because/Since + S + V / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-139",
+          "english": "The first pizza restaurant in the United States opened its doors in 1905.",
+          "korean": "미국 최초의 피자 레스토랑은 1905년에 문을 열었습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "The first pizza restaurant in the",
+              "kor": "미국 최초의 피자",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "United States opened its doors in 1905.",
+              "kor": "레스토랑은 1905년에 문을 열었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-140",
+          "english": "izza is now enjoyed almost everywhere.",
+          "korean": "이제 Izza는 거의 모든 곳에서 즐길 수 있습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "izza is now",
+              "kor": "이제 Izza는 거의 모든",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "enjoyed almost everywhere.",
+              "kor": "곳에서 즐길 수 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-141",
+          "english": "Of course, toppings differ widely from place to place.",
+          "korean": "물론 토핑은 지점마다 많이 다릅니다.",
+          "grammar": "to부정사 / 비교급",
+          "structure": "to + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Of course, toppings differ",
+              "kor": "물론 토핑은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "widely from place to place.",
+              "kor": "지점마다 많이 다릅니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 비교급",
+            "target_pattern": "to + V / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-142",
+          "english": "Koreans love bulgogi  on their pizza, while Russians like to have fi  sh and onion toppings on their pizza.",
+          "korean": "한국 사람들은 피자에 불고기를 얹는 것을 좋아하고, 러시아 사람들은 피자에 생선과 양파 토핑을 얹는 것을 좋아합니다.",
+          "grammar": "시간의 접속사 / to부정사",
+          "structure": "When/While + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Koreans love bulgogi  on their pizza, while Russians like",
+              "kor": "한국 사람들은 피자에 불고기를 얹는 것을 좋아하고, 러시아",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to have fi  sh and onion toppings on their pizza.",
+              "kor": "사람들은 피자에 생선과 양파 토핑을 얹는 것을 좋아합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / to부정사",
+            "target_pattern": "When/While + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-143",
+          "english": "However, all types of pizza share two things.",
+          "korean": "그러나 모든 종류의 피자는 두 가지를 공유합니다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "However, all types of",
+              "kor": "그러나 모든 종류의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "pizza share two things.",
+              "kor": "피자는 두 가지를 공유합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-144",
+          "english": "Each begins with flat bread, and each is a slice of history.",
+          "korean": "각각은 평평한 빵으로 시작되며 각각은 역사의 한 조각입니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Each begins with flat bread, and",
+              "kor": "각각은 평평한 빵으로 시작되며",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "each is a slice of history.",
+              "kor": "각각은 역사의 한 조각입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-145",
+          "english": "Stone Age 16th century 1830 1889 1905 What happened to pizza over the years?",
+          "korean": "석기시대 16세기 1830년 1889년 1905년 동안 피자에는 무슨 일이 일어났나요?",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "Stone Age 16th century 1830 1889 1905",
+              "kor": "석기시대 16세기 1830년 1889년 1905년",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "What happened to pizza over the years?",
+              "kor": "동안 피자에는 무슨 일이 일어났나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-146",
+          "english": "Spread honey all over the tortilla.",
+          "korean": "토르티야 전체에 꿀을 발라주세요.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Spread honey all",
+              "kor": "토르티야 전체에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "over the tortilla.",
+              "kor": "꿀을 발라주세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-147",
+          "english": "Add cheese, cookies, and chocolate.",
+          "korean": "치즈, 쿠키, 초콜릿을 추가하세요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Add cheese,",
+              "kor": "치즈, 쿠키,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "cookies, and chocolate.",
+              "kor": "초콜릿을 추가하세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-148",
+          "english": "Bake until the cheese and chocolate melt.",
+          "korean": "치즈와 초콜릿이 녹을 때까지 굽습니다.",
+          "grammar": "시간의 접속사",
+          "structure": "When/While + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "Bake until the",
+              "kor": "치즈와 초콜릿이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "cheese and chocolate melt.",
+              "kor": "녹을 때까지 굽습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사",
+            "target_pattern": "When/While + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-149",
+          "english": "B If I were you, I’d do it during breaks.",
+          "korean": "B 내가 너라면 쉬는 시간에 할 텐데.",
+          "grammar": "조건의 접속사 / 현재분사/동명사",
+          "structure": "If/Unless + S + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "B If I were you,",
+              "kor": "B 내가 너라면",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "I’d do it during breaks.",
+              "kor": "쉬는 시간에 할 텐데.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 현재분사/동명사",
+            "target_pattern": "If/Unless + S + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-150",
+          "english": "A Do you mind if I eat your sausage?",
+          "korean": "A 소시지를 먹어도 될까요?",
+          "grammar": "조건의 접속사",
+          "structure": "If/Unless + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "A Do you mind",
+              "kor": "A 소시지를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "if I eat your sausage?",
+              "kor": "먹어도 될까요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사",
+            "target_pattern": "If/Unless + S + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L04-151",
+          "english": "Lesson 6 Are You into Books?",
+          "korean": "제 6과 당신은 책을 좋아합니까?",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Lesson 6 Are",
+              "kor": "제 6과",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "You into Books?",
+              "kor": "당신은 책을 좋아합니까?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-152",
+          "english": "A Can you recommend some good music?",
+          "korean": "A 좋은 음악 추천해주실 수 있나요?",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "A Can you",
+              "kor": "A 좋은 음악",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "recommend some good music?",
+              "kor": "추천해주실 수 있나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-153",
+          "english": "B I recommend you listen to Happy.",
+          "korean": "B Happy를 들어보시길 추천해요.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "B I recommend",
+              "kor": "B Happy를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "you listen to Happy.",
+              "kor": "들어보시길 추천해요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-154",
+          "english": "A You look excited.",
+          "korean": "A 신나 보이는데요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "A You",
+              "kor": "A",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "look excited.",
+              "kor": "신나 보이는데요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L04-155",
+          "english": "I’m looking forward to a big curling match this Tuesday.",
+          "korean": "이번 주 화요일에 열리는 큰 컬링 시합을 기대하고 있어요.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I’m looking forward to a",
+              "kor": "이번 주 화요일에 열리는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "big curling match this Tuesday.",
+              "kor": "큰 컬링 시합을 기대하고 있어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    "wonder",
+    "discover",
+    "local",
+    "digest",
+    "covered",
+    "symbol",
+    "river",
+    "traditional",
+    "ship",
+    "corner"
+  ]
+}

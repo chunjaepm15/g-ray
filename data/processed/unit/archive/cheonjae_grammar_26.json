@@ -1,0 +1,61 @@
+{
+  "curriculum_name": "천재 그래마 26 (Cheonjae Grammar 26)",
+  "authors": {
+    "so_youngsoon": {
+      "name": "소영순",
+      "units": [
+        { "unit": "Unit 1", "grammar": ["not only ~ but also ...", "관계대명사 what"] },
+        { "unit": "Unit 2", "grammar": ["조동사 + 수동태", "현재완료 진행"] },
+        { "unit": "Unit 3", "grammar": ["to부정사의 의미상 주어", "관계부사"] },
+        { "unit": "Unit 4", "grammar": ["과거완료", "명사를 수식하는 현재분사"] },
+        { "unit": "Unit 5", "grammar": ["분사구문", "접속사 if / whether"] },
+        { "unit": "Unit 6", "grammar": ["too ~ to ...", "계속적 용법의 관계대명사"] },
+        { "unit": "Unit 7", "grammar": ["가정법 과거", "접속사 so that"] },
+        { "unit": "Unit 8", "grammar": ["the+비교급, the+비교급", "소유격 관계대명사"] }
+      ]
+    },
+    "lee_sanggi": {
+      "name": "이상기",
+      "units": [
+        { "unit": "Unit 1", "grammar": ["현재완료 진행형", "so that"] },
+        { "unit": "Unit 2", "grammar": ["사역동사", "접속사 though"] },
+        { "unit": "Unit 3", "grammar": ["관계대명사 what", "과거완료"] },
+        { "unit": "Unit 4", "grammar": ["make+목적어+형용사", "간접의문문"] },
+        { "unit": "Unit 5", "grammar": ["명사를 수식하는 분사", "접속사 while"] },
+        { "unit": "Unit 6", "grammar": ["to부정사의 의미상 주어", "접속사 if/whether"] },
+        { "unit": "Unit 7", "grammar": ["분사구문", "too ~ to"] },
+        { "unit": "Unit 8", "grammar": ["It ~ that 강조 구문", "가정법 과거"] }
+      ]
+    }
+  },
+  "common_grammar": [
+    { "item": "관계대명사 what", "so_unit": "Unit 1", "lee_unit": "Unit 3" },
+    { "item": "현재완료 진행(형)", "so_unit": "Unit 2", "lee_unit": "Unit 1" },
+    { "item": "to부정사의 의미상 주어", "so_unit": "Unit 3", "lee_unit": "Unit 6" },
+    { "item": "과거완료", "so_unit": "Unit 4", "lee_unit": "Unit 3" },
+    { "item": "명사를 수식하는 분사", "so_unit": "Unit 4", "lee_unit": "Unit 5" },
+    { "item": "분사구문", "so_unit": "Unit 5", "lee_unit": "Unit 7" },
+    { "item": "접속사 if / whether", "so_unit": "Unit 5", "lee_unit": "Unit 6" },
+    { "item": "too ~ to ...", "so_unit": "Unit 6", "lee_unit": "Unit 7" },
+    { "item": "가정법 과거", "so_unit": "Unit 7", "lee_unit": "Unit 8" },
+    { "item": "접속사 so that", "so_unit": "Unit 7", "lee_unit": "Unit 1" }
+  ],
+  "unique_grammar": {
+    "only_so_youngsoon": [
+      { "item": "not only ~ but also ...", "unit": "Unit 1" },
+      { "item": "조동사 + 수동태", "unit": "Unit 2" },
+      { "item": "관계부사", "unit": "Unit 3" },
+      { "item": "계속적 용법의 관계대명사", "unit": "Unit 6" },
+      { "item": "the+비교급, the+비교급", "unit": "Unit 8" },
+      { "item": "소유격 관계대명사", "unit": "Unit 8" }
+    ],
+    "only_lee_sanggi": [
+      { "item": "사역동사", "unit": "Unit 2" },
+      { "item": "접속사 though", "unit": "Unit 2" },
+      { "item": "make+목적어+형용사", "unit": "Unit 4" },
+      { "item": "간접의문문", "unit": "Unit 4" },
+      { "item": "접속사 while", "unit": "Unit 5" },
+      { "item": "It ~ that 강조 구문", "unit": "Unit 8" }
+    ]
+  }
+}
