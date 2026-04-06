@@ -8,6 +8,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 01",
       "title": "관계대명사 what",
+      "origin_tags": ["관계대명사"],
       "total_matches": 4,
       "sentences": [
         {
@@ -69,6 +70,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 02",
       "title": "현재완료 진행형",
+      "origin_tags": ["현재완료", "진행형"],
       "total_matches": 4,
       "sentences": [
         {
@@ -132,6 +134,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 03",
       "title": "to부정사 의미상주어",
+      "origin_tags": ["to부정사", "의미상주어"],
       "total_matches": 4,
       "sentences": [
         {
@@ -199,6 +202,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 04",
       "title": "과거 완료",
+      "origin_tags": ["과거완료"],
       "total_matches": 4,
       "sentences": [
         {
@@ -261,6 +265,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 05",
       "title": "명사 수식 분사",
+      "origin_tags": ["분사", "명사수식"],
       "total_matches": 4,
       "sentences": [
         {
@@ -320,6 +325,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 06",
       "title": "분사구문",
+      "origin_tags": ["분사구문"],
       "total_matches": 4,
       "sentences": [
         {
@@ -384,6 +390,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 07",
       "title": "명사절 if / whether",
+      "origin_tags": ["명사절", "if", "whether"],
       "total_matches": 4,
       "sentences": [
         {
@@ -444,6 +451,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 08",
       "title": "too ~ to",
+      "origin_tags": ["too_to"],
       "total_matches": 4,
       "sentences": [
         {
@@ -506,6 +514,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 09",
       "title": "가정법 과거",
+      "origin_tags": ["가정법"],
       "total_matches": 4,
       "sentences": [
         {
@@ -569,6 +578,7 @@ const CURRICULUM = {
     {
       "unit_id": "Unit 10",
       "title": "so ~ that",
+      "origin_tags": ["so_that"],
       "total_matches": 4,
       "sentences": [
         {

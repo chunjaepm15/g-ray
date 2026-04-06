@@ -40,7 +40,7 @@
                 id: u.unit_id,
                 unit: `Unit ${i+1}`,
                 title: u.title,
-                tags: u.origin_tags,
+                tags: u.origin_tags || [],
                 sentences: u.sentences
             }));
 
