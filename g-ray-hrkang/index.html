@@ -789,23 +789,70 @@
                         <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
                             <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 32, textAlign: "center", color: "#1a3a5c" }}>📊 우리 반 친구들의 포착 현황</div>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center", marginBottom: 40 }}>
-                                {words.map((w, i) => (
-                                    <div key={i} style={{ textAlign: "center" }}>
-                                        <div style={{ padding: "14px 18px", borderRadius: 12, border: "1px solid #e2e8f0", background: i <= 5 ? "#4f46e5" : "#fff", color: i <= 5 ? "#fff" : "#334155", fontWeight: 900, fontSize: 18, boxShadow: i <= 5 ? "0 4px 10px rgba(79,70,229,0.3)" : "none" }}>{w}</div>
-                                        <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4, fontWeight: 700 }}>82%</div>
-                                    </div>
-                                ))}
+                                {words.map((w, i) => {
+                                    // 청크 데이터를 기반으로 더욱 정교한 히트맵 수치 계산
+                                    let percentage = 12; // 기본값 (동사/연결구 등)
+                                    const chunks = CHUNK_DATA[currentSentence?.id] || [];
+                                    
+                                    let currentPos = 0;
+                                    let chunkIndex = -1;
+                                    for (let j = 0; j < chunks.length; j++) {
+                                        const chunkWords = chunks[j].en.trim().split(/\s+/).length;
+                                        if (i >= currentPos && i < currentPos + chunkWords) {
+                                            chunkIndex = j;
+                                            break;
+                                        }
+                                        currentPos += chunkWords;
+                                    }
+
+                                    const isCorrect = i >= answerRange.start && i <= answerRange.end;
+                                    
+                                    // 청크 위치별 전략적 수치 부여
+                                    if (isCorrect) {
+                                        percentage = 92;
+                                    } else if (chunkIndex === 0) {
+                                        percentage = 28; // 도입부 (Thanks to...)
+                                    } else if (chunkIndex !== -1) {
+                                        // 정답 바로 앞 청크(보통 동사구)는 낮게, 그 앞(주어)은 높게 설정
+                                        const targetChunkIndex = chunks.findIndex(c => c.isTarget);
+                                        if (chunkIndex === targetChunkIndex - 1) {
+                                            percentage = 12; // 동사/연결구 (could get)
+                                        } else if (chunkIndex < targetChunkIndex) {
+                                            percentage = 65; // 주어 (the islanders)
+                                        }
+                                    }
+
+                                    return (
+                                        <div key={i} style={{ textAlign: "center" }}>
+                                            <div style={{ padding: "14px 18px", borderRadius: 12, border: "1px solid #e2e8f0", background: isCorrect ? "#4f46e5" : "#fff", color: isCorrect ? "#fff" : "#334155", fontWeight: 900, fontSize: 18, boxShadow: isCorrect ? "0 4px 10px rgba(79,70,229,0.3)" : "none" }}>{w}</div>
+                                            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4, fontWeight: 700 }}>{percentage}%</div>
+                                        </div>
+                                    );
+                                })}
                             </div>
                             <div style={{ background: "#fffbeb", padding: "20px", borderRadius: 14, fontSize: 14, color: "#92400e", border: "1px solid #fde68a", marginBottom: 24 }}>
                                 💡 <strong>오답 가이드</strong>: <br />
-                                'at the meeting'을 놓쳤다면 수식어구가 관계절의 일부임을 인식하지 못한 것입니다. 절 전체를 하나로 묶어주는 것이 포인트입니다.
+                                '{selectedUnit.title}'의 핵심은 해당 구문(chunk) 전체를 하나의 의미 마디로 포착하는 것입니다. 수식어구나 목적어가 문법 구조 안에 포함되어 있는지 꼭 확인하세요.
                             </div>
                             <div style={{ background: "#f8fafc", padding: "24px", borderRadius: 20, fontSize: 14, color: "#475569", border: "1px solid #e2e8f0" }}>
                                 <div style={{ fontWeight: 900, color: "#1a3a5c", marginBottom: 12, fontSize: 16 }}>💬 수업 마무리 토론 포인트</div>
-                                <div>Q1. 82%가 'at the meeting'까지 포함했어요. 왜 이 부분도 관계절일까요?</div>
-                                <div style={{ marginTop: 8 }}>Q2. 'was' 앞에서 정확히 끊은 이유를 문장 구조와 함께 설명해볼 사람?</div>
+                                <div>Q1. 학생들이 왜 '{words.slice(0, answerRange.start).join(' ')}' 같은 앞부분을 정답으로 많이 선택했을까요?</div>
+                                <div style={{ marginTop: 8 }}>Q2. '{words.slice(answerRange.start, answerRange.end + 1).join(' ')}' 부분이 왜 하나의 묶음인지 문법적으로 설명할 수 있는 사람?</div>
                             </div>
-                            <button onClick={() => setScreen("SIMILAR")} style={{ width: "100%", padding: "22px", background: "#4f46e5", color: "white", borderRadius: 20, fontWeight: 900, fontSize: 19, marginTop: 32, boxShadow:"0 4px 10px rgba(79,70,229,0.3)" }}>다음: 비슷한 예문 풀어보기 →</button>
+                            <div style={{ display: "flex", gap: 14, marginTop: 32 }}>
+                                <button 
+                                    onClick={() => { setScreen("HOME"); setTries(0); setActivityStatus("IDLE"); setDragRange({start:null, end:null}); }} 
+                                    style={{ flex: 1, padding: "20px", background: "#fff", border: "2.5px solid #1a3a5c", borderRadius: 20, fontWeight: 900, color: "#1a3a5c", cursor: "pointer", fontSize: 16 }}
+                                >
+                                    🏠 초기로 돌아가기
+                                </button>
+                                <button 
+                                    onClick={() => setScreen("SIMILAR")} 
+                                    style={{ flex: 2, padding: "20px", background: "#4f46e5", color: "white", borderRadius: 20, fontWeight: 900, fontSize: 18, boxShadow:"0 4px 10px rgba(79,70,229,0.3)", cursor: "pointer" }}
+                                >
+                                    다음: 비슷한 예문 →
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
