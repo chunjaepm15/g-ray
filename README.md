@@ -1,4 +1,4 @@
-# 🔍 문장투시경 (G-ray) v9.2 FULL Package
+# 🔍 문장투시경 (G-ray) v13.0 Premium Package
 
 ## 📄 목차
 - [📖 개요](#-개요)
@@ -17,15 +17,24 @@
 
 ## 📦 폴더 구조
 ```text
-grammar_viewer_v9_package/
-├── index.html           (메인 앱: React 기반, 로그인/교사홈 통합)
+g-ray-hrkang/
+├── index.html           (메인 앱: 학생용/로그인 통합)
+├── index-teacher.html   (교사용 앱: 대시보드 화면)
 ├── README.md            (본 문서)
-├── js/                  (데이터 및 앱 로직)
-│   ├── curriculum_v9.js (통합 데이터 + EBS Chunking)
-├── css/                 (디자인: v12-2 프리미엄 스타일 적용)
-├── docs/                (개발 이력 문서)
-└── scripts/             (데이터 관리 도구)
-    └── data_rebuild_tool.py (이재영/정사열 통합 빌드 스크립트)
+├── css/                 (스타일시트)
+│   └── style_v13.css    (v13 프리미엄 스타일)
+├── js/                  (애플리케이션 로직)
+│   ├── app_v13.js            (메인 React 및 상호작용 로직)
+│   ├── curriculum_v13.js     (통합 커리큘럼 및 EBS Chunking 데이터)
+│   └── teacher_admin_v13.js (교사용 관리자 모듈)
+├── data/                (원천 및 정제 데이터셋)
+│   └── processed/       (정제된 교과서 및 문법 데이터)
+├── docs/                (프로젝트 문서화 및 설계도)
+│   ├── architecture_proposal.md
+│   ├── data_pipeline_rules.md
+│   └── history.md
+└── scripts/             (데이터 자동화 유틸리티)
+    └── data_rebuild_tool.py (데이터 빌드 및 재구성 도구)
 ```
 
 ## 🚀 시작하기
@@ -41,7 +50,7 @@ grammar_viewer_v9_package/
 *   **X-Ray(투시)**: 문장을 EBS 표준 덩어리(S/V/O/M) 단위로 분석하여 직관적으로 보여줍니다.
 *   **청크 훈련**: 드래그앤드롭을 통한 문장 재배열, 빈칸 채우기, 영작 훈련 기능.
 
-## 📈 데이터셋 특징 (v9.2)
+## 📈 데이터셋 특징 (v13.0)
 *   **EBS 표준 청크(Chunk)**: [주어] + [동사] + [목적어/보어] + [수식어] 4단계 표준화 및 AI 기반 구문 경계 인식 (CoT v3).
 *   **Cheonjae-Grammar-26 (10대 공통 문법)**:
     1.  관계대명사 what
@@ -56,4 +65,4 @@ grammar_viewer_v9_package/
     10. 접속사 so that
 
 ---
-_Last Modified: 2026-04-06 by Antigravity AI_
+_Last Modified: 2026-04-06 19:46 by Antigravity AI_
