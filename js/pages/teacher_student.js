@@ -1,12 +1,6 @@
 const { useState, useEffect } = React;
 
-// [공통 UI] Header
-const Header = ({ title, sub }) => (
-    <div style={{ background: "#1a3a5c", padding: "20px 40px", color: "white", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-        <h1 style={{ fontSize: "20px", fontWeight: 900, margin: 0 }}>{title}</h1>
-        <span style={{ fontSize: "14px", opacity: 0.8 }}>{sub}</span>
-    </div>
-);
+
 
 function App() {
     const [selectedClass, setSelectedClass] = useState("3학년 1반");
@@ -85,7 +79,7 @@ function App() {
 
     return (
         <div style={{ minHeight: "100vh", background: "#f8fafc", paddingBottom: "80px", fontFamily: "'Noto Sans KR', sans-serif" }}>
-            <Header title="🔍 문장투시경 Admin" sub={`학생 관리 | ${selectedClass}`} />
+            <Header isTeacher={true} title="🔍 문장투시경 Admin" sub={`김수현 교사 (${selectedClass})`} />
 
             <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 24px" }}>
                 {/* 1. 상단 대메뉴 탭 */}

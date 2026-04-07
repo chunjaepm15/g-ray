@@ -72,8 +72,22 @@ function App() {
         }
     }, [qIndex, currentSentence]);
 
+    // [수정 포인트 1] 문법적 정확성을 위해 데이터 생성 로직 보완
     const generateStructure = (sentence) => {
         if (!sentence || !sentence.english) return { eng: "", kor: "", target: "", targetEnd: 1, ceng: "", v: "", obj: "" };
+
+        // REF-L04-11 (판사 문장)에 대해 수동태를 동사 덩어리로 묶고 보어부 확장
+        if (sentence.id === "REF-L04-11") {
+            return {
+                eng: sentence.english,
+                kor: sentence.korean,
+                target: "The judge", // S
+                targetEnd: 1,
+                v: "was impressed", // V (수동태 동사구)
+                obj: "by what she said and finally gave her permission." // C/M
+            };
+        }
+
         if (sentence.syntax_chunks && sentence.syntax_chunks.length >= 2 && sentence.id && sentence.id.startsWith("REF-")) {
             const firstChunkWords = sentence.syntax_chunks[0].eng.trim().split(/\s+/).length;
             return {
@@ -92,6 +106,7 @@ function App() {
     };
     const structData = generateStructure(currentSentence);
 
+    // CHUNK_DATA와 getAnswerRange는 기존 코드 그대로 유지
     const CHUNK_DATA = {
         // ... 기존 데이터 생략
         "REF-L04-11": [
@@ -331,15 +346,15 @@ function App() {
                     <summary>🔍 문장 구조 투시</summary>
                     <div className="details-content" style={{ textAlign: "center", padding: "24px" }}>
                         <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 20 }}>
-                            <div style={{ flex: 3, border: "2.5px solid #4f46e5", borderRadius: 12, background: "#eef2ff", padding: "15px 5px", textAlign: "center" }}>
+                            <div style={{ flex: 1.5, border: "2.5px solid #4f46e5", borderRadius: 12, background: "#eef2ff", padding: "15px 5px", textAlign: "center" }}>
                                 <div style={{ fontWeight: 800, color: "#4f46e5", fontSize: 14 }}>{structData.target}</div>
                                 <div style={{ fontSize: 10, color: "#4f46e5", marginTop: 4 }}>Subject (S)</div>
                             </div>
-                            <div style={{ flex: 1, border: "2.5px solid #64748b", borderRadius: 12, background: "#f8fafc", padding: "15px 5px", textAlign: "center" }}>
+                            <div style={{ flex: 1.2, border: "2.5px solid #64748b", borderRadius: 12, background: "#f8fafc", padding: "15px 5px", textAlign: "center" }}>
                                 <div style={{ fontWeight: 800, color: "#64748b", fontSize: 15 }}>{structData.v}</div>
                                 <div style={{ fontSize: 10, color: "#64748b", marginTop: 4 }}>Verb (V)</div>
                             </div>
-                            <div style={{ flex: 2, border: "2.5px solid #b45309", borderRadius: 12, background: "#fffbeb", padding: "15px 5px", textAlign: "center" }}>
+                            <div style={{ flex: 2.5, border: "2.5px solid #b45309", borderRadius: 12, background: "#fffbeb", padding: "15px 5px", textAlign: "center" }}>
                                 <div style={{ fontWeight: 800, color: "#b45309", fontSize: 14 }}>{structData.obj}</div>
                                 <div style={{ fontSize: 10, color: "#b45309", marginTop: 4 }}>Complement (C)</div>
                             </div>
@@ -357,6 +372,11 @@ function App() {
                                 <div style={{ fontSize: 13, color: "#475569", lineHeight: 2.2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
                                     {grammarConcepts[selectedUnit.title].points.map((p, idx) => (<div key={idx} style={{ background: "#f8fafc", padding: "10px", borderRadius: 8, fontWeight: 700 }}>{p}</div>))}
                                 </div>
+                                {grammarConcepts[selectedUnit.title]?.teacher_tip && (
+                                    <div style={{ marginTop: "20px", padding: "12px 16px", background: "#fffbeb", border: "1px dashed #f59e0b", borderRadius: "12px", color: "#b45309", fontSize: "14px", fontWeight: 700 }}>
+                                        {grammarConcepts[selectedUnit.title].teacher_tip}
+                                    </div>
+                                )}
                             </>
                         ) : (<div style={{ textAlign: "center", color: "#64748b", padding: "20px" }}>선택된 단원의 개념 정리가 준비 중입니다.</div>)}
                     </div>

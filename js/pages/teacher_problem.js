@@ -1,5 +1,6 @@
 const { useState, useEffect } = React;
 
+
 function App() {
     const units = CURRICULUM.units.map((u, i) => ({
         id: u.unit_id,
@@ -9,22 +10,79 @@ function App() {
         sentences: u.sentences
     }));
 
-    const [activeUnits, setActiveUnits] = useState(() => {
-        const saved = sessionStorage.getItem('activeUnits');
-        return saved ? JSON.parse(saved) : units.slice(0, 10).map(u => u.id);
-    }); 
-    const [unitProblemSettings, setUnitProblemSettings] = useState(() => {
-        const saved = sessionStorage.getItem('unitProblemSettings');
-        return saved ? JSON.parse(saved) : {};
-    }); 
+    const [selectedClass, setSelectedClass] = useState("3학년 1반");
+    const [selectedUnitId, setSelectedUnitId] = useState("all");
+
+    const [allClassActiveUnits, setAllClassActiveUnits] = useState(() => {
+        const saved = sessionStorage.getItem('allClassActiveUnits');
+        if (saved) return JSON.parse(saved);
+        const oldStr = sessionStorage.getItem('activeUnits');
+        const defaultUnits = oldStr ? JSON.parse(oldStr) : units.slice(0, 10).map(u => u.id);
+        const classes = ["3학년 1반", "3학년 2반", "3학년 3반", "3학년 4반"];
+        const res = {};
+        classes.forEach(c => res[c] = defaultUnits);
+        return res;
+    });
+
+    const [allClassUnitSettings, setAllClassUnitSettings] = useState(() => {
+        const saved = sessionStorage.getItem('allClassUnitSettings');
+        if (saved) return JSON.parse(saved);
+        const oldStr = sessionStorage.getItem('unitProblemSettings');
+        const oldSettings = oldStr ? JSON.parse(oldStr) : {};
+        const classes = ["3학년 1반", "3학년 2반", "3학년 3반", "3학년 4반"];
+        const res = {};
+        classes.forEach(c => res[c] = oldSettings);
+        return res;
+    });
+
+    const [copiedSettings, setCopiedSettings] = useState(() => {
+        const saved = sessionStorage.getItem('copiedClassSettings');
+        return saved ? JSON.parse(saved) : null;
+    });
 
     useEffect(() => {
-        sessionStorage.setItem('activeUnits', JSON.stringify(activeUnits));
-    }, [activeUnits]);
+        sessionStorage.setItem('allClassActiveUnits', JSON.stringify(allClassActiveUnits));
+    }, [allClassActiveUnits]);
 
     useEffect(() => {
-        sessionStorage.setItem('unitProblemSettings', JSON.stringify(unitProblemSettings));
-    }, [unitProblemSettings]);
+        sessionStorage.setItem('allClassUnitSettings', JSON.stringify(allClassUnitSettings));
+    }, [allClassUnitSettings]);
+
+    const activeUnits = allClassActiveUnits[selectedClass] || [];
+    const unitProblemSettings = allClassUnitSettings[selectedClass] || {};
+
+    const setActiveUnits = (newValOrFunc) => {
+        setAllClassActiveUnits(prev => ({
+            ...prev,
+            [selectedClass]: typeof newValOrFunc === 'function' ? newValOrFunc(prev[selectedClass] || []) : newValOrFunc
+        }));
+    };
+
+    const setUnitProblemSettings = (newValOrFunc) => {
+        setAllClassUnitSettings(prev => ({
+            ...prev,
+            [selectedClass]: typeof newValOrFunc === 'function' ? newValOrFunc(prev[selectedClass] || {}) : newValOrFunc
+        }));
+    };
+
+    const handleCopy = () => {
+        const toCopy = {
+            activeUnits: activeUnits,
+            unitProblemSettings: unitProblemSettings
+        };
+        sessionStorage.setItem('copiedClassSettings', JSON.stringify(toCopy));
+        setCopiedSettings(toCopy);
+        alert(`${selectedClass}의 설정이 복사되었습니다.`);
+    };
+
+    const handlePaste = () => {
+        if (!copiedSettings) return;
+        if (window.confirm(`복사된 설정을 ${selectedClass}에 붙여넣으시겠습니까?\n기존 설정은 덮어씌워집니다.`)) {
+            setAllClassActiveUnits(prev => ({ ...prev, [selectedClass]: copiedSettings.activeUnits }));
+            setAllClassUnitSettings(prev => ({ ...prev, [selectedClass]: copiedSettings.unitProblemSettings }));
+            alert(`${selectedClass}에 설정이 붙여넣기 되었습니다.`);
+        }
+    };
     const [problemViewStage, setProblemViewStage] = useState(1); 
     const [problemDetailUnit, setProblemDetailUnit] = useState(null);
 
@@ -35,9 +93,6 @@ function App() {
         if (problemViewStage === 1) {
             return (
                 <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
-                    <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "32px" }}>
-                        <div style={{ background: "#4f46e5", color: "white", padding: "10px 24px", borderRadius: "24px", fontSize: "14px", fontWeight: 900 }}>3학년 1반</div>
-                    </div>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
                         <h3 style={{ fontWeight: 950, fontSize: "20px" }}>1-2. 문제 관리 (단원별 세부 설정)</h3>
                         <span onClick={() => { if(isAllActive) setActiveUnits([]); else setActiveUnits(units.map(u=>u.id)); }} style={{ fontSize: "13px", fontWeight: 800, color: "#4f46e5", cursor: "pointer" }}>{isAllActive ? "전체 해제" : "전체 선택"}</span>
@@ -82,7 +137,7 @@ function App() {
 
             return (
                 <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
-                    <button onClick={() => setProblemViewStage(1)} style={{ background: "#eef2ff", border: "none", color: "#4f46e5", padding: "10px 16px", borderRadius: "12px", fontWeight: 800, fontSize: "13px", marginBottom: "24px", cursor: "pointer" }}>&larr; 단원 목록으로</button>
+                    <button onClick={() => { setProblemViewStage(1); setSelectedUnitId("all"); }} style={{ background: "#eef2ff", border: "none", color: "#4f46e5", padding: "10px 16px", borderRadius: "12px", fontWeight: 800, fontSize: "13px", marginBottom: "24px", cursor: "pointer" }}>&larr; 단원 목록으로</button>
                     <div style={{ fontSize: "22px", fontWeight: 950, marginBottom: "32px" }}>{problemDetailUnit.unit} 예문별 성질 설정</div>
                     
                     {problemDetailUnit.sentences.filter(s => selectedSentences.includes(s.id)).map((s, idx) => {
@@ -197,13 +252,44 @@ function App() {
 
     return (
         <div style={{ minHeight: "100vh", background: "#f8fafc" }}>
-            <Header sub="교사용 관리 센터" isTeacher={true} title="🔍 문장투시경 Admin" />
+            <Header isTeacher={true} title="🔍 문장투시경 Admin" sub={`김수현 교사 (${selectedClass})`} />
             <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 24px" }}>
                 <div className="home-tabs" style={{marginBottom: "40px"}}>
                     <button onClick={() => { window.location.href = 'main.html'; }} className="tab-item">1-1. 단원 선택</button>
                     <button className="tab-item active">1-2. 문제 관리</button>
-                    <button onClick={() => { window.location.href = 'teacher_student.html'; }} className="tab-item">1-3. 학생 결과</button>
+                    <button onClick={() => { window.location.href = 'teacher_student.html'; }} className="tab-item">1-3. 학생 관리</button>
                 </div>
+
+                {/* 필터 바 (학급/단원) */}
+                <div style={{ display: "flex", gap: "12px", marginBottom: "32px", background: "white", padding: "24px", borderRadius: "20px", border: "1.5px solid #e2e8f0", boxShadow: "0 4px 15px rgba(0,0,0,0.02)", alignItems: "flex-end" }}>
+                    <div style={{ flex: 1 }}>
+                        <label style={{ display: "block", fontSize: "12px", fontWeight: 900, color: "#64748b", marginBottom: "8px" }}>학급 선택</label>
+                        <select value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} style={{ width: "100%", padding: "12px", borderRadius: "10px", border: "1.5px solid #f1f5f9", fontWeight: 700, cursor: "pointer" }}>
+                            {["3학년 1반", "3학년 2반", "3학년 3반", "3학년 4반"].map(c => <option key={c} value={c}>{c}</option>)}
+                        </select>
+                    </div>
+                    <div style={{ flex: 1.5 }}>
+                        <label style={{ display: "block", fontSize: "12px", fontWeight: 900, color: "#64748b", marginBottom: "8px" }}>단원 선택</label>
+                        <select value={selectedUnitId} onChange={(e) => {
+                            setSelectedUnitId(e.target.value);
+                            if(e.target.value !== "all") {
+                                const u = units.find(x => x.id === e.target.value);
+                                setProblemDetailUnit(u);
+                                setProblemViewStage(2);
+                            } else {
+                                setProblemViewStage(1);
+                            }
+                        }} style={{ width: "100%", padding: "12px", borderRadius: "10px", border: "1.5px solid #f1f5f9", fontWeight: 700, cursor: "pointer" }}>
+                            <option value="all">전체 단원 보기</option>
+                            {CURRICULUM.units.map(u => <option key={u.unit_id} value={u.unit_id}>{u.unit_id}. {u.title}</option>)}
+                        </select>
+                    </div>
+                    <div style={{ display: "flex", gap: "8px" }}>
+                        <button onClick={handleCopy} style={{ background: "#f8fafc", color: "#475569", border: "1px solid #cbd5e1", borderRadius: "8px", padding: "12px 16px", fontSize: "13px", fontWeight: 800, cursor: "pointer", transition: "all 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#f1f5f9"} onMouseLeave={e => e.currentTarget.style.background = "#f8fafc"}>설정 복사</button>
+                        <button onClick={handlePaste} disabled={!copiedSettings} style={{ background: copiedSettings ? "#4f46e5" : "#e2e8f0", color: copiedSettings ? "white" : "#94a3b8", border: "none", borderRadius: "8px", padding: "12px 16px", fontSize: "13px", fontWeight: 800, cursor: copiedSettings ? "pointer" : "not-allowed" }}>설정 붙여넣기</button>
+                    </div>
+                </div>
+
                 <ProblemManageTab />
             </div>
         </div>
