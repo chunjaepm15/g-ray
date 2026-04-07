@@ -183,7 +183,13 @@ function App() {
         setHintText(hint);
         setTries(prev => {
             const nextTries = prev + 1;
-            if (nextTries >= 2) setTimeout(() => setScreen("RESULT"), 3000);
+            if (nextTries >= 2) {
+                setActivityStatus("WRONG");
+                setDragRange({ start: answerRange.start, end: answerRange.end }); // 정답 범위 강제 표시
+                setTimeout(() => setScreen("RESULT"), 3500);
+            } else {
+                setActivityStatus("WRONG");
+            }
             return nextTries;
         });
     };
@@ -223,7 +229,18 @@ function App() {
             setQStatus("SUCCESS");
         } else {
             setQStatus("WRONG");
-            if (nextTries >= 2) setTimeout(() => nextAction(), 3000);
+            if (nextTries >= 2) {
+                // 2번 틀리면 답안 공개
+                if (qIndex === 0) {
+                    setReorderAnswer(currentSentence.english.split(' '));
+                    setReorderPool([]);
+                } else if (qIndex === 1) {
+                    setSelectedOption(q2CorrectOptionIndex);
+                } else if (qIndex === 2) {
+                    setWriteAnswer(currentSentence.english);
+                }
+                setTimeout(() => nextAction(), 3500);
+            }
         }
     };
 
@@ -362,8 +379,13 @@ function App() {
                         })}
                     </div>
                     <div style={{ background: dragRange.start !== null ? "#1e293b" : "#f1f5f9", color: dragRange.start !== null ? "#fff" : "#94a3b8", transition: "0.3s", padding: "16px", borderRadius: 12, textAlign: "center", fontSize: 16, fontWeight: 800, minHeight: "24px", marginBottom: "32px" }}> {getTranslation(dragRange.start, dragRange.end)} </div>
-                    {tries > 0 && <div style={{ textAlign: "center", marginBottom: 16 }}> <button onClick={() => setShowHint(true)} style={{ background: "#fff", border: "1.5px solid #d1d5db", borderRadius: 10, padding: "8px 20px", fontSize: 14, fontWeight: 600, color: "#4b5563" }}> 💡 힌트 보기 </button> </div>}
-                    {showHint && <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "24px", color: "#92400e", fontSize: 15, lineHeight: 1.6 }}>💡 힌트: {hintText}</div>}
+                    {tries === 1 && !showHint && <div style={{ textAlign: "center", marginBottom: 16 }}> <button onClick={() => setShowHint(true)} style={{ background: "#fff", border: "1.5px solid #d1d5db", borderRadius: 10, padding: "8px 20px", fontSize: 14, fontWeight: 600, color: "#4b5563" }}> 💡 힌트 보기 </button> </div>}
+                    {tries >= 2 && (
+                        <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "20px", color: "#92400e", fontSize: 15, marginBottom: 16 }}>
+                            💡 <strong>오답 가이드</strong>: '{selectedUnit.title}'의 핵심은 정답에 해당하는 구문(chunk) 전체를 하나의 의미 마디로 포착하는 것입니다. ({hintText})
+                        </div>
+                    )}
+                    {showHint && tries <= 1 && <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "24px", color: "#92400e", fontSize: 15, lineHeight: 1.6 }}>💡 힌트: {hintText}</div>}
                     <div style={{ display: "flex", gap: 14, marginTop: 12 }}>
                         <button onClick={handleCheck} style={{ flex: 2, padding: "20px", borderRadius: 18, background: "#1a3a5c", color: "white", fontWeight: 900, fontSize: 18 }}>{activityStatus === "SUCCESS" ? "결과 보기" : "투시 확인하기"}</button>
                     </div>
@@ -441,8 +463,17 @@ function App() {
                         </div>
                     )}
                     <div style={{ marginTop: 32, minHeight: 90 }}>
-                        {qStatus === "WRONG" && <div style={{ background: "#fef2f2", padding: "16px", color: "#dc2626", fontWeight: 800 }}>❌ 틀렸습니다. 다시 시도해 보세요.</div>}
-                        {qStatus === "SUCCESS" && <div style={{ background: "#ecfdf5", padding: "20px", color: "#059669", fontWeight: 900 }}>🎉 정답입니다!</div>}
+                        {qStatus === "WRONG" && (
+                            <div style={{ background: "#fef2f2", padding: "16px", borderRadius: 12, color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>
+                                ❌ {qTries >= 2 ? "아쉽네요! 정답을 공개합니다." : "틀렸습니다. 다시 시도해 보세요."}
+                                {qTries >= 2 && (
+                                    <div style={{ marginTop: 10, fontSize: 14, color: "#991b1b", fontWeight: 500 }}>
+                                        💡 <strong>오답 가이드</strong>: {selectedUnit.title} 패턴에 유의하세요. {qIndex === 1 ? "알맞은 접속사나 관계대명사 형태를 확인해보세요." : "문장의 전체적인 흐름을 다시 한번 파악하는 것이 중요합니다."}
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                        {qStatus === "SUCCESS" && <div style={{ background: "#ecfdf5", padding: "20px", borderRadius: 12, color: "#059669", fontWeight: 900, border: "1px solid #a7f3d0" }}>🎉 정답입니다!</div>}
                     </div>
                     <button onClick={qStatus === "SUCCESS" ? nextAction : handleQCheck} style={{ width: "100%", padding: "20px", background: "#1a3a5c", color: "white", borderRadius: 20, fontWeight: 900 }}>
                         {qStatus === "SUCCESS" ? (qIndex === 2 ? "완료하기" : "다음 문제") : "정답 확인"}
