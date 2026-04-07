@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <script>
+        if (!sessionStorage.getItem('isLoggedIn')) {
+            alert("로그인 페이지를 거치지 않았습니다. 로그인 페이지로 이동합니다.");
+            window.location.href = 'index.html';
+        }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>문장투시경 (G-ray) Teacher Admin</title>
