@@ -1,7 +1,0 @@
-﻿README.md
-docs/history.md
-index-teacher.html
-index.html
-js/app_v13.js
-js/curriculum_v13.js
-js/teacher_admin_v13.js
