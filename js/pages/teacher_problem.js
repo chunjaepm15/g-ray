@@ -86,7 +86,10 @@ function App() {
                     <div style={{ fontSize: "22px", fontWeight: 950, marginBottom: "32px" }}>{problemDetailUnit.unit} 예문별 성질 설정</div>
                     
                     {problemDetailUnit.sentences.filter(s => selectedSentences.includes(s.id)).map((s, idx) => {
-                        const currentSettings = unitProblemSettings[problemDetailUnit.id]?.[s.id] || types; // 기본값으로 모든 타입 설정 (문장 분석, 빈칸, 재배치, 영작)
+                        // 기본값: 첫 번째 예문은 재배열, 두 번째는 빈칸, 세 번째는 영작. 그 이후는 기본으로 빈 배열
+                        const defaultSettings = idx === 0 ? ["재배열"] : idx === 1 ? ["빈칸 채우기"] : idx === 2 ? ["영작"] : [];
+                        const currentSettings = unitProblemSettings[problemDetailUnit.id]?.[s.id] || defaultSettings;
+
                         return (
                             <div key={s.id} style={{ padding: "24px", border: "1.5px solid #f1f5f9", borderRadius: "20px", marginBottom: "20px", background: "#fcfdff" }}>
                                 <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
@@ -95,13 +98,13 @@ function App() {
                                 </div>
                                 <div style={{ fontSize: "16px", fontWeight: 800, marginBottom: "12px", color: "#1a3a5c" }}>{s.english}</div>
                                 <div style={{ fontSize: "14px", color: "#64748b", marginBottom: "20px" }}>{s.korean}</div>
-                                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "10px" }}>
+                                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "10px", marginBottom: "20px" }}>
                                     {types.map(t => (
                                         <label key={t} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "12px 16px", border: "1.5px solid #e2e8f0", borderRadius: "12px", background: "white", fontSize: "14px", fontWeight: 900, cursor: "pointer" }}>
                                             <input type="checkbox" checked={currentSettings.includes(t)} onChange={() => {
                                                 setUnitProblemSettings(prev => {
                                                     const unitData = prev[problemDetailUnit.id] || {};
-                                                    const sData = unitData[s.id] || types;
+                                                    const sData = unitData[s.id] || defaultSettings;
                                                     const newData = sData.includes(t) ? sData.filter(x => x !== t) : [...sData, t];
                                                     return { ...prev, [problemDetailUnit.id]: { ...unitData, [s.id]: newData } };
                                                 });
@@ -109,6 +112,63 @@ function App() {
                                             {t}
                                         </label>
                                     ))}
+                                </div>
+                                
+                                {/* 미리보기 및 통제 영역 */}
+                                <div style={{ display: "flex", flexDirection: "column", gap: "12px", background: "white", padding: "16px", borderRadius: "12px", border: "1px solid #cbd5e1" }}>
+                                    <div style={{ fontSize: "13px", fontWeight: 900, color: "#1e293b", marginBottom: "4px" }}>🔧 문제 미리보기 및 설정 (Logic 처리)</div>
+                                    
+                                    {currentSettings.includes("재배열") && (
+                                        <div style={{ padding: "12px", background: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+                                            <div style={{ fontSize: "12px", fontWeight: 800, color: "#4f46e5", marginBottom: "8px" }}>Step 1. 재배치 (구문 단위 셔플)</div>
+                                            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+                                                {/* 실제로는 셔플 결과를 보여주어야 하므로, 임시로 구문들을 직접 렌더링하고 교사가 볼 수 있게 함 */}
+                                                {(s.syntax_chunks || []).map((chunk, cIdx) => (
+                                                    <div key={cIdx} style={{ padding: "6px 12px", background: "white", border: "1px solid #cbd5e1", borderRadius: "6px", fontSize: "13px", fontWeight: 800, cursor: "move" }}>
+                                                        {chunk.eng}
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <div style={{ fontSize: "11px", color: "#64748b", marginTop: "8px" }}>* 학생들이 보게 될 셔플된 청크입니다. 끌어서 셔플 순서를 통제할 수 있습니다.</div>
+                                        </div>
+                                    )}
+
+                                    {currentSettings.includes("빈칸 채우기") && (() => {
+                                        let blanked = s.english;
+                                        const engKeywords = s.grammar.match(/[a-zA-Z]+/g);
+                                        if (engKeywords) {
+                                            engKeywords.forEach(kw => {
+                                                blanked = blanked.replace(new RegExp(`\\b${kw}\\b`, 'gi'), '_____');
+                                            });
+                                        } else {
+                                            const verbChunk = (s.syntax_chunks || []).find(c => c.role === 'Verb');
+                                            if (verbChunk) {
+                                                blanked = blanked.replace(verbChunk.eng, '_____');
+                                            } else {
+                                                blanked = blanked.replace(/ /g, ' _____ '); // fallback
+                                            }
+                                        }
+                                        return (
+                                            <div style={{ padding: "12px", background: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+                                                <div style={{ fontSize: "12px", fontWeight: 800, color: "#4f46e5", marginBottom: "8px" }}>Step 2. 빈칸 (Grammar 기반 치환)</div>
+                                                <div style={{ fontSize: "14px", fontWeight: 700, color: "#334155", letterSpacing: "0.5px" }}>{blanked}</div>
+                                                <div style={{ fontSize: "11px", color: "#64748b", marginTop: "8px" }}>* 문법명({s.grammar})을 기반으로 키워드가 블라인드 처리되었습니다.</div>
+                                            </div>
+                                        );
+                                    })()}
+
+                                    {currentSettings.includes("영작") && (
+                                        <div style={{ padding: "12px", background: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+                                            <div style={{ fontSize: "12px", fontWeight: 800, color: "#4f46e5", marginBottom: "8px" }}>Step 3. 영작 (전체 입력 및 키워드 일치 확인)</div>
+                                            <div style={{ fontSize: "13px", color: "#334155", marginBottom: "6px" }}><strong>문제:</strong> {s.korean}</div>
+                                            <div style={{ fontSize: "13px", color: "#16a34a" }}><strong>정답 기준:</strong> {s.english}</div>
+                                            <div style={{ fontSize: "11px", color: "#64748b", marginTop: "8px" }}>* 학생이 전체 문장을 입력하면, 주요 키워드 일치 여부를 기반으로 채점됩니다.</div>
+                                        </div>
+                                    )}
+                                    
+                                    {currentSettings.length === 0 && (
+                                        <div style={{ fontSize: "12px", color: "#94a3b8", fontStyle: "italic" }}>선택된 문제 유형이 없습니다.</div>
+                                    )}
                                 </div>
                             </div>
                         );
