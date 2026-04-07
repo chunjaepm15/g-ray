@@ -1,0 +1,32 @@
+# 교과서 예문 
+### [Unit 1~10] ###
+- **`Unit 1` (관계대명사 what)**
+  - 📖 **추출 문장**: "We want to share with you **what** we have learned about these insects."
+  - 🇰🇷 **번역**: 우리는 이 곤충들에 대해 우리가 배운 것을 당신과 공유하고 싶습니다.
+- **`Unit 2` (현재완료 진행형)**
+  - 📖 **추출 문장**: "She **has been studying** wild chimpanzees in Africa since her twenties."
+  - 🇰🇷 **번역**: 그녀는 20대 때부터 아프리카에서 야생 침팬지들을 연구해 오고 있습니다.
+- **`Unit 3` (to부정사 의미상주어)**
+  - 📖 **추출 문장**: "It is important for us to protect nature."
+  - 🇰🇷 **번역**: 우리가 자연을 보호하는 것은 중요하다.
+- **`Unit 4` (과거 완료)**
+  - 📖 **추출 문장**: "By the time I was ten, I **had visited** five countries."
+  - 🇰🇷 **번역**: 내가 열 살이 되었을 때, 나는 다섯 나라를 방문했었다.
+- **`Unit 5` (명사를 수식하는 분사)**
+  - 📖 **추출 문장**: "The girl **singing** on the stage is my sister."
+  - 🇰🇷 **번역**: 무대 위에서 노래하고 있는 소녀는 내 여동생이다.
+- **`Unit 6` (분사구문)**  
+  - 📖 **추출 문장**: "**Walking** along the street, I met an old friend."
+  - 🇰🇷 **번역**: 길을 걷다가 옛 친구를 만났다.
+- **`Unit 7` (명사절 if / whether)**
+  - 📖 **추출 문장**: "I wonder **if** you want to travel with friends or family."
+  - 🇰🇷 **번역**: 나는 네가 친구 또는 가족과 함께 여행하고 싶은지 궁금해.
+- **`Unit 8` (too ~ to)**
+  - 📖 **추출 문장**: "When the day of the main tryouts came, she was **too** afraid **to** go."
+  - 🇰🇷 **번역**: 메인 선발전 날이 왔을 때, 그녀는 너무 두려워서 갈 수 없었다.
+- **`Unit 9` (가정법 과거)**
+  - 📖 **추출 문장**: "**If** she **had** a car, she **would drive** everywhere."
+  - 🇰🇷 **번역**: 만약 그녀에게 차가 있다면, 그녀는 어디든 운전해서 갈 텐데.
+- **`Unit 10` (so ~ that 구문)**
+  - 📖 **추출 문장**: "While I fish, I'm **so** focused **that** I can leave all my worries behind."
+  - 🇰🇷 **번역**: 낚시를 하는 동안, 나는 너무 집중해서 모든 걱정을 뒤로 할 수 있다.

@@ -1,0 +1,2798 @@
+{
+  "lesson_metadata": {
+    "source": "Middle School English 3 (Jung Sa-yeol)",
+    "lesson_id": "L03",
+    "title": "Laugh First and Then Think",
+    "curriculum_version": "2015 Revised"
+  },
+  "sections": [
+    {
+      "section_name": "Listen & Talk",
+      "description": "Expressing Anticipation & Wishing Luck",
+      "items": [
+        {
+          "id": "L03-LT-001",
+          "english": "I’m looking forward to the model airplane contest.",
+          "korean": "나는 내일 있을 모형 비행기 대회를 고대하고 있어.",
+          "tags": [
+            "Anticipation"
+          ]
+        },
+        {
+          "id": "L03-LT-002",
+          "english": "I’ll keep my fingers crossed!",
+          "korean": "행운을 빌어줄게!",
+          "tags": [
+            "Wishing Luck"
+          ]
+        }
+      ]
+    },
+    {
+      "section_name": "Reading: Ig Nobel Prizes",
+      "description": "Information about unusual and humorous scientific research",
+      "items": [
+        {
+          "id": "L03-RD-001",
+          "english": "The Ig Nobel Prizes are awarded for discoveries that first make one laugh and then think.",
+          "korean": "이그 노벨상은 “사람들을 먼저 웃게 하고 그 다음 생각하게 만드는” 발견들에 수여된다.",
+          "context": "Definition",
+          "grammar": [
+            "Causative Verb make"
+          ]
+        },
+        {
+          "id": "L03-RD-002",
+          "english": "Not only the winners’ fun studies but also the ceremony makes people laugh.",
+          "korean": "수상자들이 재미있는 연구뿐만 아니라 시상식 또한 사람들을 웃게 만든다.",
+          "context": "Ceremony",
+          "grammar": [
+            "Not only A but also B"
+          ]
+        }
+      ]
+    },
+    {
+      "section_name": "Focus In",
+      "description": "Key Grammar Points",
+      "items": [
+        {
+          "id": "L03-GR-001",
+          "english": "Is this research project good enough to win a Nobel Prize?",
+          "korean": "이 연구 프로젝트가 노벨상을 받을 만큼 충분히 훌륭한가?",
+          "grammar_point": "Adj/Adv + enough to-V"
+        },
+        {
+          "id": "L03-GR-002",
+          "english": "Not only the winners’ fun studies but also the ceremony makes people laugh.",
+          "korean": "수상자들의 재미있는 연구뿐만 아니라 시상식도 사람들을 웃게 만든다.",
+          "grammar_point": "Not only A but also B (Subject-Verb Agreement)"
+        }
+      ]
+    },
+    {
+      "section_name": "Extended Contexts (Auto-Generated)",
+      "items": [
+        {
+          "id": "L03-01",
+          "english": "I’m looking forward to seeing you at the race.",
+          "korean": "경주에서 너를 보게 되기를 기대하고 있어.",
+          "grammar": "기대 표현하기",
+          "structure": "looking forward to V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I’m looking forward to",
+              "kor": "경주에서 너를 보게",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "seeing you at the race.",
+              "kor": "되기를 기대하고 있어.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "기대 표현하기",
+            "target_pattern": "looking forward to V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-02",
+          "english": "I’ll keep my fingers crossed!",
+          "korean": "행운을 빌게!",
+          "grammar": "행운 빌어주기",
+          "structure": "keep one's fingers crossed",
+          "syntax_chunks": [
+            {
+              "eng": "I’ll keep",
+              "kor": "행운을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "my fingers crossed!",
+              "kor": "빌게!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "행운 빌어주기",
+            "target_pattern": "keep one's fingers crossed"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-03",
+          "english": "I’m really looking forward to the field trip next Tuesday.",
+          "korean": "다음 주 화요일 현장 학습이 정말 기대돼.",
+          "grammar": "기구 표현하기",
+          "structure": "looking forward to + N",
+          "syntax_chunks": [
+            {
+              "eng": "I’m really looking forward to",
+              "kor": "다음 주 화요일",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the field trip next Tuesday.",
+              "kor": "현장 학습이 정말 기대돼.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "기구 표현하기",
+            "target_pattern": "looking forward to + N"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-04",
+          "english": "Don’t worry. I’m sure you’ll do great.",
+          "korean": "걱정하지 마. 네가 잘해낼 거라고 확신해.",
+          "grammar": "확신 표현하기",
+          "structure": "I'm sure S + V",
+          "syntax_chunks": [
+            {
+              "eng": "Don’t worry. I’m",
+              "kor": "걱정하지 마. 네가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "sure you’ll do great.",
+              "kor": "잘해낼 거라고 확신해.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "확신 표현하기",
+            "target_pattern": "I'm sure S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-05",
+          "english": "He’s bright enough to make us feel happy.",
+          "korean": "그는 우리를 기분 좋게 만들 정도로 똑똑하다.",
+          "grammar": "형용사 + enough to",
+          "structure": "ADJ + enough to + V",
+          "syntax_chunks": [
+            {
+              "eng": "He’s bright enough to",
+              "kor": "그는 우리를 기분",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "make us feel happy.",
+              "kor": "좋게 만들 정도로 똑똑하다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "형용사 + enough to",
+            "target_pattern": "ADJ + enough to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-06",
+          "english": "You always make us laugh out loud.",
+          "korean": "넌 항상 우리를 크게 웃게 해.",
+          "grammar": "사역동사",
+          "structure": "make + O + V (원형)",
+          "syntax_chunks": [
+            {
+              "eng": "You always make",
+              "kor": "넌 항상 우리를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "us laugh out loud.",
+              "kor": "크게 웃게 해.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사",
+            "target_pattern": "make + O + V (원형)"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-07",
+          "english": "Han Jiwon, a Korean high school student, did research on this topic in 2015.",
+          "korean": "한국 고등학생인 한지원은 2015년에 이 주제에 대해 연구를 했다.",
+          "grammar": "과거 시제 / 어구",
+          "structure": "did research on",
+          "syntax_chunks": [
+            {
+              "eng": "Han Jiwon, a Korean high school student,",
+              "kor": "한국 고등학생인 한지원은 2015년에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "did research on this topic in 2015.",
+              "kor": "이 주제에 대해 연구를 했다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거 시제 / 어구",
+            "target_pattern": "did research on"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-08",
+          "english": "Is this research project good enough to win a Nobel Prize?",
+          "korean": "이 연구 프로젝트가 노벨상을 받을 만큼 충분히 좋은가?",
+          "grammar": "형용사 + enough to",
+          "structure": "ADJ + enough to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Is this research project good",
+              "kor": "이 연구 프로젝트가 노벨상을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "enough to win a Nobel Prize?",
+              "kor": "받을 만큼 충분히 좋은가?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "형용사 + enough to",
+            "target_pattern": "ADJ + enough to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-09",
+          "english": "The Ig Nobel Prizes are awarded for discoveries that \"first make one laugh and then think.\"",
+          "korean": "이그 노벨상은 \"먼저 사람들을 웃게 하고 그다음 생각하게 만드는\" 발견들에 수여된다.",
+          "grammar": "수동태 및 주격관계대명사",
+          "structure": "be awarded for ... that + V",
+          "syntax_chunks": [
+            {
+              "eng": "The Ig Nobel Prizes are awarded for discoveries",
+              "kor": "이그 노벨상은 \"먼저 사람들을 웃게",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "that \"first make one laugh and then think.\"",
+              "kor": "하고 그다음 생각하게 만드는\" 발견들에 수여된다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 및 주격관계대명사",
+            "target_pattern": "be awarded for ... that + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-10",
+          "english": "To save money, the Navy made its sailors shout, “Bang!” instead of using real bombs.",
+          "korean": "돈을 아끼기 위해 해군은 선원들이 실제 폭탄을 사용하는 대신 “뱅!”이라고 외치게 했다.",
+          "grammar": "사역동사 / 어구",
+          "structure": "made + O + V / instead of",
+          "syntax_chunks": [
+            {
+              "eng": "To save money, the Navy made its",
+              "kor": "돈을 아끼기 위해 해군은 선원들이 실제",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "sailors shout, “Bang!” instead of using real bombs.",
+              "kor": "폭탄을 사용하는 대신 “뱅!”이라고 외치게 했다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사 / 어구",
+            "target_pattern": "made + O + V / instead of"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-11",
+          "english": "He succeeded in floating a live frog in the air by using magnets.",
+          "korean": "그는 자석을 사용하여 살아있는 개구리를 공중에 띄우는 데 성공했다.",
+          "grammar": "어구 표현",
+          "structure": "succeed in V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "He succeeded in floating a live",
+              "kor": "그는 자석을 사용하여 살아있는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "frog in the air by using magnets.",
+              "kor": "개구리를 공중에 띄우는 데 성공했다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "어구 표현",
+            "target_pattern": "succeed in V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-12",
+          "english": "If people don’t have a sense of humor, they are usually not very good scientists.",
+          "korean": "사람들이 유머 감각이 없다면, 그들은 대개 아주 훌륭한 과학자가 아니다.,G0309",
+          "grammar": "조건의 접속사",
+          "structure": "If + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "If people don’t have a sense of",
+              "kor": "사람들이 유머 감각이 없다면, 그들은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "humor, they are usually not very good scientists.",
+              "kor": "대개 아주 훌륭한 과학자가 아니다.,G0309",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사",
+            "target_pattern": "If + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-13",
+          "english": "Not only the winners’ fun studies but also the ceremony makes people laugh.",
+          "korean": "수상자들의 재미있는 연구뿐만 아니라 시상식도 사람들을 웃게 만든다.",
+          "grammar": "상관접속사",
+          "structure": "Not only A but also B",
+          "syntax_chunks": [
+            {
+              "eng": "Not only the winners’ fun studies",
+              "kor": "수상자들의 재미있는 연구뿐만 아니라",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "but also the ceremony makes people laugh.",
+              "kor": "시상식도 사람들을 웃게 만든다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "상관접속사",
+            "target_pattern": "Not only A but also B"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-14",
+          "english": " Zimbabwe's ten trillion Zimbabwean dollars, which is worth less than one U.S. dollar.",
+          "korean": "미화 1달러보다 가치가 낮은 짐바브웨의 10조 달러 지폐.",
+          "grammar": "계속적 용법의 관계대명사",
+          "structure": "N + , which + V",
+          "syntax_chunks": [
+            {
+              "eng": "Zimbabwe's ten trillion Zimbabwean dollars, which",
+              "kor": "미화 1달러보다 가치가 낮은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "is worth less than one U.S. dollar.",
+              "kor": "짐바브웨의 10조 달러 지폐.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "계속적 용법의 관계대명사",
+            "target_pattern": "N + , which + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-15",
+          "english": "The band is popular enough to win the award.",
+          "korean": "그 밴드는 상을 받을 만큼 충분히 인기가 있다.",
+          "grammar": "형용사 + enough to",
+          "structure": "ADJ + enough to + V",
+          "syntax_chunks": [
+            {
+              "eng": "The band is popular",
+              "kor": "그 밴드는 상을 받을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "enough to win the award.",
+              "kor": "만큼 충분히 인기가 있다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "형용사 + enough to",
+            "target_pattern": "ADJ + enough to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-16",
+          "english": "Anne is not only lovely but also smart.",
+          "korean": "앤은 사랑스러울 뿐만 아니라 똑똑하다.",
+          "grammar": "상관접속사",
+          "structure": "Not only A but also B",
+          "syntax_chunks": [
+            {
+              "eng": "Anne is not only",
+              "kor": "앤은 사랑스러울",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "lovely but also smart.",
+              "kor": "뿐만 아니라 똑똑하다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "상관접속사",
+            "target_pattern": "Not only A but also B"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-17",
+          "english": "Our songs are easy enough to sing.",
+          "korean": "우리 노래는 부르기에 충분히 쉽다.",
+          "grammar": "형용사 + enough to",
+          "structure": "ADJ + enough to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Our songs are",
+              "kor": "우리 노래는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "easy enough to sing.",
+              "kor": "부르기에 충분히 쉽다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "형용사 + enough to",
+            "target_pattern": "ADJ + enough to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-18",
+          "english": "Your smile is bright enough to light up the classroom.",
+          "korean": "네 미소는 교실을 밝힐 만큼 충분히 환하다.",
+          "grammar": "형용사 + enough to",
+          "structure": "ADJ + enough to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Your smile is bright enough",
+              "kor": "네 미소는 교실을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to light up the classroom.",
+              "kor": "밝힐 만큼 충분히 환하다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "형용사 + enough to",
+            "target_pattern": "ADJ + enough to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-19",
+          "english": "Malala Yousafzai won the Nobel Prize because she had fought for children’s rights.",
+          "korean": "말랄라 유사프자이는 아동 권리를 위해 싸웠기 때문에 노벨상을 받았다.",
+          "grammar": "과거완료 시제",
+          "structure": "because S + had + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "Malala Yousafzai won the Nobel Prize",
+              "kor": "말랄라 유사프자이는 아동 권리를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "because she had fought for children’s rights.",
+              "kor": "위해 싸웠기 때문에 노벨상을 받았다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 시제",
+            "target_pattern": "because S + had + p.p."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-20",
+          "english": "Not only Marie Curie but also her daughter was awarded the Nobel Prize.",
+          "korean": "마리 퀴리뿐만 아니라 그녀의 딸도 노벨상을 받았다.",
+          "grammar": "상관접속사",
+          "structure": "Not only A but also B",
+          "syntax_chunks": [
+            {
+              "eng": "Not only Marie Curie but also",
+              "kor": "마리 퀴리뿐만 아니라",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "her daughter was awarded the Nobel Prize.",
+              "kor": "그녀의 딸도 노벨상을 받았다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "상관접속사",
+            "target_pattern": "Not only A but also B"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-021",
+          "english": "Maybe not.",
+          "korean": "아마 아닐 것입니다.",
+          "grammar": "형용사 + enough to 구문",
+          "structure": "ADJ + enough to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Maybe",
+              "kor": "아마",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "not.",
+              "kor": "아닐 것입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "형용사 + enough to 구문",
+            "target_pattern": "ADJ + enough to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-022",
+          "english": "But how about an Ig Nobel Prize?",
+          "korean": "하지만 이그 노벨상은 어떨까요?",
+          "grammar": "형용사 + enough to 구문",
+          "structure": "ADJ + enough to + V",
+          "syntax_chunks": [
+            {
+              "eng": "But how about",
+              "kor": "하지만 이그",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "an Ig Nobel Prize?",
+              "kor": "노벨상은 어떨까요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "형용사 + enough to 구문",
+            "target_pattern": "ADJ + enough to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-023",
+          "english": "He won one in 2017 for this fun research.",
+          "korean": "그는 이 재미있는 연구로 2017년에 이그 노벨상을 받았습니다.",
+          "grammar": "형용사 + enough to 구문",
+          "structure": "ADJ + enough to + V",
+          "syntax_chunks": [
+            {
+              "eng": "He won one in",
+              "kor": "그는 이 재미있는 연구로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "2017 for this fun research.",
+              "kor": "2017년에 이그 노벨상을 받았습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "형용사 + enough to 구문",
+            "target_pattern": "ADJ + enough to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-024",
+          "english": "The prizes are presented by real Nobel winners in Sanders Theater at Harvard University.",
+          "korean": "상이 수여되는 하버드 대학교 샌더스 극장에는 실제 노벨상 수상자들이 시상합니다.",
+          "grammar": "수동태 / 어휘 표현",
+          "structure": "be presented / be filled with / eager to",
+          "syntax_chunks": [
+            {
+              "eng": "The prizes are presented by real Nobel",
+              "kor": "상이 수여되는 하버드 대학교 샌더스",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "winners in Sanders Theater at Harvard University.",
+              "kor": "극장에는 실제 노벨상 수상자들이 시상합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / 어휘 표현",
+            "target_pattern": "be presented / be filled with / eager to"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-025",
+          "english": "The room is usually filled with people who are eager to cheer for the brave scientists with their “laughable” research.",
+          "korean": "그 방은 보통 “웃음이 날 만한” 연구를 한 용감한 과학자들을 응원하고 싶어 하는 사람들로 가득 차 있습니다.",
+          "grammar": "수동태 / 어휘 표현",
+          "structure": "be presented / be filled with / eager to",
+          "syntax_chunks": [
+            {
+              "eng": "The room is usually filled with people who are eager",
+              "kor": "그 방은 보통 “웃음이 날 만한” 연구를 한",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to cheer for the brave scientists with their “laughable” research.",
+              "kor": "용감한 과학자들을 응원하고 싶어 하는 사람들로 가득 차 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / 어휘 표현",
+            "target_pattern": "be presented / be filled with / eager to"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-026",
+          "english": "Andre Geim also won an award that year.",
+          "korean": "안드레 가임 또한 그해에 상을 받았습니다.",
+          "grammar": "어구 표현 / 조건문",
+          "structure": "succeed in V-ing / if S + V",
+          "syntax_chunks": [
+            {
+              "eng": "Andre Geim also won",
+              "kor": "안드레 가임 또한",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "an award that year.",
+              "kor": "그해에 상을 받았습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "어구 표현 / 조건문",
+            "target_pattern": "succeed in V-ing / if S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-027",
+          "english": "In 2005, Gauri Nanda won the Ig Nobel Prize in Economics for inventing an alarm clock.",
+          "korean": "2005년 가우리 난다는 알람 시계를 발명한 공로로 이그 노벨 경제학상을 받았습니다.",
+          "grammar": "동명사 / 어휘 표현",
+          "structure": "keeps running away / get out of",
+          "syntax_chunks": [
+            {
+              "eng": "In 2005, Gauri Nanda won the Ig Nobel",
+              "kor": "2005년 가우리 난다는 알람 시계를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Prize in Economics for inventing an alarm clock.",
+              "kor": "발명한 공로로 이그 노벨 경제학상을 받았습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "동명사 / 어휘 표현",
+            "target_pattern": "keeps running away / get out of"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-028",
+          "english": "It keeps running away until the sleeper finally gets out of bed.",
+          "korean": "이 시계는 잠자는 사람이 마침내 침대에서 나올 때까지 계속해서 도망쳐 다닙니다.",
+          "grammar": "동명사 / 어휘 표현",
+          "structure": "keeps running away / get out of",
+          "syntax_chunks": [
+            {
+              "eng": "It keeps running away until the",
+              "kor": "이 시계는 잠자는 사람이 마침내",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "sleeper finally gets out of bed.",
+              "kor": "침대에서 나올 때까지 계속해서 도망쳐 다닙니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "동명사 / 어휘 표현",
+            "target_pattern": "keeps running away / get out of"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-029",
+          "english": "Not only the winners’ fun studies but also the ceremony for the Ig Nobel Prizes makes people laugh. There are a number of interesting things that keep people from getting bored. The opening and closing speeches are just two words each: “Welcome. Welcome.” and “Goodbye. Goodbye.” If someone talks for too long, an eight-year-old girl called Miss Sweetie Poo shouts repeatedly, “Please stop! I’m bored.”",
+          "korean": "수상자들의 재미있는 연구뿐만 아니라 이그 노벨상 시상식 또한 사람들을 웃게 만듭니다. 사람들이 지루해하지 않도록 하는 흥미로운 것들이 많이 있습니다. 개회사와 폐회사는 각각 “환영합니다. 환영합니다”와 “안녕히 가세요. 안녕히 가세요”라는 단 두 마디뿐입니다. 만약 누군가 너무 오래 말하면, 미스 스위티 푸라고 불리는 8살 소녀가 “그만하세요! 지루해요”라고 반복해서 외칩니다.",
+          "grammar": "상관접속사 / 어구 표현",
+          "structure": "Not only... but also / keep from V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Not only the winners’ fun studies but also the ceremony for the Ig Nobel Prizes makes people laugh. There are a number of interesting things that keep people from getting bored. The",
+              "kor": "수상자들의 재미있는 연구뿐만 아니라 이그 노벨상 시상식 또한 사람들을 웃게 만듭니다. 사람들이 지루해하지 않도록 하는 흥미로운 것들이 많이 있습니다. 개회사와 폐회사는 각각 “환영합니다.",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "opening and closing speeches are just two words each: “Welcome. Welcome.” and “Goodbye. Goodbye.” If someone talks for too long, an eight-year-old girl called Miss Sweetie Poo shouts repeatedly, “Please stop! I’m bored.”",
+              "kor": "환영합니다”와 “안녕히 가세요. 안녕히 가세요”라는 단 두 마디뿐입니다. 만약 누군가 너무 오래 말하면, 미스 스위티 푸라고 불리는 8살 소녀가 “그만하세요! 지루해요”라고 반복해서 외칩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "상관접속사 / 어구 표현",
+            "target_pattern": "Not only... but also / keep from V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-030",
+          "english": "Each winner receives ten trillion Zimbabwean dollars, which is worth less than one U.S.",
+          "korean": "각 수상자는 짐바브웨의 10조 달러를 받는데, 이것은 미화 1달러보다 가치가 낮습니다.",
+          "grammar": "계속적 용법 / 비교급 강조",
+          "structure": "worth / which is / a lot more fun",
+          "syntax_chunks": [
+            {
+              "eng": "Each winner receives ten trillion Zimbabwean dollars,",
+              "kor": "각 수상자는 짐바브웨의 10조 달러를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "which is worth less than one U.S.",
+              "kor": "받는데, 이것은 미화 1달러보다 가치가 낮습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "계속적 용법 / 비교급 강조",
+            "target_pattern": "worth / which is / a lot more fun"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-031",
+          "english": "Throwing paper planes is another fun tradition.",
+          "korean": "이그 노벨 시상식은 “여러분이 상을 받지 못했다면 – 그리고 만약 받았다면 – 내년에는 더 큰 행운이 따르기를!”이라는 말로 끝납니다.",
+          "grammar": "계속적 용법 / 비교급 강조",
+          "structure": "worth / which is / a lot more fun",
+          "syntax_chunks": [
+            {
+              "eng": "Throwing paper planes",
+              "kor": "이그 노벨 시상식은 “여러분이 상을 받지 못했다면 – 그리고",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "is another fun tradition.",
+              "kor": "만약 받았다면 – 내년에는 더 큰 행운이 따르기를!”이라는 말로 끝납니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "계속적 용법 / 비교급 강조",
+            "target_pattern": "worth / which is / a lot more fun"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-032",
+          "english": "The Ig Nobel Prize ceremony ends with the words, “If you didn’t win a prize – and if you did – better luck next year!” But the Ig Nobel Prizes make science a lot more fun!",
+          "korean": "하지만 이그 노벨상은 과학을 훨씬 더 재미있게 만들어 줍니다!",
+          "grammar": "계속적 용법 / 비교급 강조",
+          "structure": "worth / which is / a lot more fun",
+          "syntax_chunks": [
+            {
+              "eng": "The Ig Nobel Prize ceremony ends with the words, “If you didn’t win a prize – and if",
+              "kor": "하지만 이그 노벨상은 과학을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "you did – better luck next year!” But the Ig Nobel Prizes make science a lot more fun!",
+              "kor": "훨씬 더 재미있게 만들어 줍니다!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "계속적 용법 / 비교급 강조",
+            "target_pattern": "worth / which is / a lot more fun"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L03-033",
+          "english": "Title: Laugh First and Then Think --- Lesson 03 --- [Page 45] A     Listen and match.",
+          "korean": "제목: 먼저 웃고 생각하라 --- Lesson 03 --- [45 페이지] A 듣고 맞춰라.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Title: Laugh First and Then Think --- Lesson 03 ---",
+              "kor": "제목: 먼저 웃고 생각하라 --- Lesson",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "[Page 45] A     Listen and match.",
+              "kor": "03 --- [45 페이지] A 듣고 맞춰라.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-034",
+          "english": "Start O f f Listen & Talk B     Listen and choose.",
+          "korean": "Start Of f f Listen & Talk B 듣고 선택하세요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Start O f f Listen & Talk",
+              "kor": "Start Of f f Listen",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "B     Listen and choose.",
+              "kor": "& Talk B 듣고 선택하세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-035",
+          "english": "Your Turn Talk with your partner.",
+          "korean": "귀하의 차례 귀하의 파트너와 대화하십시오.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Your Turn Talk",
+              "kor": "귀하의 차례",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "with your partner.",
+              "kor": "귀하의 파트너와 대화하십시오.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-036",
+          "english": "join the funny photo contest / see your photos join the food art show / see your food artwork perform in the school musical / listen to your song We‛re going to ...",
+          "korean": "재미있는 사진 콘테스트에 참가하세요 / 사진을 보세요 음식 아트 쇼에 참여하세요 / 학교 뮤지컬에서 음식 작품이 공연되는 걸 보세요 / 노래를 들어보세요 우리는 ...",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "join the funny photo contest / see your photos join the food art show / see",
+              "kor": "재미있는 사진 콘테스트에 참가하세요 / 사진을 보세요 음식 아트 쇼에 참여하세요 /",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "your food artwork perform in the school musical / listen to your song We‛re going to ...",
+              "kor": "학교 뮤지컬에서 음식 작품이 공연되는 걸 보세요 / 노래를 들어보세요 우리는 ...",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-037",
+          "english": "Speak Up Look and talk.",
+          "korean": "보고 이야기하십시오.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Speak Up",
+              "kor": "보고",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Look and talk.",
+              "kor": "이야기하십시오.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-038",
+          "english": "I‛m looking forward to the model airplane contest tomorrow.",
+          "korean": "내일 모형 비행기 대회가 기대됩니다.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I‛m looking forward to",
+              "kor": "내일 모형",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the model airplane contest tomorrow.",
+              "kor": "비행기 대회가 기대됩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-039",
+          "english": "I‛ll keep my ﬁ  ngers crossed!",
+          "korean": "손가락질하지 않겠습니다!",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "I‛ll keep my",
+              "kor": "손가락질하지",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "ﬁ  ngers crossed!",
+              "kor": "않겠습니다!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-040",
+          "english": "Well, I think so, but I‛m nervous.",
+          "korean": "글쎄요, 그럴 것 같지만 긴장됩니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Well, I think",
+              "kor": "글쎄요, 그럴",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "so, but I‛m nervous.",
+              "kor": "것 같지만 긴장됩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-041",
+          "english": "I’m looking forward to it.",
+          "korean": "나는 그것을 기대하고 있습니다.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I’m looking",
+              "kor": "나는 그것을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "forward to it.",
+              "kor": "기대하고 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-042",
+          "english": "A   I’m going to enter the cooking contest tomorrow.",
+          "korean": "A 내일 요리대회에 참가할 예정이에요.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "A   I’m going",
+              "kor": "A 내일",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to enter the cooking contest tomorrow.",
+              "kor": "요리대회에 참가할 예정이에요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-043",
+          "english": "Laugh First and Then Think 47 [Page 47] StepU   p Looking Forward to the Talent Show Real-life Scene Ü\u0001laugh      enough  tough Ü\u0001 \u0001\u0001neighbor bright throu gh sight    thou gh ri ght Say It Right Your Turn A  Minho always makes us laugh out loud.",
+          "korean": "먼저 웃고 생각하세요 47 [47 쪽] StepU p 장기자랑 기대 실제 현장 Ü 충분히 웃으세요 Ü 눈으로 보면 밝은 이웃 그래도 말하세요 네 차례 민호는 항상 우리를 크게 웃게 만들어요.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Laugh First and Then Think 47 [Page 47] StepU   p Looking Forward to the Talent Show Real-life Scene Ü\u0001laugh      enough",
+              "kor": "먼저 웃고 생각하세요 47 [47 쪽] StepU p 장기자랑 기대 실제 현장 Ü 충분히 웃으세요",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "tough Ü\u0001 \u0001\u0001neighbor bright throu gh sight    thou gh ri ght Say It Right Your Turn A  Minho always makes us laugh out loud.",
+              "kor": "Ü 눈으로 보면 밝은 이웃 그래도 말하세요 네 차례 민호는 항상 우리를 크게 웃게 만들어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L03-044",
+          "english": "Looking Forward to the Talent Show We‛re going on a ﬁ  eld trip next Tuesday.",
+          "korean": "장기자랑을 기대하며 우리는 다음주 화요일에 현장여행을 갈 예정입니다.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Looking Forward to the Talent Show We‛re going",
+              "kor": "장기자랑을 기대하며 우리는 다음주",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "on a ﬁ  eld trip next Tuesday.",
+              "kor": "화요일에 현장여행을 갈 예정입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-045",
+          "english": "What are you going to do in the talent show, Jimin?",
+          "korean": "지민아, 장기자랑에서 뭐 할 거야?",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "What are you going to",
+              "kor": "지민아, 장기자랑에서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "do in the talent show, Jimin?",
+              "kor": "뭐 할 거야?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-046",
+          "english": "I‛m going to talk like our teachers do in class and tell some jokes.",
+          "korean": "저는 우리 선생님들이 수업시간에 하는 것처럼 이야기도 하고 농담도 할 거예요.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I‛m going to talk like our teachers",
+              "kor": "저는 우리 선생님들이 수업시간에 하는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "do in class and tell some jokes.",
+              "kor": "것처럼 이야기도 하고 농담도 할 거예요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-047",
+          "english": "I‛m really looking forward to it.",
+          "korean": "정말 기대됩니다.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I‛m really looking",
+              "kor": "정말",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "forward to it.",
+              "kor": "기대됩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-048",
+          "english": "Will everyone like my show?",
+          "korean": "모두가 내 쇼를 좋아할까요?",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Will everyone",
+              "kor": "모두가 내",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "like my show?",
+              "kor": "쇼를 좋아할까요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-049",
+          "english": "Ha-ha, you sound like our English teacher.",
+          "korean": "하하, 우리 영어 선생님 같으시네요.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Ha-ha, you sound",
+              "kor": "하하, 우리",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "like our English teacher.",
+              "kor": "영어 선생님 같으시네요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-050",
+          "english": "Let me show you one part of my act.",
+          "korean": "내 연기의 한 부분을 보여드리겠습니다.",
+          "grammar": "사역동사",
+          "structure": "make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "Let me show you",
+              "kor": "내 연기의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "one part of my act.",
+              "kor": "한 부분을 보여드리겠습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사",
+            "target_pattern": "make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-051",
+          "english": "I‛m going to show you more at the show.",
+          "korean": "공연에서 더 많은 모습을 보여드릴 예정이에요.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I‛m going to show",
+              "kor": "공연에서 더 많은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "you more at the show.",
+              "kor": "모습을 보여드릴 예정이에요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-052",
+          "english": "How to Play Sample Dialog A I’m going to travel to Jejudo next week.",
+          "korean": "샘플 대화 A 플레이 방법 다음 주에 제주도로 여행을 갈 예정이에요.",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "How to Play Sample Dialog A I’m",
+              "kor": "샘플 대화 A 플레이 방법",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "going to travel to Jejudo next week.",
+              "kor": "다음 주에 제주도로 여행을 갈 예정이에요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-053",
+          "english": "That sounds great.",
+          "korean": "정말 좋은 것 같아요.",
+          "grammar": "접속사/관계대명사 that",
+          "structure": "that + S + V / N + that",
+          "syntax_chunks": [
+            {
+              "eng": "That",
+              "kor": "정말 좋은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "sounds great.",
+              "kor": "것 같아요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사/관계대명사 that",
+            "target_pattern": "that + S + V / N + that"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-054",
+          "english": "A   I’m going to enter the dance contest next week, but I’m worried about it.",
+          "korean": "A 다음 주에 댄스 경연대회에 참가할 예정인데 걱정이 돼요.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "A   I’m going to enter the",
+              "kor": "A 다음 주에 댄스",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "dance contest next week, but I’m worried about it.",
+              "kor": "경연대회에 참가할 예정인데 걱정이 돼요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-055",
+          "english": "” They were started in 1991 by AIR magazine to increase people’s interest in science by honoring the unusual and the imaginative.",
+          "korean": "” 특이한 것과 상상력을 기리며 과학에 대한 사람들의 관심을 높이기 위해 1991년 AIR 잡지에서 시작되었습니다.",
+          "grammar": "수동태 / to부정사",
+          "structure": "be + p.p. / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "” They were started in 1991 by AIR magazine to increase",
+              "kor": "” 특이한 것과 상상력을 기리며 과학에 대한",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "people’s interest in science by honoring the unusual and the imaginative.",
+              "kor": "사람들의 관심을 높이기 위해 1991년 AIR 잡지에서 시작되었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / to부정사",
+            "target_pattern": "be + p.p. / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-056",
+          "english": "Navy won the Ig Nobel Prize for Peace in 2000.",
+          "korean": "해군은 2000년 이그노벨 평화상을 수상했다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Navy won the Ig Nobel",
+              "kor": "해군은 2000년",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Prize for Peace in 2000.",
+              "kor": "이그노벨 평화상을 수상했다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-057",
+          "english": "Is that funny enough for you to laugh out loud?",
+          "korean": "크게 웃을 만큼 재미있나요?",
+          "grammar": "to부정사 / 접속사/관계대명사 that",
+          "structure": "to + V / that + S + V / N + that",
+          "syntax_chunks": [
+            {
+              "eng": "Is that funny enough for",
+              "kor": "크게 웃을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "you to laugh out loud?",
+              "kor": "만큼 재미있나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 접속사/관계대명사 that",
+            "target_pattern": "to + V / that + S + V / N + that"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-058",
+          "english": "university    be filled with    eager    peace    sailor    instead of succeed    sense    humor    accept    economics    get out of Talk About It What is your favorite school event?",
+          "korean": "대학은 성공 대신 열정적인 평화 선원으로 가득 차 있습니다. 유머 감각, 경제학을 받아들입니다. Talk About It에서 벗어나십시오. 가장 좋아하는 학교 행사는 무엇입니까?",
+          "grammar": "의문사 구문 / 비교급",
+          "structure": "Wh-word / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "university    be filled with    eager    peace    sailor    instead of succeed",
+              "kor": "대학은 성공 대신 열정적인 평화 선원으로 가득 차 있습니다. 유머 감각,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "sense    humor    accept    economics    get out of Talk About It What is your favorite school event?",
+              "kor": "경제학을 받아들입니다. Talk About It에서 벗어나십시오. 가장 좋아하는 학교 행사는 무엇입니까?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문 / 비교급",
+            "target_pattern": "Wh-word / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-059",
+          "english": "Join us for the awarding of 10 new Ig Nobel Prizes The 27th Ig* Nobel Prize Ceremony Thursday, September 14, 2017 6:00 PM in Sanders Theater at Since First make one and then Winners of 2017: , Korea “How to  Your ” Laugh First and Then Think 51 [Page 51] Not only the winners’ fun studies but also the ceremony for the Ig Nobel Prizes makes people laugh.",
+          "korean": "10명의 새로운 이그노벨상 시상식에 참여하세요. 제27회 이그* 노벨상 시상식이 2017년 9월 14일 목요일 오후 6시 샌더스 극장에서 처음으로 만들고 2017년 수상자: , 한국의 \"How to Your\" Laugh First and Then Think 51 [51 페이지] 수상자들의 재미있는 연구뿐만 아니라 이그노벨상 시상식도 사람들을 웃게 만듭니다.",
+          "grammar": "이유의 접속사 / to부정사",
+          "structure": "Because/Since + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Join us for the awarding of 10 new Ig Nobel Prizes The 27th Ig* Nobel Prize Ceremony Thursday, September 14, 2017 6:00 PM in Sanders Theater at Since First make one and then Winners",
+              "kor": "10명의 새로운 이그노벨상 시상식에 참여하세요. 제27회 이그* 노벨상 시상식이 2017년 9월 14일 목요일 오후 6시 샌더스 극장에서 처음으로 만들고 2017년 수상자:",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "of 2017: , Korea “How to  Your ” Laugh First and Then Think 51 [Page 51] Not only the winners’ fun studies but also the ceremony for the Ig Nobel Prizes makes people laugh.",
+              "kor": ", 한국의 \"How to Your\" Laugh First and Then Think 51 [51 페이지] 수상자들의 재미있는 연구뿐만 아니라 이그노벨상 시상식도 사람들을 웃게 만듭니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / to부정사",
+            "target_pattern": "Because/Since + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-060",
+          "english": "ceremony    a number of    keep ...",
+          "korean": "의식의 숫자 유지 ...",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "ceremony    a number",
+              "kor": "의식의 숫자",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "of    keep ...",
+              "kor": "유지 ...",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-061",
+          "english": "from    get bored    speech    repeatedly receive    trillion    worth CULTURE U.K.",
+          "korean": "지루한 말을 반복하다 보면 1000조 달러 상당의 CULTURE U.K.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "from    get bored    speech",
+              "kor": "지루한 말을 반복하다 보면",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "repeatedly receive    trillion    worth CULTURE U.K.",
+              "kor": "1000조 달러 상당의 CULTURE U.K.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-062",
+          "english": "France - Palme d’Or 3.",
+          "korean": "프랑스 - 황금종려상 3.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "France -",
+              "kor": "프랑스 -",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Palme d’Or 3.",
+              "kor": "황금종려상 3.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-063",
+          "english": "USA - the Fields Medal the top award in the field of mathematics the award for the best and funniest books for children the highest prize at the Cannes Film Festival interesting awards 52 Lesson 3 [Page 52] The Ig Nobel Prize ceremony ends with the words, “If you didn’t win a prize – and if you did – better luck next year!” The winners do not receive lots of money .",
+          "korean": "미국 - 필즈상 수학 분야 최고의 상 어린이를 위한 가장 재미있고 재미있는 책에 대한 상 칸 영화제에서 최고상 흥미로운 상 52 Lesson 3 [Page 52] 이그노벨상 시상식은 \"만약 상을 받지 못하셨다면 - 그리고 받으셨다면 - 내년에 더 나은 행운을 빕니다!\"라는 말로 끝납니다. 승자는 많은 돈을 받지 않습니다.",
+          "grammar": "조건의 접속사 / 현재분사/동명사",
+          "structure": "If/Unless + S + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "USA - the Fields Medal the top award in the field of mathematics the award for the best and funniest books for children the highest prize at the Cannes Film Festival interesting awards 52 Lesson 3",
+              "kor": "미국 - 필즈상 수학 분야 최고의 상 어린이를 위한 가장 재미있고 재미있는 책에 대한 상 칸 영화제에서 최고상 흥미로운 상 52 Lesson 3",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "[Page 52] The Ig Nobel Prize ceremony ends with the words, “If you didn’t win a prize – and if you did – better luck next year!” The winners do not receive lots of money .",
+              "kor": "[Page 52] 이그노벨상 시상식은 \"만약 상을 받지 못하셨다면 - 그리고 받으셨다면 - 내년에 더 나은 행운을 빕니다!\"라는 말로 끝납니다. 승자는 많은 돈을 받지 않습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 현재분사/동명사",
+            "target_pattern": "If/Unless + S + V / V-ing"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L03-064",
+          "english": "And the a wards are not great honors like the Nobel Prizes.",
+          "korean": "그리고 A 병동은 노벨상처럼 큰 영예가 아닙니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "And the a wards are not",
+              "kor": "그리고 A 병동은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "great honors like the Nobel Prizes.",
+              "kor": "노벨상처럼 큰 영예가 아닙니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-065",
+          "english": "Dog and Cat Washing Machine 3.",
+          "korean": "개와 고양이 세탁기 3.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Dog and Cat",
+              "kor": "개와 고양이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Washing Machine 3.",
+              "kor": "세탁기 3.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-066",
+          "english": "Their music is great   make the fans excited.",
+          "korean": "그들의 음악은 팬들을 흥분하게 만든다.",
+          "grammar": "사역동사",
+          "structure": "make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "Their music is great",
+              "kor": "그들의 음악은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "make the fans excited.",
+              "kor": "팬들을 흥분하게 만든다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사",
+            "target_pattern": "make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-067",
+          "english": "Their fans are   to cry out.",
+          "korean": "그들의 팬들은 울부짖을 것이다.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Their fans are",
+              "kor": "그들의 팬들은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to cry out.",
+              "kor": "울부짖을 것이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-068",
+          "english": "The singer is the fl  ower.",
+          "korean": "가수는 꽃이다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "The singer is",
+              "kor": "가수는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the fl  ower.",
+              "kor": "꽃이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-069",
+          "english": "The fl  ower the woman’s face.",
+          "korean": "꽃은 여자의 얼굴이다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "The fl",
+              "kor": "꽃은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "ower the woman’s face.",
+              "kor": "여자의 얼굴이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-070",
+          "english": "A  I think Peter Pan is very brave.",
+          "korean": "A 피터팬은 정말 용감한 사람인 것 같아요.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "A  I think",
+              "kor": "A 피터팬은 정말",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Peter Pan is very brave.",
+              "kor": "용감한 사람인 것 같아요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-071",
+          "english": "B  He is not only brave but also very nice.",
+          "korean": "B 그는 용감할 뿐만 아니라 매우 친절해요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "B  He is not",
+              "kor": "B 그는 용감할",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "only brave but also very nice.",
+              "kor": "뿐만 아니라 매우 친절해요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-072",
+          "english": "Pinocchio Winnie the Pooh Peter Pan Rapunzel Ms.",
+          "korean": "피노키오 곰돌이 푸 피터팬 라푼젤 선생님",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Pinocchio Winnie the Pooh",
+              "kor": "피노키오 곰돌이 푸",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Peter Pan Rapunzel Ms.",
+              "kor": "피터팬 라푼젤 선생님",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-073",
+          "english": "Increase Your Word Power New words again!",
+          "korean": "당신의 단어력을 높이십시오. 새로운 단어를 다시 한번!",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Increase Your Word",
+              "kor": "당신의 단어력을 높이십시오.",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Power New words again!",
+              "kor": "새로운 단어를 다시 한번!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-074",
+          "english": "Your Turn ஘੺ೞѱkind sail use soft real teach invent wonder ful ness \u0001\u0001\u000f׮פTip Laugh First and Then Think 55 [Page 55] A   This is a special door.",
+          "korean": "당신의 차례 ஘੺ೞѱkind 돛을 사용하여 부드러운 진짜를 가르치고 경이로움을 발명하십시오 ׮פTip 먼저 웃고 생각하십시오 55 [Page 55] A 이것은 특별한 문입니다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Your Turn ஘੺ೞѱkind sail use soft real teach invent wonder ful ness \u0001\u0001\u000f׮פTip Laugh",
+              "kor": "당신의 차례 ஘੺ೞѱkind 돛을 사용하여 부드러운 진짜를 가르치고 경이로움을 발명하십시오",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "First and Then Think 55 [Page 55] A   This is a special door.",
+              "kor": "׮פTip 먼저 웃고 생각하십시오 55 [Page 55] A 이것은 특별한 문입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-075",
+          "english": "I hope to win a prize with this invention.",
+          "korean": "나는 이 발명품으로 상을 받기를 희망한다.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "I hope to win",
+              "kor": "나는 이 발명품으로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "a prize with this invention.",
+              "kor": "상을 받기를 희망한다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-076",
+          "english": "Express Yourself Smart Paper Holder Kind Cutting Board Healthy Door Smart Shoes Soft Controller Pizza’s Friend 56 Lesson 3 [Page 56] Self-check C\u0001ח This is the Umbrella for Coffee Lovers.",
+          "korean": "자신을 표현하세요 스마트 페이퍼 홀더 종류 도마 건강한 문 스마트 슈즈 소프트 컨트롤러 피자 친구 56 3과 [56쪽] 셀프 체크 C ח 커피 애호가를 위한 우산입니다.",
+          "grammar": "현재분사/동명사 / 비교급",
+          "structure": "V-ing / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Express Yourself Smart Paper Holder Kind Cutting Board Healthy Door Smart Shoes Soft Controller Pizza’s",
+              "kor": "자신을 표현하세요 스마트 페이퍼 홀더 종류 도마 건강한 문 스마트 슈즈 소프트 컨트롤러",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Friend 56 Lesson 3 [Page 56] Self-check C\u0001ח This is the Umbrella for Coffee Lovers.",
+              "kor": "피자 친구 56 3과 [56쪽] 셀프 체크 C ח 커피 애호가를 위한 우산입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사 / 비교급",
+            "target_pattern": "V-ing / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-077",
+          "english": "You can use it not only as an but also as a .",
+          "korean": "으로 뿐만 아니라 로도 사용할 수 있습니다.",
+          "grammar": "이유의 접속사 / 조동사",
+          "structure": "Because/Since + S + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "You can use it not only",
+              "kor": "으로 뿐만 아니라",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "as an but also as a .",
+              "kor": "로도 사용할 수 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 조동사",
+            "target_pattern": "Because/Since + S + V / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-078",
+          "english": "This invention is useful enough to make your life much easier.",
+          "korean": "이 발명은 당신의 삶을 훨씬 더 쉽게 만들어 줄 만큼 유용합니다.",
+          "grammar": "to부정사 / 비교급",
+          "structure": "to + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "This invention is useful enough",
+              "kor": "이 발명은 당신의 삶을 훨씬",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to make your life much easier.",
+              "kor": "더 쉽게 만들어 줄 만큼 유용합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 비교급",
+            "target_pattern": "to + V / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L03-079",
+          "english": "These ar e Magic Stairs.",
+          "korean": "이것은 마법의 계단입니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "These ar",
+              "kor": "이것은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "e Magic Stairs.",
+              "kor": "마법의 계단입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-080",
+          "english": "You can use them  for and down  for storing things.",
+          "korean": "물건을 보관하는 용도로 사용하거나 아래로 사용할 수 있습니다.",
+          "grammar": "조동사 / 현재분사/동명사",
+          "structure": "Modal + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "You can use them  for",
+              "kor": "물건을 보관하는 용도로 사용하거나",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and down  for storing things.",
+              "kor": "아래로 사용할 수 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사 / 현재분사/동명사",
+            "target_pattern": "Modal + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-081",
+          "english": "This invention is useful make your l ife much easier.",
+          "korean": "이 발명품은 당신의 삶을 훨씬 더 쉽게 만들어주는 데 유용합니다.",
+          "grammar": "비교급 / 사역동사",
+          "structure": "Comparative / make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "This invention is useful make",
+              "kor": "이 발명품은 당신의 삶을 훨씬",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "your l ife much easier.",
+              "kor": "더 쉽게 만들어주는 데 유용합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 / 사역동사",
+            "target_pattern": "Comparative / make/have/let + O + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L03-082",
+          "english": "With your smile, you not only make us happy but also help us get along well.",
+          "korean": "당신의 미소는 우리를 행복하게 할 뿐만 아니라 우리가 잘 지내도록 도와줍니다.",
+          "grammar": "사역동사",
+          "structure": "make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "With your smile, you not only make us",
+              "kor": "당신의 미소는 우리를 행복하게 할",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "happy but also help us get along well.",
+              "kor": "뿐만 아니라 우리가 잘 지내도록 도와줍니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사",
+            "target_pattern": "make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-083",
+          "english": "58 Lesson 3 [Page 58] famous awards More Info The Nobel Prize The Nobel Prize The Nobel Prize The\tNobel\tPrize\twas\tnamed\tafter\tAlfred Nobel,\ta\tSwedish\tscientist.",
+          "korean": "58 3과 [58 페이지] 유명한 상 추가 정보 노벨상 노벨상 노벨상 노벨상은 스웨덴 과학자 알프레드 노벨의 이름을 따서 명명되었습니다.",
+          "grammar": "시간의 접속사 / 수동태",
+          "structure": "When/While + S + V / be + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "58 Lesson 3 [Page 58] famous awards More Info The",
+              "kor": "58 3과 [58 페이지] 유명한 상 추가 정보 노벨상",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Nobel Prize The Nobel Prize The Nobel Prize The\tNobel\tPrize\twas\tnamed\tafter\tAlfred Nobel,\ta\tSwedish\tscientist.",
+              "kor": "노벨상 노벨상 노벨상은 스웨덴 과학자 알프레드 노벨의 이름을 따서 명명되었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 수동태",
+            "target_pattern": "When/While + S + V / be + p.p."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-084",
+          "english": "It\tis\tawarded\tto people\twho\thave\tdone\tgreat\twork\tfor\tthe world.",
+          "korean": "세상을 위해 위대한 일을 한 사람들에게 수여됩니다.",
+          "grammar": "수동태 / to부정사",
+          "structure": "be + p.p. / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "It\tis\tawarded\tto",
+              "kor": "세상을 위해 위대한",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "people\twho\thave\tdone\tgreat\twork\tfor\tthe world.",
+              "kor": "일을 한 사람들에게 수여됩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / to부정사",
+            "target_pattern": "be + p.p. / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-085",
+          "english": "Of\tall\tthe\twinners,\tMalala\tYousafzai is\tthe\tyoungest.",
+          "korean": "모든 우승자 중에서 말랄라 유사프자이(Malala Yousafzai)가 가장 어리다.",
+          "grammar": "최상급",
+          "structure": "Superlative",
+          "syntax_chunks": [
+            {
+              "eng": "Of\tall\tthe\twinners,\tMalala\tYousafzai",
+              "kor": "모든 우승자 중에서 말랄라",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "is\tthe\tyoungest.",
+              "kor": "유사프자이(Malala Yousafzai)가 가장 어리다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "최상급",
+            "target_pattern": "Superlative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-086",
+          "english": "She\twon\tthe\tNobel Prize\tat\tthe\tage\tof\t17\tbecause\tshe had\tfought\tfor\twomen’s\tand\tchildren’s rights.",
+          "korean": "그녀는 여성과 아동의 권리를 위해 싸웠기 때문에 17세에 노벨상을 받았습니다.",
+          "grammar": "이유의 접속사",
+          "structure": "Because/Since + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "She\twon\tthe\tNobel Prize\tat\tthe\tage\tof\t17\tbecause\tshe",
+              "kor": "그녀는 여성과 아동의 권리를 위해",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "had\tfought\tfor\twomen’s\tand\tchildren’s rights.",
+              "kor": "싸웠기 때문에 17세에 노벨상을 받았습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사",
+            "target_pattern": "Because/Since + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-087",
+          "english": "The\tCurie\tfamily\treceived\tthe\tNobel Prize\tthree\ttimes.",
+          "korean": "퀴리 가족은 세 번이나 노벨상을 받았습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "The\tCurie\tfamily\treceived\tthe\tNobel",
+              "kor": "퀴리 가족은 세",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Prize\tthree\ttimes.",
+              "kor": "번이나 노벨상을 받았습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-088",
+          "english": "Not\tonly\tMarie\tCurie Prize\tthree\ttimes.",
+          "korean": "마리 퀴리상만 세 번 수상한 것이 아니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Not\tonly\tMarie\tCurie",
+              "kor": "마리 퀴리상만 세",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Prize\tthree\ttimes.",
+              "kor": "번 수상한 것이 아니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-089",
+          "english": "Not\tonly\tMarie\tCurie but\talso\ther\tdaughter\twas\tawarded\tthe but\talso\ther\tdaughter\twas\tawarded\tthe Laugh First and Then Think 59 [Page 59] Learning Diary Words 1.",
+          "korean": "마리 퀴리뿐만 아니라 그녀의 딸도 '먼저 웃고 생각하고 59 [Page 59] 단어 학습일기 1' 부문을 수상했습니다.",
+          "grammar": "수동태 / 현재분사/동명사",
+          "structure": "be + p.p. / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Not\tonly\tMarie\tCurie but\talso\ther\tdaughter\twas\tawarded\tthe but\talso\ther\tdaughter\twas\tawarded\tthe Laugh First and Then",
+              "kor": "마리 퀴리뿐만 아니라 그녀의 딸도 '먼저 웃고 생각하고",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Think 59 [Page 59] Learning Diary Words 1.",
+              "kor": "59 [Page 59] 단어 학습일기 1' 부문을 수상했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / 현재분사/동명사",
+            "target_pattern": "be + p.p. / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-090",
+          "english": "ce Read & Write The U.K.",
+          "korean": "ce 읽기 및 쓰기 영국",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "ce Read &",
+              "kor": "ce 읽기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Write The U.K.",
+              "kor": "및 쓰기 영국",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-091",
+          "english": "“In my experience, if people don’t have a sense of , they are usually not very good scientists,” he said when he accepted his award.",
+          "korean": "“내 경험에 따르면, 감각이 없는 사람들은 대개 훌륭한 과학자가 아닙니다.”라고 그는 상을 받았을 때 말했습니다.",
+          "grammar": "조건의 접속사 / 시간의 접속사",
+          "structure": "If/Unless + S + V / When/While + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "“In my experience, if people don’t have a sense of , they",
+              "kor": "“내 경험에 따르면, 감각이 없는 사람들은 대개",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "are usually not very good scientists,” he said when he accepted his award.",
+              "kor": "훌륭한 과학자가 아닙니다.”라고 그는 상을 받았을 때 말했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 시간의 접속사",
+            "target_pattern": "If/Unless + S + V / When/While + S + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L03-092",
+          "english": "(1)   ઴\u0001஘\u0001that yearࠇ \u0001\u0001\u0001\u0001 ˃\u0001wonder   \u0001\u0001\u0001˄\u0001humor   \u0001\u0001\u0001\u0001\u0001˅\u0001sight Topic e.g.",
+          "korean": "(1) ઴ ஘ that yearࠇ ˃ wonder ˄ 유머 ˅ 광경 주제 예:",
+          "grammar": "접속사/관계대명사 that / 비교급",
+          "structure": "that + S + V / N + that / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "(1)   ઴\u0001஘\u0001that yearࠇ \u0001\u0001\u0001\u0001 ˃\u0001wonder",
+              "kor": "(1) ઴ ஘ that yearࠇ ˃",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "\u0001\u0001\u0001˄\u0001humor   \u0001\u0001\u0001\u0001\u0001˅\u0001sight Topic e.g.",
+              "kor": "wonder ˄ 유머 ˅ 광경 주제 예:",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사/관계대명사 that / 비교급",
+            "target_pattern": "that + S + V / N + that / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-093",
+          "english": "I read a joke a day and tell it to my friends every day.",
+          "korean": "나는 매일 농담을 읽고 매일 친구들에게 이야기합니다.",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "I read a joke a day and",
+              "kor": "나는 매일 농담을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "tell it to my friends every day.",
+              "kor": "읽고 매일 친구들에게 이야기합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-094",
+          "english": "Listen & Speak Q:   What is Minji going to do on the sports day?",
+          "korean": "Listen & Speak Q: 민지는 운동회에 무엇을 할 예정인가요?",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "Listen & Speak Q:   What is",
+              "kor": "Listen & Speak Q:",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Minji going to do on the sports day?",
+              "kor": "민지는 운동회에 무엇을 할 예정인가요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-095",
+          "english": "A   Soyun, are you going to take part in any races on the sports day?",
+          "korean": "A 소윤 씨는 운동회에 어떤 경주에도 참가할 건가요?",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "A   Soyun, are you going to",
+              "kor": "A 소윤 씨는 운동회에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "take part in any races on the sports day?",
+              "kor": "어떤 경주에도 참가할 건가요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-096",
+          "english": "A  Wow, B   But, Mom, I’m not sure I’ll win the race.",
+          "korean": "A 와, B 그런데 엄마, 제가 경주에서 이길 수 있을지 모르겠어요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "A  Wow, B   But,",
+              "kor": "A 와, B 그런데 엄마,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Mom, I’m not sure I’ll win the race.",
+              "kor": "제가 경주에서 이길 수 있을지 모르겠어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-097",
+          "english": "A  Just do your best.",
+          "korean": "A 그냥 최선을 다하세요.",
+          "grammar": "최상급",
+          "structure": "Superlative",
+          "syntax_chunks": [
+            {
+              "eng": "A  Just",
+              "kor": "A 그냥",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "do your best.",
+              "kor": "최선을 다하세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "최상급",
+            "target_pattern": "Superlative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-098",
+          "english": "I’m going to run a 100 meter race at the end of the day.",
+          "korean": "나는 하루가 끝나면 100미터 경주를 할 예정이다.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I’m going to run a 100 meter",
+              "kor": "나는 하루가 끝나면",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "race at the end of the day.",
+              "kor": "100미터 경주를 할 예정이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L03-099",
+          "english": "(not only / a toy car / get /  to / a toy robot / but also) My younger brother was glad (to / economic rules / enough / understand / smart) My sister is ➞   F e    l ugh d    the Adapted from IG Nobel Prizes Honor ‘Fun’ Scientific Research (Meera Dolasia, 2015) 60 Lesson 3 [Page 60] Ain’t No Mountain High Enough by Marvin Gaye & Tammi Terrell Let’s Sing Along Words Listen & Speak Read & Write Ain’t no mountain high enough Ain’t no ...",
+          "korean": "(뿐만 아니라 / 장난감 자동차 / 얻다 / ~로 / 장난감 로봇을 / 뿐만 아니라) 내 남동생은 기뻤다 (~에 / 경제 규칙 / 충분히 / 이해함 / 똑똑함) 내 여동생은 ➞ IG 노벨상 수상 '재미' 과학 연구에 대한 적응을 펠로우합니다(Meera Dolasia, 2015) 60 3과 [페이지 60] Marvin Gaye & Tammi Terrell의 Ai n't No Mountain High Enough Let's Sing Along 단어 듣기 및 말하기 읽기 및 쓰기 충분히 높은 산은 없습니다.",
+          "grammar": "현재분사/동명사 / 비교급",
+          "structure": "V-ing / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "(not only / a toy car / get /  to / a toy robot / but also) My younger brother was glad (to / economic rules / enough / understand / smart) My sister is ➞   F e    l ugh d",
+              "kor": "(뿐만 아니라 / 장난감 자동차 / 얻다 / ~로 / 장난감 로봇을 / 뿐만 아니라) 내 남동생은 기뻤다 (~에 / 경제 규칙 / 충분히 / 이해함 / 똑똑함) 내 여동생은 ➞ IG 노벨상 수상 '재미'",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the Adapted from IG Nobel Prizes Honor ‘Fun’ Scientific Research (Meera Dolasia, 2015) 60 Lesson 3 [Page 60] Ain’t No Mountain High Enough by Marvin Gaye & Tammi Terrell Let’s Sing Along Words Listen & Speak Read & Write Ain’t no mountain high enough Ain’t no ...",
+              "kor": "과학 연구에 대한 적응을 펠로우합니다(Meera Dolasia, 2015) 60 3과 [페이지 60] Marvin Gaye & Tammi Terrell의 Ai n't No Mountain High Enough Let's Sing Along 단어 듣기 및 말하기 읽기 및 쓰기 충분히 높은 산은 없습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사 / 비교급",
+            "target_pattern": "V-ing / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L03-100",
+          "english": "baby there To keep me from getting to you, baby Ain’t no river wide enough Laugh First and Then Think 61 [Page 61] Dreaming  of My  Future4 Lesson We’ll learn ....",
+          "korean": "자기야 거기 내가 너에게 닿지 못하게 하기 위해, 자기야 강은 충분히 넓지 않아 먼저 웃고 생각하라 61 [Page 61] Dreaming of My Future4 Lesson 우리는 배울 것이다 ....",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "baby there To keep me from getting to you, baby Ain’t no river wide enough Laugh",
+              "kor": "자기야 거기 내가 너에게 닿지 못하게 하기 위해, 자기야 강은 충분히 넓지 않아 먼저",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "First and Then Think 61 [Page 61] Dreaming  of My  Future4 Lesson We’ll learn ....",
+              "kor": "웃고 생각하라 61 [Page 61] Dreaming of My Future4 Lesson 우리는 배울 것이다 ....",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    "discovery",
+    "contest",
+    "ceremony",
+    "increase",
+    "interest",
+    "magnet",
+    "scientist",
+    "receive",
+    "award",
+    "talent"
+  ]
+}
