@@ -16,7 +16,7 @@ const Badge = ({ children, color = "#eef2ff", text = "#4f46e5" }) => (
 );
 
 function App() {
-    const [screen, setScreen] = useState("LOGIN");
+    const [screen, setScreen] = useState("HOME");
     const [loginStep, setLoginStep] = useState("SELECTION"); // SELECTION, TEACHER, STUDENT
     const units = CURRICULUM.units.map((u, i) => ({
         id: u.unit_id,
@@ -224,51 +224,7 @@ function App() {
         }
     };
 
-    const LoginScreen = () => (
-        <div id="screen-login">
-            <div className="login-container">
-                <div className="login-card">
-                    <h1 className="login-title">문장투시경 AIDT Pro</h1>
-                    <p className="login-subtitle">역할을 선택하고 학습을 시작하세요.</p>
 
-                    {loginStep === "SELECTION" && (
-                        <div className="role-selection">
-                            <div className="role-card" onClick={() => setLoginStep("TEACHER")}>
-                                <span className="role-icon">👨‍🏫</span>
-                                <span className="role-label">선생님</span>
-                            </div>
-                            <div className="role-card" onClick={() => setLoginStep("STUDENT")}>
-                                <span className="role-icon">👨‍🎓</span>
-                                <span className="role-label">학생</span>
-                            </div>
-                        </div>
-                    )}
-
-                    {loginStep === "TEACHER" && (
-                        <div>
-                            <input type="text" className="login-input" placeholder="교사 인증 코드" />
-                            <input type="text" className="login-input" placeholder="성명" />
-                            <button className="login-submit" onClick={() => { setIsTeacher(true); setHomeTab("UNIT_SELECT"); setScreen("HOME"); }}>확인</button>
-                            <button className="login-back-btn" onClick={() => setLoginStep("SELECTION")}>뒤로가기</button>
-                        </div>
-                    )}
-
-                    {loginStep === "STUDENT" && (
-                        <div>
-                            <div style={{display:"grid", gridTemplateColumns:"1fr 1fr", gap:"12px", marginBottom:"12px"}}>
-                                <input type="text" className="login-input" placeholder="학년" style={{marginBottom:0}} />
-                                <input type="text" className="login-input" placeholder="반" style={{marginBottom:0}} />
-                            </div>
-                            <input type="text" className="login-input" placeholder="출석 번호" />
-                            <input type="text" className="login-input" placeholder="이름" />
-                            <button className="login-submit" onClick={() => { setIsTeacher(false); setScreen("HOME"); }}>시작하기</button>
-                            <button className="login-back-btn" onClick={() => setLoginStep("SELECTION")}>뒤로가기</button>
-                        </div>
-                    )}
-                </div>
-            </div>
-        </div>
-    );
 
     const TeacherDashboard = () => (
         <div style={{ padding: "0 24px 80px", maxWidth: "1200px", margin: "0 auto" }}>
@@ -330,7 +286,6 @@ function App() {
         </div>
     );
 
-    if (screen === "LOGIN") return <LoginScreen />;
     if (screen === "DASHBOARD") return (
         <div>
             <Header sub="Teacher Desktop" isTeacher={true} />
@@ -451,7 +406,7 @@ function App() {
 
     if (screen === "HOME") return (
         <div>
-            <Header isTeacher={isTeacher} sub={isTeacher ? "김수현 교사 (3학년 1반)" : "박지훈 학생"} onBack={() => setScreen("LOGIN")} />
+            <Header isTeacher={isTeacher} sub={isTeacher ? "김수현 교사 (3학년 1반)" : "박지훈 학생"} />
             <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 24px" }}>
                 <div className="home-tabs">
                     {!isTeacher ? (
