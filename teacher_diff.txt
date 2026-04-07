@@ -1,0 +1,151 @@
+﻿diff --git a/js/pages/teacher_problem.js b/js/pages/teacher_problem.js
+index 40b3006..90e49ba 100644
+--- a/js/pages/teacher_problem.js
++++ b/js/pages/teacher_problem.js
+@@ -53,7 +53,7 @@ function App() {
+                                     </div>
+                                 </div>
+                                 <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+-                                    <button onClick={() => { setProblemDetailUnit(u); setProblemViewStage(2); }} style={{ background: "#1a3a5c", color: "white", border: "none", borderRadius: "10px", padding: "10px 18px", fontSize: "13px", fontWeight: 900, cursor: "pointer" }}>?덈Ц 異붽?</button>
++                                    <button onClick={() => { setProblemDetailUnit(u); setProblemViewStage(2); }} style={{ background: "#1a3a5c", color: "white", border: "none", borderRadius: "10px", padding: "10px 18px", fontSize: "13px", fontWeight: 900, cursor: "pointer" }}>?덈Ц ?ㅼ젙</button>
+                                     <input type="checkbox" checked={activeUnits.includes(u.id)} onChange={() => { if(activeUnits.includes(u.id)) setActiveUnits(activeUnits.filter(id=>id!==u.id)); else setActiveUnits([...activeUnits, u.id]); }} style={{ width: "20px", height: "20px", accentColor: "#4f46e5" }} />
+                                 </div>
+                             </div>
+@@ -63,24 +63,48 @@ function App() {
+                 </div>
+             );
+         } else {
++            // ?덈Ц 愿由??곸꽭 (Stage 2)
++            const [selectedSentences, setSelectedSentences] = useState(() => {
++                const saved = unitProblemSettings[`${problemDetailUnit.id}_selected`];
++                return saved ? JSON.parse(saved) : problemDetailUnit.sentences.slice(0, 3).map(s => s.id);
++            });
++
++            const toggleSentence = (id) => {
++                const newSelected = selectedSentences.includes(id) 
++                    ? selectedSentences.filter(sid => sid !== id)
++                    : [...selectedSentences, id];
++                setSelectedSentences(newSelected);
++                setUnitProblemSettings(prev => ({
++                    ...prev,
++                    [`${problemDetailUnit.id}_selected`]: JSON.stringify(newSelected)
++                }));
++            };
++
+             return (
+                 <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
+                     <button onClick={() => setProblemViewStage(1)} style={{ background: "#eef2ff", border: "none", color: "#4f46e5", padding: "10px 16px", borderRadius: "12px", fontWeight: 800, fontSize: "13px", marginBottom: "24px", cursor: "pointer" }}>&larr; ?⑥썝 紐⑸줉?쇰줈</button>
+                     <div style={{ fontSize: "22px", fontWeight: 950, marginBottom: "32px" }}>{problemDetailUnit.unit} ?덈Ц蹂??깆쭏 ?ㅼ젙</div>
+-                    {problemDetailUnit.sentences.slice(0, 3).map((s, idx) => {
+-                        const currentSettings = unitProblemSettings[problemDetailUnit.id]?.[s.id] || [];
++                    
++                    {problemDetailUnit.sentences.filter(s => selectedSentences.includes(s.id)).map((s, idx) => {
++                        // 湲곕낯媛? 泥?踰덉㎏ ?덈Ц? ?щ같?? ??踰덉㎏??鍮덉뭏, ??踰덉㎏???곸옉. 洹??댄썑??湲곕낯?쇰줈 鍮?諛곗뿴
++                        const defaultSettings = idx === 0 ? ["?щ같??] : idx === 1 ? ["鍮덉뭏 梨꾩슦湲?] : idx === 2 ? ["?곸옉"] : [];
++                        const currentSettings = unitProblemSettings[problemDetailUnit.id]?.[s.id] || defaultSettings;
++
+                         return (
+                             <div key={s.id} style={{ padding: "24px", border: "1.5px solid #f1f5f9", borderRadius: "20px", marginBottom: "20px", background: "#fcfdff" }}>
+-                                <div style={{ fontSize: "12px", color: "#94a3b8", fontWeight: 900, marginBottom: "8px" }}>?덈Ц {idx + 1}</div>
++                                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
++                                    <div style={{ fontSize: "12px", color: "#94a3b8", fontWeight: 900 }}>?덈Ц {idx + 1}</div>
++                                    <button onClick={() => toggleSentence(s.id)} style={{ background: "none", border: "none", color: "#ef4444", fontSize: "12px", fontWeight: 800, cursor: "pointer" }}>?쒓굅</button>
++                                </div>
+                                 <div style={{ fontSize: "16px", fontWeight: 800, marginBottom: "12px", color: "#1a3a5c" }}>{s.english}</div>
+                                 <div style={{ fontSize: "14px", color: "#64748b", marginBottom: "20px" }}>{s.korean}</div>
+-                                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "10px" }}>
++                                <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "10px", marginBottom: "20px" }}>
+                                     {types.map(t => (
+                                         <label key={t} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "12px 16px", border: "1.5px solid #e2e8f0", borderRadius: "12px", background: "white", fontSize: "14px", fontWeight: 900, cursor: "pointer" }}>
+                                             <input type="checkbox" checked={currentSettings.includes(t)} onChange={() => {
+                                                 setUnitProblemSettings(prev => {
+                                                     const unitData = prev[problemDetailUnit.id] || {};
+-                                                    const sData = unitData[s.id] || [];
++                                                    const sData = unitData[s.id] || defaultSettings;
+                                                     const newData = sData.includes(t) ? sData.filter(x => x !== t) : [...sData, t];
+                                                     return { ...prev, [problemDetailUnit.id]: { ...unitData, [s.id]: newData } };
+                                                 });
+@@ -89,9 +113,83 @@ function App() {
+                                         </label>
+                                     ))}
+                                 </div>
++                                
++                                {/* 誘몃━蹂닿린 諛??듭젣 ?곸뿭 */}
++                                <div style={{ display: "flex", flexDirection: "column", gap: "12px", background: "white", padding: "16px", borderRadius: "12px", border: "1px solid #cbd5e1" }}>
++                                    <div style={{ fontSize: "13px", fontWeight: 900, color: "#1e293b", marginBottom: "4px" }}>?뵩 臾몄젣 誘몃━蹂닿린 諛??ㅼ젙 (Logic 泥섎━)</div>
++                                    
++                                    {currentSettings.includes("?щ같??) && (
++                                        <div style={{ padding: "12px", background: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
++                                            <div style={{ fontSize: "12px", fontWeight: 800, color: "#4f46e5", marginBottom: "8px" }}>Step 1. ?щ같移?(援щЦ ?⑥쐞 ?뷀뵆)</div>
++                                            <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
++                                                {/* ?ㅼ젣濡쒕뒗 ?뷀뵆 寃곌낵瑜?蹂댁뿬二쇱뼱???섎?濡? ?꾩떆濡?援щЦ?ㅼ쓣 吏곸젒 ?뚮뜑留곹븯怨?援먯궗媛 蹂????덇쾶 ??*/}
++                                                {(s.syntax_chunks || []).map((chunk, cIdx) => (
++                                                    <div key={cIdx} style={{ padding: "6px 12px", background: "white", border: "1px solid #cbd5e1", borderRadius: "6px", fontSize: "13px", fontWeight: 800, cursor: "move" }}>
++                                                        {chunk.eng}
++                                                    </div>
++                                                ))}
++                                            </div>
++                                            <div style={{ fontSize: "11px", color: "#64748b", marginTop: "8px" }}>* ?숈깮?ㅼ씠 蹂닿쾶 ???뷀뵆??泥?겕?낅땲?? ?뚯뼱???뷀뵆 ?쒖꽌瑜??듭젣?????덉뒿?덈떎.</div>
++                                        </div>
++                                    )}
++
++                                    {currentSettings.includes("鍮덉뭏 梨꾩슦湲?) && (() => {
++                                        let blanked = s.english;
++                                        const engKeywords = s.grammar.match(/[a-zA-Z]+/g);
++                                        if (engKeywords) {
++                                            engKeywords.forEach(kw => {
++                                                blanked = blanked.replace(new RegExp(`\\b${kw}\\b`, 'gi'), '_____');
++                                            });
++                                        } else {
++                                            const verbChunk = (s.syntax_chunks || []).find(c => c.role === 'Verb');
++                                            if (verbChunk) {
++                                                blanked = blanked.replace(verbChunk.eng, '_____');
++                                            } else {
++                                                blanked = blanked.replace(/ /g, ' _____ '); // fallback
++                                            }
++                                        }
++                                        return (
++                                            <div style={{ padding: "12px", background: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
++                                                <div style={{ fontSize: "12px", fontWeight: 800, color: "#4f46e5", marginBottom: "8px" }}>Step 2. 鍮덉뭏 (Grammar 湲곕컲 移섑솚)</div>
++                                                <div style={{ fontSize: "14px", fontWeight: 700, color: "#334155", letterSpacing: "0.5px" }}>{blanked}</div>
++                                                <div style={{ fontSize: "11px", color: "#64748b", marginTop: "8px" }}>* 臾몃쾿紐?{s.grammar})??湲곕컲?쇰줈 ?ㅼ썙?쒓? 釉붾씪?몃뱶 泥섎━?섏뿀?듬땲??</div>
++                                            </div>
++                                        );
++                                    })()}
++
++                                    {currentSettings.includes("?곸옉") && (
++                                        <div style={{ padding: "12px", background: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
++                                            <div style={{ fontSize: "12px", fontWeight: 800, color: "#4f46e5", marginBottom: "8px" }}>Step 3. ?곸옉 (?꾩껜 ?낅젰 諛??ㅼ썙???쇱튂 ?뺤씤)</div>
++                                            <div style={{ fontSize: "13px", color: "#334155", marginBottom: "6px" }}><strong>臾몄젣:</strong> {s.korean}</div>
++                                            <div style={{ fontSize: "13px", color: "#16a34a" }}><strong>?뺣떟 湲곗?:</strong> {s.english}</div>
++                                            <div style={{ fontSize: "11px", color: "#64748b", marginTop: "8px" }}>* ?숈깮???꾩껜 臾몄옣???낅젰?섎㈃, 二쇱슂 ?ㅼ썙???쇱튂 ?щ?瑜?湲곕컲?쇰줈 梨꾩젏?⑸땲??</div>
++                                        </div>
++                                    )}
++                                    
++                                    {currentSettings.length === 0 && (
++                                        <div style={{ fontSize: "12px", color: "#94a3b8", fontStyle: "italic" }}>?좏깮??臾몄젣 ?좏삎???놁뒿?덈떎.</div>
++                                    )}
++                                </div>
+                             </div>
+                         );
+                     })}
++
++                    {/* 異붽? ?덈Ц ?좏깮 ?곸뿭 */}
++                    {problemDetailUnit.sentences.filter(s => !selectedSentences.includes(s.id)).length > 0 && (
++                        <div style={{ marginTop: "40px", borderTop: "1.5px dashed #e2e8f0", paddingTop: "32px" }}>
++                            <div style={{ fontSize: "15px", fontWeight: 900, color: "#4f46e5", marginBottom: "16px" }}>+ ?⑥썝 ???덈Ц 異붽??섍린</div>
++                            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
++                                {problemDetailUnit.sentences.filter(s => !selectedSentences.includes(s.id)).map(s => (
++                                    <div key={s.id} onClick={() => toggleSentence(s.id)} style={{ padding: "16px 20px", border: "1.5px solid #f1f5f9", borderRadius: "12px", cursor: "pointer", background: "white", display: "flex", justifyContent: "space-between", alignItems: "center", transition: "all 0.2s" }} onMouseEnter={e => e.currentTarget.style.borderColor = "#4f46e5"} onMouseLeave={e => e.currentTarget.style.borderColor = "#f1f5f9"}>
++                                        <div style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1, marginRight: "20px" }}>
++                                            <span style={{ fontWeight: 800, color: "#1e293b", fontSize: "14px" }}>{s.english}</span>
++                                        </div>
++                                        <div style={{ color: "#4f46e5", fontWeight: 900, fontSize: "13px" }}>異붽? +</div>
++                                    </div>
++                                ))}
++                            </div>
++                        </div>
++                    )}
+                 </div>
+             );
+         }
