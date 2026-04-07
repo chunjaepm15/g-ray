@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>문장투시경 v12-2 — 천재교육 AIDT</title>
+  <link rel="stylesheet" href="../../css/main.css">
+  <link rel="stylesheet" href="css/local.css">
+  <style>
+    :root {
+      --bg-common: #F9FAFB;
+      --bg-card: #FFFFFF;
+      --text-primary: #101828;
+      --text-secondary: #475467;
+      --border-common: #EAECF0;
+      --pri: #2E90FA;
+      --pri-d: #1570EF;
+      --ng: #F04438;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-common: #101828;
+        --bg-card: #1D2939;
+        --text-primary: #F9FAFB;
+        --text-secondary: #98A2B3;
+        --border-common: #344054;
+      }
+    }
+
+    body {
+      background: var(--bg-common) !important;
+      color: var(--text-primary) !important;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .card {
+      background: var(--bg-card) !important;
+      border: 1px solid var(--border-common) !important;
+      color: var(--text-primary) !important;
+    }
+
+    .btn-primary,
+    .btn-sec,
+    .btn-acc,
+    .util-btn,
+    .gnb-btn,
+    .qa-btn {
+      margin: 5px !important;
+      padding: 14px 24px !important;
+      font-size: 16px !important;
+      border-radius: 12px !important;
+    }
+
+    .stage-tab {
+      padding: 16px 24px !important;
+      font-size: 15px !important;
+    }
+
+    /* ════ LOGIN SCREEN STYLES (Exclusive Full Screen Overlay) ════ */
+    body.login-active > .shell { display: none !important; }
+    body.login-active #screen-login { display: flex !important; pointer-events: auto !important; opacity: 1 !important; visibility: visible !important; }
+    
+    #screen-login {
+      position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      z-index: 99999; display: none; align-items: center; justify-content: center;
+      transition: opacity 0.4s ease;
+    }
+    .login-container { width: 100%; max-width: 480px; padding: 20px; }
+    .login-card {
+      background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 24px;
+      padding: 40px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .login-title { font-size: 28px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 8px; }
+    .login-subtitle { font-size: 14px; color: #94A3B8; text-align: center; margin-bottom: 32px; }
+    
+    .role-selection { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
+    .role-card {
+      background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px; padding: 24px; text-align: center; cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .role-card:hover { transform: translateY(-4px); background: rgba(255, 255, 255, 0.08); border-color: var(--pri); }
+    .role-icon { font-size: 40px; margin-bottom: 12px; display: block; }
+    .role-label { font-weight: 700; color: #fff; font-size: 16px; }
+
+    .login-form-view { display: none; }
+    .login-input {
+      width: 100%; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px; padding: 14px 16px; color: #fff; font-size: 15px; margin-bottom: 16px;
+    }
+    .login-submit {
+      width: 100%; background: var(--pri); color: #fff; border: none; border-radius: 12px;
+      padding: 16px; font-size: 16px; font-weight: 700; cursor: pointer;
+      transition: background 0.2s; margin-top: 8px;
+    }
+    .login-back-btn {
+      width: 100%; background: transparent; color: #94A3B8; border: none; padding: 12px;
+      margin-top: 8px; cursor: pointer; font-size: 14px;
+    }
+  </style>
+
+  <script>
+    function showLoginForm(role) {
+      document.getElementById('view-selection').style.display = 'none';
+      const form = document.getElementById(role === 'teacher' ? 'view-teacher' : 'view-student');
+      if (form) form.style.display = 'block';
+    }
+    function backToLoginSelection() {
+      document.getElementById('view-selection').style.display = 'block';
+      document.getElementById('view-teacher').style.display = 'none';
+      document.getElementById('view-student').style.display = 'none';
+    }
+    function performFinalLogin(role) {
+      console.log("LOGIN_FINAL Triggered:", role);
+      document.body.classList.remove('login-active');
+      const loginOverlay = document.getElementById('screen-login');
+      if (loginOverlay) {
+          loginOverlay.style.opacity = '0';
+          setTimeout(() => { loginOverlay.style.display = 'none'; }, 400);
+      }
+      
+      // CALL ORIGINAL APP.JS LOGIC
+      if (typeof window.setMode === 'function') {
+        window.setMode(role);
+      }
+    }
+  </script>
+  <!-- Chart.js for Teacher Analytics -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body class="login-active">
+
+  <!-- ════════ LOGIN OVERLAY (Full Screen, Pre-Shell) ════════ -->
+  <section id="screen-login">
+    <div class="login-container">
+      <div class="login-card">
+        <h1 class="login-title">문장투시경 AIDT Pro</h1>
+        <p class="login-subtitle">역할을 선택하고 학습을 시작하세요.</p>
+
+        <!-- Step 1: Selection -->
+        <div id="view-selection">
+          <div class="role-selection">
+            <div class="role-card" onclick="showLoginForm('teacher')">
+              <span class="role-icon">👨‍🏫</span>
+              <span class="role-label">선생님</span>
+            </div>
+            <div class="role-card" onclick="showLoginForm('student')">
+              <span class="role-icon">👨‍🎓</span>
+              <span class="role-label">학생</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Teacher -->
+        <div id="view-teacher" class="login-form-view">
+          <input type="text" class="login-input" placeholder="교사 인증 코드">
+          <input type="text" class="login-input" placeholder="성명">
+          <button class="login-submit" onclick="performFinalLogin('teacher')">로그인 확인</button>
+          <button class="login-back-btn" onclick="backToLoginSelection()">뒤로가기</button>
+        </div>
+
+        <!-- Step 2: Student -->
+        <div id="view-student" class="login-form-view">
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px;">
+            <input type="text" class="login-input" placeholder="학년" style="margin-bottom:0">
+            <input type="text" class="login-input" placeholder="반" style="margin-bottom:0">
+          </div>
+          <input type="text" class="login-input" placeholder="출석 번호">
+          <input type="text" class="login-input" placeholder="이름">
+          <input type="email" class="login-input" placeholder="메일 주소">
+          <input type="password" class="login-input" placeholder="비밀번호 (6자리 생년월일)">
+          <button class="login-submit" onclick="performFinalLogin('student')">학습 시작하기</button>
+          <button class="login-back-btn" onclick="backToLoginSelection()">뒤로가기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="shell">
+    <!-- ════════ HEADER ════════ -->
+    <header class="hd">
+      <div class="logo-mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+          <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+        </svg>
+      </div>
+      <div class="logo-text">문장투시경 <span>AIDT Grammar Pro v12-2</span></div>
+
+      <div class="hd-mode">
+        <button class="mode-btn on" data-mode="teacher" onclick="setMode('teacher')">교사용</button>
+        <button class="mode-btn" data-mode="student" onclick="setMode('student')">학생용</button>
+      </div>
+      <div class="hd-unit-info teacher-only" style="margin-left:20px; font-size:13px; color:#667085;">
+        <b>3학년 1반</b> <span style="margin:0 8px;">|</span> 3월 31일
+      </div>
+    </header>
+
+    <!-- ════════ SIDE RAIL ════════ -->
+    <nav class="rail">
+      <div class="teacher-only">
+        <button class="rail-btn active" data-screen="dashboard" onclick="goScreen('dashboard')">
+          <span class="rail-icon">🏠</span>
+          <span class="rail-label">홈</span>
+        </button>
+        <button class="rail-btn" data-screen="create-lesson" onclick="goScreen('create-lesson')">
+          <span class="rail-icon">➕</span>
+          <span class="rail-label">수업</span>
+        </button>
+        <button class="rail-btn" data-screen="class-mgmt" onclick="goScreen('class-mgmt')">
+          <span class="rail-icon">📋</span>
+          <span class="rail-label">반관리</span>
+        </button>
+      </div>
+
+      <div class="student-only">
+        <button class="rail-btn" data-screen="dashboard" onclick="goScreen('dashboard')">
+          <span class="rail-icon">🏠</span>
+          <span class="rail-label">홈</span>
+        </button>
+        <button class="rail-btn" data-screen="learn" onclick="goScreen('learn')">
+          <span class="rail-icon">📖</span>
+          <span class="rail-label">학습</span>
+        </button>
+        <button class="rail-btn" data-screen="wrong" onclick="goScreen('wrong')">
+          <span class="rail-icon">✍️</span>
+          <span class="rail-label">오답노트</span>
+        </button>
+        <!-- Top Nav: Right (Status & Switches) -->
+        <div class="tn-rt">
+          <div class="class-label">3학년 1반</div>
+          <div class="mode-switch">
+            <button class="mode-btn on" id="mode-teacher" onclick="setMode('teacher')">교사용</button>
+            <button class="mode-btn" id="mode-student" onclick="setMode('student')">학생용</button>
+          </div>
+        </div>
+    </nav>
+
+    <!-- ════════ SIDEBAR ════════ -->
+    <aside class="sb">
+      <div class="sb-hd">
+        <h3 style="font-size:11px; color:#667085; text-transform:uppercase; margin-bottom:8px;">단원 리스트</h3>
+        <input type="text" class="sb-search" id="sb-search" placeholder="단원 검색...">
+      </div>
+      <div class="unit-list" id="unit-list">
+        <!-- Generated via JS: Accordion Unit List -->
+      </div>
+    </aside>
+
+    <!-- ════════ MAIN CONTENT ════════ -->
+    <main class="mn">
+
+      <!-- STUDENT HOME SCREEN -->
+      <section id="screen-student-home" class="screen student-only">
+        <div class="page-hd">
+          <div class="card"
+            style="background:var(--pri-d); color:#fff; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <h2 style="font-size:18px;">박지훈 학생 - 3학년 2반</h2>
+              <p style="font-size:13px; opacity:0.8;">현재 진행 단원: Step 05 · not only~but also</p>
+            </div>
+            <div class="badge-diff diff-low" style="background:rgba(255,255,255,0.2); color:#fff;">진행률 82%</div>
+          </div>
+        </div>
+
+        <div class="grid2" style="margin-top:24px;">
+          <div class="card" style="text-align:center; cursor:pointer;" onclick="resumeLastLesson()">
+            <div style="font-size:32px; margin-bottom:12px;">▶️</div>
+            <h3 class="card-title">지난 수업 이어서 하기</h3>
+            <p class="page-desc">Step 05. not only ~ but also</p>
+          </div>
+          <div class="card" style="text-align:center; cursor:pointer;" onclick="reviewLastLesson()">
+            <div style="font-size:32px; margin-bottom:12px;">⏪</div>
+            <h3 class="card-title">지난 수업 복습하기</h3>
+            <p class="page-desc">Step 04. 이전에 끝낸 수업</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 1. TEACHER DASHBOARD (New Requirements) -->
+      <section id="screen-dashboard" class="screen on teacher-only">
+        <div class="dashboard-top" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:24px;">
+          <!-- Announcement Module -->
+          <div class="card" style="display:flex; flex-direction:column; gap:16px;">
+            <div class="card-hd">
+              <h3 class="card-title">📢 공지 작성</h3>
+            </div>
+            <textarea
+              style="width:100%; height:100px; padding:12px; border:1px solid var(--border-common); border-radius:8px;"
+              placeholder="학급 공지사항을 입력하세요..."></textarea>
+            <button class="btn-primary" style="width:fit-content;" onclick="showToast('공지가 등록되었습니다.')">공지 등록</button>
+          </div>
+          <!-- G-ray AI Analyzer Module -->
+          <div class="card" style="display:flex; flex-direction:column; gap:16px;">
+            <div class="card-hd">
+              <h3 class="card-title">🤖 G-ray 텍스트 분석</h3>
+            </div>
+            <p class="page-desc">외부 지문을 AI로 분석하고 난이도를 측정합니다.</p>
+            <div style="flex:1"></div>
+            <button class="btn-acc" style="width:100%;" onclick="openModal('analyzer-modal')">분석기 시작</button>
+          </div>
+        </div>
+
+        <div class="quick-actions" style="margin-bottom:24px;">
+          <button class="qa-btn" onclick="goScreen('create-lesson')"><span class="qa-icon">✏️</span><span
+              class="qa-label">수업 생성</span><span class="qa-desc">17개 단원 중 선택</span></button>
+          <button class="qa-btn" onclick="openModal('assignment-modal')"><span class="qa-icon">📤</span><span
+              class="qa-label">과제 배정</span><span class="qa-desc">클래스/개인 배정</span></button>
+          <button class="qa-btn"><span class="qa-icon">📊</span><span class="qa-label">반 분석</span><span
+              class="qa-desc">성취 현황 확인</span></button>
+          <button class="qa-btn"><span class="qa-icon">📋</span><span class="qa-label">오답 관리</span><span
+              class="qa-desc">유형별 복습 배정</span></button>
+        </div>
+
+        <div class="dashboard-grid">
+          <div class="card">
+            <div class="stat-value">78%</div>
+            <div class="stat-label">이번 주 평균 완료율</div>
+            <div class="stat-delta delta-up">▲ 5% vs 지난주</div>
+          </div>
+          <div class="card">
+            <div class="stat-value">64%</div>
+            <div class="stat-label">직접쓰기 정답률</div>
+            <div class="stat-delta">— 전주 동일</div>
+          </div>
+          <div class="card">
+            <div class="stat-value">3</div>
+            <div class="stat-label">이번 주 배정 수업</div>
+            <div class="stat-delta">2/3 진행 완료</div>
+          </div>
+          <div class="card">
+            <div class="stat-value" style="color:var(--ng)">7</div>
+            <div class="stat-label">보충 필요 학생</div>
+            <div class="stat-delta delta-dn">▼ 2 vs 지난주</div>
+          </div>
+        </div>
+
+        <div class="bottom-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:24px;">
+          <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <h3 class="card-title">📚 진행 중 수업</h3>
+              <span style="font-size:12px; color:var(--pri); cursor:pointer;">+ 새 수업</span>
+            </div>
+            <div class="lesson-item" style="padding:12px; border-bottom:1px solid #EAECF0;">
+              <b>3학년 2반</b> · Step 07 · 간접의문문 <span class="badge diff-mid" style="float:right;">82% 진행</span>
+            </div>
+            <div class="lesson-item" style="padding:12px; border-bottom:1px solid #EAECF0;">
+              <b>3학년 2반</b> · Step 05 · not only~but also <span class="badge diff-low" style="float:right;">100%
+                완료</span>
+            </div>
+            <div class="lesson-item" style="padding:12px;">
+              <b>3학년 1반</b> · Step 08 · 관계대명사 what <span class="badge diff-high" style="float:right;">34% 진행</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3 class="card-title" style="margin-bottom:16px;">🕐 최근 활동</h3>
+            <div class="activity-item" style="font-size:13px; margin-bottom:12px;">
+              <div style="display:flex; justify-content:space-between;"><b>김민준</b> <span
+                  style="font-size:11px; color:#667085;">14분 전</span></div>
+              <div>Step 07 모든 단계 완료 후 제출</div>
+            </div>
+            <div class="activity-item" style="font-size:13px; margin-bottom:12px;">
+              <div style="display:flex; justify-content:space-between;"><b>이서연</b> <span
+                  style="font-size:11px; color:#667085;">32분 전</span></div>
+              <div>3단계(빈칸)에서 오답 누적 3개</div>
+            </div>
+            <div class="activity-item" style="font-size:13px;">
+              <div style="display:flex; justify-content:space-between;"><b>박도윤</b> <span
+                  style="font-size:11px; color:#667085;">1시간 전</span></div>
+              <div style="color:var(--ng)">직접쓰기 3회 연속 오답 감지!</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. STUDENT LEARNING SCREEN (Complex 5-Stage Interation) -->
+      <section id="screen-learn" class="screen">
+        <div id="learning-header"
+          style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+          <div>
+            <h1 class="page-title" id="learn-title-display">not only ~ but also</h1>
+            <p class="page-desc">문장 구조를 색상으로 분해하고 단계를 높여가며 체화합니다.</p>
+          </div>
+          <div style="text-align:right;">
+            <div class="badge-diff diff-mid">⬤ 중급</div>
+            <div style="font-size:12px; color:var(--mute); margin-top:4px;">문장 4 / 15</div>
+          </div>
+        </div>
+
+        <!-- Stage Tabs (Scaffolding) -->
+        <div class="stage-tabs" style="display:flex; gap:8px; margin-bottom:24px;">
+          <div class="stage-tab on" id="stab-0" onclick="goStage(0)">0단계 읽기</div>
+          <div class="stage-tab locked" id="stab-1" onclick="goStage(1)">1단계 자르기 🔒</div>
+          <div class="stage-tab locked" id="stab-2" onclick="goStage(2)">2단계 재배열 🔒</div>
+          <div class="stage-tab locked" id="stab-3" onclick="goStage(3)">3단계 빈칸 🔒</div>
+          <div class="stage-tab locked" id="stab-4" onclick="goStage(4)">4단계 직접쓰기 🔒</div>
+        </div>
+
+        <!-- STAGE 0: X-RAY READING -->
+        <div class="stage-pane" id="pane-0">
+          <div class="card learn-view">
+            <div class="sent-box x-ray">
+              <div class="sent-en" id="xray-en"></div>
+              <div class="sent-ko" id="xray-ko"></div>
+            </div>
+
+            <div id="structure-labels" style="display:flex; justify-content:center; gap:12px; margin-top:16px;">
+              <!-- Generated via JS: [ 주어 S ] → [ 동사 V ] ... -->
+            </div>
+
+            <div id="hint-action" class="student-only" style="margin-top:24px; text-align:center;">
+              <button class="btn-primary" onclick="openDiagQuiz()">🎯 0단계 진단평가 시작 →</button>
+            </div>
+          </div>
+
+          <div class="grid2" style="margin-top:24px;">
+            <div class="card">
+              <div class="card-hd">
+                <h3 class="card-title">🗂 문장 구조 분석</h3>
+              </div>
+              <div id="analysis-point" style="font-size:14px; line-height:1.6;">목표 문법: <span id="gram-target"
+                  class="badge-pri"></span></div>
+              <div id="analysis-structure"
+                style="margin-top:12px; padding:12px; background:#F9FAFB; border-radius:8px; font-family:monospace;">
+                S + V + not only A but also B
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-hd">
+                <h3 class="card-title">📌 이 Step 메모</h3>
+              </div>
+              <textarea style="width:100%; height:80px; border:1px solid #EAECF0; padding:8px;"
+                placeholder="학습하며 기억할 점을 적으세요..."></textarea>
+              <div style="font-size:11px; color:var(--mute); margin-top:4px;">✓ 자동 저장됨</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 1: CHOPPING -->
+        <div class="stage-pane" id="pane-1" style="display:none;">
+          <div class="card">
+            <div class="card-hd">
+              <h3 class="card-title">✂️ 문장 자르기</h3>
+              <p class="page-desc">단어 사이 | 를 클릭해 성분을 나누세요.</p>
+            </div>
+            <div id="chop-wrap" class="chop-container" style="font-size:24px; padding:40px; text-align:center;"></div>
+            <div style="text-align:center; margin-top:20px;">
+              <button class="btn-primary" onclick="checkChop()">나누기 확인</button>
+              <button class="btn-acc hint-glow" onclick="showProgressiveHint()">💡 힌트 보기</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 2: REARRANGE -->
+        <div class="stage-pane" id="pane-2" style="display:none;">
+          <div class="card">
+            <div class="card-hd">
+              <h3 class="card-title">🧩 문장 재배열</h3>
+            </div>
+            <div id="rear-drop"
+              style="min-height:80px; border:2px dashed #EAECF0; padding:20px; display:flex; flex-wrap:wrap; gap:8px;">
+            </div>
+            <div id="rear-bank" style="margin-top:24px; display:flex; flex-wrap:wrap; gap:8px;"></div>
+            <div style="text-align:center; margin-top:40px;">
+              <button class="btn-primary" onclick="checkRear()">어순 확인</button>
+              <button class="btn-acc hint-glow" onclick="showProgressiveHint()">💡 힌트 보기</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 3: BLANK -->
+        <div class="stage-pane" id="pane-3" style="display:none;">
+          <div class="card">
+            <div class="card-hd">
+              <h3 class="card-title">📝 빈칸 채우기</h3>
+            </div>
+            <div id="blank-question" style="font-size:20px; padding:40px; text-align:center;"></div>
+            <div style="text-align:center; margin-top:20px;">
+              <button class="btn-primary" onclick="checkBlank()">정답 확인</button>
+              <button class="btn-acc hint-glow" onclick="showProgressiveHint()">💡 힌트 보기</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- STAGE 4: WRITING -->
+        <div class="stage-pane" id="pane-4" style="display:none;">
+          <div class="card">
+            <div class="card-hd">
+              <h3 class="card-title">✍️ 전체 영작</h3>
+              <p id="write-ko-target" style="font-weight:700;"></p>
+            </div>
+            <textarea id="write-input" style="width:100%; height:120px; font-size:18px; padding:16px;"
+              placeholder="영어 문장을 입력하세요..."></textarea>
+            <div style="text-align:center; margin-top:20px;">
+              <button class="btn-primary" onclick="checkWrite()">완료 확인</button>
+              <button class="btn-acc hint-glow" onclick="showProgressiveHint()">💡 힌트 보기</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- 3. CREATE LESSON SCREEN (Placeholder for GNB navigation) -->
+      <section id="screen-create-lesson" class="screen teacher-only">
+        <div class="page-hd">
+          <h1 class="page-title">수업 생성 및 관리</h1>
+          <p class="page-desc">학생들에게 배정할 수업 콘텐츠를 구성합니다.</p>
+        </div>
+        <div class="card">
+          <button class="btn-primary" onclick="openModal('lesson-create-modal')">➕ 새 수업 만들기</button>
+          <div
+            style="margin-top:24px; color:#667085; text-align:center; padding:40px; border:1px dashed #EAECF0; border-radius:12px;">
+            생성된 수업이 없습니다. 단원을 선택하여 수업을 만들어주세요.
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. CLASS MGMT SCREEN -->
+      <section id="screen-class-mgmt" class="screen teacher-only">
+        <div class="page-hd">
+          <h1 class="page-title">반 관리</h1>
+          <p class="page-desc">학급 학생 명단 및 학습 진도를 관리합니다.</p>
+        </div>
+        <div class="card">
+          <p>3학년 1반 (현재 24명 참여 중)</p>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Bottom Utility Bar (White) -->
+    <footer class="util-bar">
+      <div class="util-lt">
+        <div class="util-timer" id="util-timer">05:00</div>
+        <div class="util-clock" id="util-clock">00:00:00</div>
+      </div>
+
+      <div class="util-rt">
+        <!-- Teacher Only Utils -->
+        <div class="teacher-only" style="display:flex; gap:12px;">
+          <button class="util-btn" onclick="toggleBeamMode()">📽️ 빔 모드</button>
+          <button class="util-btn" onclick="showToast('랜덤 뽑기 기능을 실행합니다.')">🎲 랜덤뽑기</button>
+          <button class="util-btn" onclick="showToast('교사 메모장을 엽니다.')">📝 교사메모</button>
+          <button class="util-btn" onclick="openModal('analyzer-modal')">🔬 G-ray 분석</button>
+          <button class="util-btn" id="timer-btn-teacher" onclick="toggleTimer()">⏱ 타이머 시작</button>
+        </div>
+        <!-- Student Only Utils -->
+        <div class="student-only" style="display:none;">
+          <button class="util-btn" id="timer-btn" onclick="toggleTimer()">⏱ 타이머 시작</button>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ════ MODALS (Closed by Click Outside or X) ════ -->
+    <!-- Lesson Create Modal -->
+    <div class="modal-overlay" id="lesson-create-modal"
+      style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:5000; align-items:center; justify-content:center;">
+      <div class="card" style="width:600px; max-height:80vh; display:flex; flex-direction:column;">
+        <div class="card-hd">
+          <h3 class="card-title">✨ 수업 생성 - 단원 선택</h3>
+          <button style="border:none; background:none; cursor:pointer;"
+            onclick="this.closest('.modal-overlay').style.display='none'">✕</button>
+        </div>
+        <p class="page-desc">수업에 포함할 단원을 선택하세요. (순서 변경 가능)</p>
+
+        <div class="modal-content-scroller" id="lesson-unit-select">
+          <!-- Generated via JS -->
+        </div>
+
+        <div style="display:flex; gap:12px; margin-top:16px;">
+          <button class="btn-primary" style="flex:1" onclick="createLessonFromSelected()">수업 생성 완료</button>
+          <button class="btn-sec" style="flex:1"
+            onclick="this.closest('.modal-overlay').style.display='none'">취소</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diagnostic Quiz Modal (3-Choice) -->
+    <div class="modal-overlay" id="diag-quiz-modal"
+      style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:6000; align-items:center; justify-content:center;">
+      <div class="card" style="width:480px; text-align:center; padding:32px;">
+        <div class="card-hd">
+          <h3 style="font-size:20px;">🎯 0단계 진단평가</h3>
+        </div>
+        <p id="diag-q-text" style="font-size:18px; margin:24px 0; font-weight:600; line-height:1.6;"></p>
+        <div id="diag-options" style="display:flex; flex-direction:column; gap:12px;">
+          <!-- 3 choices generated via JS -->
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-overlay" id="memo-modal"
+      style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; z-index:5000; align-items:center; justify-content:center;">
+      <div class="card" style="width:400px;">
+        <div class="card-hd">
+          <h3 class="card-title">📝 교사 메모</h3><button style="border:none; background:none; cursor:pointer;"
+            onclick="this.closest('.modal-overlay').style.display='none'">✕</button>
+        </div>
+        <textarea class="sb-search" style="width:100%; height:100px; margin:16px 0;"
+          placeholder="자유롭게 기록하세요..."></textarea>
+        <p style="font-size:12px; color:#667085;">자동 저장됨 ✓</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Global Toast -->
+  <div id="global-toast" class="toast">메시지</div>
+
+  <!-- SCRIPTS -->
+  <script src="js/curriculum_data.js"></script>
+  <script src="js/textbook_data.js"></script>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Beam Mode Exit Button -->
+  <button id="beam-exit-btn" onclick="toggleBeamMode()"
+    style="display:none; position:fixed; top:20px; right:20px; z-index:10000; background:rgba(255,255,255,0.2); border:none; border-radius:50%; width:50px; height:50px; color:#fff; font-size:24px; cursor:pointer;">✕</button>
