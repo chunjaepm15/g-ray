@@ -281,10 +281,10 @@
                         setShowHint(false); // 처음 틀렸을 때는 힌트 박스 숨김
                     } else if (nextTries >= 2) {
                         setActivityStatus("WRONG_2");
-                        // 3초 후 정답 화면으로 자동 이동
+                        setDragRange({ start: answerRange.start, end: answerRange.end }); // 정답 범위 강제 표시
                         setTimeout(() => {
                             setScreen("RESULT");
-                        }, 3000);
+                        }, 3500);
                     }
                     return nextTries;
                 });
@@ -329,11 +329,20 @@
                     setQStatus("SUCCESS");
                 } else {
                     setQStatus("WRONG");
-                    if (nextTries >= 2) {
+                    if (nextTries >= 2) 
+                        // 2번 틀리면 답안 공개
+                        if (qIndex === 0) {
+                            setReorderAnswer(currentSentence.english.split(' '));
+                            setReorderPool([]);
+                        } else if (qIndex === 1) {
+                            setSelectedOption(q2CorrectOptionIndex);
+                        } else if (qIndex === 2) {
+                            setWriteAnswer(currentSentence.english);
+                        }
                         // 2회 오답 시 3초 후 다음 화면으로 자동 이동
                         setTimeout(() => {
                             nextAction();
-                        }, 3000);
+                        }, 3500);
                     }
                 }
             };
@@ -734,9 +743,16 @@
 
                             <div style={{ minHeight: "60px" }}>
                                 {tries === 1 && <div style={{ background: "#fef2f2", borderRadius: 14, padding: "18px", marginBottom: 16, textAlign: "center", color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>❌ 아쉽네요. 다시 한번 찾아볼까요?</div>}
-                                {tries >= 2 && <div style={{ background: "#fef2f2", borderRadius: 14, padding: "18px", marginBottom: 16, textAlign: "center", color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>❌ 아쉽네요. 정답을 확인해볼까요?</div>}
+                                {tries >= 2 && (
+                                    <>
+                                        <div style={{ background: "#fef2f2", borderRadius: 14, padding: "18px", marginBottom: 16, textAlign: "center", color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>❌ 아쉽네요! 정답을 공개합니다.</div>
+                                        <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "20px", color: "#92400e", fontSize: 15, marginBottom: 16 }}>
+                                            💡 <strong>오답 가이드</strong>: '{selectedUnit.title}'의 핵심은 정답에 해당하는 구문(chunk) 전체를 하나의 의미 마디로 포착하는 것입니다. ({hintText})
+                                        </div>
+                                    </>
+                                )}
                                 
-                                {tries > 0 && !showHint && (
+                                {tries === 1 && !showHint && (
                                     <div style={{ textAlign: "center", marginBottom: 16 }}>
                                         <button 
                                             onClick={() => setShowHint(true)}
@@ -746,7 +762,7 @@
                                         </button>
                                     </div>
                                 )}
-                                {showHint && <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "24px", color: "#92400e", fontSize: 15, lineHeight: 1.6 }}>💡 <strong>힌트</strong>: {hintText}</div>}
+                                {showHint && tries <= 1 && <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "24px", color: "#92400e", fontSize: 15, lineHeight: 1.6 }}>💡 <strong>힌트</strong>: {hintText}</div>}
                             </div>
                             <div style={{ display: "flex", gap: 14, marginTop: 12 }}>
                                 {tries > 0 && activityStatus !== "SUCCESS" && !showHint && <button onClick={() => setShowHint(true)} style={{ flex: 1, padding: "20px", borderRadius: 18, background: "white", border: "2.5px solid #1a3a5c", fontWeight: 900, color: "#1a3a5c" }}>힌트 보기</button>}
@@ -886,11 +902,17 @@
                             <div style={{ marginTop: 32, minHeight: 90 }}>
                                 {qStatus === "WRONG" && (
                                     <div style={{ background: "#fef2f2", borderRadius: 14, padding: "16px", color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>
-                                        <div style={{ marginBottom: 12 }}>{qTries >= 2 ? "❌ 아쉽네요! 정답을 확인해볼까요?" : "❌ 아쉽네요! 힌트를 참고하세요."}</div>
+                                        <div style={{ marginBottom: 12 }}>{qTries >= 2 ? "❌ 아쉽네요! 정답을 공개합니다." : "❌ 아쉽네요! 힌트를 참고하세요."}</div>
                                         <div style={{ fontSize: 14, fontWeight: 500 }}>
-                                            {qIndex===0 ? "'to부정사' 구문이 문장 끝에 붙을 수 있어요." : 
-                                             qIndex===1 ? "'그가 말한 것'처럼 명사절을 만드는 단어가 필요해요. 선행사가 없을 때 쓰는 표현을 찾아보세요." : 
-                                             "5형식 사역동사 make를 사용해야 합니다."}
+                                            {qTries >= 2 ? (
+                                                <div style={{ marginTop: 10, color: "#991b1b" }}>
+                                                    💡 <strong>오답 가이드</strong>: {selectedUnit.title} 패턴에 유의하세요. {qIndex === 1 ? "알맞은 접속사나 관계대명사 형태를 확인해보세요." : "문장의 전체적인 흐름을 다시 한번 파악하는 것이 중요합니다."}
+                                                </div>
+                                            ) : (
+                                                qIndex===0 ? "'to부정사' 구문이 문장 끝에 붙을 수 있어요." : 
+                                                qIndex===1 ? "'그가 말한 것'처럼 명사절을 만드는 단어가 필요해요. 선행사가 없을 때 쓰는 표현을 찾아보세요." : 
+                                                "5형식 사역동사 make를 사용해야 합니다."
+                                            )}
                                         </div>
                                         {qTries < 2 && (
                                             <div style={{ marginTop: 12 }}>
