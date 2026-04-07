@@ -53,7 +53,7 @@ function App() {
                                     </div>
                                 </div>
                                 <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-                                    <button onClick={() => { setProblemDetailUnit(u); setProblemViewStage(2); }} style={{ background: "#1a3a5c", color: "white", border: "none", borderRadius: "10px", padding: "10px 18px", fontSize: "13px", fontWeight: 900, cursor: "pointer" }}>예문 추가</button>
+                                    <button onClick={() => { setProblemDetailUnit(u); setProblemViewStage(2); }} style={{ background: "#1a3a5c", color: "white", border: "none", borderRadius: "10px", padding: "10px 18px", fontSize: "13px", fontWeight: 900, cursor: "pointer" }}>예문 설정</button>
                                     <input type="checkbox" checked={activeUnits.includes(u.id)} onChange={() => { if(activeUnits.includes(u.id)) setActiveUnits(activeUnits.filter(id=>id!==u.id)); else setActiveUnits([...activeUnits, u.id]); }} style={{ width: "20px", height: "20px", accentColor: "#4f46e5" }} />
                                 </div>
                             </div>
@@ -63,15 +63,36 @@ function App() {
                 </div>
             );
         } else {
+            // 예문 관리 상세 (Stage 2)
+            const [selectedSentences, setSelectedSentences] = useState(() => {
+                const saved = unitProblemSettings[`${problemDetailUnit.id}_selected`];
+                return saved ? JSON.parse(saved) : problemDetailUnit.sentences.slice(0, 3).map(s => s.id);
+            });
+
+            const toggleSentence = (id) => {
+                const newSelected = selectedSentences.includes(id) 
+                    ? selectedSentences.filter(sid => sid !== id)
+                    : [...selectedSentences, id];
+                setSelectedSentences(newSelected);
+                setUnitProblemSettings(prev => ({
+                    ...prev,
+                    [`${problemDetailUnit.id}_selected`]: JSON.stringify(newSelected)
+                }));
+            };
+
             return (
                 <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
                     <button onClick={() => setProblemViewStage(1)} style={{ background: "#eef2ff", border: "none", color: "#4f46e5", padding: "10px 16px", borderRadius: "12px", fontWeight: 800, fontSize: "13px", marginBottom: "24px", cursor: "pointer" }}>&larr; 단원 목록으로</button>
                     <div style={{ fontSize: "22px", fontWeight: 950, marginBottom: "32px" }}>{problemDetailUnit.unit} 예문별 성질 설정</div>
-                    {problemDetailUnit.sentences.slice(0, 3).map((s, idx) => {
-                        const currentSettings = unitProblemSettings[problemDetailUnit.id]?.[s.id] || [];
+                    
+                    {problemDetailUnit.sentences.filter(s => selectedSentences.includes(s.id)).map((s, idx) => {
+                        const currentSettings = unitProblemSettings[problemDetailUnit.id]?.[s.id] || types; // 기본값으로 모든 타입 설정 (문장 분석, 빈칸, 재배치, 영작)
                         return (
                             <div key={s.id} style={{ padding: "24px", border: "1.5px solid #f1f5f9", borderRadius: "20px", marginBottom: "20px", background: "#fcfdff" }}>
-                                <div style={{ fontSize: "12px", color: "#94a3b8", fontWeight: 900, marginBottom: "8px" }}>예문 {idx + 1}</div>
+                                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
+                                    <div style={{ fontSize: "12px", color: "#94a3b8", fontWeight: 900 }}>예문 {idx + 1}</div>
+                                    <button onClick={() => toggleSentence(s.id)} style={{ background: "none", border: "none", color: "#ef4444", fontSize: "12px", fontWeight: 800, cursor: "pointer" }}>제거</button>
+                                </div>
                                 <div style={{ fontSize: "16px", fontWeight: 800, marginBottom: "12px", color: "#1a3a5c" }}>{s.english}</div>
                                 <div style={{ fontSize: "14px", color: "#64748b", marginBottom: "20px" }}>{s.korean}</div>
                                 <div style={{ display: "grid", gridTemplateColumns: "repeat(2, 1fr)", gap: "10px" }}>
@@ -80,7 +101,7 @@ function App() {
                                             <input type="checkbox" checked={currentSettings.includes(t)} onChange={() => {
                                                 setUnitProblemSettings(prev => {
                                                     const unitData = prev[problemDetailUnit.id] || {};
-                                                    const sData = unitData[s.id] || [];
+                                                    const sData = unitData[s.id] || types;
                                                     const newData = sData.includes(t) ? sData.filter(x => x !== t) : [...sData, t];
                                                     return { ...prev, [problemDetailUnit.id]: { ...unitData, [s.id]: newData } };
                                                 });
@@ -92,6 +113,23 @@ function App() {
                             </div>
                         );
                     })}
+
+                    {/* 추가 예문 선택 영역 */}
+                    {problemDetailUnit.sentences.filter(s => !selectedSentences.includes(s.id)).length > 0 && (
+                        <div style={{ marginTop: "40px", borderTop: "1.5px dashed #e2e8f0", paddingTop: "32px" }}>
+                            <div style={{ fontSize: "15px", fontWeight: 900, color: "#4f46e5", marginBottom: "16px" }}>+ 단원 내 예문 추가하기</div>
+                            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+                                {problemDetailUnit.sentences.filter(s => !selectedSentences.includes(s.id)).map(s => (
+                                    <div key={s.id} onClick={() => toggleSentence(s.id)} style={{ padding: "16px 20px", border: "1.5px solid #f1f5f9", borderRadius: "12px", cursor: "pointer", background: "white", display: "flex", justifyContent: "space-between", alignItems: "center", transition: "all 0.2s" }} onMouseEnter={e => e.currentTarget.style.borderColor = "#4f46e5"} onMouseLeave={e => e.currentTarget.style.borderColor = "#f1f5f9"}>
+                                        <div style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1, marginRight: "20px" }}>
+                                            <span style={{ fontWeight: 800, color: "#1e293b", fontSize: "14px" }}>{s.english}</span>
+                                        </div>
+                                        <div style={{ color: "#4f46e5", fontWeight: 900, fontSize: "13px" }}>추가 +</div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
                 </div>
             );
         }
