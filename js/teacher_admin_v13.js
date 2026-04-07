@@ -18,7 +18,7 @@ const Badge = ({ children, color = "#eef2ff", text = "#4f46e5" }) => (
 );
 
 function App() {
-    const [screen, setScreen] = useState("LOGIN"); // LOGIN, HOME
+    const [screen, setScreen] = useState("HOME"); // LOGIN, HOME
     const [loginStep, setLoginStep] = useState("SELECTION");
     const units = CURRICULUM.units.map((u, i) => ({
         id: u.unit_id,
@@ -36,31 +36,7 @@ function App() {
     const [problemViewStage, setProblemViewStage] = useState(1); // 1: List, 2: Detail
     const [problemDetailUnit, setProblemDetailUnit] = useState(null);
 
-    const LoginScreen = () => (
-        <div id="screen-login">
-            <div className="login-container">
-                <div className="login-card">
-                    <h1 className="login-title">문장투시경 Admin</h1>
-                    <p className="login-subtitle">교사용 관리자 계정으로 로그인하세요.</p>
-                    {loginStep === "SELECTION" ? (
-                        <div className="role-selection">
-                            <div className="role-card" style={{ width: "100%", maxWidth: "300px" }} onClick={() => setLoginStep("TEACHER")}>
-                                <span className="role-icon">👨‍🏫</span>
-                                <span className="role-label" style={{ fontSize: "18px", fontWeight: 900 }}>선생님 로그인</span>
-                            </div>
-                        </div>
-                    ) : (
-                        <div>
-                            <input type="text" className="login-input" placeholder="교사 인증 코드" />
-                            <input type="text" className="login-input" placeholder="성함" />
-                            <button className="login-submit" onClick={() => setScreen("HOME")}>접속하기</button>
-                            <button className="login-back-btn" onClick={() => setLoginStep("SELECTION")}>뒤로가기</button>
-                        </div>
-                    )}
-                </div>
-            </div>
-        </div>
-    );
+
 
     const StudentResultsView = () => (
         <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
@@ -164,7 +140,7 @@ function App() {
 
     const renderHome = () => (
         <div>
-            <Header sub="교사용 관리 센터" isTeacher={true} onBack={() => setScreen("LOGIN")} />
+            <Header sub="교사용 관리 센터" isTeacher={true} />
             <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 24px" }}>
                 <div className="home-tabs" style={{marginBottom: "40px"}}>
                     <button onClick={() => { setHomeTab("UNIT_SELECT"); setProblemViewStage(1); }} className={`tab-item ${homeTab === "UNIT_SELECT" ? 'active' : ''}`}>1-1. 단원 선택</button>
@@ -193,8 +169,6 @@ function App() {
             </div>
         </div>
     );
-
-    if (screen === "LOGIN") return <LoginScreen />;
 
     return (
         <div style={{ minHeight: "100vh", background: "#f8fafc" }}>
