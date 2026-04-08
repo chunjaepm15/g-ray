@@ -160,7 +160,7 @@ h3{font-size:11px;font-weight:900;color:var(--t4);text-transform:uppercase;lette
         .word-pool { display: flex; flex-wrap: wrap; gap: 10px; min-height: 80px; padding: 16px; background: #f8fafc; border-radius: 16px; border: 2px dashed #cbd5e1; }
         .dropzone { display: flex; flex-wrap: wrap; gap: 10px; min-height: 80px; padding: 16px; background: white; border-radius: 16px; border: 2px solid #e2e8f0; margin-bottom: 20px; }
 
-        /* ════ LOGIN SCREEN STYLES (v12 style) ════ */
+        /* Login screen styles */
         #screen-login {
           position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
           background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
@@ -212,7 +212,7 @@ h3{font-size:11px;font-weight:900;color:var(--t4);text-transform:uppercase;lette
         .qa-label { font-weight: 800; font-size: 15px; color: #1e293b; display: block; }
         .qa-desc { font-size: 11px; color: #64748b; margin-top: 4px; display: block; }
 
-        /* Problem Setting Modal - Premium Theme Alignment */
+        /* Problem Setting Modal */
         .modal-overlay {
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             background: rgba(15, 23, 42, 0.4); backdrop-filter: blur(8px);
