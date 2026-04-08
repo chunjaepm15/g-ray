@@ -8,13 +8,14 @@ function App() {
     const [selectedSentenceIdx, setSelectedSentenceIdx] = useState(0);
     const [isListOpen, setIsListOpen] = useState(false);
 
-    // 3학년 1반~4반 가상 데이터셋 (노티싱 이론 및 인지적 격차 반영)
+    // 3학년 1반~4반 가상 데이터셋 (학습 격차 반영)
+    // 인원수 5명 기준: 1인당 20%로 계산하여 정합성 조정
     const mockDatabase = {
-        "3학년 1반": { // 중위권: 인지적 과부하 상태
+        "3학년 1반": { // 중위권: 학습 정체 상태 (5명)
             "Unit 01": [
                 {
-                    wordStats: [12, 10, 15, 12, 40, 92, 85, 78, 15, 10, 12, 10],
-                    quizStats: { s1: 78, total: 45 },
+                    wordStats: [20, 40, 20, 40, 60, 100, 80, 80, 40, 20, 20, 40],
+                    quizStats: { s1: 80, total: 40 },
                     students: [
                         { name: "김철수", steps: [true, true, true, true], guide: "✅ 모든 단계를 마스터했습니다. 심화 예문에 도전하세요." },
                         { name: "이영희", steps: [true, false, false, false], guide: "📉 구조는 보이지만 구문 조립이 미숙합니다. 2~3단계 배열 훈련을 강화하세요." },
@@ -25,11 +26,11 @@ function App() {
                 }
             ]
         },
-        "3학년 2반": { // 하위권: 구조 인지 부족
+        "3학년 2반": { // 하위권: 구조 인지 부족 (5명)
             "Unit 01": [
                 {
-                    wordStats: [8, 5, 10, 8, 15, 42, 35, 30, 8, 5, 10, 5],
-                    quizStats: { s1: 42, total: 20 },
+                    wordStats: [40, 20, 40, 20, 40, 60, 40, 40, 20, 20, 20, 20],
+                    quizStats: { s1: 40, total: 20 },
                     students: [
                         { name: "강호동", steps: [false, false, false, false], guide: "⚠️ 문장 구조 파악이 시급합니다. 핵심 구문(what)의 시작점을 찾는 연습을 하세요." },
                         { name: "유재석", steps: [true, false, false, false], guide: "🧐 단어는 인지하나 문장 성분 구분이 안 됩니다. 끊어 읽기 가이드를 활용하세요." },
@@ -40,11 +41,11 @@ function App() {
                 }
             ]
         },
-        "3학년 3반": { // 상위권: 우수 학급
+        "3학년 3반": { // 상위권: 우수 학급 (5명)
             "Unit 01": [
                 {
-                    wordStats: [95, 92, 98, 90, 85, 99, 97, 95, 92, 90, 88, 95],
-                    quizStats: { s1: 96, total: 92 },
+                    wordStats: [100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100],
+                    quizStats: { s1: 100, total: 100 },
                     students: [
                         { name: "안유진", steps: [true, true, true, true], guide: "✅ 완벽합니다! 원어민 속도의 리스닝 훈련과 연계해 보세요." },
                         { name: "장원영", steps: [true, true, true, true], guide: "✅ 모든 미션 성공. 관계대명사가 포함된 더 긴 문장에 도전하세요." },
@@ -55,11 +56,11 @@ function App() {
                 }
             ]
         },
-        "3학년 4반": { // 중상위권: 인출 지연 상태
+        "3학년 4반": { // 중상위권: 인출 지연 상태 (5명)
             "Unit 01": [
                 {
-                    wordStats: [40, 35, 45, 40, 50, 88, 82, 85, 35, 30, 40, 35],
-                    quizStats: { s1: 85, total: 65 },
+                    wordStats: [60, 60, 80, 60, 60, 100, 100, 100, 60, 60, 60, 60],
+                    quizStats: { s1: 100, total: 60 },
                     students: [
                         { name: "봉준호", steps: [true, true, true, false], guide: "💡 구조는 보이지만 영작 디테일이 부족합니다. 4단계 인출 훈련에 집중하세요." },
                         { name: "송강호", steps: [true, true, false, false], guide: "🧐 배열 단계에서 시간이 지체됩니다. 청크 단위 암기가 필요합니다." },
@@ -84,9 +85,9 @@ function App() {
             <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 24px" }}>
                 {/* 1. 상단 대메뉴 탭 */}
                 <div className="home-tabs" style={{ marginBottom: "32px" }}>
-                    <button onClick={() => { window.location.href = 'main.html'; }} className="tab-item">1-1. 단원 선택</button>
-                    <button onClick={() => { window.location.href = 'teacher_problem.html'; }} className="tab-item">1-2. 문제 관리</button>
-                    <button className="tab-item active">1-3. 학생 관리</button>
+                    <button onClick={() => { window.location.href = 'main.html'; }} className="tab-item">단원 선택</button>
+                    <button onClick={() => { window.location.href = 'teacher_problem.html'; }} className="tab-item">문제 관리</button>
+                    <button className="tab-item active">학생 관리</button>
                 </div>
 
                 {/* [복구] 2. 필터 바 (학급/단원 선택) */}
@@ -150,14 +151,14 @@ function App() {
                     </div>
                     {/* AI 추천 가이드 (데이터 기반 자동 변경) */}
                     <div style={{ padding: "20px", background: "#f0f7ff", borderRadius: "16px", border: "1px solid #dbeafe", fontSize: "14px", fontWeight: 700, color: "#1e3a8a", display: "flex", alignItems: "center", gap: "10px" }}>
-                        🤖 AI 추천: {stats.quizStats.s1 >= 70 && stats.quizStats.total < 50 ? "'인지적 과부하' 상태입니다. 구조는 보이지만 문장 조립 능력이 부족하니 청크 복습을 권장하세요." : "전반적으로 양호합니다. 오답률이 높은 구간을 짚어주세요."}
+                        🤖 AI 추천: {stats.quizStats.s1 >= 80 && stats.quizStats.total < 50 ? "현재 학습 정체 상태입니다. 구조는 보이지만 문장 조립 능력이 부족하니 문장 구조 나누기 복습을 권장하세요." : "전반적으로 양호합니다. 오답률이 높은 구간을 짚어주세요."}
                     </div>
                 </div>
 
                 {/* 5. 개별 학생 상세 현황 (아코디언) */}
                 <div style={{ background: "white", borderRadius: "32px", border: "1.5px solid #e2e8f0", overflow: "hidden" }}>
                     <div onClick={() => setIsListOpen(!isListOpen)} style={{ padding: "24px 40px", display: "flex", justifyContent: "space-between", alignItems: "center", cursor: "pointer", background: isListOpen ? "#f8fafc" : "white" }}>
-                        <h3 style={{ fontWeight: 950, fontSize: "20px", color: "#1e293b", margin: 0 }}>👤 개별 학생 상세 현황 (5인)</h3>
+                        <h3 style={{ fontWeight: 950, fontSize: "20px", color: "#1e293b", margin: 0 }}>👤 개별 학생 상세 현황 ({stats.students.length}인)</h3>
                         <span style={{ fontSize: "24px", transform: isListOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "0.3s" }}>▼</span>
                     </div>
                     {isListOpen && (

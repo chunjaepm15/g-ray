@@ -190,6 +190,46 @@ h3 { font-size: 20px; font-weight: 900; color: var(--t1); margin: 20px 0 12px; }
     transform: translateY(-1px); box-shadow: 0 4px 8px rgba(74, 159, 224, 0.2); 
 }
 
+/* 7.1 SENTENCE DRAG MODE (New) */
+.sentence-view {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0px; /* 공백은 실제 텍스트로 처리 */
+    padding: 24px 0;
+    line-height: 2.2;
+}
+.sentence-word {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--navy);
+    padding: 4px 6px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    user-select: none;
+    border: 2px solid transparent; /* 레이아웃 틀어짐 방지 */
+}
+.sentence-word:hover {
+    background: var(--sky-pale);
+    color: var(--sky);
+}
+.sentence-word.selected {
+    background: var(--sky);
+    color: #fff;
+    border-radius: 0; /* 연속적인 느낌을 위해 각진 모서리 */
+}
+.sentence-word.selected.start {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding-left: 10px;
+}
+.sentence-word.selected.end {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    padding-right: 10px;
+}
+
 .word-pool { 
     display: flex; flex-wrap: wrap; gap: 8px; min-height: 80px; padding: 20px; 
     background: var(--surf); border-radius: 16px; border: 2px dashed var(--bd2); 
@@ -355,10 +395,21 @@ h3 { font-size: 20px; font-weight: 900; color: var(--t1); margin: 20px 0 12px; }
 .struct-box.complement .struct-label { color: var(--c-color); }
 
 .grammar-wrap { background: #fff; border: 1.5px solid var(--bd); border-radius: 18px; padding: 18px 16px; box-shadow: 0 2px 8px rgba(44, 58, 94, 0.04); }
-.grammar-rule-box { background: var(--sky-pale); border: 1.5px solid var(--sky-lt); border-radius: 14px; padding: 18px 16px; text-align: center; margin-bottom: 14px; }
-.grammar-rule-main { font-size: 17px; font-weight: 900; color: var(--t1); margin-bottom: 6px; }
+.grammar-rule-box { background: var(--sky-pale); border: 2.5px solid var(--sky-lt); border-radius: 20px; padding: 24px 20px; text-align: center; margin-bottom: 24px; box-shadow: inset 0 2px 4px rgba(74, 159, 224, 0.05); }
+.grammar-rule-main { font-size: 20px; font-weight: 900; color: var(--navy); margin-bottom: 4px; letter-spacing: -0.5px; }
 .grammar-rule-main span { color: var(--sky); }
-.grammar-rule-sub { font-size: 13px; color: var(--t4); font-family: monospace; letter-spacing: 0.2px; }
+.grammar-rule-sub { font-size: 14px; color: var(--t4); font-family: 'JetBrains Mono', 'Cascadia Code', monospace; background: rgba(255,255,255,0.5); padding: 4px 12px; border-radius: 8px; display: inline-block; margin-top: 8px; }
+
+.grammar-details-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; padding: 0 10px; }
+.grammar-detail-item { display: flex; gap: 14px; alignItems: flex-start; }
+.grammar-detail-num { width: 24px; height: 24px; border-radius: 50%; background: var(--sky-pale); color: var(--sky); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; flex-shrink: 0; margin-top: 1px; border: 1.5px solid var(--sky-lt); }
+.grammar-detail-text { font-size: 16px; color: var(--t2); lineHeight: 1.6; font-weight: 500; }
+
+.grammar-examples-section { margin-top: 24px; }
+.grammar-example-card { background: var(--surf); border: 1.5px solid var(--bd); border-radius: 16px; padding: 18px 20px; margin-bottom: 12px; transition: all 0.2s; }
+.grammar-example-card:hover { border-color: var(--sky-mid); transform: translateX(4px); background: #fff; }
+.grammar-example-en { font-size: 17px; font-weight: 800; color: var(--navy); margin-bottom: 6px; letter-spacing: -0.2px; }
+.grammar-example-ko { font-size: 14px; color: var(--t4); font-weight: 500; }
 
 .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .check-item { background: var(--surf); border: 1.5px solid var(--bd); border-radius: 12px; padding: 12px 14px; display: flex; align-items: flex-start; gap: 8px; }

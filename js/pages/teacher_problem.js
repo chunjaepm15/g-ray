@@ -94,7 +94,7 @@ function App() {
             return (
                 <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-                        <h3 style={{ fontWeight: 950, fontSize: "20px" }}>1-2. 문제 관리 (단원별 세부 설정)</h3>
+                        <h3 style={{ fontWeight: 950, fontSize: "20px" }}>문제 관리 (단원별 세부 설정)</h3>
                         <span onClick={() => { if(isAllActive) setActiveUnits([]); else setActiveUnits(units.map(u=>u.id)); }} style={{ fontSize: "13px", fontWeight: 800, color: "var(--sky)", cursor: "pointer" }}>{isAllActive ? "전체 해제" : "전체 선택"}</span>
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
@@ -173,6 +173,25 @@ function App() {
                                 <div style={{ display: "flex", flexDirection: "column", gap: "12px", background: "white", padding: "16px", borderRadius: "12px", border: "1px solid #cbd5e1" }}>
                                     <div style={{ fontSize: "13px", fontWeight: 900, color: "#1e293b", marginBottom: "4px" }}>🔧 문제 미리보기 및 설정 (Logic 처리)</div>
                                     
+                                    {currentSettings.includes("문장 분석") && (
+                                        <div style={{ padding: "12px", background: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
+                                            <div style={{ fontSize: "12px", fontWeight: 800, color: "#4f46e5", marginBottom: "8px" }}>Step 0. 문장 분석 (구문 성분 표시)</div>
+                                            <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", alignItems: "center" }}>
+                                                {(s.syntax_chunks || []).map((chunk, cIdx) => (
+                                                    <div key={cIdx} style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "4px" }}>
+                                                        <div style={{ padding: "6px 14px", background: "white", border: "1.5px solid #cbd5e1", borderRadius: "10px", fontSize: "14px", fontWeight: 800 }}>
+                                                            {chunk.eng}
+                                                        </div>
+                                                        <div style={{ fontSize: "10px", fontWeight: 900, color: "var(--sky)", background: "var(--sky-pale)", padding: "2px 6px", borderRadius: "4px" }}>
+                                                            {chunk.role}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <div style={{ fontSize: "11px", color: "#64748b", marginTop: "12px" }}>* 학습 초기 단계에서 문장의 문법적 구조(S, V, O, C, M)를 시각적으로 분석해 보여줍니다.</div>
+                                        </div>
+                                    )}
+
                                     {currentSettings.includes("재배열") && (
                                         <div style={{ padding: "12px", background: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
                                             <div style={{ fontSize: "12px", fontWeight: 800, color: "#4f46e5", marginBottom: "8px" }}>Step 1. 재배치 (구문 단위 셔플)</div>
@@ -255,9 +274,9 @@ function App() {
             <Header isTeacher={true} title="🔍 문장투시경 Admin" sub={`김수현 교사 (${selectedClass})`} />
             <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 24px" }}>
                 <div className="home-tabs" style={{marginBottom: "40px"}}>
-                    <button onClick={() => { window.location.href = 'main.html'; }} className="tab-item">1-1. 단원 선택</button>
-                    <button className="tab-item active">1-2. 문제 관리</button>
-                    <button onClick={() => { window.location.href = 'teacher_student.html'; }} className="tab-item">1-3. 학생 관리</button>
+                    <button onClick={() => { window.location.href = 'main.html'; }} className="tab-item">단원 선택</button>
+                    <button className="tab-item active">문제 관리</button>
+                    <button onClick={() => { window.location.href = 'teacher_student.html'; }} className="tab-item">학생 관리</button>
                 </div>
 
                 {/* 필터 바 (학급/단원) */}
