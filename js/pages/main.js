@@ -56,6 +56,27 @@ function App() {
     const [q3ReadingDone, setQ3ReadingDone] = useState(false);
     const [q2Options, setQ2Options] = useState([]);
     const [q2CorrectOptionIndex, setQ2CorrectOptionIndex] = useState(0);
+    const [showQHint, setShowQHint] = useState(false);
+
+    // [신규] SIMILAR 화면 재배치 전용 데이터 (구문 단위 청킹)
+    const SIMILAR_DATA = {
+        "Unit 01": {
+            id: "REF-L04-SIM-01",
+            english: "Many scientists are still trying to understand what actually caused the extinction of the dinosaurs long ago.",
+            korean: "많은 과학자들은 오래전에 무엇이 공룡의 멸종을 실제로 일으켰는지 이해하려고 여전히 노력하고 있다.",
+            chunks: [
+                "Many scientists",
+                "are still trying",
+                "to understand",
+                "what actually caused",
+                "the extinction of the dinosaurs",
+                "long ago."
+            ],
+            diagnosis: "이 문장의 핵심은 **'무엇이 ~을 일으켰는지'**를 나타내는 `what절`이 `understand`의 목적어 역할을 한다는 점입니다! 뼈대를 먼저 잡아보세요: [과학자들은(S) + 노력하고 있다(V) + ~을 알기 위해(O)]. 특히 `what` 뒤에 바로 동사 `caused`가 오는 어순에 주의하세요. ✨",
+            diagnosis2: "`impressed`는 '~에게 감명을 주다'라는 뜻의 타동사입니다. 따라서 뒤에는 감명을 받은 대상(목적어)이 필요하며, '영화에서 나를 가장 감동시킨 것'이라는 문맥에 맞게 목적격인 **me**가 와야 합니다. ✨",
+            diagnosis3: "`what`이 이끄는 명사절을 사용하여 '내가 배워야 할 것'을 표현해 보세요. `what` + `I` + `need to learn` 순서로 조립하고, '그녀로부터'라는 의미를 더해주는 전치사 `from her`를 마지막에 붙여주면 완벽합니다! ✨"
+        }
+    };
 
     const currentSentence = selectedUnit && selectedUnit.sentences && selectedUnit.sentences.length > (screen === "SIMILAR" ? qIndex : 0) ? selectedUnit.sentences[screen === "SIMILAR" ? qIndex : 0] : (selectedUnit?.sentences?.[0] || null);
     const words = currentSentence ? currentSentence.english.split(' ') : [];
@@ -249,7 +270,15 @@ function App() {
         const sIndex = screen === "SIMILAR" ? qIndex : 0;
         if (selectedUnit && selectedUnit.sentences && selectedUnit.sentences.length > sIndex) {
             const s = selectedUnit.sentences[sIndex];
-            if (s && s.english) {
+            const simData = SIMILAR_DATA[selectedUnit.id];
+
+            if (qIndex === 0 && simData) {
+                // [개선] 단어가 아닌 구문(Chunk) 단위로 셔플
+                const chunksArr = [...simData.chunks];
+                const shuffled = chunksArr.sort(() => Math.random() - 0.5);
+                setReorderPool(shuffled);
+                setReorderAnswer([]);
+            } else if (s && s.english) {
                 if (qIndex === 0) {
                     const wordsArr = s.english.split(' ');
                     const shuffled = [...wordsArr].sort(() => Math.random() - 0.5);
@@ -259,9 +288,10 @@ function App() {
                     setWriteAnswer("");
                     setSelectedOption(null);
                 }
-                setActivityStatus("IDLE");
-                setTries(0);
             }
+            setActivityStatus("IDLE");
+            setTries(0);
+            setShowQHint(false); // 힌트 상태 초기화
         }
     }, [selectedUnit, qIndex, screen]);
 
@@ -269,21 +299,28 @@ function App() {
         const nextTries = qTries + 1;
         setQTries(nextTries);
         let isCorrect = false;
+        
+        const simData = SIMILAR_DATA[selectedUnit.id];
+        const targetSentence = (qIndex === 0 && simData) ? simData.english : currentSentence.english;
+
         if (qIndex === 0) {
-            isCorrect = currentSentence && reorderAnswer.join(" ") === currentSentence.english;
+            isCorrect = reorderAnswer.join(" ") === targetSentence;
         } else if (qIndex === 1) {
             isCorrect = selectedOption === q2CorrectOptionIndex;
         } else if (qIndex === 2) {
-            isCorrect = writeAnswer.length > 5;
+            // [개선] 단순 글자수 체크가 아닌, 실제 문장 일치 여부 확인 (Normalization 적용)
+            const normalize = (s) => s.toLowerCase().trim().replace(/[.?!]$/, "");
+            isCorrect = normalize(writeAnswer) === normalize(currentSentence.english);
         }
+
         if (isCorrect) {
             setQStatus("SUCCESS");
         } else {
             setQStatus("WRONG");
             if (nextTries >= 2) {
-                // 2번 틀리면 답안 공개
                 if (qIndex === 0) {
-                    setReorderAnswer(currentSentence.english.split(' '));
+                    const finalUnits = (qIndex === 0 && simData) ? simData.chunks : currentSentence.english.split(' ');
+                    setReorderAnswer(finalUnits);
                     setReorderPool([]);
                 } else if (qIndex === 1) {
                     setSelectedOption(q2CorrectOptionIndex);
@@ -542,11 +579,13 @@ function App() {
                     </div>
                     {qIndex === 0 && (
                         <div>
-                            <div style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>📝 단어를 올바르게 재배치하세요.</div>
-                            <div style={{ fontSize: 16, color: "#64748b", marginBottom: 24 }}>{currentSentence ? currentSentence.korean : ""}</div>
+                            <div style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>📝 문장을 올바르게 재배치하세요. (구문 퍼즐)</div>
+                            <div style={{ fontSize: 16, color: "#64748b", marginBottom: 24 }}>
+                                {SIMILAR_DATA[selectedUnit.id] ? SIMILAR_DATA[selectedUnit.id].korean : currentSentence.korean}
+                            </div>
                             <div className="dropzone" onClick={() => { if (qStatus === "SUCCESS") return; setReorderPool([...reorderPool, ...reorderAnswer]); setReorderAnswer([]); }}>
-                                {reorderAnswer.map((w, i) => <div key={i} className="word-btn" style={{ borderColor: "#4f46e5" }}>{w}</div>)}
-                                {reorderAnswer.length === 0 && <span style={{ color: "#94a3b8" }}>이곳을 눌러 단어를 해제하세요</span>}
+                                {reorderAnswer.map((w, i) => <div key={i} className="word-btn" style={{ borderColor: "#4f46e5", background: "#f5f3ff" }}>{w}</div>)}
+                                {reorderAnswer.length === 0 && <span style={{ color: "#94a3b8" }}>이곳을 눌러 구문을 조립하세요 (Puzzle)</span>}
                             </div>
                             <div className="word-pool">
                                 {reorderPool.map((w, i) => (
@@ -610,38 +649,46 @@ function App() {
                     )}
                     <div style={{ marginTop: 32, minHeight: 90 }}>
                         {qStatus === "WRONG" && (
-                            qIndex === 1 ? (
-                                <div className="feedback wrong">
+                            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                                <div className="feedback wrong" style={{ margin: 0 }}>
                                     <div className="fb-icon">✕</div>
                                     <div className="feedback-content">
-                                        <div className="feedback-title">다시 생각해봐요!</div>
-                                        <div className="feedback-desc">'{selectedUnit.title}' 패턴에 유의하세요. 알맞은 접속사나 관계대명사 형태를 확인해보세요.</div>
-                                    </div>
-                                </div>
-                            ) : qIndex === 2 ? (
-                                <div className="feedback wrong">
-                                    <div className="fb-icon">✕</div>
-                                    <div className="feedback-content">
-                                        <div className="feedback-title">{qTries >= 2 ? "아쉽네요! 정답을 확인해보세요." : "다시 한 번 확인해볼까요?"}</div>
+                                        <div className="feedback-title">{qTries >= 2 ? "아쉽네요! 정답을 확인해보세요." : "다시 생각해봐요!"}</div>
                                         <div className="feedback-desc">
-                                            {qTries >= 2 ? (
+                                            {qIndex === 2 && qTries >= 2 ? (
                                                 <span>정답: <strong style={{ textDecoration: "underline" }}>{currentSentence.english}</strong></span>
                                             ) : (
-                                                `철자나 대소문자, 문장 부호가 정확한지 다시 한번 살펴봐주세요. (패턴: ${selectedUnit.title})`
+                                                qIndex === 2 ? `철자나 대소문자, 문장 부호가 정확한지 다시 한번 살펴봐주세요. (패턴: ${selectedUnit.title})` : "선택한 답이 문맥이나 문법적으로 어색한 것 같아요."
                                             )}
                                         </div>
                                     </div>
                                 </div>
-                            ) : (
-                                <div style={{ background: "#fef2f2", padding: "16px", borderRadius: 12, color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>
-                                    ❌ {qTries >= 2 ? "아쉽네요! 정답을 공개합니다." : "틀렸습니다. 다시 시도해 보세요."}
-                                    {qTries >= 2 && (
-                                        <div style={{ marginTop: 10, fontSize: 14, color: "#991b1b", fontWeight: 500 }}>
-                                            💡 <strong>오답 가이드</strong>: {selectedUnit.title} 패턴에 유의하세요. 문장의 전체적인 흐름을 다시 한번 파악하는 것이 중요합니다.
+                                
+                                {qStatus === "WRONG" && qTries < 2 && !showQHint && (
+                                    <button 
+                                        onClick={() => setShowQHint(true)} 
+                                        style={{ background: "#fff", border: "1.5px solid #d1d5db", borderRadius: 10, padding: "10px", fontSize: 14, fontWeight: 700, color: "#1e293b", cursor: "pointer", alignSelf: "center", boxShadow: "0 2px 4px rgba(0,0,0,0.05)" }}
+                                    >
+                                        💡 힌트 확인하기
+                                    </button>
+                                )}
+
+                                {(showQHint || qTries >= 2) && (
+                                    <div style={{ background: "linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)", border: "1px solid #fcd34d", borderRadius: 16, padding: "20px", color: "#92400e", fontSize: 15, position: "relative", overflow: "hidden" }}>
+                                        <div style={{ position: "absolute", right: -5, top: -5, opacity: 0.1 }}>
+                                            <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
                                         </div>
-                                    )}
-                                </div>
-                            )
+                                        <div style={{ fontWeight: 900, marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
+                                            <span>✨ AI 학습 진단 가이드</span>
+                                        </div>
+                                        <div style={{ lineHeight: 1.6 }}>
+                                            {qIndex === 0 ? SIMILAR_DATA[selectedUnit.id]?.diagnosis : 
+                                             qIndex === 1 ? SIMILAR_DATA[selectedUnit.id]?.diagnosis2 : 
+                                             SIMILAR_DATA[selectedUnit.id]?.diagnosis3 || `오답 가이드: ${selectedUnit.title} 패턴에 유의하세요. 문장의 전체적인 흐름을 다시 한번 파악하는 것이 중요합니다.`}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         )}
                         {qStatus === "SUCCESS" && (
                             qIndex === 1 ? (
