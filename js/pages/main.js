@@ -167,9 +167,12 @@ function App() {
         ]
     };
 
+    const [isStructureOpen, setIsStructureOpen] = React.useState(false);
+    const [isGrammarOpen, setIsGrammarOpen] = React.useState(false);
+
     // AI 진단 가이드 데이터
     const DIAGNOSIS_DATA = {
-        "REF-L04-11": "많은 친구들이 전치사 **by**를 명사절의 일부로 오해하거나, 절의 마지막 동사인 **said**를 빠뜨리곤 해요! 명사절 `what she said`는 그 자체로 전치사 `by`의 목적어 역할을 한다는 점에 주목해 보세요. ✨"
+        "REF-L04-11": "많은 친구들이 전치사 by를 명사절의 일부로 오해하거나, 절의 마지막 동사인 said를 빠뜨리곤 해요! 명사절 `what she said`는 그 자체로 전치사 `by`의 목적어 역할을 한다는 점에 주목해 보세요. ✨"
     };
 
     const getAnswerRange = () => {
@@ -558,83 +561,95 @@ function App() {
                 </div>
 
                 {/* ② 문장 구조 투시 */}
-                <div className="section-header">
-                    <button className="section-toggle">▼</button>
-                    <span className="section-label">🔎 문장 구조 투시</span>
-                </div>
-                <div className="structure-wrap">
-                    <div className="structure-grid">
-                        <div className="struct-box subject">
-                            <div className="struct-text">{structData.target}</div>
-                            <div className="struct-label">Subject (S)</div>
-                        </div>
-                        <div className="struct-box verb">
-                            <div className="struct-text">{structData.v}</div>
-                            <div className="struct-label">Verb (V)</div>
-                        </div>
-                        <div className="struct-box complement">
-                            <div className="struct-text">{structData.obj}</div>
-                            <div className="struct-label">Complement (C)</div>
+                                <div 
+                                    className="section-header" 
+                                    onClick={() => setIsStructureOpen(!isStructureOpen)}
+                                    style={{ cursor: "pointer", userSelect: "none" }}
+                                >
+                                    <button className="section-toggle">{isStructureOpen ? "▼" : "▶"}</button>
+                                    <span className="section-label">🔎 문장 구조 투시</span>
+                                </div>
+                {isStructureOpen && (
+                    <div className="structure-wrap">
+                        <div className="structure-grid">
+                            <div className="struct-box subject">
+                                <div className="struct-text">{structData.target}</div>
+                                <div className="struct-label">Subject (S)</div>
+                            </div>
+                            <div className="struct-box verb">
+                                <div className="struct-text">{structData.v}</div>
+                                <div className="struct-label">Verb (V)</div>
+                            </div>
+                            <div className="struct-box complement">
+                                <div className="struct-text">{structData.obj}</div>
+                                <div className="struct-label">Complement (C)</div>
+                            </div>
                         </div>
                     </div>
-                </div>
+                )}
 
                 {/* ③ 핵심 문법 개념 정리 */}
-                <div className="section-header">
-                    <button className="section-toggle">▼</button>
-                    <span className="section-label">📊 핵심 문법 개념 정리</span>
-                </div>
-                <div className="grammar-wrap">
-                    {grammarConcepts[selectedUnit.title] ? (
-                        <>
-                            <div className="grammar-rule-box">
-                                <div className="grammar-rule-main">
-                                    {grammarConcepts[selectedUnit.title].formula}
+                                <div 
+                                    className="section-header" 
+                                    onClick={() => setIsGrammarOpen(!isGrammarOpen)}
+                                    style={{ cursor: "pointer", userSelect: "none" }}
+                                >
+                                    <button className="section-toggle">{isGrammarOpen ? "▼" : "▶"}</button>
+                                    <span className="section-label">📊 핵심 문법 개념 정리</span>
                                 </div>
-                                <div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--sky)', margin: '8px 0' }}>
-                                    {grammarConcepts[selectedUnit.title].meaning}
-                                </div>
-                                <div className="grammar-rule-sub">
-                                    {grammarConcepts[selectedUnit.title].sub_formula}
-                                </div>
-                            </div>
-                            <div className="grammar-details-list">
-                                {grammarConcepts[selectedUnit.title].details.map((d, idx) => (
-                                    <div key={idx} className="grammar-detail-item">
-                                        <div className="grammar-detail-num">
-                                            {idx + 1}
-                                        </div>
-                                        <div className="grammar-detail-text">{d}</div>
+                {isGrammarOpen && (
+                    <div className="grammar-wrap">
+                        {grammarConcepts[selectedUnit.title] ? (
+                            <>
+                                <div className="grammar-rule-box">
+                                    <div className="grammar-rule-main">
+                                        {grammarConcepts[selectedUnit.title].formula}
                                     </div>
-                                ))}
-                            </div>
-
-                            <div className="grammar-examples-section">
-                                <div className="ds-ct" style={{ marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                    <span style={{ background: 'var(--sky)', width: '4px', height: '12px', borderRadius: '2px' }}></span>
-                                    실전 예문 확인하기
+                                    <div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--sky)', margin: '8px 0' }}>
+                                        {grammarConcepts[selectedUnit.title].meaning}
+                                    </div>
+                                    <div className="grammar-rule-sub">
+                                        {grammarConcepts[selectedUnit.title].sub_formula}
+                                    </div>
                                 </div>
-                                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                                    {grammarConcepts[selectedUnit.title].examples.map((ex, idx) => (
-                                        <div key={idx} className="grammar-example-card">
-                                            <div className="grammar-example-en">{ex.en}</div>
-                                            <div className="grammar-example-ko">{ex.ko}</div>
+                                <div className="grammar-details-list">
+                                    {grammarConcepts[selectedUnit.title].details.map((d, idx) => (
+                                        <div key={idx} className="grammar-detail-item">
+                                            <div className="grammar-detail-num">
+                                                {idx + 1}
+                                            </div>
+                                            <div className="grammar-detail-text">{d}</div>
                                         </div>
                                     ))}
                                 </div>
-                            </div>
-                            {grammarConcepts[selectedUnit.title]?.teacher_tip && (
-                                <div style={{ marginTop: "24px", padding: "16px 20px", background: "#fffbeb", border: "1px dashed #f59e0b", borderRadius: "16px", color: "#b45309", fontSize: "14px", fontWeight: 700, display: 'flex', gap: '8px' }}>
-                                    <span>💡</span> {grammarConcepts[selectedUnit.title].teacher_tip}
+
+                                <div className="grammar-examples-section">
+                                    <div className="ds-ct" style={{ marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                        <span style={{ background: 'var(--sky)', width: '4px', height: '12px', borderRadius: '2px' }}></span>
+                                        실전 예문 확인하기
+                                    </div>
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                        {grammarConcepts[selectedUnit.title].examples.map((ex, idx) => (
+                                            <div key={idx} className="grammar-example-card">
+                                                <div className="grammar-example-en">{ex.en}</div>
+                                                <div className="grammar-example-ko">{ex.ko}</div>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
-                            )}
-                        </>
-                    ) : (
-                        <div style={{ textAlign: "center", color: "#64748b", padding: "20px" }}>
-                            선택된 단원의 개념 정리가 준비 중입니다.
-                        </div>
-                    )}
-                </div>
+                                {grammarConcepts[selectedUnit.title]?.teacher_tip && (
+                                    <div style={{ marginTop: "24px", padding: "16px 20px", background: "#fffbeb", border: "1px dashed #f59e0b", borderRadius: "16px", color: "#b45309", fontSize: "14px", fontWeight: 700, display: 'flex', gap: '8px' }}>
+                                        <span>💡</span> {grammarConcepts[selectedUnit.title].teacher_tip}
+                                    </div>
+                                )}
+                            </>
+                        ) : (
+                            <div style={{ textAlign: "center", color: "#64748b", padding: "20px" }}>
+                                선택된 단원의 개념 정리가 준비 중입니다.
+                            </div>
+                        )}
+                    </div>
+                )}
 
                 <button onClick={() => setScreen("ACTIVITY")} className="btn-full" style={{ marginTop: 20 }}>
                     직접 한번 해보기 (투시 시작) →
@@ -654,7 +669,7 @@ function App() {
                             const minVal = Math.min(dragRange.start, dragRange.end);
                             const maxVal = Math.max(dragRange.start, dragRange.end);
                             const isInRange = dragRange.start !== null && i >= minVal && i <= maxVal;
-                            
+
                             let classes = "sentence-word";
                             if (isInRange) {
                                 classes += " selected";
@@ -664,20 +679,27 @@ function App() {
 
                             return (
                                 <React.Fragment key={i}>
-                                    <span 
-                                        className={classes} 
+                                    <span
+                                        className={classes}
                                         onMouseDown={() => {
                                             if (activityStatus !== "SUCCESS") {
                                                 setDragRange({ start: i, end: i });
                                                 if (activityStatus === "WRONG") setActivityStatus("IDLE");
                                             }
-                                        }} 
+                                        }}
                                         onMouseEnter={() => { if (isDragging && activityStatus !== "SUCCESS") setDragRange(prev => ({ ...prev, end: i })); }}
-                                        style={{ cursor: "pointer", display: "inline-block", margin: "0" }}
+                                        style={{ cursor: "pointer", display: "inline-block" }}
                                     >
                                         {w}
                                     </span>
-                                    {i < words.length - 1 && <span className={isInRange && i < maxVal ? "sentence-word selected" : "sentence-word"} style={{ display: "inline-block", pointerEvents: "none", width: "8px", margin: "0" }}>&nbsp;</span>}
+                                    {i < words.length - 1 && (
+                                        <span 
+                                            className={isInRange && i < maxVal ? "sentence-word selected" : "sentence-word"} 
+                                            style={{ display: "inline-block", pointerEvents: "none" }}
+                                        >
+                                            &nbsp;
+                                        </span>
+                                    )}
                                 </React.Fragment>
                             );
                         })}
@@ -739,7 +761,7 @@ function App() {
                             <span>✨ AI 학습 진단 가이드</span>
                         </div>
                         <div style={{ color: "#0c4a6e", fontSize: 16, lineHeight: 1.7, fontWeight: 500 }}>
-                            {DIAGNOSIS_DATA[selectedUnit.id] || "패턴의 범위를 정확히 파악하는 것이 중요합니다. 문법적인 덩어리(Chunk)가 어디서 시작하고 끝나는지 다시 한번 복습해보세요."}
+                            {DIAGNOSIS_DATA[currentSentence?.id] || "패턴의 범위를 정확히 파악하는 것이 중요합니다. 문법적인 덩어리(Chunk)가 어디서 시작하고 끝나는지 다시 한번 복습해보세요."}
                         </div>
                     </div>
 
