@@ -649,7 +649,7 @@ function App() {
             <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 20px" }}>
                 <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 12px 30px rgba(0,0,0,0.06)" }}>
                     <div style={{ background: "#f1f5ff", padding: "20px", borderRadius: 16, fontSize: 16, marginBottom: 24, textAlign: "center", fontWeight: 800, color: "#2563eb", border: "1px solid #dbeafe" }}> 📌 <strong>{selectedUnit.title}</strong>에 해당하는 구문(덩어리) 전체를 찾아 마우스로 드래그하세요. </div>
-                    <div className="sentence-view" onMouseDown={() => { if (activityStatus !== "SUCCESS") setIsDragging(true); }} onMouseUp={() => setIsDragging(false)}>
+                    <div className="sentence-view" style={{ userSelect: "none", lineHeight: "2.4", padding: "10px 20px", display: "block", textAlign: "center" }} onMouseDown={(e) => { if (activityStatus !== "SUCCESS") { setIsDragging(true); if (e.target === e.currentTarget) { setDragRange({ start: null, end: null }); } } }} onMouseLeave={() => setIsDragging(false)} onMouseUp={() => setIsDragging(false)}>
                         {words.map((w, i) => {
                             const minVal = Math.min(dragRange.start, dragRange.end);
                             const maxVal = Math.max(dragRange.start, dragRange.end);
@@ -664,14 +664,20 @@ function App() {
 
                             return (
                                 <React.Fragment key={i}>
-                                    <div 
+                                    <span 
                                         className={classes} 
-                                        onClick={() => handleWordAction(i)} 
-                                        onMouseEnter={() => { if (isDragging) setDragRange(prev => ({ ...prev, end: i })); }}
+                                        onMouseDown={() => {
+                                            if (activityStatus !== "SUCCESS") {
+                                                setDragRange({ start: i, end: i });
+                                                if (activityStatus === "WRONG") setActivityStatus("IDLE");
+                                            }
+                                        }} 
+                                        onMouseEnter={() => { if (isDragging && activityStatus !== "SUCCESS") setDragRange(prev => ({ ...prev, end: i })); }}
+                                        style={{ cursor: "pointer", display: "inline-block", margin: "0" }}
                                     >
                                         {w}
-                                    </div>
-                                    {i < words.length - 1 && <span className={isInRange && i < maxVal ? "sentence-word selected" : "sentence-word"} style={{ padding: '4px 2px' }}>&nbsp;</span>}
+                                    </span>
+                                    {i < words.length - 1 && <span className={isInRange && i < maxVal ? "sentence-word selected" : "sentence-word"} style={{ display: "inline-block", pointerEvents: "none", width: "8px", margin: "0" }}>&nbsp;</span>}
                                 </React.Fragment>
                             );
                         })}
