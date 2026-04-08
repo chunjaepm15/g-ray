@@ -4,7 +4,7 @@ const { useState, useEffect } = React;
 function App() {
     const units = CURRICULUM.units.map((u, i) => ({
         id: u.unit_id,
-        unit: `Unit ${i+1}`,
+        unit: `Unit ${i + 1}`,
         title: u.title,
         tags: u.origin_tags,
         sentences: u.sentences
@@ -83,7 +83,7 @@ function App() {
             alert(`${selectedClass}에 설정이 붙여넣기 되었습니다.`);
         }
     };
-    const [problemViewStage, setProblemViewStage] = useState(1); 
+    const [problemViewStage, setProblemViewStage] = useState(1);
     const [problemDetailUnit, setProblemDetailUnit] = useState(null);
 
     const ProblemManageTab = () => {
@@ -95,7 +95,7 @@ function App() {
                 <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
                         <h3 style={{ fontWeight: 950, fontSize: "20px" }}>문제 관리 (단원별 세부 설정)</h3>
-                        <span onClick={() => { if(isAllActive) setActiveUnits([]); else setActiveUnits(units.map(u=>u.id)); }} style={{ fontSize: "13px", fontWeight: 800, color: "var(--sky)", cursor: "pointer" }}>{isAllActive ? "전체 해제" : "전체 선택"}</span>
+                        <span onClick={() => { if (isAllActive) setActiveUnits([]); else setActiveUnits(units.map(u => u.id)); }} style={{ fontSize: "13px", fontWeight: 800, color: "var(--sky)", cursor: "pointer" }}>{isAllActive ? "전체 해제" : "전체 선택"}</span>
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
                         {units.map((u, idx) => (
@@ -109,7 +109,7 @@ function App() {
                                 </div>
                                 <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
                                     <button onClick={() => { setProblemDetailUnit(u); setProblemViewStage(2); }} className="start-btn" style={{ marginTop: 0, padding: "10px 18px", fontSize: "13px" }}>예문 설정</button>
-                                    <input type="checkbox" checked={activeUnits.includes(u.id)} onChange={() => { if(activeUnits.includes(u.id)) setActiveUnits(activeUnits.filter(id=>id!==u.id)); else setActiveUnits([...activeUnits, u.id]); }} style={{ width: "20px", height: "20px", accentColor: "var(--sky)" }} />
+                                    <input type="checkbox" checked={activeUnits.includes(u.id)} onChange={() => { if (activeUnits.includes(u.id)) setActiveUnits(activeUnits.filter(id => id !== u.id)); else setActiveUnits([...activeUnits, u.id]); }} style={{ width: "20px", height: "20px", accentColor: "var(--sky)" }} />
                                 </div>
                             </div>
                         ))}
@@ -125,7 +125,7 @@ function App() {
             });
 
             const toggleSentence = (id) => {
-                const newSelected = selectedSentences.includes(id) 
+                const newSelected = selectedSentences.includes(id)
                     ? selectedSentences.filter(sid => sid !== id)
                     : [...selectedSentences, id];
                 setSelectedSentences(newSelected);
@@ -138,8 +138,8 @@ function App() {
             return (
                 <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
                     <button onClick={() => { setProblemViewStage(1); setSelectedUnitId("all"); }} style={{ background: "var(--sky-pale)", border: "none", color: "var(--sky)", padding: "10px 16px", borderRadius: "12px", fontWeight: 800, fontSize: "13px", marginBottom: "24px", cursor: "pointer" }}>&larr; 단원 목록으로</button>
-                    <div style={{ fontSize: "22px", fontWeight: 950, marginBottom: "32px" }}>{problemDetailUnit.unit} 예문별 성질 설정</div>
-                    
+                    <div style={{ fontSize: "22px", fontWeight: 950, marginBottom: "32px" }}>{problemDetailUnit.unit} 예문별 설정</div>
+
                     {problemDetailUnit.sentences.filter(s => selectedSentences.includes(s.id)).map((s, idx) => {
                         // 기본값: 첫 번째 예문은 재배열, 두 번째는 빈칸, 세 번째는 영작. 그 이후는 기본으로 빈 배열
                         const defaultSettings = idx === 0 ? ["재배열"] : idx === 1 ? ["빈칸 채우기"] : idx === 2 ? ["영작"] : [];
@@ -168,11 +168,11 @@ function App() {
                                         </label>
                                     ))}
                                 </div>
-                                
+
                                 {/* 미리보기 및 통제 영역 */}
                                 <div style={{ display: "flex", flexDirection: "column", gap: "12px", background: "white", padding: "16px", borderRadius: "12px", border: "1px solid #cbd5e1" }}>
                                     <div style={{ fontSize: "13px", fontWeight: 900, color: "#1e293b", marginBottom: "4px" }}>🔧 문제 미리보기 및 설정 (Logic 처리)</div>
-                                    
+
                                     {currentSettings.includes("문장 분석") && (
                                         <div style={{ padding: "12px", background: "#f8fafc", borderRadius: "8px", border: "1px solid #e2e8f0" }}>
                                             <div style={{ fontSize: "12px", fontWeight: 800, color: "#4f46e5", marginBottom: "8px" }}>Step 0. 문장 분석 (구문 성분 표시)</div>
@@ -239,7 +239,7 @@ function App() {
                                             <div style={{ fontSize: "11px", color: "#64748b", marginTop: "8px" }}>* 학생이 전체 문장을 입력하면, 주요 키워드 일치 여부를 기반으로 채점됩니다.</div>
                                         </div>
                                     )}
-                                    
+
                                     {currentSettings.length === 0 && (
                                         <div style={{ fontSize: "12px", color: "#94a3b8", fontStyle: "italic" }}>선택된 문제 유형이 없습니다.</div>
                                     )}
@@ -273,7 +273,7 @@ function App() {
         <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
             <Header isTeacher={true} title="🔍 문장투시경 Admin" sub={`김수현 교사 (${selectedClass})`} />
             <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 24px" }}>
-                <div className="home-tabs" style={{marginBottom: "40px"}}>
+                <div className="home-tabs" style={{ marginBottom: "40px" }}>
                     <button onClick={() => { window.location.href = 'main.html'; }} className="tab-item">단원 선택</button>
                     <button className="tab-item active">문제 관리</button>
                     <button onClick={() => { window.location.href = 'teacher_student.html'; }} className="tab-item">학생 관리</button>
@@ -291,7 +291,7 @@ function App() {
                         <label style={{ display: "block", fontSize: "12px", fontWeight: 900, color: "#64748b", marginBottom: "8px" }}>단원 선택</label>
                         <select value={selectedUnitId} onChange={(e) => {
                             setSelectedUnitId(e.target.value);
-                            if(e.target.value !== "all") {
+                            if (e.target.value !== "all") {
                                 const u = units.find(x => x.id === e.target.value);
                                 setProblemDetailUnit(u);
                                 setProblemViewStage(2);
