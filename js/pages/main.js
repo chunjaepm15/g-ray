@@ -107,18 +107,48 @@ function App() {
     const structData = generateStructure(currentSentence);
 
     // CHUNK_DATA와 getAnswerRange는 기존 코드 그대로 유지
+    // 범위 기반 하드코딩 번역 데이터
+    const RANGE_TRANS_DATA = {
+        "REF-L04-11": {
+            "0-1": "그 판사는",
+            "0-3": "그 판사는 감명받았습니다",
+            "0-4": "그 판사는 ~에 의해서 감명받았습니다",
+            "0-7": "그 판사는 그녀가 했던 말에 감명받았습니다",
+            "0-8": "그 판사는 그녀가 했던 말에 감명받았고",
+            "0-9": "그 판사는 그녀가 했던 말에 감명받았고 마침내",
+            "0-10": "그 판사는 그녀가 했던 말에 감명받았고 마침내 주었습니다",
+            "0-11": "그 판사는 그녀가 했던 말에 감명받았고 마침내 그녀에게 주었습니다",
+            "0-12": "그 판사는 그녀가 했던 말에 감명받았고, 마침내 그녀에게 허가를 내주었습니다.",
+            "2-3": "감명받았습니다",
+            "2-7": "그녀가 했던 말에 감명받았습니다",
+            "4-7": "그녀가 했던 말에 의해",
+            "5-7": "그녀가 했던 말",
+            "8-12": "그리고 마침내 그녀에게 허가를 내주었습니다",
+            "9-12": "마침내 그녀에게 허가를 내주었습니다",
+            "10-12": "그녀에게 허가를 내주었습니다",
+            "11-12": "그녀에게 허가를",
+            "12-12": "허가를"
+        }
+    };
+
     const CHUNK_DATA = {
         // ... 기존 데이터 생략
         "REF-L04-11": [
             { "en": "The judge", "ko": "그 판사는" },
             { "en": "was impressed", "ko": "감명받았습니다" },
             { "en": "by", "ko": "~에 의해" },
-            { "en": "what she said", "ko": "그녀가 했던 말에", "isTarget": true, "hint": "✨ [AI 피드백] 판사가 무엇에 감명받았는지 그 '내용' 전체를 드래그해보세요." },
+            { "en": "what she said", "ko": "그녀가 했던 말에", "isTarget": true, "hint": "✨ [AI 피드백] 판사가 무엇에 감명받았는지 그 '내용' 전체을 드래그해보세요." },
             { "en": "and", "ko": "그리고" },
             { "en": "finally", "ko": "마침내" },
-            { "en": "gave her", "ko": "그녀에게 주었습니다" },
-            { "en": "permission.", "ko": "허가를." }
+            { "en": "gave", "ko": "주었습니다" },
+            { "en": "her", "ko": "그녀에게" },
+            { "en": "permission.", "ko": "허가를" }
         ]
+    };
+
+    // AI 진단 가이드 데이터
+    const DIAGNOSIS_DATA = {
+        "REF-L04-11": "많은 친구들이 전치사 **by**를 명사절의 일부로 오해하거나, 절의 마지막 동사인 **said**를 빠뜨리곤 해요! 명사절 `what she said`는 그 자체로 전치사 `by`의 목적어 역할을 한다는 점에 주목해 보세요. ✨"
     };
 
     const getAnswerRange = () => {
@@ -138,6 +168,13 @@ function App() {
         if (s === null) return "드래그를 통해 문장 덩어리(구문)를 선택해주세요.";
         const start = Math.min(s, e);
         const end = Math.max(s, e);
+        const rangeKey = `${start}-${end}`;
+
+        // [추가] 범위 기반 하드코딩 데이터가 있으면 우선 반환
+        if (RANGE_TRANS_DATA[currentSentence?.id] && RANGE_TRANS_DATA[currentSentence?.id][rangeKey]) {
+            return `[해석 미리보기] "${words.slice(start, end + 1).join(' ')}" ➔ ${RANGE_TRANS_DATA[currentSentence?.id][rangeKey]}`;
+        }
+
         const sentenceChunks = CHUNK_DATA[currentSentence?.id];
 
         if (!sentenceChunks) return `[해석 미리보기] "${words.slice(start, end + 1).join(' ')}"`;
@@ -165,7 +202,7 @@ function App() {
         }
 
         if (matchedChunks.length > 0) {
-            return `[해석 미리보기] "${matchedChunks.map(c => c.en).join(' ')}" ➔ ${matchedChunks.map(c => c.ko).join(' ')}`;
+            return `[해석 미리보기] "${matchedChunks.map(c => c.en).join(' ')}" ➔ ${matchedChunks.map(c => c.ko).filter(k => k).join(' ')}`;
         }
 
         return <span style={{ opacity: 0.6 }}>[구조 분석 중...] 의미 덩어리(Chunk)를 완성해보세요.</span>;
@@ -201,7 +238,6 @@ function App() {
             if (nextTries >= 2) {
                 setActivityStatus("WRONG");
                 setDragRange({ start: answerRange.start, end: answerRange.end }); // 정답 범위 강제 표시
-                setTimeout(() => setScreen("RESULT"), 3500);
             } else {
                 setActivityStatus("WRONG");
             }
@@ -254,7 +290,6 @@ function App() {
                 } else if (qIndex === 2) {
                     setWriteAnswer(currentSentence.english);
                 }
-                setTimeout(() => nextAction(), 3500);
             }
         }
     };
@@ -286,9 +321,9 @@ function App() {
     };
 
     if (screen === "HOME") return (
-        <div>
+        <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
             <Header isTeacher={isTeacher} sub={isTeacher ? "김수현 교사 (3학년 1반)" : "박지훈 학생"} title={isTeacher ? "🔍 문장투시경 Admin" : "🔍 문장투시경"} />
-            <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 24px" }}>
+            <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 24px" }}>
                 <div className="home-tabs">
                     {!isTeacher ? (
                         <button onClick={() => setHomeTab("TRAINING")} className={`tab-item ${homeTab === "TRAINING" ? 'active' : ''}`}>투시경 훈련</button>
@@ -319,13 +354,13 @@ function App() {
                                         />
                                     )}
                                 </div>
-                                <div style={{ fontSize: 17, fontWeight: 900, color: "#1a3a5c", lineHeight: 1.4, marginBottom: 12 }}>{u.title}</div>
+                                <div style={{ fontSize: 20, fontWeight: 900, color: "var(--navy)", lineHeight: 1.4, marginBottom: 12 }}>{u.title}</div>
                                 <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
                                     {u.tags.map(t => <Badge key={t}>{t}</Badge>)}
                                 </div>
                             </div>
-                            <div style={{ textAlign: "right", fontSize: 13, fontWeight: 800, color: "#4f46e5", marginTop: 20, cursor: "pointer" }} onClick={() => { setSelectedUnit(u); setScreen("ANALYSIS"); }}>
-                                시작하기 →
+                            <div style={{ textAlign: "right" }}>
+                                <button className="start-btn" onClick={() => { setSelectedUnit(u); setScreen("ANALYSIS"); }}>시작하기 →</button>
                             </div>
                         </div>
                     ))}
@@ -335,61 +370,86 @@ function App() {
     );
 
     if (screen === "ANALYSIS") return (
-        <div>
+        <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
             <Header sub={selectedUnit.title} onBack={() => setScreen("HOME")} />
-            <div style={{ maxWidth: 740, margin: "32px auto", padding: "0 20px" }}>
-                <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1.5px solid #e2e8f0", marginBottom: 20, textAlign: "center", boxShadow: "0 4px 20px rgba(0,0,0,0.03)" }}>
-                    <div style={{ fontSize: 22, fontWeight: 900, color: "#1a3a5c", lineHeight: 1.5, marginBottom: 12 }}>{currentSentence ? currentSentence.english : ""}</div>
-                    <div style={{ fontSize: 15, color: "#64748b", fontWeight: 500 }}>{currentSentence ? currentSentence.korean : ""}</div>
+            <div style={{ maxWidth: 1000, margin: "32px auto", padding: "0 20px" }}>
+                {/* ① 예문 카드 */}
+                <div className="sentence-card">
+                    <div className="sentence-en" style={{ fontSize: "26px" }}>{currentSentence ? currentSentence.english : ""}</div>
+                    <div className="sentence-divider" style={{ width: "60px", height: "3px" }}></div>
+                    <div className="sentence-ko" style={{ fontSize: "17px" }}>{currentSentence ? currentSentence.korean : ""}</div>
                 </div>
-                <details open>
-                    <summary>🔍 문장 구조 투시</summary>
-                    <div className="details-content" style={{ textAlign: "center", padding: "24px" }}>
-                        <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 20 }}>
-                            <div style={{ flex: 1.5, border: "2.5px solid #4f46e5", borderRadius: 12, background: "#eef2ff", padding: "15px 5px", textAlign: "center" }}>
-                                <div style={{ fontWeight: 800, color: "#4f46e5", fontSize: 14 }}>{structData.target}</div>
-                                <div style={{ fontSize: 10, color: "#4f46e5", marginTop: 4 }}>Subject (S)</div>
-                            </div>
-                            <div style={{ flex: 1.2, border: "2.5px solid #64748b", borderRadius: 12, background: "#f8fafc", padding: "15px 5px", textAlign: "center" }}>
-                                <div style={{ fontWeight: 800, color: "#64748b", fontSize: 15 }}>{structData.v}</div>
-                                <div style={{ fontSize: 10, color: "#64748b", marginTop: 4 }}>Verb (V)</div>
-                            </div>
-                            <div style={{ flex: 2.5, border: "2.5px solid #b45309", borderRadius: 12, background: "#fffbeb", padding: "15px 5px", textAlign: "center" }}>
-                                <div style={{ fontWeight: 800, color: "#b45309", fontSize: 14 }}>{structData.obj}</div>
-                                <div style={{ fontSize: 10, color: "#b45309", marginTop: 4 }}>Complement (C)</div>
-                            </div>
+
+                {/* ② 문장 구조 투시 */}
+                <div className="section-header">
+                    <button className="section-toggle">▼</button>
+                    <span className="section-label">🔎 문장 구조 투시</span>
+                </div>
+                <div className="structure-wrap">
+                    <div className="structure-grid">
+                        <div className="struct-box subject">
+                            <div className="struct-text">{structData.target}</div>
+                            <div className="struct-label">Subject (S)</div>
+                        </div>
+                        <div className="struct-box verb">
+                            <div className="struct-text">{structData.v}</div>
+                            <div className="struct-label">Verb (V)</div>
+                        </div>
+                        <div className="struct-box complement">
+                            <div className="struct-text">{structData.obj}</div>
+                            <div className="struct-label">Complement (C)</div>
                         </div>
                     </div>
-                </details>
-                <details open>
-                    <summary>📚 핵심 문법 개념 정리</summary>
-                    <div className="details-content" style={{ padding: "24px" }}>
-                        {grammarConcepts[selectedUnit.title] ? (
-                            <>
-                                <div style={{ background: "#f0f7ff", borderRadius: 16, padding: "20px", marginBottom: "24px", textAlign: "center", border: "1px solid #dbeafe" }}>
-                                    <div style={{ fontSize: 16, color: "#1e40af", lineHeight: 1.8, fontWeight: 800 }}> {grammarConcepts[selectedUnit.title].rule}<br /> <small style={{ color: "#64748b", fontWeight: 500, fontSize: 13 }}>{grammarConcepts[selectedUnit.title].sub}</small> </div>
+                </div>
+
+                {/* ③ 핵심 문법 개념 정리 */}
+                <div className="section-header">
+                    <button className="section-toggle">▼</button>
+                    <span className="section-label">📊 핵심 문법 개념 정리</span>
+                </div>
+                <div className="grammar-wrap">
+                    {grammarConcepts[selectedUnit.title] ? (
+                        <>
+                            <div className="grammar-rule-box">
+                                <div className="grammar-rule-main">
+                                    {grammarConcepts[selectedUnit.title].rule}
                                 </div>
-                                <div style={{ fontSize: 13, color: "#475569", lineHeight: 2.2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
-                                    {grammarConcepts[selectedUnit.title].points.map((p, idx) => (<div key={idx} style={{ background: "#f8fafc", padding: "10px", borderRadius: 8, fontWeight: 700 }}>{p}</div>))}
+                                <div className="grammar-rule-sub">
+                                    {grammarConcepts[selectedUnit.title].sub}
                                 </div>
-                                {grammarConcepts[selectedUnit.title]?.teacher_tip && (
-                                    <div style={{ marginTop: "20px", padding: "12px 16px", background: "#fffbeb", border: "1px dashed #f59e0b", borderRadius: "12px", color: "#b45309", fontSize: "14px", fontWeight: 700 }}>
-                                        {grammarConcepts[selectedUnit.title].teacher_tip}
+                            </div>
+                            <div className="check-grid">
+                                {grammarConcepts[selectedUnit.title].points.map((p, idx) => (
+                                    <div key={idx} className="check-item">
+                                        <div className="check-dot">✓</div>
+                                        <div className="check-text">{p}</div>
                                     </div>
-                                )}
-                            </>
-                        ) : (<div style={{ textAlign: "center", color: "#64748b", padding: "20px" }}>선택된 단원의 개념 정리가 준비 중입니다.</div>)}
-                    </div>
-                </details>
-                <button onClick={() => setScreen("ACTIVITY")} style={{ width: "100%", padding: "22px", background: "#1a3a5c", color: "white", borderRadius: 20, fontWeight: 900, fontSize: 19, marginTop: 12, boxShadow: "0 6px 16px rgba(26,58,92,0.25)" }}>직접 한번 해보기 (투시 시작) →</button>
+                                ))}
+                            </div>
+                            {grammarConcepts[selectedUnit.title]?.teacher_tip && (
+                                <div style={{ marginTop: "20px", padding: "12px 16px", background: "#fffbeb", border: "1px dashed #f59e0b", borderRadius: "12px", color: "#b45309", fontSize: "14px", fontWeight: 700 }}>
+                                    {grammarConcepts[selectedUnit.title].teacher_tip}
+                                </div>
+                            )}
+                        </>
+                    ) : (
+                        <div style={{ textAlign: "center", color: "#64748b", padding: "20px" }}>
+                            선택된 단원의 개념 정리가 준비 중입니다.
+                        </div>
+                    )}
+                </div>
+
+                <button onClick={() => setScreen("ACTIVITY")} className="btn-full" style={{ marginTop: 20 }}>
+                    직접 한번 해보기 (투시 시작) →
+                </button>
             </div>
         </div>
     );
 
     if (screen === "ACTIVITY") return (
-        <div>
+        <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
             <Header sub={selectedUnit.title} onBack={() => { setScreen("ANALYSIS"); setTries(0); setActivityStatus("IDLE"); setShowHint(false); setDragRange({ start: null, end: null }); }} />
-            <div style={{ maxWidth: 680, margin: "40px auto", padding: "0 20px" }}>
+            <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 20px" }}>
                 <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 12px 30px rgba(0,0,0,0.06)" }}>
                     <div style={{ background: "#f1f5ff", padding: "20px", borderRadius: 16, fontSize: 16, marginBottom: 24, textAlign: "center", fontWeight: 800, color: "#2563eb", border: "1px solid #dbeafe" }}> 📌 <strong>{selectedUnit.title}</strong>에 해당하는 구문(덩어리) 전체를 찾아 마우스로 드래그하세요. </div>
                     <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center", padding: "12px 0 24px 0" }} onMouseDown={() => { if (activityStatus !== "SUCCESS") setIsDragging(true); }} onMouseUp={() => setIsDragging(false)}>
@@ -398,7 +458,7 @@ function App() {
                             return (<div key={i} className={`word-btn ${isInRange ? 'word-selected' : ''}`} onClick={() => handleWordAction(i)} onMouseEnter={() => { if (isDragging) setDragRange(prev => ({ ...prev, end: i })); }}>{w}</div>);
                         })}
                     </div>
-                    <div style={{ background: dragRange.start !== null ? "#1e293b" : "#f1f5f9", color: dragRange.start !== null ? "#fff" : "#94a3b8", transition: "0.3s", padding: "16px", borderRadius: 12, textAlign: "center", fontSize: 16, fontWeight: 800, minHeight: "24px", marginBottom: "32px" }}> {getTranslation(dragRange.start, dragRange.end)} </div>
+                    <div style={{ background: dragRange.start !== null ? "#1a3a5c" : "#f1f5f9", color: dragRange.start !== null ? "#fff" : "#94a3b8", transition: "0.3s", padding: "16px", borderRadius: 12, textAlign: "center", fontSize: 16, fontWeight: 800, minHeight: "24px", marginBottom: "32px", boxShadow: dragRange.start !== null ? "0 4px 12px rgba(0,0,0,0.1)" : "none" }}> {getTranslation(dragRange.start, dragRange.end)} </div>
                     {tries === 1 && !showHint && <div style={{ textAlign: "center", marginBottom: 16 }}> <button onClick={() => setShowHint(true)} style={{ background: "#fff", border: "1.5px solid #d1d5db", borderRadius: 10, padding: "8px 20px", fontSize: 14, fontWeight: 600, color: "#4b5563" }}> 💡 힌트 보기 </button> </div>}
                     {tries >= 2 && (
                         <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "20px", color: "#92400e", fontSize: 15, marginBottom: 16 }}>
@@ -407,7 +467,7 @@ function App() {
                     )}
                     {showHint && tries <= 1 && <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "24px", color: "#92400e", fontSize: 15, lineHeight: 1.6 }}>💡 힌트: {hintText}</div>}
                     <div style={{ display: "flex", gap: 14, marginTop: 12 }}>
-                        <button onClick={handleCheck} style={{ flex: 2, padding: "20px", borderRadius: 18, background: "#1a3a5c", color: "white", fontWeight: 900, fontSize: 18 }}>{activityStatus === "SUCCESS" ? "결과 보기" : "투시 확인하기"}</button>
+                        <button onClick={handleCheck} style={{ flex: 2, padding: "20px", borderRadius: 18, background: "var(--sky)", color: "white", fontWeight: 900, fontSize: 18, boxShadow: "0 4px 12px rgba(74, 159, 224, 0.3)" }}>{activityStatus === "SUCCESS" ? "결과 보기" : "투시 확인하기"}</button>
                     </div>
                 </div>
             </div>
@@ -417,23 +477,55 @@ function App() {
     if (screen === "RESULT") return (
         <div>
             <Header sub="결과 분석" onBack={() => { setScreen("HOME"); setTries(0); }} />
-            <div style={{ maxWidth: 700, margin: "40px auto", padding: "0 20px" }}>
-                <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
-                    <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 32, textAlign: "center", color: "#1a3a5c" }}>📊 우리 반 친구들의 포착 현황</div>
-                    <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center", marginBottom: 40 }}>
+            <div style={{ maxWidth: 800, margin: "40px auto", padding: "0 20px" }}>
+                <div className="result-card" style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.1)", borderRadius: 32, padding: "48px" }}>
+                    <div className="card-title-res" style={{ marginBottom: 32, fontSize: 24, justifyContent: "center" }}>
+                        <div className="title-icon" style={{ background: "#4A9FE0", color: "white" }}>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20V10M18 20V4M6 20v-4" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                        </div>
+                        우리 반 친구들의 포착 현황
+                    </div>
+                    
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center", marginBottom: 48, padding: "20px", background: "#f8fafc", borderRadius: 24 }}>
                         {words.map((w, i) => {
                             const isCorrect = i >= answerRange.start && i <= answerRange.end;
+                            // 수치 현실화 알고리즘
+                            let pct = 5;
+                            if (isCorrect) pct = 94 + (i % 3);
+                            else if (i === answerRange.start - 1) pct = 38; // 앞에 전치사(by)를 넣는 실수
+                            else if (i === answerRange.end + 1) pct = 14;  // 뒤의 and를 넣는 실수
+                            else if (i === 3) pct = 12; // 앞의 동사를 넣는 실수
+                            else pct = 4 + (i % 5);
+
                             return (
                                 <div key={i} style={{ textAlign: "center" }}>
-                                    <div style={{ padding: "14px 18px", borderRadius: 12, border: "1px solid #e2e8f0", background: isCorrect ? "#4f46e5" : "#fff", color: isCorrect ? "#fff" : "#334155", fontWeight: 900, fontSize: 18 }}>{w}</div>
-                                    <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4, fontWeight: 700 }}>{isCorrect ? '92%' : '12%'}</div>
+                                    <div className={`word-chip ${isCorrect ? 'high' : pct > 30 ? 'mid' : 'normal'}`} style={{ transition: "0.5s" }}>{w}</div>
+                                    <div className={`word-pct ${isCorrect ? 'high' : pct > 30 ? 'mid' : ''}`} style={{ fontWeight: 800 }}>{pct}%</div>
                                 </div>
                             );
                         })}
                     </div>
-                    <div style={{ display: "flex", gap: 14, marginTop: 32 }}>
-                        <button onClick={() => { setScreen("HOME"); setTries(0); setActivityStatus("IDLE"); setDragRange({ start: null, end: null }); }} style={{ flex: 1, padding: "20px", background: "#fff", border: "2.5px solid #1a3a5c", borderRadius: 20, fontWeight: 900, color: "#1a3a5c" }}>🏠 홈으로</button>
-                        <button onClick={() => setScreen("SIMILAR")} style={{ flex: 2, padding: "20px", background: "#4f46e5", color: "white", borderRadius: 20, fontWeight: 900, fontSize: 18 }}>다음: 비슷한 예문 →</button>
+
+                    {/* AI 진단 가이드 섹션 */}
+                    <div style={{ background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)", borderRadius: 20, padding: "28px", marginBottom: 40, border: "1px solid #bae6fd", position: "relative", overflow: "hidden" }}>
+                        <div style={{ position: "absolute", right: -10, top: -10, opacity: 0.1, transform: "rotate(15deg)" }}>
+                            <svg width="100" height="100" viewBox="0 0 24 24" fill="#0284c7"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#0369a1", fontWeight: 900, fontSize: 18, marginBottom: 12 }}>
+                            <span>✨ AI 학습 진단 가이드</span>
+                        </div>
+                        <div style={{ color: "#0c4a6e", fontSize: 16, lineHeight: 1.7, fontWeight: 500 }}>
+                            {DIAGNOSIS_DATA[selectedUnit.id] || "패턴의 범위를 정확히 파악하는 것이 중요합니다. 문법적인 덩어리(Chunk)가 어디서 시작하고 끝나는지 다시 한번 복습해보세요."}
+                        </div>
+                    </div>
+
+                    <div className="btn-row" style={{ gap: 16 }}>
+                        <button onClick={() => { setScreen("HOME"); setTries(0); setActivityStatus("IDLE"); setDragRange({ start: null, end: null }); }} className="btn-home" style={{ borderRadius: 18, padding: "18px 30px" }}>
+                            🏠 홈으로
+                        </button>
+                        <button onClick={() => setScreen("SIMILAR")} className="btn-next-res" style={{ borderRadius: 18, padding: "18px 40px", flex: 2, background: "var(--sky)", boxShadow: "0 8px 20px rgba(74, 159, 224, 0.3)" }}>
+                            다음: 비슷한 예문 보러가기 →
+                        </button>
                     </div>
                 </div>
             </div>
@@ -441,9 +533,9 @@ function App() {
     );
 
     if (screen === "SIMILAR") return (
-        <div>
+        <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
             <Header sub={`문제 풀이 (${qIndex + 1}/3)`} onBack={() => setScreen("RESULT")} />
-            <div style={{ maxWidth: 650, margin: "40px auto", padding: "0 20px" }}>
+            <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 20px" }}>
                 <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
                     <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 24 }}>
                         <span style={{ color: "#94a3b8", fontWeight: 800 }}>{selectedUnit.title}</span>
@@ -465,39 +557,122 @@ function App() {
                     )}
                     {qIndex === 1 && (
                         <div>
-                            <div style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>🧐 빈칸에 알맞은 단어를 고르세요.</div>
-                            <div style={{ fontSize: 16, color: "#64748b", marginBottom: 16 }}>{currentSentence ? currentSentence.korean : ""}</div>
-                            <div style={{ fontSize: 24, textAlign: "center", fontWeight: 700, margin: "24px 0" }}>
-                                {currentSentence.english.split(' ').map((w, i) => i === Math.floor(currentSentence.english.split(' ').length / 2) ? "____" : w).join(' ')}
+                            <div className="ds-ct" style={{ marginBottom: 12, color: "#4A9FE0" }}>4지선다 · 정답 선택 후 제출</div>
+                            <div className="q-prompt" style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>🧐 다음 빈칸에 들어갈 알맞은 단어를 고르세요.</div>
+                            <div style={{ fontSize: 15, color: "#64748b", marginBottom: 16 }}>{currentSentence ? currentSentence.korean : ""}</div>
+                            
+                            <div className="q-sentence">
+                                {currentSentence.english.split(' ').map((w, i) => i === Math.floor(currentSentence.english.split(' ').length / 2) ? <span key={i} className="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> : w).reduce((prev, curr) => [prev, ' ', curr])}
                             </div>
-                            {q2Options.map((opt, i) => (
-                                <button key={i} className={`option-btn ${selectedOption === (i + 1) ? 'selected' : ''}`} onClick={() => { if (qStatus !== "SUCCESS") setSelectedOption(i + 1) }}>{i + 1}. {opt}</button>
-                            ))}
+
+                            <div id="opts">
+                                {q2Options.map((opt, i) => {
+                                    let btnClass = "opt";
+                                    if (selectedOption === (i + 1)) btnClass += " selected";
+                                    if (qStatus === "SUCCESS" && q2CorrectOptionIndex === (i + 1)) btnClass += " correct";
+                                    if (qStatus === "WRONG" && selectedOption === (i + 1)) btnClass += " wrong";
+                                    // if an answer was submitted, dim the ones that are not correct/selected
+                                    if (qStatus !== "IDLE" && q2CorrectOptionIndex !== (i+1) && selectedOption !== (i+1)) btnClass += " dim";
+
+                                    return (
+                                        <button 
+                                            key={i} 
+                                            className={btnClass}
+                                            onClick={() => { if (qStatus === "IDLE") setSelectedOption(i + 1) }}
+                                        >
+                                            <span className="opt-num">{i + 1}</span>
+                                            {opt}
+                                            {qStatus !== "IDLE" && q2CorrectOptionIndex === (i + 1) && <span className="opt-result">✓ 정답</span>}
+                                            {qStatus !== "IDLE" && selectedOption === (i + 1) && q2CorrectOptionIndex !== (i + 1) && <span className="opt-result">✕ 오답</span>}
+                                        </button>
+                                    );
+                                })}
+                            </div>
                         </div>
                     )}
                     {qIndex === 2 && (
                         <div>
-                            <div style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>⌨️ 해석을 보고 영문장을 완성하세요.</div>
-                            <div style={{ fontSize: 16, color: "#64748b", marginBottom: 24 }}>{currentSentence ? currentSentence.korean : ""}</div>
-                            <input type="text" className="text-input" placeholder="영문을 작성하세요" value={writeAnswer} onChange={(e) => setWriteAnswer(e.target.value)} disabled={qStatus === "SUCCESS"} />
+                            <div className="ds-ct" style={{ marginBottom: 12, color: "#4A9FE0" }}>서술형 직접 쓰기 · 문장 전체 작성</div>
+                            <div className="q-prompt" style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>⌨️ 우리말 해석을 보고 영문장을 완성하세요.</div>
+                            <div style={{ fontSize: 16, color: "#64748b", marginBottom: 24, padding: "16px", background: "var(--surf)", borderRadius: "12px", border: "1.5px solid var(--bd)" }}>
+                                {currentSentence ? currentSentence.korean : ""}
+                            </div>
+                            <input 
+                                type="text" 
+                                className="subjective-input" 
+                                placeholder="이곳에 영문을 작성하세요..." 
+                                value={writeAnswer} 
+                                onChange={(e) => setWriteAnswer(e.target.value)} 
+                                disabled={qStatus === "SUCCESS" || (qStatus === "WRONG" && qTries >= 2)}
+                                autoFocus
+                            />
                         </div>
                     )}
                     <div style={{ marginTop: 32, minHeight: 90 }}>
                         {qStatus === "WRONG" && (
-                            <div style={{ background: "#fef2f2", padding: "16px", borderRadius: 12, color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>
-                                ❌ {qTries >= 2 ? "아쉽네요! 정답을 공개합니다." : "틀렸습니다. 다시 시도해 보세요."}
-                                {qTries >= 2 && (
-                                    <div style={{ marginTop: 10, fontSize: 14, color: "#991b1b", fontWeight: 500 }}>
-                                        💡 <strong>오답 가이드</strong>: {selectedUnit.title} 패턴에 유의하세요. {qIndex === 1 ? "알맞은 접속사나 관계대명사 형태를 확인해보세요." : "문장의 전체적인 흐름을 다시 한번 파악하는 것이 중요합니다."}
+                            qIndex === 1 ? (
+                                <div className="feedback wrong">
+                                    <div className="fb-icon">✕</div>
+                                    <div className="feedback-content">
+                                        <div className="feedback-title">다시 생각해봐요!</div>
+                                        <div className="feedback-desc">'{selectedUnit.title}' 패턴에 유의하세요. 알맞은 접속사나 관계대명사 형태를 확인해보세요.</div>
                                     </div>
-                                )}
-                            </div>
+                                </div>
+                            ) : qIndex === 2 ? (
+                                <div className="feedback wrong">
+                                    <div className="fb-icon">✕</div>
+                                    <div className="feedback-content">
+                                        <div className="feedback-title">{qTries >= 2 ? "아쉽네요! 정답을 확인해보세요." : "다시 한 번 확인해볼까요?"}</div>
+                                        <div className="feedback-desc">
+                                            {qTries >= 2 ? (
+                                                <span>정답: <strong style={{ textDecoration: "underline" }}>{currentSentence.english}</strong></span>
+                                            ) : (
+                                                `철자나 대소문자, 문장 부호가 정확한지 다시 한번 살펴봐주세요. (패턴: ${selectedUnit.title})`
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div style={{ background: "#fef2f2", padding: "16px", borderRadius: 12, color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>
+                                    ❌ {qTries >= 2 ? "아쉽네요! 정답을 공개합니다." : "틀렸습니다. 다시 시도해 보세요."}
+                                    {qTries >= 2 && (
+                                        <div style={{ marginTop: 10, fontSize: 14, color: "#991b1b", fontWeight: 500 }}>
+                                            💡 <strong>오답 가이드</strong>: {selectedUnit.title} 패턴에 유의하세요. 문장의 전체적인 흐름을 다시 한번 파악하는 것이 중요합니다.
+                                        </div>
+                                    )}
+                                </div>
+                            )
                         )}
-                        {qStatus === "SUCCESS" && <div style={{ background: "#ecfdf5", padding: "20px", borderRadius: 12, color: "#059669", fontWeight: 900, border: "1px solid #a7f3d0" }}>🎉 정답입니다!</div>}
+                        {qStatus === "SUCCESS" && (
+                            qIndex === 1 ? (
+                                <div className="feedback correct">
+                                    <div className="fb-icon">✓</div>
+                                    <div className="feedback-content">
+                                        <div className="feedback-title">정답이에요!</div>
+                                        <div className="feedback-desc">정확한 문법 구조를 선택했습니다.</div>
+                                    </div>
+                                </div>
+                            ) : qIndex === 2 ? (
+                                <div className="feedback correct">
+                                    <div className="fb-icon">✓</div>
+                                    <div className="feedback-content">
+                                        <div className="feedback-title">참 잘했어요!</div>
+                                        <div className="feedback-desc">완벽한 영문장을 완성했습니다. 이제 학습을 마무리해볼까요?</div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div style={{ background: "#ecfdf5", padding: "20px", borderRadius: 12, color: "#059669", fontWeight: 900, border: "1px solid #a7f3d0" }}>🎉 정답입니다!</div>
+                            )
+                        )}
                     </div>
-                    <button onClick={qStatus === "SUCCESS" ? nextAction : handleQCheck} style={{ width: "100%", padding: "20px", background: "#1a3a5c", color: "white", borderRadius: 20, fontWeight: 900 }}>
-                        {qStatus === "SUCCESS" ? (qIndex === 2 ? "완료하기" : "다음 문제") : "정답 확인"}
-                    </button>
+                        <button 
+                            onClick={qStatus === "SUCCESS" || (qStatus === "WRONG" && qTries >= 2) ? nextAction : handleQCheck} 
+                            className={(qIndex === 1 || qIndex === 2) ? "btn-cta-full" : "btn-full"} 
+                            style={{ marginTop: 12 }}
+                            disabled={qIndex === 1 ? selectedOption === null : (qIndex === 2 ? writeAnswer.trim().length === 0 : false)}
+                        >
+                            {qStatus === "SUCCESS" || (qStatus === "WRONG" && qTries >= 2) ? (qIndex === 2 ? "완료하기" : "다음 문제 풀기") : "정답 확인하기"}
+                        </button>
                 </div>
             </div>
         </div>
@@ -509,7 +684,7 @@ function App() {
             <div style={{ maxWidth: 700, margin: "40px auto", padding: "0 20px" }}>
                 <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
                     <div style={{ textAlign: "center", marginBottom: 32 }}> <div style={{ fontSize: 56 }}>🏅</div> <div style={{ fontSize: 28, fontWeight: 900 }}>학습 완료!</div> </div>
-                    <button onClick={() => { setScreen("HOME"); setQIndex(0); setQStatus("IDLE"); setActivityStatus("IDLE"); }} style={{ width: "100%", padding: "22px", background: "#1a3a5c", color: "white", borderRadius: 20, fontWeight: 900 }}>홈으로 돌아가기</button>
+                    <button onClick={() => { setScreen("HOME"); setQIndex(0); setQStatus("IDLE"); setActivityStatus("IDLE"); }} className="btn-full">홈으로 돌아가기</button>
                 </div>
             </div>
         </div>

@@ -95,7 +95,7 @@ function App() {
                 <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
                         <h3 style={{ fontWeight: 950, fontSize: "20px" }}>1-2. 문제 관리 (단원별 세부 설정)</h3>
-                        <span onClick={() => { if(isAllActive) setActiveUnits([]); else setActiveUnits(units.map(u=>u.id)); }} style={{ fontSize: "13px", fontWeight: 800, color: "#4f46e5", cursor: "pointer" }}>{isAllActive ? "전체 해제" : "전체 선택"}</span>
+                        <span onClick={() => { if(isAllActive) setActiveUnits([]); else setActiveUnits(units.map(u=>u.id)); }} style={{ fontSize: "13px", fontWeight: 800, color: "var(--sky)", cursor: "pointer" }}>{isAllActive ? "전체 해제" : "전체 선택"}</span>
                     </div>
                     <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
                         {units.map((u, idx) => (
@@ -108,8 +108,8 @@ function App() {
                                     </div>
                                 </div>
                                 <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-                                    <button onClick={() => { setProblemDetailUnit(u); setProblemViewStage(2); }} style={{ background: "#1a3a5c", color: "white", border: "none", borderRadius: "10px", padding: "10px 18px", fontSize: "13px", fontWeight: 900, cursor: "pointer" }}>예문 설정</button>
-                                    <input type="checkbox" checked={activeUnits.includes(u.id)} onChange={() => { if(activeUnits.includes(u.id)) setActiveUnits(activeUnits.filter(id=>id!==u.id)); else setActiveUnits([...activeUnits, u.id]); }} style={{ width: "20px", height: "20px", accentColor: "#4f46e5" }} />
+                                    <button onClick={() => { setProblemDetailUnit(u); setProblemViewStage(2); }} className="start-btn" style={{ marginTop: 0, padding: "10px 18px", fontSize: "13px" }}>예문 설정</button>
+                                    <input type="checkbox" checked={activeUnits.includes(u.id)} onChange={() => { if(activeUnits.includes(u.id)) setActiveUnits(activeUnits.filter(id=>id!==u.id)); else setActiveUnits([...activeUnits, u.id]); }} style={{ width: "20px", height: "20px", accentColor: "var(--sky)" }} />
                                 </div>
                             </div>
                         ))}
@@ -137,7 +137,7 @@ function App() {
 
             return (
                 <div style={{ background: "white", borderRadius: "24px", border: "1.5px solid #e2e8f0", padding: "32px" }}>
-                    <button onClick={() => { setProblemViewStage(1); setSelectedUnitId("all"); }} style={{ background: "#eef2ff", border: "none", color: "#4f46e5", padding: "10px 16px", borderRadius: "12px", fontWeight: 800, fontSize: "13px", marginBottom: "24px", cursor: "pointer" }}>&larr; 단원 목록으로</button>
+                    <button onClick={() => { setProblemViewStage(1); setSelectedUnitId("all"); }} style={{ background: "var(--sky-pale)", border: "none", color: "var(--sky)", padding: "10px 16px", borderRadius: "12px", fontWeight: 800, fontSize: "13px", marginBottom: "24px", cursor: "pointer" }}>&larr; 단원 목록으로</button>
                     <div style={{ fontSize: "22px", fontWeight: 950, marginBottom: "32px" }}>{problemDetailUnit.unit} 예문별 성질 설정</div>
                     
                     {problemDetailUnit.sentences.filter(s => selectedSentences.includes(s.id)).map((s, idx) => {
@@ -232,14 +232,14 @@ function App() {
                     {/* 추가 예문 선택 영역 */}
                     {problemDetailUnit.sentences.filter(s => !selectedSentences.includes(s.id)).length > 0 && (
                         <div style={{ marginTop: "40px", borderTop: "1.5px dashed #e2e8f0", paddingTop: "32px" }}>
-                            <div style={{ fontSize: "15px", fontWeight: 900, color: "#4f46e5", marginBottom: "16px" }}>+ 단원 내 예문 추가하기</div>
+                            <div style={{ fontSize: "15px", fontWeight: 900, color: "var(--sky)", marginBottom: "16px" }}>+ 단원 내 예문 추가하기</div>
                             <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                                 {problemDetailUnit.sentences.filter(s => !selectedSentences.includes(s.id)).map(s => (
                                     <div key={s.id} onClick={() => toggleSentence(s.id)} style={{ padding: "16px 20px", border: "1.5px solid #f1f5f9", borderRadius: "12px", cursor: "pointer", background: "white", display: "flex", justifyContent: "space-between", alignItems: "center", transition: "all 0.2s" }} onMouseEnter={e => e.currentTarget.style.borderColor = "#4f46e5"} onMouseLeave={e => e.currentTarget.style.borderColor = "#f1f5f9"}>
                                         <div style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap", flex: 1, marginRight: "20px" }}>
                                             <span style={{ fontWeight: 800, color: "#1e293b", fontSize: "14px" }}>{s.english}</span>
                                         </div>
-                                        <div style={{ color: "#4f46e5", fontWeight: 900, fontSize: "13px" }}>추가 +</div>
+                                        <div style={{ color: "var(--sky)", fontWeight: 900, fontSize: "13px" }}>추가 +</div>
                                     </div>
                                 ))}
                             </div>
@@ -251,9 +251,9 @@ function App() {
     };
 
     return (
-        <div style={{ minHeight: "100vh", background: "#f8fafc" }}>
+        <div style={{ minHeight: "100vh", background: "var(--bg)" }}>
             <Header isTeacher={true} title="🔍 문장투시경 Admin" sub={`김수현 교사 (${selectedClass})`} />
-            <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 24px" }}>
+            <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 24px" }}>
                 <div className="home-tabs" style={{marginBottom: "40px"}}>
                     <button onClick={() => { window.location.href = 'main.html'; }} className="tab-item">1-1. 단원 선택</button>
                     <button className="tab-item active">1-2. 문제 관리</button>
@@ -286,7 +286,7 @@ function App() {
                     </div>
                     <div style={{ display: "flex", gap: "8px" }}>
                         <button onClick={handleCopy} style={{ background: "#f8fafc", color: "#475569", border: "1px solid #cbd5e1", borderRadius: "8px", padding: "12px 16px", fontSize: "13px", fontWeight: 800, cursor: "pointer", transition: "all 0.2s" }} onMouseEnter={e => e.currentTarget.style.background = "#f1f5f9"} onMouseLeave={e => e.currentTarget.style.background = "#f8fafc"}>설정 복사</button>
-                        <button onClick={handlePaste} disabled={!copiedSettings} style={{ background: copiedSettings ? "#4f46e5" : "#e2e8f0", color: copiedSettings ? "white" : "#94a3b8", border: "none", borderRadius: "8px", padding: "12px 16px", fontSize: "13px", fontWeight: 800, cursor: copiedSettings ? "pointer" : "not-allowed" }}>설정 붙여넣기</button>
+                        <button onClick={handlePaste} disabled={!copiedSettings} style={{ background: copiedSettings ? "var(--sky)" : "#e2e8f0", color: copiedSettings ? "white" : "#94a3b8", border: "none", borderRadius: "8px", padding: "12px 16px", fontSize: "13px", fontWeight: 800, cursor: copiedSettings ? "pointer" : "not-allowed" }}>설정 붙여넣기</button>
                     </div>
                 </div>
 

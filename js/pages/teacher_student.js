@@ -78,7 +78,7 @@ function App() {
     const words = currentSentence?.english.split(' ') || [];
 
     return (
-        <div style={{ minHeight: "100vh", background: "#f8fafc", paddingBottom: "80px", fontFamily: "'Noto Sans KR', sans-serif" }}>
+        <div style={{ minHeight: "100vh", background: "var(--bg)", paddingBottom: "80px", fontFamily: "'Noto Sans KR', sans-serif" }}>
             <Header isTeacher={true} title="🔍 문장투시경 Admin" sub={`김수현 교사 (${selectedClass})`} />
 
             <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 24px" }}>
@@ -143,7 +143,7 @@ function App() {
                     <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center", marginBottom: "32px" }}>
                         {words.map((w, i) => (
                             <div key={i} style={{ textAlign: "center" }}>
-                                <div style={{ padding: "14px 18px", borderRadius: "12px", border: "1.5px solid #e2e8f0", background: stats.wordStats[i] > 70 ? "#4f46e5" : "#fff", color: stats.wordStats[i] > 70 ? "#fff" : "#1e293b", fontWeight: 900, fontSize: "17px" }}>{w}</div>
+                                <div style={{ padding: "14px 18px", borderRadius: "12px", border: "1.5px solid #e2e8f0", background: stats.wordStats[i] > 70 ? "var(--sky)" : "#fff", color: stats.wordStats[i] > 70 ? "#fff" : "#1e293b", fontWeight: 900, fontSize: "17px" }}>{w}</div>
                                 <div style={{ fontSize: "11px", color: "#94a3b8", marginTop: "6px", fontWeight: 700 }}>{stats.wordStats[i] || 0}%</div>
                             </div>
                         ))}
