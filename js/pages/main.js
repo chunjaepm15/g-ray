@@ -1,0 +1,953 @@
+const { useState, useEffect } = React;
+
+function App() {
+    const [screen, setScreen] = useState("HOME");
+    const [userRole, setUserRole] = useState(sessionStorage.getItem('userRole') || 'student');
+    const isTeacher = userRole === 'teacher';
+
+    const units = CURRICULUM.units.map((u, i) => ({
+        id: u.unit_id,
+        unit: `Unit ${i + 1}`,
+        title: u.title,
+        tags: u.origin_tags,
+        sentences: u.sentences
+    }));
+
+    const [homeTab, setHomeTab] = useState(isTeacher ? "UNIT_SELECT" : "TRAINING");
+    const [selectedUnit, setSelectedUnit] = useState(null);
+    const [dragRange, setDragRange] = useState({ start: null, end: null });
+    const [isDragging, setIsDragging] = useState(false);
+
+    const [selectedClass, setSelectedClass] = useState("3학년 1반");
+    const [activeUnits, setActiveUnits] = useState(() => {
+        const saved = sessionStorage.getItem('activeUnits');
+        return saved ? JSON.parse(saved) : units.slice(0, 10).map(u => u.id);
+    });
+    const [unitProblemSettings, setUnitProblemSettings] = useState(() => {
+        const saved = sessionStorage.getItem('unitProblemSettings');
+        return saved ? JSON.parse(saved) : {};
+    });
+
+    useEffect(() => {
+        sessionStorage.setItem('activeUnits', JSON.stringify(activeUnits));
+    }, [activeUnits]);
+
+    useEffect(() => {
+        sessionStorage.setItem('unitProblemSettings', JSON.stringify(unitProblemSettings));
+    }, [unitProblemSettings]);
+
+    // 활동 상태
+    const [tries, setTries] = useState(0);
+    const [showHint, setShowHint] = useState(false);
+    const [hintText, setHintText] = useState("");
+    const [activityStatus, setActivityStatus] = useState("IDLE");
+
+    // Similar questions states
+    const [qIndex, setQIndex] = useState(0);
+    const [qStatus, setQStatus] = useState("IDLE");
+    const [qTries, setQTries] = useState(0);
+    const [showConcept, setShowConcept] = useState(false);
+    const [reorderPool, setReorderPool] = useState([]);
+    const [reorderAnswer, setReorderAnswer] = useState([]);
+    const [selectedOption, setSelectedOption] = useState(null);
+    const [writeAnswer, setWriteAnswer] = useState("");
+    const [showQ3Translation, setShowQ3Translation] = useState(false);
+    const [visibleChunks, setVisibleChunks] = useState([]);
+    const [q3ReadingDone, setQ3ReadingDone] = useState(false);
+    const [q2Options, setQ2Options] = useState([]);
+    const [q2CorrectOptionIndex, setQ2CorrectOptionIndex] = useState(0);
+    const [showQHint, setShowQHint] = useState(false);
+
+    // [신규] SIMILAR 화면 재배치 전용 데이터 (구문 단위 청킹)
+    const SIMILAR_DATA = {
+        "Unit 01": {
+            id: "REF-L04-SIM-01",
+            english: "Many scientists are still trying to understand what actually caused the extinction of the dinosaurs long ago.",
+            korean: "많은 과학자들은 오래전에 무엇이 공룡의 멸종을 실제로 일으켰는지 이해하려고 여전히 노력하고 있다.",
+            chunks: [
+                "Many scientists",
+                "are still trying",
+                "to understand",
+                "what actually caused",
+                "the extinction of the dinosaurs",
+                "long ago."
+            ],
+            diagnosis: "이 문장의 핵심은 **'무엇이 ~을 일으켰는지'**를 나타내는 `what절`이 `understand`의 목적어 역할을 한다는 점입니다! 뼈대를 먼저 잡아보세요: [과학자들은(S) + 노력하고 있다(V) + ~을 알기 위해(O)]. 특히 `what` 뒤에 바로 동사 `caused`가 오는 어순에 주의하세요. ✨",
+            diagnosis2: "`impressed`는 '~에게 감명을 주다'라는 뜻의 타동사입니다. 따라서 뒤에는 감명을 받은 대상(목적어)이 필요하며, '영화에서 나를 가장 감동시킨 것'이라는 문맥에 맞게 목적격인 **me**가 와야 합니다. ✨",
+            diagnosis3: "`what`이 이끄는 명사절을 사용하여 '내가 배워야 할 것'을 표현해 보세요. `what` + `I` + `need to learn` 순서로 조립하고, '그녀로부터'라는 의미를 더해주는 전치사 `from her`를 마지막에 붙여주면 완벽합니다! ✨"
+        }
+    };
+
+    const currentSentence = selectedUnit && selectedUnit.sentences && selectedUnit.sentences.length > (screen === "SIMILAR" ? qIndex : 0) ? selectedUnit.sentences[screen === "SIMILAR" ? qIndex : 0] : (selectedUnit?.sentences?.[0] || null);
+    const words = currentSentence ? currentSentence.english.split(' ') : [];
+
+    useEffect(() => {
+        if (qIndex === 1 && currentSentence) {
+            const words = currentSentence.english.split(' ');
+            const blankIdx = Math.floor(words.length / 2);
+            const correctWord = words[blankIdx].replace(/[^a-zA-Z]/g, '');
+            const decoys = ["what", "how", "who", "when", "where", "which", "if", "that", "in", "on", "at", "for", "to"].filter(d => d !== correctWord.toLowerCase()).sort(() => 0.5 - Math.random()).slice(0, 3);
+            const opts = [...decoys, correctWord].sort(() => 0.5 - Math.random());
+            setQ2Options(opts);
+            setQ2CorrectOptionIndex(opts.indexOf(correctWord) + 1);
+        }
+    }, [qIndex, currentSentence]);
+
+    // [수정 포인트 1] 문법적 정확성을 위해 데이터 생성 로직 보완
+    const generateStructure = (sentence) => {
+        if (!sentence || !sentence.english) return { eng: "", kor: "", target: "", targetEnd: 1, ceng: "", v: "", obj: "" };
+
+        // REF-L04-11 (판사 문장)에 대해 수동태를 동사 덩어리로 묶고 보어부 확장
+        if (sentence.id === "REF-L04-11") {
+            return {
+                eng: sentence.english,
+                kor: sentence.korean,
+                target: "The judge", // S
+                targetEnd: 1,
+                v: "was impressed", // V (수동태 동사구)
+                obj: "by what she said and finally gave her permission." // C/M
+            };
+        }
+
+        if (sentence.syntax_chunks && sentence.syntax_chunks.length >= 2 && sentence.id && sentence.id.startsWith("REF-")) {
+            const firstChunkWords = sentence.syntax_chunks[0].eng.trim().split(/\s+/).length;
+            return {
+                eng: sentence.english,
+                kor: sentence.korean,
+                target: sentence.syntax_chunks[0].eng,
+                targetEnd: firstChunkWords - 1,
+                ceng: '',
+                v: sentence.syntax_chunks[1].eng,
+                obj: sentence.syntax_chunks.slice(2).map(c => c.eng).join(' ')
+            };
+        }
+        const w = sentence.english.split(' ');
+        const mid = Math.floor(w.length / 2);
+        return { eng: sentence.english, kor: sentence.korean, target: w.slice(0, mid).join(' '), targetEnd: mid - 1, ceng: '', v: w.length > 1 ? w[mid] : '', obj: w.slice(mid + 1).join(' ') };
+    };
+    const structData = generateStructure(currentSentence);
+
+    // CHUNK_DATA와 getAnswerRange는 기존 코드 그대로 유지
+    // 범위 기반 하드코딩 번역 데이터
+    const RANGE_TRANS_DATA = {
+        "REF-L04-11": {
+            "0-1": "그 판사는",
+            "0-3": "그 판사는 감명받았습니다",
+            "0-4": "그 판사는 ~에 의해서 감명받았습니다",
+            "0-7": "그 판사는 그녀가 했던 말에 감명받았습니다",
+            "0-8": "그 판사는 그녀가 했던 말에 감명받았고",
+            "0-9": "그 판사는 그녀가 했던 말에 감명받았고 마침내",
+            "0-10": "그 판사는 그녀가 했던 말에 감명받았고 마침내 주었습니다",
+            "0-11": "그 판사는 그녀가 했던 말에 감명받았고 마침내 그녀에게 주었습니다",
+            "0-12": "그 판사는 그녀가 했던 말에 감명받았고, 마침내 그녀에게 허가를 내주었습니다.",
+            "2-3": "감명받았습니다",
+            "2-7": "그녀가 했던 말에 감명받았습니다",
+            "4-7": "그녀가 했던 말에 의해",
+            "5-7": "그녀가 했던 말",
+            "8-12": "그리고 마침내 그녀에게 허가를 내주었습니다",
+            "9-12": "마침내 그녀에게 허가를 내주었습니다",
+            "10-12": "그녀에게 허가를 내주었습니다",
+            "11-12": "그녀에게 허가를",
+            "12-12": "허가를"
+        }
+    };
+
+    const CHUNK_DATA = {
+        // ... 기존 데이터 생략
+        "REF-L04-11": [
+            { "en": "The judge", "ko": "그 판사는" },
+            { "en": "was impressed", "ko": "감명받았습니다" },
+            { "en": "by", "ko": "~에 의해" },
+            { "en": "what she said", "ko": "그녀가 했던 말에", "isTarget": true, "hint": "✨ [AI 피드백] 판사가 무엇에 감명받았는지 그 '내용' 전체을 드래그해보세요." },
+            { "en": "and", "ko": "그리고" },
+            { "en": "finally", "ko": "마침내" },
+            { "en": "gave", "ko": "주었습니다" },
+            { "en": "her", "ko": "그녀에게" },
+            { "en": "permission.", "ko": "허가를" }
+        ]
+    };
+
+    const [isStructureOpen, setIsStructureOpen] = React.useState(false);
+    const [isGrammarOpen, setIsGrammarOpen] = React.useState(false);
+
+    // AI 진단 가이드 데이터
+    const DIAGNOSIS_DATA = {
+        "REF-L04-11": "많은 친구들이 전치사 by를 명사절의 일부로 오해하거나, 절의 마지막 동사인 said를 빠뜨리곤 해요! 명사절 `what she said`는 그 자체로 전치사 `by`의 목적어 역할을 한다는 점에 주목해 보세요. ✨"
+    };
+
+    const getAnswerRange = () => {
+        const chunks = CHUNK_DATA[currentSentence?.id];
+        if (!chunks) return { start: 0, end: structData.targetEnd };
+        let currentPos = 0;
+        for (const chunk of chunks) {
+            const chunkWords = chunk.en.trim().split(/\s+/).length;
+            if (chunk.isTarget) return { start: currentPos, end: currentPos + chunkWords - 1 };
+            currentPos += chunkWords;
+        }
+        return { start: 0, end: structData.targetEnd };
+    };
+    const answerRange = getAnswerRange();
+
+    const getTranslation = (s, e) => {
+        if (s === null) return "드래그를 통해 문장 덩어리(구문)를 선택해주세요.";
+        const start = Math.min(s, e);
+        const end = Math.max(s, e);
+        const rangeKey = `${start}-${end}`;
+
+        // [추가] 범위 기반 하드코딩 데이터가 있으면 우선 반환
+        if (RANGE_TRANS_DATA[currentSentence?.id] && RANGE_TRANS_DATA[currentSentence?.id][rangeKey]) {
+            return `[해석 미리보기] "${words.slice(start, end + 1).join(' ')}" ➔ ${RANGE_TRANS_DATA[currentSentence?.id][rangeKey]}`;
+        }
+
+        const sentenceChunks = CHUNK_DATA[currentSentence?.id];
+
+        if (!sentenceChunks) return `[해석 미리보기] "${words.slice(start, end + 1).join(' ')}"`;
+
+        let matchedChunks = [];
+        let currentPos = 0;
+
+        for (const chunk of sentenceChunks) {
+            const chunkWords = chunk.en.trim().split(/\s+/).length;
+            const chunkStart = currentPos;
+            const chunkEnd = currentPos + chunkWords - 1;
+
+            // 1. 사용자가 선택한 범위가 청크의 시작과 끝을 정확히 포함하는지 확인
+            const isStartInside = start >= chunkStart && start <= chunkEnd;
+            const isEndInside = end >= chunkStart && end <= chunkEnd;
+
+            if (start <= chunkStart && end >= chunkEnd) {
+                // 청크 전체가 선택 범위에 포함된 경우
+                matchedChunks.push(chunk);
+            } else if (isStartInside || isEndInside) {
+                // 2. 청크의 일부만 걸쳐 있는 경우 (할루시네이션 방지 구간)
+                return <span style={{ opacity: 0.6 }}>[구조 분석 중...] 의미 덩어리(Chunk)를 완성해보세요.</span>;
+            }
+            currentPos += chunkWords;
+        }
+
+        if (matchedChunks.length > 0) {
+            return `[해석 미리보기] "${matchedChunks.map(c => c.en).join(' ')}" ➔ ${matchedChunks.map(c => c.ko).filter(k => k).join(' ')}`;
+        }
+
+        return <span style={{ opacity: 0.6 }}>[구조 분석 중...] 의미 덩어리(Chunk)를 완성해보세요.</span>;
+    };
+
+    const handleWordAction = (i) => {
+        if (activityStatus === "SUCCESS") return;
+        if (dragRange.start === i && dragRange.end === i) setDragRange({ start: null, end: null });
+        else if (dragRange.start === null) setDragRange({ start: i, end: i });
+        else setDragRange(prev => ({ ...prev, end: i }));
+        if (activityStatus === "WRONG") setActivityStatus("IDLE");
+    };
+
+    const handleCheck = () => {
+        if (dragRange.start === null) return;
+        const s = Math.min(dragRange.start, dragRange.end);
+        const e = Math.max(dragRange.start, dragRange.end);
+
+        if (s === answerRange.start && e === answerRange.end) {
+            setActivityStatus("SUCCESS");
+            setScreen("RESULT");
+            return;
+        }
+
+        // 맞춤형 힌트 추출 로직
+        const sentenceChunks = CHUNK_DATA[currentSentence?.id];
+        const targetChunk = sentenceChunks?.find(c => c.isTarget);
+        let hint = targetChunk?.hint || `✨ [AI 피드백] <${selectedUnit.title}> 패턴이 포함된 의미 덩어리를 다시 확인해보세요.`;
+
+        setHintText(hint);
+        setTries(prev => {
+            const nextTries = prev + 1;
+            if (nextTries >= 2) {
+                setActivityStatus("WRONG");
+                setDragRange({ start: answerRange.start, end: answerRange.end }); // 정답 범위 강제 표시
+            } else {
+                setActivityStatus("WRONG");
+            }
+            return nextTries;
+        });
+    };
+
+    useEffect(() => {
+        const sIndex = screen === "SIMILAR" ? qIndex : 0;
+        if (selectedUnit && selectedUnit.sentences && selectedUnit.sentences.length > sIndex) {
+            const s = selectedUnit.sentences[sIndex];
+            const simData = SIMILAR_DATA[selectedUnit.id];
+
+            if (qIndex === 0 && simData) {
+                // [개선] 단어가 아닌 구문(Chunk) 단위로 셔플
+                const chunksArr = [...simData.chunks];
+                const shuffled = chunksArr.sort(() => Math.random() - 0.5);
+                setReorderPool(shuffled);
+                setReorderAnswer([]);
+            } else if (s && s.english) {
+                if (qIndex === 0) {
+                    const wordsArr = s.english.split(' ');
+                    const shuffled = [...wordsArr].sort(() => Math.random() - 0.5);
+                    setReorderPool(shuffled);
+                    setReorderAnswer([]);
+                } else {
+                    setWriteAnswer("");
+                    setSelectedOption(null);
+                }
+            }
+            setActivityStatus("IDLE");
+            setTries(0);
+            setShowQHint(false); // 힌트 상태 초기화
+        }
+    }, [selectedUnit, qIndex, screen]);
+
+    const handleQCheck = () => {
+        const nextTries = qTries + 1;
+        setQTries(nextTries);
+        let isCorrect = false;
+
+        const simData = SIMILAR_DATA[selectedUnit.id];
+        const targetSentence = (qIndex === 0 && simData) ? simData.english : currentSentence.english;
+
+        if (qIndex === 0) {
+            isCorrect = reorderAnswer.join(" ") === targetSentence;
+        } else if (qIndex === 1) {
+            isCorrect = selectedOption === q2CorrectOptionIndex;
+        } else if (qIndex === 2) {
+            // [개선] 단순 글자수 체크가 아닌, 실제 문장 일치 여부 확인 (Normalization 적용)
+            const normalize = (s) => s.toLowerCase().trim().replace(/[.?!]$/, "");
+            isCorrect = normalize(writeAnswer) === normalize(currentSentence.english);
+        }
+
+        if (isCorrect) {
+            setQStatus("SUCCESS");
+        } else {
+            setQStatus("WRONG");
+            if (nextTries >= 2) {
+                if (qIndex === 0) {
+                    const finalUnits = (qIndex === 0 && simData) ? simData.chunks : currentSentence.english.split(' ');
+                    setReorderAnswer(finalUnits);
+                    setReorderPool([]);
+                } else if (qIndex === 1) {
+                    setSelectedOption(q2CorrectOptionIndex);
+                } else if (qIndex === 2) {
+                    setWriteAnswer(currentSentence.english);
+                }
+            }
+        }
+    };
+
+    const nextAction = () => {
+        if (qIndex < 2) {
+            setQIndex(prev => prev + 1);
+            setQStatus("IDLE");
+            setQTries(0);
+            setShowConcept(false);
+            setWriteAnswer("");
+            setSelectedOption(null);
+        } else {
+            setScreen("DASHBOARD");
+        }
+    };
+
+    const grammarConcepts = {
+        "관계대명사 what": {
+            formula: "what + 주어 + 동사",
+            meaning: "~하는 것 (명사절)",
+            sub_formula: "= the thing which[that] + S + V",
+            details: [
+                "선행사를 포함하고 있어 what 앞에는 수식받는 명사가 올 수 없어요.",
+                "문장에서 주어, 목적어, 보어 역할을 하는 명사절을 이끌어요.",
+                "what 뒤에는 반드시 주어나 목적어가 빠진 불완전한 문장 형태가 와야 해요.",
+                "명사절인 what절은 항상 단수 취급한다는 점에 유의하세요!"
+            ],
+            examples: [
+                { en: "I don't believe what he said.", ko: "나는 그가 말한 것을 믿지 않는다." },
+                { en: "What I need is a cup of coffee.", ko: "내가 필요한 것은 커피 한 잔이다." }
+            ]
+        },
+        "현재완료 진행(형)": {
+            formula: "have / has + been + V-ing",
+            meaning: "과거부터 지금까지 계속 중인 동작",
+            sub_formula: "현재완료(have p.p.) + 진행형(be v-ing)",
+            details: [
+                "동사가 과거에 시작되어 현재까지도 계속 진행 중임을 강조해요.",
+                "for(기간), since(시점) 등의 표현과 함께 자주 쓰입니다.",
+                "주어의 인칭과 수에 따라 have 또는 has를 구분해서 사용하세요.",
+                "know, like, belong 등 상태를 나타내는 동사는 진행형으로 쓸 수 없어요."
+            ],
+            examples: [
+                { en: "She has been studying for two hours.", ko: "그녀는 두 시간째 공부하고 있어요." },
+                { en: "It has been raining since this morning.", ko: "오늘 아침부터 비가 내리고 있어요." }
+            ]
+        },
+        "to부정사의 의미상 주어": {
+            formula: "for / of + 목적격 + to V",
+            meaning: "to부정사의 동작을 하는 주체 명시",
+            sub_formula: "주로 it is ... to V 구문에서 사용",
+            details: [
+                "to부정사의 주체가 문장의 주어와 다를 때 보충해주는 표현이에요.",
+                "일반적인 경우에는 'for + 목적격'을 to부정사 앞에 씁니다.",
+                "사람의 성격을 나타내는 형용사 뒤에는 'of + 목적격'을 써요.",
+                "의미상 주어를 마치 문장의 주인공인 것처럼 '~이/가'로 해석하면 자연스러워요."
+            ],
+            examples: [
+                { en: "It is difficult for me to solve the problem.", ko: "내가 그 문제를 푸는 것은 어렵다." },
+                { en: "It was very kind of you to help me.", ko: "나를 도와주다니 당신은 정말 친절하시네요." }
+            ]
+        },
+        "과거완료": {
+            formula: "had + p.p.",
+            meaning: "대과거 (특정 과거보다 더 이전의 일)",
+            sub_formula: "과거의 두 사건 중 먼저 일어난 일을 표현",
+            details: [
+                "과거의 어느 시점을 기준으로 그보다 먼저 일어난 일을 나타내요.",
+                "과거에 시작된 일이 특정 과거 시점까지 계속, 완료, 경험되었음을 알립니다.",
+                "현재완료(have p.p.)의 기준점이 과거로 이동한 것이라고 이해하면 쉬워요.",
+                "after, before와 같이 선후 관계가 명확한 접속사와 자주 함께 쓰입니다."
+            ],
+            examples: [
+                { en: "The train had already left when I arrived.", ko: "내가 도착했을 때 기차는 이미 떠나고 없었다." },
+                { en: "I had never seen him before that day.", ko: "그날 이전에는 그를 본 적이 없었다." }
+            ]
+        },
+        "명사를 수식하는 분사": {
+            formula: "명사 + V-ing / p.p.",
+            meaning: "분사가 형용사처럼 명사를 꾸며줌",
+            sub_formula: "(관계대명사 + be동사)가 생략된 구조",
+            details: [
+                "현재분사(V-ing)는 능동이나 진행(~하고 있는)의 의미로 수식해요.",
+                "과거분사(p.p.)는 수동이나 완료(~된/당한)의 의미로 수식해요.",
+                "분사가 단독일 때는 명사 앞에, 어구가 길어지면 명사 뒤에서 꾸며줍니다.",
+                "수식받는 명사와 분사의 관계가 '직접 하는 것'인지 '되는 것'인지 구분하는 게 핵심!"
+            ],
+            examples: [
+                { en: "Who is the girl dancing over there?", ko: "저기서 춤추고 있는 소녀는 누구니?" },
+                { en: "The book written in English is easy.", ko: "영어로 쓰인 그 책은 쉽다." }
+            ]
+        },
+        "분사구문": {
+            formula: "V-ing ... , S + V ...",
+            meaning: "접속사와 주어를 생략하고 동사를 분사로 축약",
+            sub_formula: "부사절을 더 짧고 간결하게 표현한 구문",
+            details: [
+                "주절의 주어와 부사절의 주어가 같을 때 접속사와 주어를 생략해요.",
+                "남은 동사 원형에 -ing를 붙여 분사 형태로 바꿉니다.",
+                "때(when), 이유(because) 등 의미를 문맥에 맞게 해석하세요.",
+                "부정은 분사 바로 앞에 not이나 never를 붙여 표현합니다."
+            ],
+            examples: [
+                { en: "Feeling tired, I went to bed early.", ko: "피곤해서, 나는 일찍 잠자리에 들었다." },
+                { en: "Walking along the street, I met him.", ko: "길을 걷다가, 나는 그를 만났다." }
+            ]
+        },
+        "접속사 if / whether": {
+            formula: "if / whether + 주어 + 동사",
+            meaning: "~인지 아닌지 (명사절)",
+            sub_formula: "타동사(know, ask, wonder 등)의 목적어 역할",
+            details: [
+                "확실하지 않은 사실을 나타내는 명사절 접속사예요.",
+                "문장에서 주로 목적어 역할을 하며, '~인지 아닌지'로 해석합니다.",
+                "whether는 주어, 보어 자리에도 올 수 있지만 if는 주로 목적어 자리에 쓰여요.",
+                "문장 끝에 or not을 덧붙여 의미를 더 명확하게 할 수 있습니다."
+            ],
+            examples: [
+                { en: "I wonder if it will rain tomorrow.", ko: "내일 비가 올지 안 올지 궁금해." },
+                { en: "He asked whether she was busy.", ko: "그는 그녀가 바쁜지 아닌지 물었다." }
+            ]
+        },
+        "too ~ to ...": {
+            formula: "too + 형용사/부사 + to V",
+            meaning: "너무 ~해서 ...할 수 없다",
+            sub_formula: "so ~ that ... can't 로 변환 가능",
+            details: [
+                "부정어가 없지만 내용상으로는 부정의 의미를 담고 있어요.",
+                "형용사나 부사의 정도가 너무 심해 동작을 할 수 없음을 나타냅니다.",
+                "to부정사의 의미상 주어(for 목적격)를 넣어 누가 못하는지 명시할 수 있어요.",
+                "긍정적인 의미인 'enough to V'와 반대되는 패턴임을 기억하세요."
+            ],
+            examples: [
+                { en: "The coffee was too hot to drink.", ko: "커피가 너무 뜨거워서 마실 수 없었다." },
+                { en: "He is too busy to join us.", ko: "그는 너무 바빠서 우리와 함께할 수 없다." }
+            ]
+        },
+        "가정법 과거": {
+            formula: "If + S + 과거동사, S + 조동사과거 + V",
+            meaning: "현재 사실과 반대되는 일을 가정",
+            sub_formula: "만약 ~라면, ...할 텐데",
+            details: [
+                "실제로 일어나기 힘든 일이나 현재 상황과 반대되는 일을 상상할 때 써요.",
+                "시제는 과거를 쓰지만 해석은 반드시 '현재'로 한다는 점이 가장 중요합니다!",
+                "if절의 be동사는 주어에 상관없이 주로 were를 쓰는 것이 정석이에요.",
+                "직설법으로 바꾸면 '사실은 ~해서 ...하지 못한다'는 의미가 됩니다."
+            ],
+            examples: [
+                { en: "If I were rich, I could buy the car.", ko: "내가 부자라면, 그 차를 살 수 있을 텐데." },
+                { en: "If I had wings, I would fly to you.", ko: "내게 날개가 있다면, 너에게 날아갈 텐데." }
+            ]
+        },
+        "접속사 so that": {
+            formula: "so that + 주어 + can + V",
+            meaning: "~하기 위해서",
+            sub_formula: "목적을 나타내는 부사절 접속사",
+            details: [
+                "어떤 행위의 목적이나 의도를 나타낼 때 사용하는 접속사예요.",
+                "주로 뒤에 can, could, may와 같은 조동사가 함께 등장합니다.",
+                "콤마(,)와 함께 쓰이는 ', so that'은 '그래서 결국 ~했다'는 결과를 나타내요.",
+                "격식 있는 표현인 in order that으로 바꾸어 쓸 수도 있습니다."
+            ],
+            examples: [
+                { en: "I study hard so that I can pass the test.", ko: "시험에 합격하기 위해서 나는 열심히 공부한다." },
+                { en: "He spoke loudly so that everyone could hear.", ko: "모든 사람이 들을 수 있도록 그는 큰 소리로 말했다." }
+            ]
+        }
+    };
+
+    if (screen === "HOME") return (
+        <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
+            <Header isTeacher={isTeacher} sub={isTeacher ? "김수현 교사 (3학년 1반)" : "박지훈 학생"} title={isTeacher ? "🔍 문장투시경 Admin" : "🔍 문장투시경"} />
+            <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 24px" }}>
+                <div className="home-tabs">
+                    {!isTeacher ? (
+                        <button onClick={() => setHomeTab("TRAINING")} className={`tab-item ${homeTab === "TRAINING" ? 'active' : ''}`}>투시경 훈련</button>
+                    ) : (
+                        <>
+                            <button onClick={() => setHomeTab("UNIT_SELECT")} className={`tab-item ${homeTab === "UNIT_SELECT" ? 'active' : ''}`}> 단원 선택</button>
+                            <button onClick={() => { window.location.href = 'teacher_problem.html'; }} className={`tab-item`}> 문제 관리</button>
+                            <button onClick={() => { window.location.href = 'teacher_student.html'; }} className={`tab-item`}> 학생 관리</button>
+                        </>
+                    )}
+                </div>
+
+                <div className="unit-grid">
+                    {units.filter(u => isTeacher || activeUnits.includes(u.id)).map((u, idx) => (
+                        <div key={u.id} className="unit-card" style={{ opacity: isTeacher && homeTab === "UNIT_SELECT" && !activeUnits.includes(u.id) ? 0.5 : 1 }}>
+                            <div onClick={() => { if (!isTeacher || homeTab === "TRAINING") { setSelectedUnit(u); setScreen("ANALYSIS"); } }}>
+                                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                                    <div style={{ fontSize: 11, color: "#94a3b8", fontWeight: 800, marginBottom: 8, letterSpacing: "1px" }}>{u.unit}</div>
+                                    {isTeacher && homeTab === "UNIT_SELECT" && (
+                                        <input
+                                            type="checkbox"
+                                            checked={activeUnits.includes(u.id)}
+                                            onChange={(e) => {
+                                                if (e.target.checked) setActiveUnits([...activeUnits, u.id]);
+                                                else setActiveUnits(activeUnits.filter(id => id !== u.id));
+                                            }}
+                                            style={{ width: "18px", height: "18px" }}
+                                        />
+                                    )}
+                                </div>
+                                <div style={{ fontSize: 20, fontWeight: 900, color: "var(--navy)", lineHeight: 1.4, marginBottom: 12 }}>{u.title}</div>
+                                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                                    {u.tags.map(t => <Badge key={t}>{t}</Badge>)}
+                                </div>
+                            </div>
+                            <div style={{ textAlign: "right" }}>
+                                <button className="start-btn" onClick={() => { setSelectedUnit(u); setScreen("ANALYSIS"); }}>시작하기 →</button>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    );
+
+    if (screen === "ANALYSIS") return (
+        <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
+            <Header sub={selectedUnit.title} onBack={() => setScreen("HOME")} />
+            <div style={{ maxWidth: 1000, margin: "32px auto", padding: "0 20px" }}>
+                {/* ① 예문 카드 */}
+                <div className="sentence-card">
+                    <div className="sentence-en" style={{ fontSize: "26px" }}>{currentSentence ? currentSentence.english : ""}</div>
+                    <div className="sentence-divider" style={{ width: "60px", height: "3px" }}></div>
+                    <div className="sentence-ko" style={{ fontSize: "17px" }}>{currentSentence ? currentSentence.korean : ""}</div>
+                </div>
+
+                {/* ② 문장 구조 투시 */}
+                <div
+                    className="section-header"
+                    onClick={() => setIsStructureOpen(!isStructureOpen)}
+                    style={{ cursor: "pointer", userSelect: "none" }}
+                >
+                    <button className="section-toggle">{isStructureOpen ? "▼" : "▶"}</button>
+                    <span className="section-label">🔎 문장 구조 투시</span>
+                </div>
+                {isStructureOpen && (
+                    <div className="structure-wrap">
+                        <div className="structure-grid">
+                            <div className="struct-box subject">
+                                <div className="struct-text">{structData.target}</div>
+                                <div className="struct-label">Subject (S)</div>
+                            </div>
+                            <div className="struct-box verb">
+                                <div className="struct-text">{structData.v}</div>
+                                <div className="struct-label">Verb (V)</div>
+                            </div>
+                            <div className="struct-box complement">
+                                <div className="struct-text">{structData.obj}</div>
+                                <div className="struct-label">Complement (C)</div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* ③ 핵심 문법 개념 정리 */}
+                <div
+                    className="section-header"
+                    onClick={() => setIsGrammarOpen(!isGrammarOpen)}
+                    style={{ cursor: "pointer", userSelect: "none" }}
+                >
+                    <button className="section-toggle">{isGrammarOpen ? "▼" : "▶"}</button>
+                    <span className="section-label">📊 핵심 문법 개념 정리</span>
+                </div>
+                {isGrammarOpen && (
+                    <div className="grammar-wrap">
+                        {grammarConcepts[selectedUnit.title] ? (
+                            <>
+                                <div className="grammar-rule-box">
+                                    <div className="grammar-rule-main">
+                                        {grammarConcepts[selectedUnit.title].formula}
+                                    </div>
+                                    <div style={{ fontSize: '18px', fontWeight: 800, color: 'var(--sky)', margin: '8px 0' }}>
+                                        {grammarConcepts[selectedUnit.title].meaning}
+                                    </div>
+                                    <div className="grammar-rule-sub">
+                                        {grammarConcepts[selectedUnit.title].sub_formula}
+                                    </div>
+                                </div>
+                                <div className="grammar-details-list">
+                                    {grammarConcepts[selectedUnit.title].details.map((d, idx) => (
+                                        <div key={idx} className="grammar-detail-item">
+                                            <div className="grammar-detail-num">
+                                                {idx + 1}
+                                            </div>
+                                            <div className="grammar-detail-text">{d}</div>
+                                        </div>
+                                    ))}
+                                </div>
+
+                                <div className="grammar-examples-section">
+                                    <div className="ds-ct" style={{ marginBottom: '14px', display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                        <span style={{ background: 'var(--sky)', width: '4px', height: '12px', borderRadius: '2px' }}></span>
+                                        실전 예문 확인하기
+                                    </div>
+                                    <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                        {grammarConcepts[selectedUnit.title].examples.map((ex, idx) => (
+                                            <div key={idx} className="grammar-example-card">
+                                                <div className="grammar-example-en">{ex.en}</div>
+                                                <div className="grammar-example-ko">{ex.ko}</div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                {grammarConcepts[selectedUnit.title]?.teacher_tip && (
+                                    <div style={{ marginTop: "24px", padding: "16px 20px", background: "#fffbeb", border: "1px dashed #f59e0b", borderRadius: "16px", color: "#b45309", fontSize: "14px", fontWeight: 700, display: 'flex', gap: '8px' }}>
+                                        <span>💡</span> {grammarConcepts[selectedUnit.title].teacher_tip}
+                                    </div>
+                                )}
+                            </>
+                        ) : (
+                            <div style={{ textAlign: "center", color: "#64748b", padding: "20px" }}>
+                                선택된 단원의 개념 정리가 준비 중입니다.
+                            </div>
+                        )}
+                    </div>
+                )}
+
+                <button onClick={() => setScreen("ACTIVITY")} className="btn-full" style={{ marginTop: 20 }}>
+                    직접 한번 해보기 (투시 시작) →
+                </button>
+            </div>
+        </div>
+    );
+
+    if (screen === "ACTIVITY") return (
+        <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
+            <Header sub={selectedUnit.title} onBack={() => { setScreen("ANALYSIS"); setTries(0); setActivityStatus("IDLE"); setShowHint(false); setDragRange({ start: null, end: null }); }} />
+            <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 20px" }}>
+                <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 12px 30px rgba(0,0,0,0.06)" }}>
+                    <div style={{ background: "#f1f5ff", padding: "20px", borderRadius: 16, fontSize: 16, marginBottom: 24, textAlign: "center", fontWeight: 800, color: "#2563eb", border: "1px solid #dbeafe" }}> 📌 <strong>{selectedUnit.title}</strong>에 해당하는 구문(덩어리) 전체를 찾아 마우스로 드래그하세요. </div>
+                    <div className="sentence-view" style={{ userSelect: "none", lineHeight: "2.4", padding: "10px 20px", display: "block", textAlign: "center" }} onMouseDown={(e) => { if (activityStatus !== "SUCCESS") { setIsDragging(true); if (e.target === e.currentTarget) { setDragRange({ start: null, end: null }); } } }} onMouseLeave={() => setIsDragging(false)} onMouseUp={() => setIsDragging(false)}>
+                        {words.map((w, i) => {
+                            const minVal = Math.min(dragRange.start, dragRange.end);
+                            const maxVal = Math.max(dragRange.start, dragRange.end);
+                            const isInRange = dragRange.start !== null && i >= minVal && i <= maxVal;
+
+                            let classes = "sentence-word";
+                            if (isInRange) {
+                                classes += " selected";
+                                if (i === minVal) classes += " start";
+                                if (i === maxVal) classes += " end";
+                            }
+
+                            return (
+                                <React.Fragment key={i}>
+                                    <span
+                                        className={classes}
+                                        onMouseDown={() => {
+                                            if (activityStatus !== "SUCCESS") {
+                                                setDragRange({ start: i, end: i });
+                                                if (activityStatus === "WRONG") setActivityStatus("IDLE");
+                                            }
+                                        }}
+                                        onMouseEnter={() => { if (isDragging && activityStatus !== "SUCCESS") setDragRange(prev => ({ ...prev, end: i })); }}
+                                        style={{ cursor: "pointer", display: "inline-block" }}
+                                    >
+                                        {w}
+                                    </span>
+                                    {i < words.length - 1 && (
+                                        <span
+                                            className={isInRange && i < maxVal ? "sentence-word selected" : "sentence-word"}
+                                            style={{ display: "inline-block", pointerEvents: "none" }}
+                                        >
+                                            &nbsp;
+                                        </span>
+                                    )}
+                                </React.Fragment>
+                            );
+                        })}
+                    </div>
+                    <div style={{ background: dragRange.start !== null ? "#1a3a5c" : "#f1f5f9", color: dragRange.start !== null ? "#fff" : "#94a3b8", transition: "0.3s", padding: "16px", borderRadius: 12, textAlign: "center", fontSize: 16, fontWeight: 800, minHeight: "24px", marginBottom: "32px", boxShadow: dragRange.start !== null ? "0 4px 12px rgba(0,0,0,0.1)" : "none" }}> {getTranslation(dragRange.start, dragRange.end)} </div>
+                    {tries === 1 && !showHint && <div style={{ textAlign: "center", marginBottom: 16 }}> <button onClick={() => setShowHint(true)} style={{ background: "#fff", border: "1.5px solid #d1d5db", borderRadius: 10, padding: "8px 20px", fontSize: 14, fontWeight: 600, color: "#4b5563" }}> 💡 힌트 보기 </button> </div>}
+                    {tries >= 2 && (
+                        <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "20px", color: "#92400e", fontSize: 15, marginBottom: 16 }}>
+                            💡 <strong>오답 가이드</strong>: '{selectedUnit.title}'의 핵심은 정답에 해당하는 구문(chunk) 전체를 하나의 의미 마디로 포착하는 것입니다. ({hintText})
+                        </div>
+                    )}
+                    {showHint && tries <= 1 && <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "24px", color: "#92400e", fontSize: 15, lineHeight: 1.6 }}>💡 힌트: {hintText}</div>}
+                    <div style={{ display: "flex", gap: 14, marginTop: 12 }}>
+                        <button onClick={handleCheck} style={{ flex: 2, padding: "20px", borderRadius: 18, background: "var(--sky)", color: "white", fontWeight: 900, fontSize: 18, boxShadow: "0 4px 12px rgba(74, 159, 224, 0.3)" }}>{activityStatus === "SUCCESS" ? "결과 보기" : "결과 확인"}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+
+    if (screen === "RESULT") return (
+        <div>
+            <Header sub="결과 분석" onBack={() => { setScreen("HOME"); setTries(0); }} />
+            <div style={{ maxWidth: 800, margin: "40px auto", padding: "0 20px" }}>
+                <div className="result-card" style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.1)", borderRadius: 32, padding: "48px" }}>
+                    <div className="card-title-res" style={{ marginBottom: 32, fontSize: 24, justifyContent: "center" }}>
+                        <div className="title-icon" style={{ background: "#4A9FE0", color: "white" }}>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M12 20V10M18 20V4M6 20v-4" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                        </div>
+                        우리 반 친구들의 포착 현황
+                    </div>
+
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 14, justifyContent: "center", marginBottom: 48, padding: "20px", background: "#f8fafc", borderRadius: 24 }}>
+                        {words.map((w, i) => {
+                            const isCorrect = i >= answerRange.start && i <= answerRange.end;
+                            // 수치 현실화 알고리즘
+                            let pct = 5;
+                            if (isCorrect) pct = 94 + (i % 3);
+                            else if (i === answerRange.start - 1) pct = 38; // 앞에 전치사(by)를 넣는 실수
+                            else if (i === answerRange.end + 1) pct = 14;  // 뒤의 and를 넣는 실수
+                            else if (i === 3) pct = 12; // 앞의 동사를 넣는 실수
+                            else pct = 4 + (i % 5);
+
+                            return (
+                                <div key={i} style={{ textAlign: "center" }}>
+                                    <div className={`word-chip ${isCorrect ? 'high' : pct > 30 ? 'mid' : 'normal'}`} style={{ transition: "0.5s" }}>{w}</div>
+                                    <div className={`word-pct ${isCorrect ? 'high' : pct > 30 ? 'mid' : ''}`} style={{ fontWeight: 800 }}>{pct}%</div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* AI 진단 가이드 섹션 */}
+                    <div style={{ background: "linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%)", borderRadius: 20, padding: "28px", marginBottom: 40, border: "1px solid #bae6fd", position: "relative", overflow: "hidden" }}>
+                        <div style={{ position: "absolute", right: -10, top: -10, opacity: 0.1, transform: "rotate(15deg)" }}>
+                            <svg width="100" height="100" viewBox="0 0 24 24" fill="#0284c7"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
+                        </div>
+                        <div style={{ display: "flex", alignItems: "center", gap: 10, color: "#0369a1", fontWeight: 900, fontSize: 18, marginBottom: 12 }}>
+                            <span>✨ AI 학습 진단 가이드</span>
+                        </div>
+                        <div style={{ color: "#0c4a6e", fontSize: 16, lineHeight: 1.7, fontWeight: 500 }}>
+                            {DIAGNOSIS_DATA[currentSentence?.id] || "패턴의 범위를 정확히 파악하는 것이 중요합니다. 문법적인 덩어리(Chunk)가 어디서 시작하고 끝나는지 다시 한번 복습해보세요."}
+                        </div>
+                    </div>
+
+                    <div className="btn-row" style={{ gap: 16 }}>
+                        <button onClick={() => { setScreen("HOME"); setTries(0); setActivityStatus("IDLE"); setDragRange({ start: null, end: null }); }} className="btn-home" style={{ borderRadius: 18, padding: "18px 30px" }}>
+                            🏠 홈으로
+                        </button>
+                        <button onClick={() => setScreen("SIMILAR")} className="btn-next-res" style={{ borderRadius: 18, padding: "18px 40px", flex: 2, background: "var(--sky)", boxShadow: "0 8px 20px rgba(74, 159, 224, 0.3)" }}>
+                            다음: 비슷한 예문 보러가기 →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+
+    if (screen === "SIMILAR") return (
+        <div style={{ background: "var(--bg)", minHeight: "100vh" }}>
+            <Header sub={`문제 풀이 (${qIndex + 1}/3)`} onBack={() => setScreen("RESULT")} />
+            <div style={{ maxWidth: 1000, margin: "40px auto", padding: "0 20px" }}>
+                <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
+                    <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 24 }}>
+                        <span style={{ color: "#94a3b8", fontWeight: 800 }}>{selectedUnit.title}</span>
+                    </div>
+                    {qIndex === 0 && (
+                        <div>
+                            <div style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>📝 문장을 올바르게 재배치하세요. (구문 퍼즐)</div>
+                            <div style={{ fontSize: 16, color: "#64748b", marginBottom: 24 }}>
+                                {SIMILAR_DATA[selectedUnit.id] ? SIMILAR_DATA[selectedUnit.id].korean : currentSentence.korean}
+                            </div>
+                            <div className="dropzone" onClick={() => { if (qStatus === "SUCCESS") return; setReorderPool([...reorderPool, ...reorderAnswer]); setReorderAnswer([]); }}>
+                                {reorderAnswer.map((w, i) => <div key={i} className="word-btn" style={{ borderColor: "#4f46e5", background: "#f5f3ff" }}>{w}</div>)}
+                                {reorderAnswer.length === 0 && <span style={{ color: "#94a3b8" }}>이곳을 눌러 구문을 조립하세요 (Puzzle)</span>}
+                            </div>
+                            <div className="word-pool">
+                                {reorderPool.map((w, i) => (
+                                    <div key={i} className="word-btn" onClick={() => { if (qStatus !== "SUCCESS") { setReorderAnswer([...reorderAnswer, w]); setReorderPool(reorderPool.filter((_, idx) => idx !== i)); } }}>{w}</div>
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                    {qIndex === 1 && (
+                        <div>
+                            <div className="ds-ct" style={{ marginBottom: 12, color: "#4A9FE0" }}>4지선다 · 정답 선택 후 제출</div>
+                            <div className="q-prompt" style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>🧐 다음 빈칸에 들어갈 알맞은 단어를 고르세요.</div>
+                            <div style={{ fontSize: 15, color: "#64748b", marginBottom: 16 }}>{currentSentence ? currentSentence.korean : ""}</div>
+
+                            <div className="q-sentence">
+                                {currentSentence.english.split(' ').map((w, i) => i === Math.floor(currentSentence.english.split(' ').length / 2) ? <span key={i} className="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> : w).reduce((prev, curr) => [prev, ' ', curr])}
+                            </div>
+
+                            <div id="opts">
+                                {q2Options.map((opt, i) => {
+                                    let btnClass = "opt";
+                                    if (selectedOption === (i + 1)) btnClass += " selected";
+                                    if (qStatus === "SUCCESS" && q2CorrectOptionIndex === (i + 1)) btnClass += " correct";
+                                    if (qStatus === "WRONG" && selectedOption === (i + 1)) btnClass += " wrong";
+                                    // if an answer was submitted, dim the ones that are not correct/selected
+                                    if (qStatus !== "IDLE" && q2CorrectOptionIndex !== (i + 1) && selectedOption !== (i + 1)) btnClass += " dim";
+
+                                    return (
+                                        <button
+                                            key={i}
+                                            className={btnClass}
+                                            onClick={() => { if (qStatus === "IDLE") setSelectedOption(i + 1) }}
+                                        >
+                                            <span className="opt-num">{i + 1}</span>
+                                            {opt}
+                                            {qStatus !== "IDLE" && q2CorrectOptionIndex === (i + 1) && <span className="opt-result">✓ 정답</span>}
+                                            {qStatus !== "IDLE" && selectedOption === (i + 1) && q2CorrectOptionIndex !== (i + 1) && <span className="opt-result">✕ 오답</span>}
+                                        </button>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    )}
+                    {qIndex === 2 && (
+                        <div>
+                            <div className="ds-ct" style={{ marginBottom: 12, color: "#4A9FE0" }}>서술형 직접 쓰기 · 문장 전체 작성</div>
+                            <div className="q-prompt" style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>⌨️ 우리말 해석을 보고 영문장을 완성하세요.</div>
+                            <div style={{ fontSize: 16, color: "#64748b", marginBottom: 24, padding: "16px", background: "var(--surf)", borderRadius: "12px", border: "1.5px solid var(--bd)" }}>
+                                {currentSentence ? currentSentence.korean : ""}
+                            </div>
+                            <input
+                                type="text"
+                                className="subjective-input"
+                                placeholder="이곳에 영문을 작성하세요..."
+                                value={writeAnswer}
+                                onChange={(e) => setWriteAnswer(e.target.value)}
+                                disabled={qStatus === "SUCCESS" || (qStatus === "WRONG" && qTries >= 2)}
+                                autoFocus
+                            />
+                        </div>
+                    )}
+                    <div style={{ marginTop: 32, minHeight: 90 }}>
+                        {qStatus === "WRONG" && (
+                            <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+                                <div className="feedback wrong" style={{ margin: 0 }}>
+                                    <div className="fb-icon">✕</div>
+                                    <div className="feedback-content">
+                                        <div className="feedback-title">{qTries >= 2 ? "아쉽네요! 정답을 확인해보세요." : "다시 생각해봐요!"}</div>
+                                        <div className="feedback-desc">
+                                            {qIndex === 2 && qTries >= 2 ? (
+                                                <span>정답: <strong style={{ textDecoration: "underline" }}>{currentSentence.english}</strong></span>
+                                            ) : (
+                                                qIndex === 2 ? `철자나 대소문자, 문장 부호가 정확한지 다시 한번 살펴봐주세요. (패턴: ${selectedUnit.title})` : "선택한 답이 문맥이나 문법적으로 어색한 것 같아요."
+                                            )}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {qStatus === "WRONG" && qTries < 2 && !showQHint && (
+                                    <button
+                                        onClick={() => setShowQHint(true)}
+                                        style={{ background: "#fff", border: "1.5px solid #d1d5db", borderRadius: 10, padding: "10px", fontSize: 14, fontWeight: 700, color: "#1e293b", cursor: "pointer", alignSelf: "center", boxShadow: "0 2px 4px rgba(0,0,0,0.05)" }}
+                                    >
+                                        💡 힌트 확인하기
+                                    </button>
+                                )}
+
+                                {(showQHint || qTries >= 2) && (
+                                    <div style={{ background: "linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%)", border: "1px solid #fcd34d", borderRadius: 16, padding: "20px", color: "#92400e", fontSize: 15, position: "relative", overflow: "hidden" }}>
+                                        <div style={{ position: "absolute", right: -5, top: -5, opacity: 0.1 }}>
+                                            <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" /></svg>
+                                        </div>
+                                        <div style={{ fontWeight: 900, marginBottom: 8, display: "flex", alignItems: "center", gap: 6 }}>
+                                            <span>✨ AI 학습 진단 가이드</span>
+                                        </div>
+                                        <div style={{ lineHeight: 1.6 }}>
+                                            {qIndex === 0 ? SIMILAR_DATA[selectedUnit.id]?.diagnosis :
+                                                qIndex === 1 ? SIMILAR_DATA[selectedUnit.id]?.diagnosis2 :
+                                                    SIMILAR_DATA[selectedUnit.id]?.diagnosis3 || `오답 가이드: ${selectedUnit.title} 패턴에 유의하세요. 문장의 전체적인 흐름을 다시 한번 파악하는 것이 중요합니다.`}
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                        {qStatus === "SUCCESS" && (
+                            qIndex === 1 ? (
+                                <div className="feedback correct">
+                                    <div className="fb-icon">✓</div>
+                                    <div className="feedback-content">
+                                        <div className="feedback-title">정답이에요!</div>
+                                        <div className="feedback-desc">정확한 문법 구조를 선택했습니다.</div>
+                                    </div>
+                                </div>
+                            ) : qIndex === 2 ? (
+                                <div className="feedback correct">
+                                    <div className="fb-icon">✓</div>
+                                    <div className="feedback-content">
+                                        <div className="feedback-title">참 잘했어요!</div>
+                                        <div className="feedback-desc">완벽한 영문장을 완성했습니다. 이제 학습을 마무리해볼까요?</div>
+                                    </div>
+                                </div>
+                            ) : (
+                                <div style={{ background: "#ecfdf5", padding: "20px", borderRadius: 12, color: "#059669", fontWeight: 900, border: "1px solid #a7f3d0" }}>🎉 정답입니다!</div>
+                            )
+                        )}
+                    </div>
+                    <button
+                        onClick={qStatus === "SUCCESS" || (qStatus === "WRONG" && qTries >= 2) ? nextAction : handleQCheck}
+                        className={(qIndex === 1 || qIndex === 2) ? "btn-cta-full" : "btn-full"}
+                        style={{ marginTop: 12 }}
+                        disabled={qIndex === 1 ? selectedOption === null : (qIndex === 2 ? writeAnswer.trim().length === 0 : false)}
+                    >
+                        {qStatus === "SUCCESS" || (qStatus === "WRONG" && qTries >= 2) ? (qIndex === 2 ? "완료하기" : "다음 문제 풀기") : "정답 확인하기"}
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+
+    if (screen === "DASHBOARD") return (
+        <div>
+            <Header sub="학습 결과" onBack={() => setScreen("HOME")} />
+            <div style={{ maxWidth: 700, margin: "40px auto", padding: "0 20px" }}>
+                <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
+                    <div style={{ textAlign: "center", marginBottom: 32 }}> <div style={{ fontSize: 56 }}>🏅</div> <div style={{ fontSize: 28, fontWeight: 900 }}>학습 완료!</div> </div>
+                    <button onClick={() => { setScreen("HOME"); setQIndex(0); setQStatus("IDLE"); setActivityStatus("IDLE"); }} className="btn-full">홈으로 돌아가기</button>
+                </div>
+            </div>
+        </div>
+    );
+
+    return null;
+}
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);

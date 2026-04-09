@@ -1,0 +1,22 @@
+# Local IDE settings
+.vscode/
+.idea/
+.DS_Store
+
+# Web build / logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python caches
+__pycache__/
+*.pyc
+
+# Temporary files
+/tmp/
+.gemini/
+css/gray_design_system_full.html
+data/processed/page-design/grammar_viewer_page.html
+data/processed/page-design/gray_catch_result.html
+data/processed/page-design/qtype_objective_v3.html

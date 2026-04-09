@@ -1,0 +1,6402 @@
+[
+  {
+    "no": 1,
+    "original_list": "a* (an)",
+    "headword": "a",
+    "derivatives": "(an)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 2,
+    "original_list": "abandon",
+    "headword": "abandon",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 3,
+    "original_list": "able** (disabled)",
+    "headword": "able",
+    "derivatives": "(disabled)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 4,
+    "original_list": "aboard",
+    "headword": "aboard",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 5,
+    "original_list": "abort (abortion)",
+    "headword": "abort",
+    "derivatives": "(abortion)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 6,
+    "original_list": "abound (abundant)",
+    "headword": "abound",
+    "derivatives": "(abundant)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 7,
+    "original_list": "about*",
+    "headword": "about",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 8,
+    "original_list": "above*",
+    "headword": "above",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 9,
+    "original_list": "abroad",
+    "headword": "abroad",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 10,
+    "original_list": "absent",
+    "headword": "absent",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 11,
+    "original_list": "absolute**",
+    "headword": "absolute",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 12,
+    "original_list": "absorb",
+    "headword": "absorb",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 13,
+    "original_list": "abstract",
+    "headword": "abstract",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 14,
+    "original_list": "absurd",
+    "headword": "absurd",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 15,
+    "original_list": "abuse",
+    "headword": "abuse",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 16,
+    "original_list": "academy",
+    "headword": "academy",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 17,
+    "original_list": "accelerate",
+    "headword": "accelerate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 18,
+    "original_list": "accent**",
+    "headword": "accent",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 19,
+    "original_list": "accept**",
+    "headword": "accept",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 20,
+    "original_list": "access**",
+    "headword": "access",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 21,
+    "original_list": "accident**",
+    "headword": "accident",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 22,
+    "original_list": "accommodate",
+    "headword": "accommodate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 23,
+    "original_list": "accompany",
+    "headword": "accompany",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 24,
+    "original_list": "accomplish",
+    "headword": "accomplish",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 25,
+    "original_list": "accord",
+    "headword": "accord",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 26,
+    "original_list": "account**",
+    "headword": "account",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 27,
+    "original_list": "accumulate",
+    "headword": "accumulate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 28,
+    "original_list": "accurate",
+    "headword": "accurate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 29,
+    "original_list": "accuse**",
+    "headword": "accuse",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 30,
+    "original_list": "ache (headache)",
+    "headword": "ache",
+    "derivatives": "(headache)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 31,
+    "original_list": "achieve**",
+    "headword": "achieve",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 32,
+    "original_list": "acid",
+    "headword": "acid",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 33,
+    "original_list": "acknowledge",
+    "headword": "acknowledge",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 34,
+    "original_list": "acquire",
+    "headword": "acquire",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 35,
+    "original_list": "acquisition",
+    "headword": "acquisition",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 36,
+    "original_list": "across*",
+    "headword": "across",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 37,
+    "original_list": "act* (actual, interact)",
+    "headword": "act",
+    "derivatives": "(actual, interact)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 38,
+    "original_list": "adapt**",
+    "headword": "adapt",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 39,
+    "original_list": "add*",
+    "headword": "add",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 40,
+    "original_list": "addict",
+    "headword": "addict",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 41,
+    "original_list": "address*",
+    "headword": "address",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 42,
+    "original_list": "adequate",
+    "headword": "adequate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 43,
+    "original_list": "adjust",
+    "headword": "adjust",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 44,
+    "original_list": "administer (administration)",
+    "headword": "administer",
+    "derivatives": "(administration)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 45,
+    "original_list": "admire**",
+    "headword": "admire",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 46,
+    "original_list": "admit** (admission)",
+    "headword": "admit",
+    "derivatives": "(admission)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 47,
+    "original_list": "adolescent",
+    "headword": "adolescent",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 48,
+    "original_list": "adopt**",
+    "headword": "adopt",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 49,
+    "original_list": "adult*",
+    "headword": "adult",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 50,
+    "original_list": "advance**",
+    "headword": "advance",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 51,
+    "original_list": "advantage** (disadvantage)",
+    "headword": "advantage",
+    "derivatives": "(disadvantage)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 52,
+    "original_list": "adventure**",
+    "headword": "adventure",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 53,
+    "original_list": "adverse",
+    "headword": "adverse",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 54,
+    "original_list": "advertize** / advertise**",
+    "headword": "advertize",
+    "derivatives": "/ advertise",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 55,
+    "original_list": "advice**",
+    "headword": "advice",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 56,
+    "original_list": "advise**",
+    "headword": "advise",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 57,
+    "original_list": "advocate",
+    "headword": "advocate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 58,
+    "original_list": "aesthetic",
+    "headword": "aesthetic",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 59,
+    "original_list": "affair**",
+    "headword": "affair",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 60,
+    "original_list": "affect** (affection)",
+    "headword": "affect",
+    "derivatives": "(affection)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 61,
+    "original_list": "afford**",
+    "headword": "afford",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 62,
+    "original_list": "afraid*",
+    "headword": "afraid",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 63,
+    "original_list": "after*",
+    "headword": "after",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 64,
+    "original_list": "afternoon*",
+    "headword": "afternoon",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 65,
+    "original_list": "again*",
+    "headword": "again",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 66,
+    "original_list": "against*",
+    "headword": "against",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 67,
+    "original_list": "age*",
+    "headword": "age",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 68,
+    "original_list": "agency",
+    "headword": "agency",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 69,
+    "original_list": "agenda",
+    "headword": "agenda",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 70,
+    "original_list": "agent**",
+    "headword": "agent",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 71,
+    "original_list": "aggress (aggressive)",
+    "headword": "aggress",
+    "derivatives": "(aggressive)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 72,
+    "original_list": "ago*",
+    "headword": "ago",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 73,
+    "original_list": "agree* (disagree)",
+    "headword": "agree",
+    "derivatives": "(disagree)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 74,
+    "original_list": "agriculture",
+    "headword": "agriculture",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 75,
+    "original_list": "ahead*",
+    "headword": "ahead",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 76,
+    "original_list": "aid**",
+    "headword": "aid",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 77,
+    "original_list": "aim**",
+    "headword": "aim",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 78,
+    "original_list": "air*",
+    "headword": "air",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 79,
+    "original_list": "airline**",
+    "headword": "airline",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 80,
+    "original_list": "airplane* / aeroplane*",
+    "headword": "airplane",
+    "derivatives": "/ aeroplane",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 81,
+    "original_list": "airport**",
+    "headword": "airport",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 82,
+    "original_list": "alarm**",
+    "headword": "alarm",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 83,
+    "original_list": "album*",
+    "headword": "album",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 84,
+    "original_list": "alcohol**",
+    "headword": "alcohol",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 85,
+    "original_list": "alert",
+    "headword": "alert",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 86,
+    "original_list": "alien",
+    "headword": "alien",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 87,
+    "original_list": "alike",
+    "headword": "alike",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 88,
+    "original_list": "alive**",
+    "headword": "alive",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 89,
+    "original_list": "all*",
+    "headword": "all",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 90,
+    "original_list": "allocate",
+    "headword": "allocate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 91,
+    "original_list": "allow**",
+    "headword": "allow",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 92,
+    "original_list": "ally",
+    "headword": "ally",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 93,
+    "original_list": "almost*",
+    "headword": "almost",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 94,
+    "original_list": "alone*",
+    "headword": "alone",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 95,
+    "original_list": "along*",
+    "headword": "along",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 96,
+    "original_list": "alongside",
+    "headword": "alongside",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 97,
+    "original_list": "aloud**",
+    "headword": "aloud",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 98,
+    "original_list": "already*",
+    "headword": "already",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 99,
+    "original_list": "alright*",
+    "headword": "alright",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 100,
+    "original_list": "also*",
+    "headword": "also",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 101,
+    "original_list": "alter**",
+    "headword": "alter",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 102,
+    "original_list": "alternate (alternative)",
+    "headword": "alternate",
+    "derivatives": "(alternative)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 103,
+    "original_list": "although**",
+    "headword": "although",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 104,
+    "original_list": "altogether**",
+    "headword": "altogether",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 105,
+    "original_list": "always*",
+    "headword": "always",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 106,
+    "original_list": "amaze**",
+    "headword": "amaze",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 107,
+    "original_list": "ambassador",
+    "headword": "ambassador",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 108,
+    "original_list": "ambition (ambitious)",
+    "headword": "ambition",
+    "derivatives": "(ambitious)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 109,
+    "original_list": "ambulance**",
+    "headword": "ambulance",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 110,
+    "original_list": "among**",
+    "headword": "among",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 111,
+    "original_list": "amount**",
+    "headword": "amount",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 112,
+    "original_list": "amuse**",
+    "headword": "amuse",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 113,
+    "original_list": "analysis**",
+    "headword": "analysis",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 114,
+    "original_list": "analyze / analyse",
+    "headword": "analyze",
+    "derivatives": "/ analyse",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 115,
+    "original_list": "anchor",
+    "headword": "anchor",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 116,
+    "original_list": "ancient",
+    "headword": "ancient",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 117,
+    "original_list": "and*",
+    "headword": "and",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 118,
+    "original_list": "angel**",
+    "headword": "angel",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 119,
+    "original_list": "anger**",
+    "headword": "anger",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 120,
+    "original_list": "angle",
+    "headword": "angle",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 121,
+    "original_list": "animal*",
+    "headword": "animal",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 122,
+    "original_list": "anniversary",
+    "headword": "anniversary",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 123,
+    "original_list": "announce**",
+    "headword": "announce",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 124,
+    "original_list": "annoy**",
+    "headword": "annoy",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 125,
+    "original_list": "annual**",
+    "headword": "annual",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 126,
+    "original_list": "another*",
+    "headword": "another",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 127,
+    "original_list": "answer*",
+    "headword": "answer",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 128,
+    "original_list": "ant**",
+    "headword": "ant",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 129,
+    "original_list": "anticipate",
+    "headword": "anticipate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 130,
+    "original_list": "anxiety",
+    "headword": "anxiety",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 131,
+    "original_list": "anxious**",
+    "headword": "anxious",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 132,
+    "original_list": "any*",
+    "headword": "any",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 133,
+    "original_list": "apart**",
+    "headword": "apart",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 134,
+    "original_list": "apartment*",
+    "headword": "apartment",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 135,
+    "original_list": "apology",
+    "headword": "apology",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 136,
+    "original_list": "apparent",
+    "headword": "apparent",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 137,
+    "original_list": "appeal**",
+    "headword": "appeal",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 138,
+    "original_list": "appear** (disappear)",
+    "headword": "appear",
+    "derivatives": "(disappear)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 139,
+    "original_list": "apple*",
+    "headword": "apple",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 140,
+    "original_list": "apply** (applicant)",
+    "headword": "apply",
+    "derivatives": "(applicant)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 141,
+    "original_list": "appoint**",
+    "headword": "appoint",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 142,
+    "original_list": "appreciate**",
+    "headword": "appreciate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 143,
+    "original_list": "approach**",
+    "headword": "approach",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 144,
+    "original_list": "appropriate**",
+    "headword": "appropriate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 145,
+    "original_list": "approve",
+    "headword": "approve",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 146,
+    "original_list": "approximate",
+    "headword": "approximate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 147,
+    "original_list": "architect (architecture)",
+    "headword": "architect",
+    "derivatives": "(architecture)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 148,
+    "original_list": "area*",
+    "headword": "area",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 149,
+    "original_list": "argue**",
+    "headword": "argue",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 150,
+    "original_list": "arise",
+    "headword": "arise",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 151,
+    "original_list": "arm*",
+    "headword": "arm",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 152,
+    "original_list": "army**",
+    "headword": "army",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 153,
+    "original_list": "around*",
+    "headword": "around",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 154,
+    "original_list": "arrange**",
+    "headword": "arrange",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 155,
+    "original_list": "arrest**",
+    "headword": "arrest",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 156,
+    "original_list": "arrive*",
+    "headword": "arrive",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 157,
+    "original_list": "arrow",
+    "headword": "arrow",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 158,
+    "original_list": "art*",
+    "headword": "art",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 159,
+    "original_list": "article**",
+    "headword": "article",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 160,
+    "original_list": "artifice (artificial)",
+    "headword": "artifice",
+    "derivatives": "(artificial)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 161,
+    "original_list": "as*",
+    "headword": "as",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 162,
+    "original_list": "aside**",
+    "headword": "aside",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 163,
+    "original_list": "ask*",
+    "headword": "ask",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 164,
+    "original_list": "asleep**",
+    "headword": "asleep",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 165,
+    "original_list": "aspect",
+    "headword": "aspect",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 166,
+    "original_list": "aspire",
+    "headword": "aspire",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 167,
+    "original_list": "assault",
+    "headword": "assault",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 168,
+    "original_list": "assemble",
+    "headword": "assemble",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 169,
+    "original_list": "assert",
+    "headword": "assert",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 170,
+    "original_list": "assess**",
+    "headword": "assess",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 171,
+    "original_list": "asset",
+    "headword": "asset",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 172,
+    "original_list": "assign** (assignment)",
+    "headword": "assign",
+    "derivatives": "(assignment)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 173,
+    "original_list": "assist** (assistant)",
+    "headword": "assist",
+    "derivatives": "(assistant)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 174,
+    "original_list": "associate**",
+    "headword": "associate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 175,
+    "original_list": "assume**",
+    "headword": "assume",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 176,
+    "original_list": "assure",
+    "headword": "assure",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 177,
+    "original_list": "astonish",
+    "headword": "astonish",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 178,
+    "original_list": "at*",
+    "headword": "at",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 179,
+    "original_list": "athlete",
+    "headword": "athlete",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 180,
+    "original_list": "atmosphere**",
+    "headword": "atmosphere",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 181,
+    "original_list": "atom",
+    "headword": "atom",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 182,
+    "original_list": "attach**",
+    "headword": "attach",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 183,
+    "original_list": "attack**",
+    "headword": "attack",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 184,
+    "original_list": "attempt**",
+    "headword": "attempt",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 185,
+    "original_list": "attend**",
+    "headword": "attend",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 186,
+    "original_list": "attention**",
+    "headword": "attention",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 187,
+    "original_list": "attitude**",
+    "headword": "attitude",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 188,
+    "original_list": "attract**",
+    "headword": "attract",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 189,
+    "original_list": "attribute",
+    "headword": "attribute",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 190,
+    "original_list": "auction",
+    "headword": "auction",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 191,
+    "original_list": "audience**",
+    "headword": "audience",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 192,
+    "original_list": "aunt*",
+    "headword": "aunt",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 193,
+    "original_list": "authentic",
+    "headword": "authentic",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 194,
+    "original_list": "author",
+    "headword": "author",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 195,
+    "original_list": "automatic**",
+    "headword": "automatic",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 196,
+    "original_list": "autumn*",
+    "headword": "autumn",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 197,
+    "original_list": "avail (available)",
+    "headword": "avail",
+    "derivatives": "(available)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 198,
+    "original_list": "average**",
+    "headword": "average",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 199,
+    "original_list": "avoid**",
+    "headword": "avoid",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 200,
+    "original_list": "await",
+    "headword": "await",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 201,
+    "original_list": "awake**",
+    "headword": "awake",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 202,
+    "original_list": "award**",
+    "headword": "award",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 203,
+    "original_list": "aware** (unaware)",
+    "headword": "aware",
+    "derivatives": "(unaware)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 204,
+    "original_list": "away*",
+    "headword": "away",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 205,
+    "original_list": "awe (awful)",
+    "headword": "awe",
+    "derivatives": "(awful)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 206,
+    "original_list": "awkward**",
+    "headword": "awkward",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 207,
+    "original_list": "baby*",
+    "headword": "baby",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 208,
+    "original_list": "back*",
+    "headword": "back",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 209,
+    "original_list": "background**",
+    "headword": "background",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 210,
+    "original_list": "bacon**",
+    "headword": "bacon",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 211,
+    "original_list": "bad*",
+    "headword": "bad",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 212,
+    "original_list": "badminton*",
+    "headword": "badminton",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 213,
+    "original_list": "bag*",
+    "headword": "bag",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 214,
+    "original_list": "bake*",
+    "headword": "bake",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 215,
+    "original_list": "balance**",
+    "headword": "balance",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 216,
+    "original_list": "ball*",
+    "headword": "ball",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 217,
+    "original_list": "balloon**",
+    "headword": "balloon",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 218,
+    "original_list": "ban",
+    "headword": "ban",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 219,
+    "original_list": "banana*",
+    "headword": "banana",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 220,
+    "original_list": "band**",
+    "headword": "band",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 221,
+    "original_list": "bang**",
+    "headword": "bang",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 222,
+    "original_list": "bank*",
+    "headword": "bank",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 223,
+    "original_list": "bankrupt",
+    "headword": "bankrupt",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 224,
+    "original_list": "bar**",
+    "headword": "bar",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 225,
+    "original_list": "bare**",
+    "headword": "bare",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 226,
+    "original_list": "bargain",
+    "headword": "bargain",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 227,
+    "original_list": "bark**",
+    "headword": "bark",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 228,
+    "original_list": "barrier",
+    "headword": "barrier",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 229,
+    "original_list": "base*",
+    "headword": "base",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 230,
+    "original_list": "baseball*",
+    "headword": "baseball",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 231,
+    "original_list": "basis**",
+    "headword": "basis",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 232,
+    "original_list": "basket*",
+    "headword": "basket",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 233,
+    "original_list": "basketball*",
+    "headword": "basketball",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 234,
+    "original_list": "bat*",
+    "headword": "bat",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 235,
+    "original_list": "bath*",
+    "headword": "bath",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 236,
+    "original_list": "battery**",
+    "headword": "battery",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 237,
+    "original_list": "battle**",
+    "headword": "battle",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 238,
+    "original_list": "bay**",
+    "headword": "bay",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 239,
+    "original_list": "be*",
+    "headword": "be",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 240,
+    "original_list": "beach*",
+    "headword": "beach",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 241,
+    "original_list": "beam",
+    "headword": "beam",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 242,
+    "original_list": "bean**",
+    "headword": "bean",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 243,
+    "original_list": "bear*",
+    "headword": "bear",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 244,
+    "original_list": "beard",
+    "headword": "beard",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 245,
+    "original_list": "beast",
+    "headword": "beast",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 246,
+    "original_list": "beat**",
+    "headword": "beat",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 247,
+    "original_list": "beauty*",
+    "headword": "beauty",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 248,
+    "original_list": "because*",
+    "headword": "because",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 249,
+    "original_list": "become*",
+    "headword": "become",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 250,
+    "original_list": "bed*",
+    "headword": "bed",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 251,
+    "original_list": "bee*",
+    "headword": "bee",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 252,
+    "original_list": "beef*",
+    "headword": "beef",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 253,
+    "original_list": "beer**",
+    "headword": "beer",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 254,
+    "original_list": "before*",
+    "headword": "before",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 255,
+    "original_list": "beg**",
+    "headword": "beg",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 256,
+    "original_list": "begin*",
+    "headword": "begin",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 257,
+    "original_list": "behalf",
+    "headword": "behalf",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 258,
+    "original_list": "behave (behavior / behaviour)",
+    "headword": "behave",
+    "derivatives": "(behavior / behaviour)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 259,
+    "original_list": "behind*",
+    "headword": "behind",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 260,
+    "original_list": "belief**",
+    "headword": "belief",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 261,
+    "original_list": "believe*",
+    "headword": "believe",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 262,
+    "original_list": "bell*",
+    "headword": "bell",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 263,
+    "original_list": "belong**",
+    "headword": "belong",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 264,
+    "original_list": "below*",
+    "headword": "below",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 265,
+    "original_list": "belt*",
+    "headword": "belt",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 266,
+    "original_list": "bench**",
+    "headword": "bench",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 267,
+    "original_list": "bend**",
+    "headword": "bend",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 268,
+    "original_list": "beneath**",
+    "headword": "beneath",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 269,
+    "original_list": "benefit**",
+    "headword": "benefit",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 270,
+    "original_list": "beside*",
+    "headword": "beside",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 271,
+    "original_list": "bet**",
+    "headword": "bet",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 272,
+    "original_list": "betray",
+    "headword": "betray",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 273,
+    "original_list": "between*",
+    "headword": "between",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 274,
+    "original_list": "beyond**",
+    "headword": "beyond",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 275,
+    "original_list": "bias",
+    "headword": "bias",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 276,
+    "original_list": "big*",
+    "headword": "big",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 277,
+    "original_list": "bike*",
+    "headword": "bike",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 278,
+    "original_list": "bill*",
+    "headword": "bill",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 279,
+    "original_list": "billion**",
+    "headword": "billion",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 280,
+    "original_list": "bin**",
+    "headword": "bin",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 281,
+    "original_list": "bind**",
+    "headword": "bind",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 282,
+    "original_list": "biography",
+    "headword": "biography",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 283,
+    "original_list": "biology",
+    "headword": "biology",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 284,
+    "original_list": "bird*",
+    "headword": "bird",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 285,
+    "original_list": "birth*",
+    "headword": "birth",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 286,
+    "original_list": "biscuit*",
+    "headword": "biscuit",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 287,
+    "original_list": "bit**",
+    "headword": "bit",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 288,
+    "original_list": "bite**",
+    "headword": "bite",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 289,
+    "original_list": "bitter**",
+    "headword": "bitter",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 290,
+    "original_list": "black*",
+    "headword": "black",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 291,
+    "original_list": "blame**",
+    "headword": "blame",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 292,
+    "original_list": "blank**",
+    "headword": "blank",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 293,
+    "original_list": "blanket**",
+    "headword": "blanket",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 294,
+    "original_list": "blast",
+    "headword": "blast",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 295,
+    "original_list": "blend",
+    "headword": "blend",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 296,
+    "original_list": "bless**",
+    "headword": "bless",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 297,
+    "original_list": "blind**",
+    "headword": "blind",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 298,
+    "original_list": "blink",
+    "headword": "blink",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 299,
+    "original_list": "block**",
+    "headword": "block",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 300,
+    "original_list": "blonde**",
+    "headword": "blonde",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 301,
+    "original_list": "blood*",
+    "headword": "blood",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 302,
+    "original_list": "bloom**",
+    "headword": "bloom",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 303,
+    "original_list": "blossom",
+    "headword": "blossom",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 304,
+    "original_list": "blow**",
+    "headword": "blow",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 305,
+    "original_list": "blue*",
+    "headword": "blue",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 306,
+    "original_list": "board*",
+    "headword": "board",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 307,
+    "original_list": "boat*",
+    "headword": "boat",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 308,
+    "original_list": "body* (embody)",
+    "headword": "body",
+    "derivatives": "(embody)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 309,
+    "original_list": "boil**",
+    "headword": "boil",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 310,
+    "original_list": "bold",
+    "headword": "bold",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 311,
+    "original_list": "bomb**",
+    "headword": "bomb",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 312,
+    "original_list": "bond**",
+    "headword": "bond",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 313,
+    "original_list": "bone*",
+    "headword": "bone",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 314,
+    "original_list": "book*",
+    "headword": "book",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 315,
+    "original_list": "boom**",
+    "headword": "boom",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 316,
+    "original_list": "boost",
+    "headword": "boost",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 317,
+    "original_list": "boot**",
+    "headword": "boot",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 318,
+    "original_list": "border",
+    "headword": "border",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 319,
+    "original_list": "bore**",
+    "headword": "bore",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 320,
+    "original_list": "borrow*",
+    "headword": "borrow",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 321,
+    "original_list": "boss**",
+    "headword": "boss",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 322,
+    "original_list": "both*",
+    "headword": "both",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 323,
+    "original_list": "bother**",
+    "headword": "bother",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 324,
+    "original_list": "bottle*",
+    "headword": "bottle",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 325,
+    "original_list": "bottom*",
+    "headword": "bottom",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 326,
+    "original_list": "bounce**",
+    "headword": "bounce",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 327,
+    "original_list": "boundary",
+    "headword": "boundary",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 328,
+    "original_list": "bow**",
+    "headword": "bow",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 329,
+    "original_list": "bowl**",
+    "headword": "bowl",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 330,
+    "original_list": "box*",
+    "headword": "box",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 331,
+    "original_list": "boy*",
+    "headword": "boy",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 332,
+    "original_list": "brain**",
+    "headword": "brain",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 333,
+    "original_list": "brake**",
+    "headword": "brake",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 334,
+    "original_list": "branch**",
+    "headword": "branch",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 335,
+    "original_list": "brand**",
+    "headword": "brand",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 336,
+    "original_list": "brave*",
+    "headword": "brave",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 337,
+    "original_list": "bread*",
+    "headword": "bread",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 338,
+    "original_list": "break*",
+    "headword": "break",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 339,
+    "original_list": "breakfast*",
+    "headword": "breakfast",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 340,
+    "original_list": "breast**",
+    "headword": "breast",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 341,
+    "original_list": "breath**",
+    "headword": "breath",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 342,
+    "original_list": "breathe**",
+    "headword": "breathe",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 343,
+    "original_list": "breed",
+    "headword": "breed",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 344,
+    "original_list": "breeze",
+    "headword": "breeze",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 345,
+    "original_list": "brick**",
+    "headword": "brick",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 346,
+    "original_list": "bridge*",
+    "headword": "bridge",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 347,
+    "original_list": "brief**",
+    "headword": "brief",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 348,
+    "original_list": "bright*",
+    "headword": "bright",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 349,
+    "original_list": "brilliant**",
+    "headword": "brilliant",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 350,
+    "original_list": "bring*",
+    "headword": "bring",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 351,
+    "original_list": "broad**",
+    "headword": "broad",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 352,
+    "original_list": "broadcast",
+    "headword": "broadcast",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 353,
+    "original_list": "brother*",
+    "headword": "brother",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 354,
+    "original_list": "brown*",
+    "headword": "brown",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 355,
+    "original_list": "brush*",
+    "headword": "brush",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 356,
+    "original_list": "brute (brutal)",
+    "headword": "brute",
+    "derivatives": "(brutal)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 357,
+    "original_list": "bubble**",
+    "headword": "bubble",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 358,
+    "original_list": "budget**",
+    "headword": "budget",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 359,
+    "original_list": "bug**",
+    "headword": "bug",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 360,
+    "original_list": "build*",
+    "headword": "build",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 361,
+    "original_list": "bulk",
+    "headword": "bulk",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 362,
+    "original_list": "bull",
+    "headword": "bull",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 363,
+    "original_list": "bully",
+    "headword": "bully",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 364,
+    "original_list": "bump**",
+    "headword": "bump",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 365,
+    "original_list": "bunch**",
+    "headword": "bunch",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 366,
+    "original_list": "bundle",
+    "headword": "bundle",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 367,
+    "original_list": "burden",
+    "headword": "burden",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 368,
+    "original_list": "burn*",
+    "headword": "burn",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 369,
+    "original_list": "burst**",
+    "headword": "burst",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 370,
+    "original_list": "bury**",
+    "headword": "bury",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 371,
+    "original_list": "bus*",
+    "headword": "bus",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 372,
+    "original_list": "bush**",
+    "headword": "bush",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 373,
+    "original_list": "business*",
+    "headword": "business",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 374,
+    "original_list": "busy*",
+    "headword": "busy",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 375,
+    "original_list": "but*",
+    "headword": "but",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 376,
+    "original_list": "butcher",
+    "headword": "butcher",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 377,
+    "original_list": "butter*",
+    "headword": "butter",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 378,
+    "original_list": "button*",
+    "headword": "button",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 379,
+    "original_list": "buy*",
+    "headword": "buy",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 380,
+    "original_list": "buzz",
+    "headword": "buzz",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 381,
+    "original_list": "by*",
+    "headword": "by",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 382,
+    "original_list": "cable**",
+    "headword": "cable",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 383,
+    "original_list": "cage**",
+    "headword": "cage",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 384,
+    "original_list": "cake*",
+    "headword": "cake",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 385,
+    "original_list": "calculate** (calculator)",
+    "headword": "calculate",
+    "derivatives": "(calculator)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 386,
+    "original_list": "calendar**",
+    "headword": "calendar",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 387,
+    "original_list": "call*",
+    "headword": "call",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 388,
+    "original_list": "calm**",
+    "headword": "calm",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 389,
+    "original_list": "camera*",
+    "headword": "camera",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 390,
+    "original_list": "camp*",
+    "headword": "camp",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 391,
+    "original_list": "campaign*",
+    "headword": "campaign",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 392,
+    "original_list": "can*",
+    "headword": "can",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 393,
+    "original_list": "cancel",
+    "headword": "cancel",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 394,
+    "original_list": "cancer",
+    "headword": "cancer",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 395,
+    "original_list": "candidate",
+    "headword": "candidate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 396,
+    "original_list": "candy*",
+    "headword": "candy",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 397,
+    "original_list": "canvas",
+    "headword": "canvas",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 398,
+    "original_list": "cap*",
+    "headword": "cap",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 399,
+    "original_list": "capable**",
+    "headword": "capable",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 400,
+    "original_list": "cape**",
+    "headword": "cape",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 401,
+    "original_list": "capital**",
+    "headword": "capital",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 402,
+    "original_list": "captain**",
+    "headword": "captain",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 403,
+    "original_list": "capture",
+    "headword": "capture",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 404,
+    "original_list": "car*",
+    "headword": "car",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 405,
+    "original_list": "card*",
+    "headword": "card",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 406,
+    "original_list": "care*",
+    "headword": "care",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 407,
+    "original_list": "career**",
+    "headword": "career",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 408,
+    "original_list": "carpet**",
+    "headword": "carpet",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 409,
+    "original_list": "carrot*",
+    "headword": "carrot",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 410,
+    "original_list": "carry*",
+    "headword": "carry",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 411,
+    "original_list": "cart**",
+    "headword": "cart",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 412,
+    "original_list": "carve",
+    "headword": "carve",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 413,
+    "original_list": "case* (casual)",
+    "headword": "case",
+    "derivatives": "(casual)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 414,
+    "original_list": "cash*",
+    "headword": "cash",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 415,
+    "original_list": "cast**",
+    "headword": "cast",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 416,
+    "original_list": "castle**",
+    "headword": "castle",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 417,
+    "original_list": "cat*",
+    "headword": "cat",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 418,
+    "original_list": "catalogue** / catalog**",
+    "headword": "catalogue",
+    "derivatives": "/ catalog",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 419,
+    "original_list": "catch*",
+    "headword": "catch",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 420,
+    "original_list": "category**",
+    "headword": "category",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 421,
+    "original_list": "cater",
+    "headword": "cater",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 422,
+    "original_list": "cattle",
+    "headword": "cattle",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 423,
+    "original_list": "cause** (causal)",
+    "headword": "cause",
+    "derivatives": "(causal)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 424,
+    "original_list": "caution",
+    "headword": "caution",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 425,
+    "original_list": "cave",
+    "headword": "cave",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 426,
+    "original_list": "cease",
+    "headword": "cease",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 427,
+    "original_list": "ceiling**",
+    "headword": "ceiling",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 428,
+    "original_list": "celebrate",
+    "headword": "celebrate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 429,
+    "original_list": "celebrity",
+    "headword": "celebrity",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 430,
+    "original_list": "cell**",
+    "headword": "cell",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 431,
+    "original_list": "censor",
+    "headword": "censor",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 432,
+    "original_list": "center*",
+    "headword": "center",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 433,
+    "original_list": "century**",
+    "headword": "century",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 434,
+    "original_list": "certain*",
+    "headword": "certain",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 435,
+    "original_list": "certificate",
+    "headword": "certificate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 436,
+    "original_list": "chain**",
+    "headword": "chain",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 437,
+    "original_list": "chair*",
+    "headword": "chair",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 438,
+    "original_list": "chairman**",
+    "headword": "chairman",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 439,
+    "original_list": "challenge**",
+    "headword": "challenge",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 440,
+    "original_list": "chamber",
+    "headword": "chamber",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 441,
+    "original_list": "champion**",
+    "headword": "champion",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 442,
+    "original_list": "chance*",
+    "headword": "chance",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 443,
+    "original_list": "change*",
+    "headword": "change",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 444,
+    "original_list": "channel**",
+    "headword": "channel",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 445,
+    "original_list": "chaos",
+    "headword": "chaos",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 446,
+    "original_list": "character**",
+    "headword": "character",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 447,
+    "original_list": "characteristic**",
+    "headword": "characteristic",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 448,
+    "original_list": "charge** (discharge)",
+    "headword": "charge",
+    "derivatives": "(discharge)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 449,
+    "original_list": "charity",
+    "headword": "charity",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 450,
+    "original_list": "charm**",
+    "headword": "charm",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 451,
+    "original_list": "chart**",
+    "headword": "chart",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 452,
+    "original_list": "chase**",
+    "headword": "chase",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 453,
+    "original_list": "chat**",
+    "headword": "chat",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 454,
+    "original_list": "cheap*",
+    "headword": "cheap",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 455,
+    "original_list": "check* / cheque*",
+    "headword": "check",
+    "derivatives": "/ cheque",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 456,
+    "original_list": "cheek**",
+    "headword": "cheek",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 457,
+    "original_list": "cheer**",
+    "headword": "cheer",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 458,
+    "original_list": "cheese*",
+    "headword": "cheese",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 459,
+    "original_list": "chef",
+    "headword": "chef",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 460,
+    "original_list": "chemical",
+    "headword": "chemical",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 461,
+    "original_list": "chest**",
+    "headword": "chest",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 462,
+    "original_list": "chew**",
+    "headword": "chew",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 463,
+    "original_list": "chicken*",
+    "headword": "chicken",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 464,
+    "original_list": "chief**",
+    "headword": "chief",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 465,
+    "original_list": "child*",
+    "headword": "child",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 466,
+    "original_list": "chill",
+    "headword": "chill",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 467,
+    "original_list": "chin",
+    "headword": "chin",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 468,
+    "original_list": "chip**",
+    "headword": "chip",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 469,
+    "original_list": "chocolate*",
+    "headword": "chocolate",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 470,
+    "original_list": "choice**",
+    "headword": "choice",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 471,
+    "original_list": "choir",
+    "headword": "choir",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 472,
+    "original_list": "choose*",
+    "headword": "choose",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 473,
+    "original_list": "chop**",
+    "headword": "chop",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 474,
+    "original_list": "chorus",
+    "headword": "chorus",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 475,
+    "original_list": "chronic",
+    "headword": "chronic",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 476,
+    "original_list": "church*",
+    "headword": "church",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 477,
+    "original_list": "cigarette**",
+    "headword": "cigarette",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 478,
+    "original_list": "cinema**",
+    "headword": "cinema",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 479,
+    "original_list": "circle*",
+    "headword": "circle",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 480,
+    "original_list": "circulate",
+    "headword": "circulate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 481,
+    "original_list": "circumstance**",
+    "headword": "circumstance",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 482,
+    "original_list": "cite",
+    "headword": "cite",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 483,
+    "original_list": "citizen**",
+    "headword": "citizen",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 484,
+    "original_list": "city*",
+    "headword": "city",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 485,
+    "original_list": "civil**",
+    "headword": "civil",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 486,
+    "original_list": "claim**",
+    "headword": "claim",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 487,
+    "original_list": "clap",
+    "headword": "clap",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 488,
+    "original_list": "clash",
+    "headword": "clash",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 489,
+    "original_list": "class* (classic, classify)",
+    "headword": "class",
+    "derivatives": "(classic, classify)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 490,
+    "original_list": "clause",
+    "headword": "clause",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 491,
+    "original_list": "clay",
+    "headword": "clay",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 492,
+    "original_list": "clean*",
+    "headword": "clean",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 493,
+    "original_list": "clear* (clarify)",
+    "headword": "clear",
+    "derivatives": "(clarify)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 494,
+    "original_list": "clerk**",
+    "headword": "clerk",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 495,
+    "original_list": "clever*",
+    "headword": "clever",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 496,
+    "original_list": "click**",
+    "headword": "click",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 497,
+    "original_list": "client**",
+    "headword": "client",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 498,
+    "original_list": "cliff**",
+    "headword": "cliff",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 499,
+    "original_list": "climate**",
+    "headword": "climate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 500,
+    "original_list": "climb*",
+    "headword": "climb",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 501,
+    "original_list": "cling",
+    "headword": "cling",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 502,
+    "original_list": "clinic",
+    "headword": "clinic",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 503,
+    "original_list": "clip**",
+    "headword": "clip",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 504,
+    "original_list": "clock*",
+    "headword": "clock",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 505,
+    "original_list": "close* (disclose, enclose)",
+    "headword": "close",
+    "derivatives": "(disclose, enclose)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 506,
+    "original_list": "clothes*",
+    "headword": "clothes",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 507,
+    "original_list": "cloud*",
+    "headword": "cloud",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 508,
+    "original_list": "club*",
+    "headword": "club",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 509,
+    "original_list": "clue**",
+    "headword": "clue",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 510,
+    "original_list": "cluster",
+    "headword": "cluster",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 511,
+    "original_list": "coach**",
+    "headword": "coach",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 512,
+    "original_list": "coal**",
+    "headword": "coal",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 513,
+    "original_list": "coast**",
+    "headword": "coast",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 514,
+    "original_list": "coat*",
+    "headword": "coat",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 515,
+    "original_list": "code**",
+    "headword": "code",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 516,
+    "original_list": "coffee*",
+    "headword": "coffee",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 517,
+    "original_list": "coin**",
+    "headword": "coin",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 518,
+    "original_list": "coincide",
+    "headword": "coincide",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 519,
+    "original_list": "cold*",
+    "headword": "cold",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 520,
+    "original_list": "collaborate",
+    "headword": "collaborate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 521,
+    "original_list": "collapse",
+    "headword": "collapse",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 522,
+    "original_list": "collar",
+    "headword": "collar",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 523,
+    "original_list": "colleague",
+    "headword": "colleague",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 524,
+    "original_list": "collect*",
+    "headword": "collect",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 525,
+    "original_list": "college*",
+    "headword": "college",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 526,
+    "original_list": "colony",
+    "headword": "colony",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 527,
+    "original_list": "color* / colour*",
+    "headword": "color",
+    "derivatives": "/ colour",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 528,
+    "original_list": "column",
+    "headword": "column",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 529,
+    "original_list": "combat",
+    "headword": "combat",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 530,
+    "original_list": "combine**",
+    "headword": "combine",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 531,
+    "original_list": "come*",
+    "headword": "come",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 532,
+    "original_list": "comedy**",
+    "headword": "comedy",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 533,
+    "original_list": "comfort** (comfortable)",
+    "headword": "comfort",
+    "derivatives": "(comfortable)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 534,
+    "original_list": "comic*",
+    "headword": "comic",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 535,
+    "original_list": "command**",
+    "headword": "command",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 536,
+    "original_list": "comment**",
+    "headword": "comment",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 537,
+    "original_list": "commerce**",
+    "headword": "commerce",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 538,
+    "original_list": "commit (commission)",
+    "headword": "commit",
+    "derivatives": "(commission)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 539,
+    "original_list": "committee**",
+    "headword": "committee",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 540,
+    "original_list": "commodity",
+    "headword": "commodity",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 541,
+    "original_list": "common**",
+    "headword": "common",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 542,
+    "original_list": "communicate** (communication)",
+    "headword": "communicate",
+    "derivatives": "(communication)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 543,
+    "original_list": "communist",
+    "headword": "communist",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 544,
+    "original_list": "community**",
+    "headword": "community",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 545,
+    "original_list": "companion",
+    "headword": "companion",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 546,
+    "original_list": "company*",
+    "headword": "company",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 547,
+    "original_list": "compare**",
+    "headword": "compare",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 548,
+    "original_list": "compatible",
+    "headword": "compatible",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 549,
+    "original_list": "compel",
+    "headword": "compel",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 550,
+    "original_list": "compensate",
+    "headword": "compensate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 551,
+    "original_list": "compete (competent)",
+    "headword": "compete",
+    "derivatives": "(competent)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 552,
+    "original_list": "compile",
+    "headword": "compile",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 553,
+    "original_list": "complain**",
+    "headword": "complain",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 554,
+    "original_list": "complement",
+    "headword": "complement",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 555,
+    "original_list": "complete**",
+    "headword": "complete",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 556,
+    "original_list": "complex** (complexity)",
+    "headword": "complex",
+    "derivatives": "(complexity)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 557,
+    "original_list": "complicate**",
+    "headword": "complicate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 558,
+    "original_list": "component",
+    "headword": "component",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 559,
+    "original_list": "compose",
+    "headword": "compose",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 560,
+    "original_list": "compound",
+    "headword": "compound",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 561,
+    "original_list": "comprehend (comprehensive)",
+    "headword": "comprehend",
+    "derivatives": "(comprehensive)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 562,
+    "original_list": "comprise",
+    "headword": "comprise",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 563,
+    "original_list": "compromise",
+    "headword": "compromise",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 564,
+    "original_list": "compute* (computer)",
+    "headword": "compute",
+    "derivatives": "(computer)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 565,
+    "original_list": "conceal",
+    "headword": "conceal",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 566,
+    "original_list": "conceive",
+    "headword": "conceive",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 567,
+    "original_list": "concentrate**",
+    "headword": "concentrate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 568,
+    "original_list": "concept**",
+    "headword": "concept",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 569,
+    "original_list": "concern**",
+    "headword": "concern",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 570,
+    "original_list": "concert**",
+    "headword": "concert",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 571,
+    "original_list": "conclude",
+    "headword": "conclude",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 572,
+    "original_list": "concrete",
+    "headword": "concrete",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 573,
+    "original_list": "condemn",
+    "headword": "condemn",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 574,
+    "original_list": "condition*",
+    "headword": "condition",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 575,
+    "original_list": "conduct",
+    "headword": "conduct",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 576,
+    "original_list": "confer",
+    "headword": "confer",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 577,
+    "original_list": "confess",
+    "headword": "confess",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 578,
+    "original_list": "confide (confident)",
+    "headword": "confide",
+    "derivatives": "(confident)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 579,
+    "original_list": "confine",
+    "headword": "confine",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 580,
+    "original_list": "confirm**",
+    "headword": "confirm",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 581,
+    "original_list": "conflict**",
+    "headword": "conflict",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 582,
+    "original_list": "conform",
+    "headword": "conform",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 583,
+    "original_list": "confront",
+    "headword": "confront",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 584,
+    "original_list": "confuse**",
+    "headword": "confuse",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 585,
+    "original_list": "congratulate*",
+    "headword": "congratulate",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 586,
+    "original_list": "congress",
+    "headword": "congress",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 587,
+    "original_list": "connect**",
+    "headword": "connect",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 588,
+    "original_list": "conscience",
+    "headword": "conscience",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 589,
+    "original_list": "conscious**",
+    "headword": "conscious",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 590,
+    "original_list": "consent",
+    "headword": "consent",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 591,
+    "original_list": "conserve",
+    "headword": "conserve",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 592,
+    "original_list": "consider**",
+    "headword": "consider",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 593,
+    "original_list": "consist (consistent)",
+    "headword": "consist",
+    "derivatives": "(consistent)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 594,
+    "original_list": "constant**",
+    "headword": "constant",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 595,
+    "original_list": "constitute (constitution)",
+    "headword": "constitute",
+    "derivatives": "(constitution)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 596,
+    "original_list": "constrain",
+    "headword": "constrain",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 597,
+    "original_list": "construct (construction)",
+    "headword": "construct",
+    "derivatives": "(construction)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 598,
+    "original_list": "consult",
+    "headword": "consult",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 599,
+    "original_list": "consume** (consumer, consumption)",
+    "headword": "consume",
+    "derivatives": "(consumer, consumption)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 600,
+    "original_list": "contact**",
+    "headword": "contact",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 601,
+    "original_list": "contain**",
+    "headword": "contain",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 602,
+    "original_list": "contemporary",
+    "headword": "contemporary",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 603,
+    "original_list": "contend",
+    "headword": "contend",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 604,
+    "original_list": "content**",
+    "headword": "content",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 605,
+    "original_list": "contest**",
+    "headword": "contest",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 606,
+    "original_list": "context**",
+    "headword": "context",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 607,
+    "original_list": "continent",
+    "headword": "continent",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 608,
+    "original_list": "continue**",
+    "headword": "continue",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 609,
+    "original_list": "contract**",
+    "headword": "contract",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 610,
+    "original_list": "contradict",
+    "headword": "contradict",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 611,
+    "original_list": "contrary",
+    "headword": "contrary",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 612,
+    "original_list": "contrast",
+    "headword": "contrast",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 613,
+    "original_list": "contribute**",
+    "headword": "contribute",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 614,
+    "original_list": "control*",
+    "headword": "control",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 615,
+    "original_list": "controversy",
+    "headword": "controversy",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 616,
+    "original_list": "convene (convenient, convention)",
+    "headword": "convene",
+    "derivatives": "(convenient, convention)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 617,
+    "original_list": "converse** (conversation)",
+    "headword": "converse",
+    "derivatives": "(conversation)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 618,
+    "original_list": "convert",
+    "headword": "convert",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 619,
+    "original_list": "convey",
+    "headword": "convey",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 620,
+    "original_list": "convict",
+    "headword": "convict",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 621,
+    "original_list": "convince**",
+    "headword": "convince",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 622,
+    "original_list": "cook*",
+    "headword": "cook",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 623,
+    "original_list": "cookie* / cooky*",
+    "headword": "cookie",
+    "derivatives": "/ cooky",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 624,
+    "original_list": "cool*",
+    "headword": "cool",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 625,
+    "original_list": "cooperate",
+    "headword": "cooperate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 626,
+    "original_list": "coordinate",
+    "headword": "coordinate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 627,
+    "original_list": "cop**",
+    "headword": "cop",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 628,
+    "original_list": "cope**",
+    "headword": "cope",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 629,
+    "original_list": "copy**",
+    "headword": "copy",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 630,
+    "original_list": "copyright",
+    "headword": "copyright",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 631,
+    "original_list": "cord",
+    "headword": "cord",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 632,
+    "original_list": "core",
+    "headword": "core",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 633,
+    "original_list": "corn",
+    "headword": "corn",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 634,
+    "original_list": "corner*",
+    "headword": "corner",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 635,
+    "original_list": "corporate (corporation)",
+    "headword": "corporate",
+    "derivatives": "(corporation)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 636,
+    "original_list": "correct**",
+    "headword": "correct",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 637,
+    "original_list": "correspond",
+    "headword": "correspond",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 638,
+    "original_list": "corridor",
+    "headword": "corridor",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 639,
+    "original_list": "corrupt",
+    "headword": "corrupt",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 640,
+    "original_list": "cost*",
+    "headword": "cost",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 641,
+    "original_list": "costume",
+    "headword": "costume",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 642,
+    "original_list": "cottage**",
+    "headword": "cottage",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 643,
+    "original_list": "cotton**",
+    "headword": "cotton",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 644,
+    "original_list": "cough**",
+    "headword": "cough",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 645,
+    "original_list": "could*",
+    "headword": "could",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 646,
+    "original_list": "council**",
+    "headword": "council",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 647,
+    "original_list": "counsel",
+    "headword": "counsel",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 648,
+    "original_list": "count** (discount, counter)",
+    "headword": "count",
+    "derivatives": "(discount, counter)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 649,
+    "original_list": "counterpart",
+    "headword": "counterpart",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 650,
+    "original_list": "country*",
+    "headword": "country",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 651,
+    "original_list": "countryside**",
+    "headword": "countryside",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 652,
+    "original_list": "county**",
+    "headword": "county",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 653,
+    "original_list": "couple*",
+    "headword": "couple",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 654,
+    "original_list": "coupon",
+    "headword": "coupon",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 655,
+    "original_list": "courage (discourage, encourage)",
+    "headword": "courage",
+    "derivatives": "(discourage, encourage)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 656,
+    "original_list": "course*",
+    "headword": "course",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 657,
+    "original_list": "court*",
+    "headword": "court",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 658,
+    "original_list": "cousin*",
+    "headword": "cousin",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 659,
+    "original_list": "cover* (discover)",
+    "headword": "cover",
+    "derivatives": "(discover)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 660,
+    "original_list": "cow*",
+    "headword": "cow",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 661,
+    "original_list": "crack**",
+    "headword": "crack",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 662,
+    "original_list": "craft",
+    "headword": "craft",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 663,
+    "original_list": "crash**",
+    "headword": "crash",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 664,
+    "original_list": "crawl**",
+    "headword": "crawl",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 665,
+    "original_list": "crayon*",
+    "headword": "crayon",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 666,
+    "original_list": "craze (crazy)",
+    "headword": "craze",
+    "derivatives": "(crazy)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 667,
+    "original_list": "cream*",
+    "headword": "cream",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 668,
+    "original_list": "create** (creature)",
+    "headword": "create",
+    "derivatives": "(creature)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 669,
+    "original_list": "credible (incredible)",
+    "headword": "credible",
+    "derivatives": "(incredible)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 670,
+    "original_list": "credit**",
+    "headword": "credit",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 671,
+    "original_list": "creep",
+    "headword": "creep",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 672,
+    "original_list": "crew",
+    "headword": "crew",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 673,
+    "original_list": "crime** (criminal)",
+    "headword": "crime",
+    "derivatives": "(criminal)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 674,
+    "original_list": "crisis**",
+    "headword": "crisis",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 675,
+    "original_list": "crisp**",
+    "headword": "crisp",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 676,
+    "original_list": "criterion",
+    "headword": "criterion",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 677,
+    "original_list": "critic (criticize / criticise, criticism)",
+    "headword": "critic",
+    "derivatives": "(criticize / criticise, criticism)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 678,
+    "original_list": "crop",
+    "headword": "crop",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 679,
+    "original_list": "cross*",
+    "headword": "cross",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 680,
+    "original_list": "crowd**",
+    "headword": "crowd",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 681,
+    "original_list": "crown**",
+    "headword": "crown",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 682,
+    "original_list": "crucial",
+    "headword": "crucial",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 683,
+    "original_list": "cruel**",
+    "headword": "cruel",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 684,
+    "original_list": "cruise",
+    "headword": "cruise",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 685,
+    "original_list": "crush",
+    "headword": "crush",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 686,
+    "original_list": "cry*",
+    "headword": "cry",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 687,
+    "original_list": "crystal",
+    "headword": "crystal",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 688,
+    "original_list": "cultivate",
+    "headword": "cultivate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 689,
+    "original_list": "culture*",
+    "headword": "culture",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 690,
+    "original_list": "cup*",
+    "headword": "cup",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 691,
+    "original_list": "cure**",
+    "headword": "cure",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 692,
+    "original_list": "curious** (curiosity)",
+    "headword": "curious",
+    "derivatives": "(curiosity)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 693,
+    "original_list": "curl**",
+    "headword": "curl",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 694,
+    "original_list": "currency",
+    "headword": "currency",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 695,
+    "original_list": "current**",
+    "headword": "current",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 696,
+    "original_list": "curriculum",
+    "headword": "curriculum",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 697,
+    "original_list": "curry",
+    "headword": "curry",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 698,
+    "original_list": "curse",
+    "headword": "curse",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 699,
+    "original_list": "curtain*",
+    "headword": "curtain",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 700,
+    "original_list": "curve",
+    "headword": "curve",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 701,
+    "original_list": "custody",
+    "headword": "custody",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 702,
+    "original_list": "custom",
+    "headword": "custom",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 703,
+    "original_list": "customer*",
+    "headword": "customer",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 704,
+    "original_list": "cut*",
+    "headword": "cut",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 705,
+    "original_list": "cute**",
+    "headword": "cute",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 706,
+    "original_list": "cycle** (recycle, cyclist)",
+    "headword": "cycle",
+    "derivatives": "(recycle cyclist)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 707,
+    "original_list": "cynical",
+    "headword": "cynical",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 708,
+    "original_list": "dairy",
+    "headword": "dairy",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 709,
+    "original_list": "damage**",
+    "headword": "damage",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 710,
+    "original_list": "damp",
+    "headword": "damp",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 711,
+    "original_list": "dance*",
+    "headword": "dance",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 712,
+    "original_list": "danger*",
+    "headword": "danger",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 713,
+    "original_list": "dare**",
+    "headword": "dare",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 714,
+    "original_list": "dark*",
+    "headword": "dark",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 715,
+    "original_list": "darling**",
+    "headword": "darling",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 716,
+    "original_list": "dash",
+    "headword": "dash",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 717,
+    "original_list": "database",
+    "headword": "database",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 718,
+    "original_list": "date*",
+    "headword": "date",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 719,
+    "original_list": "datum (data)",
+    "headword": "datum",
+    "derivatives": "(data)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 720,
+    "original_list": "daughter*",
+    "headword": "daughter",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 721,
+    "original_list": "dawn**",
+    "headword": "dawn",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 722,
+    "original_list": "day*",
+    "headword": "day",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 723,
+    "original_list": "dead*",
+    "headword": "dead",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 724,
+    "original_list": "deal**",
+    "headword": "deal",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 725,
+    "original_list": "death*",
+    "headword": "death",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 726,
+    "original_list": "debate**",
+    "headword": "debate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 727,
+    "original_list": "debt**",
+    "headword": "debt",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 728,
+    "original_list": "decade",
+    "headword": "decade",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 729,
+    "original_list": "decay",
+    "headword": "decay",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 730,
+    "original_list": "decent",
+    "headword": "decent",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 731,
+    "original_list": "decide* (decision)",
+    "headword": "decide",
+    "derivatives": "(decision)",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 732,
+    "original_list": "deck**",
+    "headword": "deck",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 733,
+    "original_list": "declare",
+    "headword": "declare",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 734,
+    "original_list": "decline (declension)",
+    "headword": "decline",
+    "derivatives": "(declension)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 735,
+    "original_list": "decorate**",
+    "headword": "decorate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 736,
+    "original_list": "decrease",
+    "headword": "decrease",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 737,
+    "original_list": "dedicate",
+    "headword": "dedicate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 738,
+    "original_list": "deep*",
+    "headword": "deep",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 739,
+    "original_list": "defeat",
+    "headword": "defeat",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 740,
+    "original_list": "defend (defendant)",
+    "headword": "defend",
+    "derivatives": "(defendant)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 741,
+    "original_list": "defense** / defence**",
+    "headword": "defense",
+    "derivatives": "/ defence",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 742,
+    "original_list": "deficiency",
+    "headword": "deficiency",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 743,
+    "original_list": "deficit",
+    "headword": "deficit",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 744,
+    "original_list": "define**",
+    "headword": "define",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 745,
+    "original_list": "definite**",
+    "headword": "definite",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 746,
+    "original_list": "degree**",
+    "headword": "degree",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 747,
+    "original_list": "delay**",
+    "headword": "delay",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 748,
+    "original_list": "delegate",
+    "headword": "delegate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 749,
+    "original_list": "delete",
+    "headword": "delete",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 750,
+    "original_list": "deliberate",
+    "headword": "deliberate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 751,
+    "original_list": "delicate",
+    "headword": "delicate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 752,
+    "original_list": "delicious*",
+    "headword": "delicious",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 753,
+    "original_list": "delight**",
+    "headword": "delight",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 754,
+    "original_list": "deliver**",
+    "headword": "deliver",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 755,
+    "original_list": "demand**",
+    "headword": "demand",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 756,
+    "original_list": "democracy",
+    "headword": "democracy",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 757,
+    "original_list": "democrat",
+    "headword": "democrat",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 758,
+    "original_list": "demon",
+    "headword": "demon",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 759,
+    "original_list": "demonstrate**",
+    "headword": "demonstrate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 760,
+    "original_list": "dense",
+    "headword": "dense",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 761,
+    "original_list": "dentist**",
+    "headword": "dentist",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 762,
+    "original_list": "deny**",
+    "headword": "deny",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 763,
+    "original_list": "depart (department, departure)",
+    "headword": "depart",
+    "derivatives": "(department, departure)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 764,
+    "original_list": "depend** (dependence, independent)",
+    "headword": "depend",
+    "derivatives": "(dependence, independent)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 765,
+    "original_list": "depict",
+    "headword": "depict",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 766,
+    "original_list": "deposit",
+    "headword": "deposit",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 767,
+    "original_list": "depress**",
+    "headword": "depress",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 768,
+    "original_list": "deprive",
+    "headword": "deprive",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 769,
+    "original_list": "derive",
+    "headword": "derive",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 770,
+    "original_list": "descend",
+    "headword": "descend",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 771,
+    "original_list": "describe** (description)",
+    "headword": "describe",
+    "derivatives": "(description)",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 772,
+    "original_list": "desert**",
+    "headword": "desert",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 773,
+    "original_list": "deserve**",
+    "headword": "deserve",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 774,
+    "original_list": "design*",
+    "headword": "design",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 775,
+    "original_list": "designate",
+    "headword": "designate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 776,
+    "original_list": "desire**",
+    "headword": "desire",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 777,
+    "original_list": "desk*",
+    "headword": "desk",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 778,
+    "original_list": "despair",
+    "headword": "despair",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 779,
+    "original_list": "desperate**",
+    "headword": "desperate",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 780,
+    "original_list": "despite**",
+    "headword": "despite",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 781,
+    "original_list": "destine (destination)",
+    "headword": "destine",
+    "derivatives": "(destination)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 782,
+    "original_list": "destiny",
+    "headword": "destiny",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 783,
+    "original_list": "destroy**",
+    "headword": "destroy",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 784,
+    "original_list": "destruct (destruction)",
+    "headword": "destruct",
+    "derivatives": "(destruction)",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 785,
+    "original_list": "detach",
+    "headword": "detach",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 786,
+    "original_list": "detail**",
+    "headword": "detail",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 787,
+    "original_list": "detect**",
+    "headword": "detect",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 788,
+    "original_list": "determine**",
+    "headword": "determine",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 789,
+    "original_list": "develop**",
+    "headword": "develop",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 790,
+    "original_list": "device",
+    "headword": "device",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 791,
+    "original_list": "devil",
+    "headword": "devil",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 792,
+    "original_list": "devise",
+    "headword": "devise",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 793,
+    "original_list": "devote",
+    "headword": "devote",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 794,
+    "original_list": "diabetes",
+    "headword": "diabetes",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 795,
+    "original_list": "dialogue* / dialog*",
+    "headword": "dialogue",
+    "derivatives": "/ dialog",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 796,
+    "original_list": "diary**",
+    "headword": "diary",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 797,
+    "original_list": "dictate",
+    "headword": "dictate",
+    "derivatives": "",
+    "star_count": "0",
+    "notes": ""
+  },
+  {
+    "no": 798,
+    "original_list": "dictionary**",
+    "headword": "dictionary",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  },
+  {
+    "no": 799,
+    "original_list": "die*",
+    "headword": "die",
+    "derivatives": "",
+    "star_count": "*",
+    "notes": ""
+  },
+  {
+    "no": 800,
+    "original_list": "diet**",
+    "headword": "diet",
+    "derivatives": "",
+    "star_count": "**",
+    "notes": ""
+  }
+]

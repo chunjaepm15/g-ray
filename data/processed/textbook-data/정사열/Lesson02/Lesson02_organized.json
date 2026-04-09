@@ -1,0 +1,3570 @@
+{
+  "lesson_metadata": {
+    "source": "Middle School English 3 (Jung Sa-yeol)",
+    "lesson_id": "L02",
+    "title": "Let’s Make Our Town Better",
+    "curriculum_version": "2015 Revised"
+  },
+  "sections": [
+    {
+      "section_name": "Listen & Talk",
+      "description": "Suggesting & Expressing Gratitude",
+      "items": [
+        {
+          "id": "L02-LT-001",
+          "english": "Let’s talk about the class party.",
+          "korean": "학급 파티에 대해 이야기해 보자.",
+          "tags": [
+            "Suggesting"
+          ]
+        },
+        {
+          "id": "L02-LT-002",
+          "english": "Thank you for volunteering.",
+          "korean": "자원해 줘서 고마워.",
+          "tags": [
+            "Gratitude"
+          ]
+        },
+        {
+          "id": "L02-LT-003",
+          "english": "Why don’t we clean the place together?",
+          "korean": "그곳을 함께 청소하는 게 어때요?",
+          "tags": [
+            "Suggesting"
+          ]
+        }
+      ]
+    },
+    {
+      "section_name": "Reading: Green Thumbs",
+      "description": "The process of turning an empty lot into a community garden",
+      "items": [
+        {
+          "id": "L02-RD-001",
+          "english": "It was just the ugly, old, empty lot across from Johnny’s Shop.",
+          "korean": "그곳은 조니네 가게 맞은편에 있는 지저분하고 오래된 텅 빈 부지였을 뿐이다.",
+          "context": "Background"
+        },
+        {
+          "id": "L02-RD-002",
+          "english": "I had to admit the lot looked much better.",
+          "korean": "나는 그 부지가 훨씬 더 좋아 보인다는 것을 인정해야만 했다.",
+          "context": "Progress",
+          "grammar": [
+            "Comparative Emphasis"
+          ]
+        },
+        {
+          "id": "L02-RD-003",
+          "english": "I’m proud I have been a part of it.",
+          "korean": "내가 그 일의 일부였다는 것이 자랑스럽다.",
+          "context": "Reflection",
+          "grammar": [
+            "Present Perfect"
+          ]
+        }
+      ]
+    },
+    {
+      "section_name": "Focus In",
+      "description": "Key Grammar Points",
+      "items": [
+        {
+          "id": "L02-GR-001",
+          "english": "I was glad my dad had made me wear gloves.",
+          "korean": "아버지가 나에게 장갑을 끼게 하셔서 다행이었다.",
+          "grammar_point": "Past Perfect + Causative Verb"
+        },
+        {
+          "id": "L02-GR-002",
+          "english": "I think chicken is much tastier than sandwiches.",
+          "korean": "나는 치킨이 샌드위치보다 훨씬 더 맛있다고 생각한다.",
+          "grammar_point": "Comparative Emphasis (much)"
+        }
+      ]
+    },
+    {
+      "section_name": "Extended Contexts (Auto-Generated)",
+      "items": [
+        {
+          "id": "L02-01",
+          "english": "Let’s talk about the class party.",
+          "korean": "우리 학급 파티에 대해 이야기해 보자.",
+          "grammar": "대화 시작하기",
+          "structure": "Let's talk about ...",
+          "syntax_chunks": [
+            {
+              "eng": "Let’s talk about",
+              "kor": "우리 학급 파티에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the class party.",
+              "kor": "대해 이야기해 보자.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "대화 시작하기",
+            "target_pattern": "Let's talk about ..."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-02",
+          "english": "Who will make sandwiches? I will. I can do it well.",
+          "korean": "누가 샌드위치를 만들 거니? 제가 할게요. 제가 잘할 수 있어요.",
+          "grammar": "지원하기",
+          "structure": "Who will ...? I will.",
+          "syntax_chunks": [
+            {
+              "eng": "Who will make sandwiches? I",
+              "kor": "누가 샌드위치를 만들 거니? 제가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "will. I can do it well.",
+              "kor": "할게요. 제가 잘할 수 있어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "지원하기",
+            "target_pattern": "Who will ...? I will."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-03",
+          "english": "Thank you for volunteering.",
+          "korean": "자원해 줘서 고마워.",
+          "grammar": "감사 표현",
+          "structure": "Thank you for V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Thank you",
+              "kor": "자원해",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "for volunteering.",
+              "kor": "줘서 고마워.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "감사 표현",
+            "target_pattern": "Thank you for V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-04",
+          "english": "Why don’t we clean the place together?",
+          "korean": "그곳을 함께 청소하는 게 어떠니?",
+          "grammar": "제안하기",
+          "structure": "Why don't we + V ...?",
+          "syntax_chunks": [
+            {
+              "eng": "Why don’t we",
+              "kor": "그곳을 함께",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "clean the place together?",
+              "kor": "청소하는 게 어떠니?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "제안하기",
+            "target_pattern": "Why don't we + V ...?"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-05",
+          "english": "How about putting some flower pots around the bench?",
+          "korean": "벤치 주변에 화분 몇 개를 놓는 건 어때?",
+          "grammar": "제안하기",
+          "structure": "How about V-ing ...?",
+          "syntax_chunks": [
+            {
+              "eng": "How about putting some",
+              "kor": "벤치 주변에 화분 몇",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "flower pots around the bench?",
+              "kor": "개를 놓는 건 어때?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "제안하기",
+            "target_pattern": "How about V-ing ...?"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-06",
+          "english": "Thank you for suggesting great ideas",
+          "korean": " everyone.,모두 좋은 아이디어를 제안해 줘서 고마워요.,G0203",
+          "grammar": "감사 표현",
+          "structure": "Thank you for V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Thank you for",
+              "kor": "everyone.,모두 좋은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "suggesting great ideas",
+              "kor": "아이디어를 제안해 줘서 고마워요.,G0203",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "감사 표현",
+            "target_pattern": "Thank you for V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-07",
+          "english": "My parents were making me work on the neighborhood project.",
+          "korean": "부모님은 내가 동네 프로젝트에서 일하게 하셨다.",
+          "grammar": "사역동사",
+          "structure": "make + O + V (원형)",
+          "syntax_chunks": [
+            {
+              "eng": "My parents were making me",
+              "kor": "부모님은 내가 동네",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "work on the neighborhood project.",
+              "kor": "프로젝트에서 일하게 하셨다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사",
+            "target_pattern": "make + O + V (원형)"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-08",
+          "english": "It was full of dirty trash you can imagine.",
+          "korean": "그곳은 여러분이 상상할 수 있는 온갖 더러운 쓰레기들로 가득했다.",
+          "grammar": "어구 표현",
+          "structure": "be full of",
+          "syntax_chunks": [
+            {
+              "eng": "It was full of",
+              "kor": "그곳은 여러분이 상상할 수",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "dirty trash you can imagine.",
+              "kor": "있는 온갖 더러운 쓰레기들로 가득했다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "어구 표현",
+            "target_pattern": "be full of"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-09",
+          "english": "I didn’t think that we could clean up this awful mess.",
+          "korean": "나는 우리가 이 지독한 엉망진창을 청소할 수 있을 것이라 생각지 않았다.",
+          "grammar": "과거의 추측/생각",
+          "structure": "didn't think that ...",
+          "syntax_chunks": [
+            {
+              "eng": "I didn’t think that we",
+              "kor": "나는 우리가 이 지독한 엉망진창을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "could clean up this awful mess.",
+              "kor": "청소할 수 있을 것이라 생각지 않았다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거의 추측/생각",
+            "target_pattern": "didn't think that ..."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-10",
+          "english": "By lunchtime",
+          "korean": " I was hot, sweaty, and glad my dad had made me wear gloves.,점심때쯤 나는 덥고 땀이 났지만 아버지가 나에게 장갑을 끼게 하셨던 것이 다행이었다.,G0208",
+          "grammar": "과거완료 / 사역동사",
+          "structure": "had + made + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "By",
+              "kor": "I was hot, sweaty, and glad my dad had made me",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "lunchtime",
+              "kor": "wear gloves.,점심때쯤 나는 덥고 땀이 났지만 아버지가 나에게 장갑을 끼게 하셨던 것이 다행이었다.,G0208",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 / 사역동사",
+            "target_pattern": "had + made + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-11",
+          "english": "At the end of the day",
+          "korean": " I had to admit the lot looked much better.,하루가 끝날 때, 나는 그 부지가 훨씬 좋아 보인다는 것을 인정해야 했다.,G0209",
+          "grammar": "비교급 강조",
+          "structure": "much + 비교급 (better)",
+          "syntax_chunks": [
+            {
+              "eng": "At the end",
+              "kor": "I had to admit the lot looked much better.,하루가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "of the day",
+              "kor": "끝날 때, 나는 그 부지가 훨씬 좋아 보인다는 것을 인정해야 했다.,G0209",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 강조",
+            "target_pattern": "much + 비교급 (better)"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-12",
+          "english": "I stopped complaining when I found the plants had started popping up!",
+          "korean": "식물들이 싹을 틔우기 시작한 것을 발견했을 때 나는 불평을 그만두었다!",
+          "grammar": "과거완료 시제",
+          "structure": "had + started V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I stopped complaining when I found",
+              "kor": "식물들이 싹을 틔우기 시작한 것을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the plants had started popping up!",
+              "kor": "발견했을 때 나는 불평을 그만두었다!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 시제",
+            "target_pattern": "had + started V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-13",
+          "english": "The bean plants grew an inch",
+          "korean": " and the tomatoes doubled in size in just a few days.,콩 식물들은 1인치 자랐고, 토마토는 불과 며칠 만에 크기가 두 배가 되었다.,G0210",
+          "grammar": "성장/변화 표현",
+          "structure": "double in size",
+          "syntax_chunks": [
+            {
+              "eng": "The bean plants",
+              "kor": "and the tomatoes doubled in size in just a few",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "grew an inch",
+              "kor": "days.,콩 식물들은 1인치 자랐고, 토마토는 불과 며칠 만에 크기가 두 배가 되었다.,G0210",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "성장/변화 표현",
+            "target_pattern": "double in size"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-14",
+          "english": "An ugly and dirty lot that people didn’t like has become a pretty garden for everyone.",
+          "korean": "사람들이 싫어하던 추하고 더러운 부지가 모두를 위한 예쁜 정원이 되었다.",
+          "grammar": "현재완료 결과",
+          "structure": "has become",
+          "syntax_chunks": [
+            {
+              "eng": "An ugly and dirty lot that people didn’t",
+              "kor": "사람들이 싫어하던 추하고 더러운 부지가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "like has become a pretty garden for everyone.",
+              "kor": "모두를 위한 예쁜 정원이 되었다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재완료 결과",
+            "target_pattern": "has become"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-15",
+          "english": "I think chicken is much tastier than sandwiches.",
+          "korean": "나는 치킨이 샌드위치보다 훨씬 더 맛있다고 생각한다.",
+          "grammar": "비교급 강조",
+          "structure": "much + 비교급 (tastier)",
+          "syntax_chunks": [
+            {
+              "eng": "I think chicken is",
+              "kor": "나는 치킨이 샌드위치보다",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "much tastier than sandwiches.",
+              "kor": "훨씬 더 맛있다고 생각한다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 강조",
+            "target_pattern": "much + 비교급 (tastier)"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-16",
+          "english": "He couldn’t open the door because he had lost his key.",
+          "korean": "그는 열쇠를 잃어버렸었기 때문에 문을 열 수 없었다.",
+          "grammar": "과거완료 시제",
+          "structure": "couldn't ... because had + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "He couldn’t open the door",
+              "kor": "그는 열쇠를 잃어버렸었기 때문에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "because he had lost his key.",
+              "kor": "문을 열 수 없었다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 시제",
+            "target_pattern": "couldn't ... because had + p.p."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-17",
+          "english": "Oksig is much cuter than real corn.",
+          "korean": "옥식이는 실제 옥수수보다 훨씬 더 귀엽다.",
+          "grammar": "비교급 강조",
+          "structure": "much + comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Oksig is much",
+              "kor": "옥식이는 실제 옥수수보다",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "cuter than real corn.",
+              "kor": "훨씬 더 귀엽다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 강조",
+            "target_pattern": "much + comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-18",
+          "english": "It is much more beautiful than you think.",
+          "korean": "그것은 여러분이 생각하는 것보다 훨씬 더 아름답다.",
+          "grammar": "비교급 강조",
+          "structure": "much + more beautiful",
+          "syntax_chunks": [
+            {
+              "eng": "It is much more",
+              "kor": "그것은 여러분이 생각하는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "beautiful than you think.",
+              "kor": "것보다 훨씬 더 아름답다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 강조",
+            "target_pattern": "much + more beautiful"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L02-19",
+          "english": "Thank you for teaching me how to ride a bike.",
+          "korean": "자전거 타는 법을 가르쳐 줘서 고마워.",
+          "grammar": "감사 표현",
+          "structure": "Thank you for V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Thank you for teaching me",
+              "kor": "자전거 타는 법을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "how to ride a bike.",
+              "kor": "가르쳐 줘서 고마워.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "감사 표현",
+            "target_pattern": "Thank you for V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-20",
+          "english": "The only way to do it is just to start.",
+          "korean": "그것을 하는 유일한 방법은 그냥 시작하는 것이다.",
+          "grammar": "to부정사의 명사적 용법",
+          "structure": "is to start",
+          "syntax_chunks": [
+            {
+              "eng": "The only way to do",
+              "kor": "그것을 하는 유일한",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "it is just to start.",
+              "kor": "방법은 그냥 시작하는 것이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사의 명사적 용법",
+            "target_pattern": "is to start"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-021",
+          "english": "I complained the whole day.",
+          "korean": "나는 온종일 불평했습니다.",
+          "grammar": "사역동사 / 비교급 강조",
+          "structure": "make + O + V / far better",
+          "syntax_chunks": [
+            {
+              "eng": "I complained",
+              "kor": "나는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the whole day.",
+              "kor": "온종일 불평했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사 / 비교급 강조",
+            "target_pattern": "make + O + V / far better"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-022",
+          "english": "I didn’t understand why we were working on this place.",
+          "korean": "나는 왜 우리가 이 장소에 매달리는지 이해할 수 없었습니다.",
+          "grammar": "사역동사 / 비교급 강조",
+          "structure": "make + O + V / far better",
+          "syntax_chunks": [
+            {
+              "eng": "I didn’t understand why we",
+              "kor": "나는 왜 우리가 이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "were working on this place.",
+              "kor": "장소에 매달리는지 이해할 수 없었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사 / 비교급 강조",
+            "target_pattern": "make + O + V / far better"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-023",
+          "english": "It was just the ugly, old, empty lot across from Johnny’s Shop.",
+          "korean": "그곳은 조니네 가게 건너편에 있는 지저분해 보이고 오래된 빈 터에 불과했습니다.",
+          "grammar": "사역동사 / 비교급 강조",
+          "structure": "make + O + V / far better",
+          "syntax_chunks": [
+            {
+              "eng": "It was just the ugly, old,",
+              "kor": "그곳은 조니네 가게 건너편에 있는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "empty lot across from Johnny’s Shop.",
+              "kor": "지저분해 보이고 오래된 빈 터에 불과했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사 / 비교급 강조",
+            "target_pattern": "make + O + V / far better"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-024",
+          "english": "It was full of wild plants, fast food wraps, old newspapers, broken glass, and every other kind of dirty trash you can imagine.",
+          "korean": "그곳은 야생 식물, 패스트푸드 포장지, 헌 신문, 깨진 유리 등 당신이 상상할 수 있는 온갖 종류의 더러운 쓰레기들로 가득 차 있었습니다.",
+          "grammar": "사역동사 / 비교급 강조",
+          "structure": "make + O + V / far better",
+          "syntax_chunks": [
+            {
+              "eng": "It was full of wild plants, fast food wraps, old newspapers,",
+              "kor": "그곳은 야생 식물, 패스트푸드 포장지, 헌 신문, 깨진 유리 등",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "broken glass, and every other kind of dirty trash you can imagine.",
+              "kor": "당신이 상상할 수 있는 온갖 종류의 더러운 쓰레기들로 가득 차 있었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사 / 비교급 강조",
+            "target_pattern": "make + O + V / far better"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-025",
+          "english": "As I looked at it that first morning, I thought, “I bet there are snakes in there, too.”",
+          "korean": "그 첫날 아침, 나는 그것을 보면서 \"여기에 분명히 뱀도 있을 거야\"라고 생각했습니다.",
+          "grammar": "사역동사 / 비교급 강조",
+          "structure": "make + O + V / far better",
+          "syntax_chunks": [
+            {
+              "eng": "As I looked at it that first morning, I",
+              "kor": "그 첫날 아침, 나는 그것을 보면서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "thought, “I bet there are snakes in there, too.”",
+              "kor": "\"여기에 분명히 뱀도 있을 거야\"라고 생각했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사 / 비교급 강조",
+            "target_pattern": "make + O + V / far better"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-026",
+          "english": "There were twenty of us – all ages and sizes – ready to work that day.",
+          "korean": "그날 일할 준비를 마친, 모든 연령대와 체격의 우리들 20명이 있었습니다.",
+          "grammar": "과거의 추측 / 명사적 용법",
+          "structure": "didn't think that / is to start",
+          "syntax_chunks": [
+            {
+              "eng": "There were twenty of us – all ages",
+              "kor": "그날 일할 준비를 마친, 모든",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and sizes – ready to work that day.",
+              "kor": "연령대와 체격의 우리들 20명이 있었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거의 추측 / 명사적 용법",
+            "target_pattern": "didn't think that / is to start"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-027",
+          "english": "We were all wondering where to begin.",
+          "korean": "우리 모두는 어디서부터 시작해야 할지 궁금해했습니다.",
+          "grammar": "과거의 추측 / 명사적 용법",
+          "structure": "didn't think that / is to start",
+          "syntax_chunks": [
+            {
+              "eng": "We were all",
+              "kor": "우리 모두는 어디서부터",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "wondering where to begin.",
+              "kor": "시작해야 할지 궁금해했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거의 추측 / 명사적 용법",
+            "target_pattern": "didn't think that / is to start"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-028",
+          "english": "Then Mr.",
+          "korean": "그때 에르난데스 씨가 말했습니다.",
+          "grammar": "과거의 추측 / 명사적 용법",
+          "structure": "didn't think that / is to start",
+          "syntax_chunks": [
+            {
+              "eng": "Then",
+              "kor": "그때 에르난데스",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Mr.",
+              "kor": "씨가 말했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거의 추측 / 명사적 용법",
+            "target_pattern": "didn't think that / is to start"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-029",
+          "english": "We filled fifty trash bags with waste and were ready to pull wild plants.",
+          "korean": "우리는 50개의 쓰레기 봉투를 폐기물로 채웠고 야생 식물을 뽑을 준비가 되었습니다.",
+          "grammar": "과거완료 / 비교급 강조",
+          "structure": "had made / much better",
+          "syntax_chunks": [
+            {
+              "eng": "We filled fifty trash bags with waste",
+              "kor": "우리는 50개의 쓰레기 봉투를 폐기물로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and were ready to pull wild plants.",
+              "kor": "채웠고 야생 식물을 뽑을 준비가 되었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 / 비교급 강조",
+            "target_pattern": "had made / much better"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L02-030",
+          "english": "As we pulled and pulled, dust filled the air and made us sneeze.",
+          "korean": "우리가 계속해서 뽑는 동안, 먼지가 공기 중에 가득 찼고 우리를 재채기하게 만들었습니다.",
+          "grammar": "과거완료 / 비교급 강조",
+          "structure": "had made / much better",
+          "syntax_chunks": [
+            {
+              "eng": "As we pulled and pulled, dust",
+              "kor": "우리가 계속해서 뽑는 동안, 먼지가 공기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "filled the air and made us sneeze.",
+              "kor": "중에 가득 찼고 우리를 재채기하게 만들었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 / 비교급 강조",
+            "target_pattern": "had made / much better"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-031",
+          "english": "That first day was the toughest.",
+          "korean": "그 첫날이 가장 힘들었습니다.",
+          "grammar": "과거완료 시제",
+          "structure": "had started",
+          "syntax_chunks": [
+            {
+              "eng": "That first day",
+              "kor": "그 첫날이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "was the toughest.",
+              "kor": "가장 힘들었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 시제",
+            "target_pattern": "had started"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-032",
+          "english": "On the weekends that followed, we made rows, planted flower and vegetable seeds, and watered them.",
+          "korean": "이어지는 주말 동안 우리는 이랑을 만들고 꽃과 야채 씨앗을 심었으며 물을 주었습니다.",
+          "grammar": "과거완료 시제",
+          "structure": "had started",
+          "syntax_chunks": [
+            {
+              "eng": "On the weekends that followed, we made rows,",
+              "kor": "이어지는 주말 동안 우리는 이랑을 만들고",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "planted flower and vegetable seeds, and watered them.",
+              "kor": "꽃과 야채 씨앗을 심었으며 물을 주었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 시제",
+            "target_pattern": "had started"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-033",
+          "english": "First, the lettuce and then the beans and the tomatoes.",
+          "korean": "먼저 상추, 그다음은 콩과 토마토였습니다.",
+          "grammar": "과거완료 시제",
+          "structure": "had started",
+          "syntax_chunks": [
+            {
+              "eng": "First, the lettuce and then",
+              "kor": "먼저 상추,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the beans and the tomatoes.",
+              "kor": "그다음은 콩과 토마토였습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 시제",
+            "target_pattern": "had started"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-034",
+          "english": "They grew so fast.",
+          "korean": "그것들은 아주 빨리 자랐습니다.",
+          "grammar": "과거완료 시제",
+          "structure": "had started",
+          "syntax_chunks": [
+            {
+              "eng": "They grew",
+              "kor": "그것들은 아주",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "so fast.",
+              "kor": "빨리 자랐습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 시제",
+            "target_pattern": "had started"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-035",
+          "english": "I couldn’t believe it!",
+          "korean": "나는 믿을 수 없었습니다!",
+          "grammar": "과거완료 시제",
+          "structure": "had started",
+          "syntax_chunks": [
+            {
+              "eng": "I couldn’t",
+              "kor": "나는 믿을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "believe it!",
+              "kor": "수 없었습니다!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "과거완료 시제",
+            "target_pattern": "had started"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-036",
+          "english": "Now, two months later, I like to go there every day to see what new flowers are ready to pop up.",
+          "korean": "이제 두 달 후, 나는 어떤 새로운 꽃들이 피어날 준비가 되었는지를 보러 매일 그곳에 가는 것을 좋아합니다.",
+          "grammar": "to부정사의 용법 / 어휘",
+          "structure": "to see / sight",
+          "syntax_chunks": [
+            {
+              "eng": "Now, two months later, I like to go there every",
+              "kor": "이제 두 달 후, 나는 어떤 새로운 꽃들이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "day to see what new flowers are ready to pop up.",
+              "kor": "피어날 준비가 되었는지를 보러 매일 그곳에 가는 것을 좋아합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사의 용법 / 어휘",
+            "target_pattern": "to see / sight"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-037",
+          "english": "Lots of people in the neighborhood meet there to enjoy the sights and to talk together.",
+          "korean": "동네의 많은 사람이 경치를 즐기고 함께 이야기 나누기 위해 그곳에서 만납니다.",
+          "grammar": "to부정사의 용법 / 어휘",
+          "structure": "to see / sight",
+          "syntax_chunks": [
+            {
+              "eng": "Lots of people in the neighborhood meet there",
+              "kor": "동네의 많은 사람이 경치를 즐기고",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "to enjoy the sights and to talk together.",
+              "kor": "함께 이야기 나누기 위해 그곳에서 만납니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사의 용법 / 어휘",
+            "target_pattern": "to see / sight"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-038",
+          "english": "Title: Let’s Make Our Town Better --- Lesson 02 --- [Page 27] A     Listen and write.",
+          "korean": "제목: 우리 마을을 더 좋게 만들자 --- Lesson 02 --- [27 페이지] A 듣고 쓰세요.",
+          "grammar": "비교급 / 사역동사",
+          "structure": "Comparative / make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "Title: Let’s Make Our Town Better --- Lesson 02 ---",
+              "kor": "제목: 우리 마을을 더 좋게 만들자 ---",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "[Page 27] A     Listen and write.",
+              "kor": "Lesson 02 --- [27 페이지] A 듣고 쓰세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 / 사역동사",
+            "target_pattern": "Comparative / make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-039",
+          "english": "\u0001\u000f׮\u0001 Start O f f Your Turn Talk with your partner.",
+          "korean": "׮ 귀하의 차례 시작 파트너와 대화하십시오.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "\u0001\u000f׮\u0001 Start O f f",
+              "kor": "׮ 귀하의 차례",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Your Turn Talk with your partner.",
+              "kor": "시작 파트너와 대화하십시오.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-040",
+          "english": "Listen & Talk B     Listen and choose.",
+          "korean": "듣고 말하기 B 듣고 선택하세요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Listen & Talk B",
+              "kor": "듣고 말하기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Listen and choose.",
+              "kor": "B 듣고 선택하세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-041",
+          "english": "Thank you for helping me.",
+          "korean": "도와주셔서 감사합니다.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Thank you",
+              "kor": "도와주셔서",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "for helping me.",
+              "kor": "감사합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-042",
+          "english": "Speak Up Look and talk.",
+          "korean": "보고 이야기하십시오.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Speak Up",
+              "kor": "보고",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Look and talk.",
+              "kor": "이야기하십시오.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-043",
+          "english": "Mission guide visitors paint the wall cook for the elderly play with the children DMBTT\u0001QBSUZ DMVC\u0001GFTUJWBM DMBTT\u0001GJFME\u0001USJQ TQPSUT\u0001EBZ make sandwiches take pictures of our activities make posters run a 100 meter race A Let’s talk about the volunteer work for our town.",
+          "korean": "미션 가이드 방문자 벽 페인트 칠하기 노인들을 위한 요리사 아이들과 놀기 DMBTT QBSUZ DMVC GFTUJWBM DMBTT GJFME USJQ TQPSUT EBZ 샌드위치 만들기 우리 활동 사진 찍기 포스터 만들기 100미터 경주 A 우리 마을을 위한 자원 봉사 활동에 대해 이야기합시다.",
+          "grammar": "비교급 / 사역동사",
+          "structure": "Comparative / make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "Mission guide visitors paint the wall cook for the elderly play with the children DMBTT\u0001QBSUZ DMVC\u0001GFTUJWBM DMBTT\u0001GJFME\u0001USJQ TQPSUT\u0001EBZ make sandwiches take",
+              "kor": "미션 가이드 방문자 벽 페인트 칠하기 노인들을 위한 요리사 아이들과 놀기 DMBTT QBSUZ DMVC GFTUJWBM DMBTT GJFME USJQ TQPSUT",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "pictures of our activities make posters run a 100 meter race A Let’s talk about the volunteer work for our town.",
+              "kor": "EBZ 샌드위치 만들기 우리 활동 사진 찍기 포스터 만들기 100미터 경주 A 우리 마을을 위한 자원 봉사 활동에 대해 이야기합시다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 / 사역동사",
+            "target_pattern": "Comparative / make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-044",
+          "english": "Who will guide visitors?",
+          "korean": "누가 방문객을 안내할 것인가?",
+          "grammar": "관계대명사 / 조동사",
+          "structure": "Relative Pronoun / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Who will",
+              "kor": "누가 방문객을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "guide visitors?",
+              "kor": "안내할 것인가?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "관계대명사 / 조동사",
+            "target_pattern": "Relative Pronoun / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-045",
+          "english": "Let’s Make Our Town Better 29 [Page 29] StepU   p Your Turn A  My cat has some trouble in its mouth.",
+          "korean": "우리 마을을 더 좋게 만들자 29 [페이지 29] 차례를 밟으세요 A 고양이 입에 문제가 있어요.",
+          "grammar": "비교급 / 사역동사",
+          "structure": "Comparative / make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "Let’s Make Our Town Better 29 [Page 29] StepU   p",
+              "kor": "우리 마을을 더 좋게 만들자 29 [페이지",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Your Turn A  My cat has some trouble in its mouth.",
+              "kor": "29] 차례를 밟으세요 A 고양이 입에 문제가 있어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 / 사역동사",
+            "target_pattern": "Comparative / make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-046",
+          "english": "B  How about taking him to the animal doctor?",
+          "korean": "B 동물병원에 데려가는 게 어때요?",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "B  How about taking",
+              "kor": "B 동물병원에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "him to the animal doctor?",
+              "kor": "데려가는 게 어때요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-047",
+          "english": "Ü\u0001around  about     loud     sound found   shout     mouth mountain Ü\u0001 \u0001\u0001double  enough t ouch trouble y oung Say It Right Real-life Scene Let‛s talk about how we can make our town better.",
+          "korean": "Ü 주변에서 큰 소리가 나고 소리지르는 산 Ü 두 배로 터치 문제가 발생합니다. Say It Right 실제 장면 우리 마을을 더 좋게 만들 수 있는 방법에 대해 이야기해 보겠습니다.",
+          "grammar": "의문사 구문 / 조동사",
+          "structure": "Wh-word / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Ü\u0001around  about     loud     sound found   shout     mouth mountain",
+              "kor": "Ü 주변에서 큰 소리가 나고 소리지르는 산 Ü 두 배로 터치 문제가 발생합니다. Say",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Ü\u0001 \u0001\u0001double  enough t ouch trouble y oung Say It Right Real-life Scene Let‛s talk about how we can make our town better.",
+              "kor": "It Right 실제 장면 우리 마을을 더 좋게 만들 수 있는 방법에 대해 이야기해 보겠습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문 / 조동사",
+            "target_pattern": "Wh-word / Modal + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L02-048",
+          "english": "It‛ll be helpful for the elderly.",
+          "korean": "노인들에게 도움이 될 것입니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "It‛ll be helpful",
+              "kor": "노인들에게 도움이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "for the elderly.",
+              "kor": "될 것입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-049",
+          "english": "We can put a bench there, too.",
+          "korean": "거기에 벤치도 놓을 수 있어요.",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "We can put",
+              "kor": "거기에 벤치도",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "a bench there, too.",
+              "kor": "놓을 수 있어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-050",
+          "english": "Let me tell you ﬁ  rst.",
+          "korean": "먼저 말씀드리겠습니다.",
+          "grammar": "사역동사",
+          "structure": "make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "Let me tell",
+              "kor": "먼저",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "you ﬁ  rst.",
+              "kor": "말씀드리겠습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "사역동사",
+            "target_pattern": "make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-051",
+          "english": "There‛s too much trash at the bus stop.",
+          "korean": "버스정류장에 쓰레기가 너무 많아요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "There‛s too much trash",
+              "kor": "버스정류장에 쓰레기가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "at the bus stop.",
+              "kor": "너무 많아요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-052",
+          "english": "How about putting some ﬂ  ower pots around the bench?",
+          "korean": "벤치 주위에 화분을 몇 개 놓는 건 어때요?",
+          "grammar": "의문사 구문 / 현재분사/동명사",
+          "structure": "Wh-word / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "How about putting some ﬂ",
+              "kor": "벤치 주위에 화분을 몇",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "ower pots around the bench?",
+              "kor": "개 놓는 건 어때요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문 / 현재분사/동명사",
+            "target_pattern": "Wh-word / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-053",
+          "english": "They‛ll make the bus stop more beautiful.",
+          "korean": "버스 정류장을 더욱 아름답게 만들어 줄 거예요.",
+          "grammar": "비교급 / 사역동사",
+          "structure": "Comparative / make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "They‛ll make the",
+              "kor": "버스 정류장을 더욱",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "bus stop more beautiful.",
+              "kor": "아름답게 만들어 줄 거예요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 / 사역동사",
+            "target_pattern": "Comparative / make/have/let + O + V"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L02-054",
+          "english": "Then, shall we start tomorrow?",
+          "korean": "그럼 내일부터 시작해볼까?",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Then, shall",
+              "kor": "그럼",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "we start tomorrow?",
+              "kor": "내일부터 시작해볼까?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-055",
+          "english": "Town Meeting for the Neighborhood Project 30 Lesson 2 [Page 30] Fun Time Board Game cook bibimbap serve pajeon have a cart race serve noodles make balloon animals have a bike race play catch make cotton candy pull the rope make lassi do a funny dance fly kites play soccer spin a hula hoop play the ukulele ഥ\tUPXO\u0001 How to Play Sample Dialog A  Let’s talk about the town party.",
+          "korean": "동네모임 프로젝트 30 2과 [30쪽] 즐거운 시간 보드게임 요리사 비빔밥 파전 먹기 수레 경주 국수 먹기 풍선 동물 만들기 자전거 경주 놀이 잡기 솜사탕 줄 당기기 라씨 우스꽝스러운 댄스 날리기 연 놀이 축구 돌리기 훌라후프 연주 우쿨렐레 연주 ഥ UPXO 연주 방법 샘플 대화 A 타운 파티에 대해 이야기해 봅시다.",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "Town Meeting for the Neighborhood Project 30 Lesson 2 [Page 30] Fun Time Board Game cook bibimbap serve pajeon have a cart race serve noodles make balloon animals have a bike race play catch make",
+              "kor": "동네모임 프로젝트 30 2과 [30쪽] 즐거운 시간 보드게임 요리사 비빔밥 파전 먹기 수레 경주 국수 먹기 풍선 동물 만들기 자전거 경주 놀이 잡기 솜사탕 줄",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "cotton candy pull the rope make lassi do a funny dance fly kites play soccer spin a hula hoop play the ukulele ഥ\tUPXO\u0001 How to Play Sample Dialog A  Let’s talk about the town party.",
+              "kor": "당기기 라씨 우스꽝스러운 댄스 날리기 연 놀이 축구 돌리기 훌라후프 연주 우쿨렐레 연주 ഥ UPXO 연주 방법 샘플 대화 A 타운 파티에 대해 이야기해 봅시다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-056",
+          "english": "Why don’t we cook bibimbap?",
+          "korean": "우리 비빔밥 만들어 보는 건 어때요?",
+          "grammar": "의문사 구문",
+          "structure": "Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "Why don’t",
+              "kor": "우리 비빔밥 만들어",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "we cook bibimbap?",
+              "kor": "보는 건 어때요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문",
+            "target_pattern": "Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-057",
+          "english": "Thank you for your idea.",
+          "korean": "당신의 아이디어에 감사드립니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Thank you",
+              "kor": "당신의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "for your idea.",
+              "kor": "아이디어에 감사드립니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-058",
+          "english": "” Then, he divided the lot into fou r parts with string and assigned five people to each part.",
+          "korean": "그런 다음 그는 끈으로 부지를 네 부분으로 나누고 각 부분에 5명을 배정했습니다.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "” Then, he divided the lot into fou r",
+              "kor": "그런 다음 그는 끈으로 부지를 네",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "parts with string and assigned five people to each part.",
+              "kor": "부분으로 나누고 각 부분에 5명을 배정했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-059",
+          "english": "awful     mess     divide ...",
+          "korean": "끔찍한 혼란 분열 ...",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "awful     mess",
+              "kor": "끔찍한 혼란",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "divide ...",
+              "kor": "분열 ...",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-060",
+          "english": "into ~     assign     sweaty     fill     trash bag     be ready to dust     sneeze     admit Activity Let’s Change the Dirty Lot into a Pretty Garden!",
+          "korean": "~에 땀에 젖어 쓰레기봉투 할당 먼지 재채기 인정 활동 더러운 곳을 예쁜 정원으로 바꾸자!",
+          "grammar": "to부정사",
+          "structure": "to + V",
+          "syntax_chunks": [
+            {
+              "eng": "into ~     assign     sweaty     fill     trash bag",
+              "kor": "~에 땀에 젖어 쓰레기봉투 할당 먼지 재채기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "be ready to dust     sneeze     admit Activity Let’s Change the Dirty Lot into a Pretty Garden!",
+              "kor": "인정 활동 더러운 곳을 예쁜 정원으로 바꾸자!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사",
+            "target_pattern": "to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-061",
+          "english": "17 • Where: at the empty  across from • What to do: to  wild plants and  the lot • What to bring:  , trash bags • How: We’ll  the lot into four parts.",
+          "korean": "17 • 장소: 건너편 빈 공간 • 해야 할 일: 야생 식물과 부지 • 가져갈 것: , 쓰레기 봉투 • 방법: 부지를 네 부분으로 나눕니다.",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "17 • Where: at the empty  across from • What to do: to  wild plants and",
+              "kor": "17 • 장소: 건너편 빈 공간 • 해야 할 일: 야생 식물과",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the lot • What to bring:  , trash bags • How: We’ll  the lot into four parts.",
+              "kor": "부지 • 가져갈 것: , 쓰레기 봉투 • 방법: 부지를 네 부분으로 나눕니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-062",
+          "english": "Five people will clean each part.",
+          "korean": "5명이 각 부품을 청소합니다.",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "Five people will",
+              "kor": "5명이 각",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "clean each part.",
+              "kor": "부품을 청소합니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-063",
+          "english": "If you have any questions, call Mr.",
+          "korean": "궁금한 점이 있으시면 Mr.에게 전화하세요.",
+          "grammar": "조건의 접속사 / 사역동사",
+          "structure": "If/Unless + S + V / make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "If you have",
+              "kor": "궁금한 점이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "any questions, call Mr.",
+              "kor": "있으시면 Mr.에게 전화하세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조건의 접속사 / 사역동사",
+            "target_pattern": "If/Unless + S + V / make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-064",
+          "english": "tough     row     pop up     double     sight Talk About It What do you want to do to make your town better?",
+          "korean": "터프 로우 팝업 이중 조준경 이야기하기 당신의 마을을 더 좋게 만들기 위해 무엇을 하고 싶나요?",
+          "grammar": "to부정사 / 의문사 구문",
+          "structure": "to + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "tough     row     pop up     double",
+              "kor": "터프 로우 팝업 이중 조준경 이야기하기 당신의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "sight Talk About It What do you want to do to make your town better?",
+              "kor": "마을을 더 좋게 만들기 위해 무엇을 하고 싶나요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 의문사 구문",
+            "target_pattern": "to + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-065",
+          "english": "CULTURE Amish (Canada, USA) Arhuaco (Colombia) Cheonghakdong (Korea) village culture They teach children Korean traditions in seodang.",
+          "korean": "문화 아미쉬(캐나다, 미국) 아르후아코(콜롬비아) 청학동(한국) 마을 문화 서당에서 아이들에게 한국 전통을 가르칩니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "CULTURE Amish (Canada, USA) Arhuaco (Colombia) Cheonghakdong (Korea)",
+              "kor": "문화 아미쉬(캐나다, 미국) 아르후아코(콜롬비아) 청학동(한국) 마을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "village culture They teach children Korean traditions in seodang.",
+              "kor": "문화 서당에서 아이들에게 한국 전통을 가르칩니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-066",
+          "english": "They work very hard and don’t use machines.",
+          "korean": "그들은 매우 열심히 일하고 기계를 사용하지 않습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "They work very hard",
+              "kor": "그들은 매우 열심히",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "and don’t use machines.",
+              "kor": "일하고 기계를 사용하지 않습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-067",
+          "english": "They believe they are the keepers of nature.",
+          "korean": "그들은 자신들이 자연의 수호자라고 믿습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "They believe they are",
+              "kor": "그들은 자신들이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the keepers of nature.",
+              "kor": "자연의 수호자라고 믿습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-068",
+          "english": "34 Lesson 2 [Page 34] Tonight, it suddenly hit me – what a good thing we did!",
+          "korean": "34 Lesson 2 [Page 34] 오늘 밤, 갑자기 생각났습니다. 우리가 한 일이 참으로 잘한 일이었습니다!",
+          "grammar": "의문사 구문 / 현재분사/동명사",
+          "structure": "Wh-word / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "34 Lesson 2 [Page 34] Tonight, it suddenly",
+              "kor": "34 Lesson 2 [Page 34] 오늘 밤,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "hit me – what a good thing we did!",
+              "kor": "갑자기 생각났습니다. 우리가 한 일이 참으로 잘한 일이었습니다!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문 / 현재분사/동명사",
+            "target_pattern": "Wh-word / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-069",
+          "english": "I’m proud I have been a part of it.",
+          "korean": "내가 그 일부가 된 것이 자랑스럽습니다.",
+          "grammar": "완료시제 / 사역동사",
+          "structure": "have + p.p. / make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "I’m proud I have",
+              "kor": "내가 그 일부가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "been a part of it.",
+              "kor": "된 것이 자랑스럽습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "완료시제 / 사역동사",
+            "target_pattern": "have + p.p. / make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-070",
+          "english": "I’m in c harge of picking flowers for the nursing home on F ourth Stree t.",
+          "korean": "저는 4번가에 있는 요양원에 보낼 꽃을 따는 일을 담당하고 있습니다.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I’m in c harge of picking flowers for",
+              "kor": "저는 4번가에 있는 요양원에 보낼",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the nursing home on F ourth Stree t.",
+              "kor": "꽃을 따는 일을 담당하고 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-071",
+          "english": "The vegetables will go to every kitc hen in our town.",
+          "korean": "야채는 우리 마을의 모든 닭장으로 갈 것입니다.",
+          "grammar": "to부정사 / 조동사",
+          "structure": "to + V / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "The vegetables will go to",
+              "kor": "야채는 우리 마을의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "every kitc hen in our town.",
+              "kor": "모든 닭장으로 갈 것입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 조동사",
+            "target_pattern": "to + V / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-072",
+          "english": "in charge of       nursing home     kitchen After You Read A೧\u0001 Bѱ\u0001 June 17 I visited the town garden after school.",
+          "korean": "요양원 주방 담당 After You Read A೧ Bѱ 6월 17일 방과 후 마을 정원을 방문했습니다.",
+          "grammar": "시간의 접속사 / 현재분사/동명사",
+          "structure": "When/While + S + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "in charge of       nursing home",
+              "kor": "요양원 주방 담당 After You Read A೧",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "kitchen After You Read A೧\u0001 Bѱ\u0001 June 17 I visited the town garden after school.",
+              "kor": "Bѱ 6월 17일 방과 후 마을 정원을 방문했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 현재분사/동명사",
+            "target_pattern": "When/While + S + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-073",
+          "english": "Some people were  while they were looking at the beautiful garden.",
+          "korean": "어떤 사람들은 아름다운 정원을 바라보며 있었습니다.",
+          "grammar": "시간의 접속사 / 현재분사/동명사",
+          "structure": "When/While + S + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Some people were  while they",
+              "kor": "어떤 사람들은 아름다운",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "were looking at the beautiful garden.",
+              "kor": "정원을 바라보며 있었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 현재분사/동명사",
+            "target_pattern": "When/While + S + V / V-ing"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L02-074",
+          "english": "I picked    and took them t o the  .",
+          "korean": "나는 그것들을 골라서 로 가져갔습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "I picked    and",
+              "kor": "나는 그것들을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "took them t o the  .",
+              "kor": "골라서 로 가져갔습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-075",
+          "english": "I’m proud that we made a pretty for .",
+          "korean": "를 위해 예쁜 작품을 만들어서 자랑스럽습니다.",
+          "grammar": "접속사/관계대명사 that",
+          "structure": "that + S + V / N + that",
+          "syntax_chunks": [
+            {
+              "eng": "I’m proud that we",
+              "kor": "를 위해 예쁜",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "made a pretty for .",
+              "kor": "작품을 만들어서 자랑스럽습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사/관계대명사 that",
+            "target_pattern": "that + S + V / N + that"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-076",
+          "english": "We picked vegetables.",
+          "korean": "우리는 야채를 골랐습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "We",
+              "kor": "우리는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "picked vegetables.",
+              "kor": "야채를 골랐습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-077",
+          "english": "Now we’re having a party.",
+          "korean": "이제 우리는 파티를 하고 있어요.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "Now we’re",
+              "kor": "이제 우리는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "having a party.",
+              "kor": "파티를 하고 있어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-078",
+          "english": "Adapted from Green Thumbs (Jennifer Overend Prior, 2006) Let’s Make Our Town Better 35 [Page 35] Build         U   p Focus In B I had to admit the lot looked much better.",
+          "korean": "Green Thumbs에서 각색(Jennifer Overend Prior, 2006) Let's Make Our Town Better 35 [Page 35] Build Up Focus In B 부지가 훨씬 좋아 보였다는 점을 인정해야 했습니다.",
+          "grammar": "to부정사 / 비교급",
+          "structure": "to + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "Adapted from Green Thumbs (Jennifer Overend Prior, 2006) Let’s Make Our Town Better 35 [Page 35] Build",
+              "kor": "Green Thumbs에서 각색(Jennifer Overend Prior, 2006) Let's Make Our Town Better 35 [Page",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "U   p Focus In B I had to admit the lot looked much better.",
+              "kor": "35] Build Up Focus In B 부지가 훨씬 좋아 보였다는 점을 인정해야 했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 비교급",
+            "target_pattern": "to + V / Comparative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L02-079",
+          "english": "A  Sandwiches are very tasty.",
+          "korean": "A 샌드위치가 정말 맛있어요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "A  Sandwiches",
+              "kor": "A 샌드위치가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "are very tasty.",
+              "kor": "정말 맛있어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-080",
+          "english": "Say Say \u0001 \u0001 He was surprised that he hadn’t locked the door.",
+          "korean": "Say Say 그는 문을 잠그지 않은 것에 놀랐다.",
+          "grammar": "수동태 / 접속사/관계대명사 that",
+          "structure": "be + p.p. / that + S + V / N + that",
+          "syntax_chunks": [
+            {
+              "eng": "Say Say \u0001 \u0001 He was",
+              "kor": "Say Say 그는 문을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "surprised that he hadn’t locked the door.",
+              "kor": "잠그지 않은 것에 놀랐다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태 / 접속사/관계대명사 that",
+            "target_pattern": "be + p.p. / that + S + V / N + that"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-081",
+          "english": "Write Write \u0001 When Mr.",
+          "korean": "쓰세요 씨가 있을 때 쓰세요.",
+          "grammar": "시간의 접속사",
+          "structure": "When/While + S + V",
+          "syntax_chunks": [
+            {
+              "eng": "Write Write",
+              "kor": "쓰세요 씨가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "\u0001 When Mr.",
+              "kor": "있을 때 쓰세요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사",
+            "target_pattern": "When/While + S + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-082",
+          "english": "Han came back home, 1.",
+          "korean": "한씨가 집으로 돌아왔다, 1.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Han came",
+              "kor": "한씨가 집으로",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "back home, 1.",
+              "kor": "돌아왔다, 1.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-083",
+          "english": "he found somebody   rice for him.",
+          "korean": "그는 그를 위해 밥을 줄 사람을 찾았습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "he found somebody",
+              "kor": "그는 그를 위해",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "rice for him.",
+              "kor": "밥을 줄 사람을 찾았습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-084",
+          "english": "he was surprised because somebody T-shirt.",
+          "korean": "그는 누군가 T 셔츠 때문에 놀랐습니다.",
+          "grammar": "이유의 접속사 / 수동태",
+          "structure": "Because/Since + S + V / be + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "he was surprised",
+              "kor": "그는 누군가 T",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "because somebody T-shirt.",
+              "kor": "셔츠 때문에 놀랐습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 수동태",
+            "target_pattern": "Because/Since + S + V / be + p.p."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-085",
+          "english": "he was happy that house.",
+          "korean": "그는 그 집이 행복했어요.",
+          "grammar": "접속사/관계대명사 that",
+          "structure": "that + S + V / N + that",
+          "syntax_chunks": [
+            {
+              "eng": "he was",
+              "kor": "그는 그",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "happy that house.",
+              "kor": "집이 행복했어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "접속사/관계대명사 that",
+            "target_pattern": "that + S + V / N + that"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-086",
+          "english": "cook rice                        fix one’s chair wash one’s T-shirt        clean one’s house I think sandwiches are much healthier than gimbap.",
+          "korean": "밥 짓기 의자 고치기 티셔츠 빨래 집 청소하기 김밥보다 샌드위치가 훨씬 건강에 좋은 것 같아요.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "cook rice",
+              "kor": "밥 짓기 의자 고치기 티셔츠 빨래 집",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "fix one’s chair wash one’s T-shirt        clean one’s house I think sandwiches are much healthier than gimbap.",
+              "kor": "청소하기 김밥보다 샌드위치가 훨씬 건강에 좋은 것 같아요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-087",
+          "english": "healthy     tasty     sweet     hot     popular     delicious rNVDI \u0001 GBS \u0001 FWFOs\u0001 A I was glad my dad had made me wear gloves.",
+          "korean": "건강하다 맛있다 달콤하다 뜨겁다 인기가 좋다 rNVDI GBS FWFOs A 아버지께서 장갑을 끼게 해주셔서 기뻤습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "healthy     tasty     sweet     hot     popular",
+              "kor": "건강하다 맛있다 달콤하다 뜨겁다 인기가 좋다 rNVDI",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "delicious rNVDI \u0001 GBS \u0001 FWFOs\u0001 A I was glad my dad had made me wear gloves.",
+              "kor": "GBS FWFOs A 아버지께서 장갑을 끼게 해주셔서 기뻤습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-088",
+          "english": "36 Lesson 2 [Page 36] Self-study Guide Think & Try      \u000f׮ Talk about What Happened \u0001\u000f׮פTip I had already eaten lunch when he called.",
+          "korean": "36 Lesson 2 [Page 36] 자습 가이드 생각하고 시도하기 ׮ 무슨 일이 있었는지 이야기해 보세요 ׮פ팁 그가 전화했을 때 나는 이미 점심을 먹고 있었습니다.",
+          "grammar": "시간의 접속사 / 의문사 구문",
+          "structure": "When/While + S + V / Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "36 Lesson 2 [Page 36] Self-study Guide Think & Try",
+              "kor": "36 Lesson 2 [Page 36] 자습 가이드 생각하고 시도하기 ׮ 무슨 일이",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "\u000f׮ Talk about What Happened \u0001\u000f׮פTip I had already eaten lunch when he called.",
+              "kor": "있었는지 이야기해 보세요 ׮פ팁 그가 전화했을 때 나는 이미 점심을 먹고 있었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 의문사 구문",
+            "target_pattern": "When/While + S + V / Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-089",
+          "english": "I had watched TV before I helped Mom.",
+          "korean": "나는 엄마를 돕기 전에 TV를 본 적이 있었습니다.",
+          "grammar": "시간의 접속사 / 완료시제",
+          "structure": "When/While + S + V / have + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "I had watched TV",
+              "kor": "나는 엄마를 돕기 전에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "before I helped Mom.",
+              "kor": "TV를 본 적이 있었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 완료시제",
+            "target_pattern": "When/While + S + V / have + p.p."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-090",
+          "english": "IFMQFE\u0001\u0001 .PN\u0001 TBOH\u0001B\u0001 TPOH QMBZFE\u0001B\u0001 HBNF\u0001 XBUDIFE\u0001\u0001 \u0001\u000f׮\u0001Your Turn e.g.",
+          "korean": "IFMQFE .PN TBOH B TPOH QMBZFE B HBNF XBUDIFE ׮ 귀하의 차례입니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "IFMQFE\u0001\u0001 .PN\u0001 TBOH\u0001B\u0001 TPOH QMBZFE\u0001B\u0001",
+              "kor": "IFMQFE .PN TBOH B TPOH QMBZFE",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "HBNF\u0001 XBUDIFE\u0001\u0001 \u0001\u000f׮\u0001Your Turn e.g.",
+              "kor": "B HBNF XBUDIFE ׮ 귀하의 차례입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-091",
+          "english": "I got up late because I had gone to bed late.",
+          "korean": "늦게 잠자리에 들었기 때문에 늦게 일어났습니다.",
+          "grammar": "이유의 접속사 / to부정사",
+          "structure": "Because/Since + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "I got up late because",
+              "kor": "늦게 잠자리에 들었기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "I had gone to bed late.",
+              "kor": "때문에 늦게 일어났습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / to부정사",
+            "target_pattern": "Because/Since + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-092",
+          "english": "MPTU\u0001IJT\u0001LFZ DPVMEOsU\u0001PQFO\u0001 UIF\u0001EPPS B C Let’s Make Our Town Better 37 [Page 37] Express Yourself My Favorite Place at My School • the Science Club Apr.",
+          "korean": "MPTU IJT LFZ DPVMEOsU PQFO UIF EPPS B C 우리 마을을 더 좋게 만들자 37 [페이지 37] 학교에서 내가 가장 좋아하는 장소 표현하기 • 과학 클럽 Apr.",
+          "grammar": "비교급 / 사역동사",
+          "structure": "Comparative / make/have/let + O + V",
+          "syntax_chunks": [
+            {
+              "eng": "MPTU\u0001IJT\u0001LFZ DPVMEOsU\u0001PQFO\u0001 UIF\u0001EPPS B C Let’s Make Our Town Better 37 [Page 37]",
+              "kor": "MPTU IJT LFZ DPVMEOsU PQFO UIF EPPS B C 우리 마을을 더 좋게",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Express Yourself My Favorite Place at My School • the Science Club Apr.",
+              "kor": "만들자 37 [페이지 37] 학교에서 내가 가장 좋아하는 장소 표현하기 • 과학 클럽 Apr.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 / 사역동사",
+            "target_pattern": "Comparative / make/have/let + O + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-093",
+          "english": "5: plant the tree • the Makers Club Apr.",
+          "korean": "5: 나무 심기 • 메이커스 클럽 4월.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "5: plant the tree",
+              "kor": "5: 나무 심기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "• the Makers Club Apr.",
+              "kor": "• 메이커스 클럽 4월.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-094",
+          "english": "11: paint it red • the class leaders Apr.",
+          "korean": "11: 빨간색으로 칠하기 • 반장 4월.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "11: paint it red",
+              "kor": "11: 빨간색으로 칠하기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "• the class leaders Apr.",
+              "kor": "• 반장 4월.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-095",
+          "english": "15: set up the board Apr.",
+          "korean": "15: 이사회 설립",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "15: set up",
+              "kor": "15:",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the board Apr.",
+              "kor": "이사회 설립",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-096",
+          "english": "16: put up some posters • the Cooking Club Apr.",
+          "korean": "16: 포스터 게시 • 요리 동아리 4월.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "16: put up some posters",
+              "kor": "16: 포스터 게시",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "• the Cooking Club Apr.",
+              "kor": "• 요리 동아리 4월.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-097",
+          "english": "5: pull wild plants Apr.",
+          "korean": "5: 야생 식물을 뽑습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "5: pull",
+              "kor": "5: 야생",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "wild plants Apr.",
+              "kor": "식물을 뽑습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-098",
+          "english": "7: plant vegetables A   Let’s talk about the bench.",
+          "korean": "7: 야채 심기 A 벤치에 대해 이야기해보자.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "7: plant vegetables A",
+              "kor": "7: 야채 심기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Let’s talk about the bench.",
+              "kor": "A 벤치에 대해 이야기해보자.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-099",
+          "english": "What do you think of it?",
+          "korean": "당신은 그것에 대해 어떻게 생각하세요?",
+          "grammar": "의문사 구문",
+          "structure": "Wh-word",
+          "syntax_chunks": [
+            {
+              "eng": "What do you",
+              "kor": "당신은 그것에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "think of it?",
+              "kor": "대해 어떻게 생각하세요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "의문사 구문",
+            "target_pattern": "Wh-word"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-100",
+          "english": "B I like it very much.",
+          "korean": "B 아주 좋아해요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "B I like",
+              "kor": "B",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "it very much.",
+              "kor": "아주 좋아해요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-101",
+          "english": "You know, the Makers Club painted it red.",
+          "korean": "아시다시피 메이커스 클럽에서는 빨간색으로 칠했어요.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "You know, the Makers",
+              "kor": "아시다시피 메이커스",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Club painted it red.",
+              "kor": "클럽에서는 빨간색으로 칠했어요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-102",
+          "english": "38 Lesson 2 [Page 38] Self-check • the Art Club Mar.",
+          "korean": "38 2과 [38쪽] 자기점검 • 미술동아리 Mar.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "38 Lesson 2 [Page 38]",
+              "kor": "38 2과 [38쪽]",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Self-check • the Art Club Mar.",
+              "kor": "자기점검 • 미술동아리 Mar.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-103",
+          "english": "15: draw fl  owers Mar.",
+          "korean": "15: 꽃 그리기 3월",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "15: draw fl",
+              "kor": "15: 꽃",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "owers Mar.",
+              "kor": "그리기 3월",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-104",
+          "english": "17: draw wings • the Green Club Apr.",
+          "korean": "17: 날개 그리기 • Green Club Apr.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "17: draw wings •",
+              "kor": "17: 날개 그리기",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the Green Club Apr.",
+              "kor": "• Green Club Apr.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-105",
+          "english": "5: put some fi  sh into it The Art Club drew wings on this wall.",
+          "korean": "5: 물고기를 넣어보세요. 미술부에서는 이 벽에 날개를 그렸습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "5: put some fi  sh into it",
+              "kor": "5: 물고기를 넣어보세요. 미술부에서는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "The Art Club drew wings on this wall.",
+              "kor": "이 벽에 날개를 그렸습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-106",
+          "english": "Thanks to the Art Club, this place is much popular  before.",
+          "korean": "아트클럽 덕분에 이곳은 예전부터 많은 인기를 끌었습니다.",
+          "grammar": "시간의 접속사 / to부정사",
+          "structure": "When/While + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Thanks to the Art Club, this",
+              "kor": "아트클럽 덕분에 이곳은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "place is much popular  before.",
+              "kor": "예전부터 많은 인기를 끌었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / to부정사",
+            "target_pattern": "When/While + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-107",
+          "english": "The Green Club this pond.",
+          "korean": "그린클럽은 이 연못입니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "The Green",
+              "kor": "그린클럽은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Club this pond.",
+              "kor": "이 연못입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-108",
+          "english": "Thanks to the Green Club, this place before.",
+          "korean": "예전에는 그린클럽 덕분에 이런 곳이 있었습니다.",
+          "grammar": "시간의 접속사 / to부정사",
+          "structure": "When/While + S + V / to + V",
+          "syntax_chunks": [
+            {
+              "eng": "Thanks to the Green",
+              "kor": "예전에는 그린클럽 덕분에",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Club, this place before.",
+              "kor": "이런 곳이 있었습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / to부정사",
+            "target_pattern": "When/While + S + V / to + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-109",
+          "english": "Your Turn Let’s Make Our Town Better 39 [Page 39] Project Step 1     \u000f׮ Step 2   \u000f׮ Option Step 3   \u000f׮ Our Town Symbol This is Oksig, which I drew as a symbol of my town.",
+          "korean": "여러분의 차례 우리 마을을 더 좋게 만들자 39 [쪽 39] 프로젝트 1단계 ׮ 2단계 ׮ 선택 3단계 ׮ 우리 마을 상징 제가 사는 마을의 상징으로 그린 ​​옥식입니다.",
+          "grammar": "이유의 접속사 / 관계대명사",
+          "structure": "Because/Since + S + V / Relative Pronoun",
+          "syntax_chunks": [
+            {
+              "eng": "Your Turn Let’s Make Our Town Better 39 [Page 39] Project Step 1     \u000f׮ Step 2",
+              "kor": "여러분의 차례 우리 마을을 더 좋게 만들자 39 [쪽 39] 프로젝트 1단계 ׮",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "\u000f׮ Option Step 3   \u000f׮ Our Town Symbol This is Oksig, which I drew as a symbol of my town.",
+              "kor": "2단계 ׮ 선택 3단계 ׮ 우리 마을 상징 제가 사는 마을의 상징으로 그린 ​​옥식입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 관계대명사",
+            "target_pattern": "Because/Since + S + V / Relative Pronoun"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-110",
+          "english": "I designed this after I had taken pictures of many different kin ds of corn.",
+          "korean": "다양한 종류의 옥수수 사진을 찍은 후에 이것을 디자인했습니다.",
+          "grammar": "시간의 접속사 / 완료시제",
+          "structure": "When/While + S + V / have + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "I designed this after I had taken",
+              "kor": "다양한 종류의 옥수수 사진을",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "pictures of many different kin ds of corn.",
+              "kor": "찍은 후에 이것을 디자인했습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 완료시제",
+            "target_pattern": "When/While + S + V / have + p.p."
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L02-111",
+          "english": "I hope everybody likes it.",
+          "korean": "모두가 좋아하길 바랍니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "I hope",
+              "kor": "모두가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "everybody likes it.",
+              "kor": "좋아하길 바랍니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-112",
+          "english": "40 Lesson 2 [Page 40] interesting towns More Info Kampong Ayer is the largest “water village” in the world.",
+          "korean": "40 2과 [40 페이지] 흥미로운 마을 추가 정보 Kampong Ayer는 세계에서 가장 큰 \"물 마을\"입니다.",
+          "grammar": "현재분사/동명사 / 비교급",
+          "structure": "V-ing / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "40 Lesson 2 [Page 40] interesting towns More Info",
+              "kor": "40 2과 [40 페이지] 흥미로운 마을 추가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Kampong Ayer is the largest “water village” in the world.",
+              "kor": "정보 Kampong Ayer는 세계에서 가장 큰 \"물 마을\"입니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사 / 비교급",
+            "target_pattern": "V-ing / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-113",
+          "english": "It is made up of about 40 small villages.",
+          "korean": "약 40개의 작은 마을로 이루어져 있다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "It is made up",
+              "kor": "약 40개의 작은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "of about 40 small villages.",
+              "kor": "마을로 이루어져 있다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-114",
+          "english": "All the houses are built over the water.",
+          "korean": "모든 집은 물 위에 지어졌습니다.",
+          "grammar": "비교급",
+          "structure": "Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "All the houses are",
+              "kor": "모든 집은",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "built over the water.",
+              "kor": "물 위에 지어졌습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급",
+            "target_pattern": "Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-115",
+          "english": "It is called the Venice of Asia.",
+          "korean": "아시아의 베니스라고 불립니다.",
+          "grammar": "수동태",
+          "structure": "be + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "It is called",
+              "kor": "아시아의",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the Venice of Asia.",
+              "kor": "베니스라고 불립니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "수동태",
+            "target_pattern": "be + p.p."
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-116",
+          "english": "There are schools, p olice stations, gas stations, and post ofﬁ  ces.",
+          "korean": "학교, 경찰서, 주유소, 우체국이 있습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "There are schools, p olice stations,",
+              "kor": "학교, 경찰서,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "gas stations, and post ofﬁ  ces.",
+              "kor": "주유소, 우체국이 있습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-117",
+          "english": "It is much more beautiful than Kampong Ayer is the largest “water village” in the world.",
+          "korean": "세계에서 가장 큰 \"물 마을\"인 Kampong Ayer보다 훨씬 더 아름답습니다.",
+          "grammar": "비교급 / 최상급",
+          "structure": "Comparative / Superlative",
+          "syntax_chunks": [
+            {
+              "eng": "It is much more beautiful than Kampong Ayer",
+              "kor": "세계에서 가장 큰 \"물 마을\"인",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "is the largest “water village” in the world.",
+              "kor": "Kampong Ayer보다 훨씬 더 아름답습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "비교급 / 최상급",
+            "target_pattern": "Comparative / Superlative"
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L02-118",
+          "english": "(1)   I stopped complaining when I found the neighbors had made rows!",
+          "korean": "(1) 이웃들이 소란을 피우는 것을 보고 나는 불평을 멈췄습니다!",
+          "grammar": "시간의 접속사 / 현재분사/동명사",
+          "structure": "When/While + S + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "(1)   I stopped complaining when",
+              "kor": "(1) 이웃들이 소란을 피우는",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "I found the neighbors had made rows!",
+              "kor": "것을 보고 나는 불평을 멈췄습니다!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 현재분사/동명사",
+            "target_pattern": "When/While + S + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-119",
+          "english": "(2)   The tomato plants grew an inch, and the beans doubled in size.",
+          "korean": "(2) 토마토 식물은 1인치 자랐고 콩의 크기는 두 배로 늘어났습니다.",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "(2)   The tomato plants grew",
+              "kor": "(2) 토마토 식물은 1인치 자랐고",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "an inch, and the beans doubled in size.",
+              "kor": "콩의 크기는 두 배로 늘어났습니다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-120",
+          "english": "(1)   (water, plant) We    the  tomatoes  after  Dad them.",
+          "korean": "(1) (물, 식물) We the Tomato after Dad them.",
+          "grammar": "시간의 접속사 / 비교급",
+          "structure": "When/While + S + V / Comparative",
+          "syntax_chunks": [
+            {
+              "eng": "(1)   (water, plant) We",
+              "kor": "(1) (물, 식물) We",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the  tomatoes  after  Dad them.",
+              "kor": "the Tomato after Dad them.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "시간의 접속사 / 비교급",
+            "target_pattern": "When/While + S + V / Comparative"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-121",
+          "english": "(2)   (even, good, than) Playing baseball is watching baseball games.",
+          "korean": "(2) (even, good, than) 야구를 하는 것은 야구 경기를 보는 것이다.",
+          "grammar": "현재분사/동명사",
+          "structure": "V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "(2)   (even, good, than)",
+              "kor": "(2) (even, good, than) 야구를",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Playing baseball is watching baseball games.",
+              "kor": "하는 것은 야구 경기를 보는 것이다.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "현재분사/동명사",
+            "target_pattern": "V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-122",
+          "english": "I’m going to clean the streets with my friends.",
+          "korean": "친구들과 함께 거리를 청소할 거예요.",
+          "grammar": "to부정사 / 현재분사/동명사",
+          "structure": "to + V / V-ing",
+          "syntax_chunks": [
+            {
+              "eng": "I’m going to clean",
+              "kor": "친구들과 함께",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "the streets with my friends.",
+              "kor": "거리를 청소할 거예요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "to부정사 / 현재분사/동명사",
+            "target_pattern": "to + V / V-ing"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-123",
+          "english": "sneeze Listen & Speak Neighborhood Project • At 2:30 p.m.",
+          "korean": "재채기 듣기 & 말하기 이웃 프로젝트 • 오후 2시 30분",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "sneeze Listen & Speak Neighborhood",
+              "kor": "재채기 듣기 & 말하기 이웃",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Project • At 2:30 p.m.",
+              "kor": "프로젝트 • 오후 2시 30분",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-124",
+          "english": "A   (the c lass party , talk, let’s, about) Who will make posters?",
+          "korean": "A (the class party , talk, let's, about) 포스터는 누가 만들까요?",
+          "grammar": "관계대명사 / 조동사",
+          "structure": "Relative Pronoun / Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "A   (the c lass party",
+              "kor": "A (the class party ,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": ", talk, let’s, about) Who will make posters?",
+              "kor": "talk, let's, about) 포스터는 누가 만들까요?",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "관계대명사 / 조동사",
+            "target_pattern": "Relative Pronoun / Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-125",
+          "english": "A  (for, thank you, volunteering) let sign ght ful tou gh eaty eze si li as sne tuce Adapted from Green Thumbs (Jennifer Overend Prior, 2006) 42 Lesson 2 [Page 42] L.O.V.E by Natalie Cole Let’s Sing Along L, is for the way you look at me And love it’s all that I can give to you E, is even more than anyone Words Listen & Speak Read & Write Let’s Make Our Town Better 43 [Page 43] We’ll learn ....",
+          "korean": "A (for, Thank you, Volunteering) let sign ght ful toough toough toough eaty eze si li as sne tuce Adapted from Green Thumbs (Jennifer Overend Prior, 2006) 42 Lesson 2 [Page 42] L.O.V.E - Natalie Cole Let's Sing Along L, is for the way you looking at you And love it's all the way I can give you E, is even more than other Words 듣기 & 말하기 읽기 & 쓰기 우리 마을을 더 좋게 만들자 43 [43 페이지] 우리는 ....",
+          "grammar": "이유의 접속사 / 수동태",
+          "structure": "Because/Since + S + V / be + p.p.",
+          "syntax_chunks": [
+            {
+              "eng": "A  (for, thank you, volunteering) let sign ght ful tou gh eaty eze si li as sne tuce Adapted from Green Thumbs (Jennifer Overend Prior, 2006) 42 Lesson 2 [Page 42] L.O.V.E by Natalie Cole Let’s Sing Along L, is",
+              "kor": "A (for, Thank you, Volunteering) let sign ght ful toough toough toough eaty eze si li as sne tuce Adapted from Green Thumbs (Jennifer Overend Prior, 2006) 42 Lesson 2 [Page 42] L.O.V.E - Natalie Cole Let's Sing Along L,",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "for the way you look at me And love it’s all that I can give to you E, is even more than anyone Words Listen & Speak Read & Write Let’s Make Our Town Better 43 [Page 43] We’ll learn ....",
+              "kor": "is for the way you looking at you And love it's all the way I can give you E, is even more than other Words 듣기 & 말하기 읽기 & 쓰기 우리 마을을 더 좋게 만들자 43 [43 페이지] 우리는 ....",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "이유의 접속사 / 수동태",
+            "target_pattern": "Because/Since + S + V / be + p.p."
+          },
+          "variation_flags": [
+            "has_or_not",
+            "verb_of_uncertainty"
+          ]
+        },
+        {
+          "id": "L02-126",
+          "english": "Self-check\u000f׮ Good luck!",
+          "korean": "자가 점검 ׮ 행운을 빕니다!",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Self-check\u000f׮",
+              "kor": "자가 점검",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Good luck!",
+              "kor": "׮ 행운을 빕니다!",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-127",
+          "english": "I can’t wait for the school festival.",
+          "korean": "학교 축제가 너무 기대돼요.",
+          "grammar": "조동사",
+          "structure": "Modal + V",
+          "syntax_chunks": [
+            {
+              "eng": "I can’t wait",
+              "kor": "학교 축제가",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "for the school festival.",
+              "kor": "너무 기대돼요.",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "조동사",
+            "target_pattern": "Modal + V"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        },
+        {
+          "id": "L02-128",
+          "english": "Get Ready\u000f׮ Lesson 44 Lesson 3 [Page 44] Watch & Think Laugh First and Then Think 45",
+          "korean": "준비하세요 ׮ 44과 3과 [44페이지] 보고 생각하기 먼저 웃고 생각하기 45",
+          "grammar": "일반 문장",
+          "structure": "-",
+          "syntax_chunks": [
+            {
+              "eng": "Get Ready\u000f׮ Lesson 44 Lesson 3 [Page 44]",
+              "kor": "준비하세요 ׮ 44과 3과 [44페이지]",
+              "role": "Main Clause"
+            },
+            {
+              "eng": "Watch & Think Laugh First and Then Think 45",
+              "kor": "보고 생각하기 먼저 웃고 생각하기 45",
+              "role": "Sub Clause"
+            }
+          ],
+          "grammar_properties": {
+            "role_in_sentence": "AutoParsed",
+            "trigger_word": "일반 문장",
+            "target_pattern": "-"
+          },
+          "variation_flags": [
+            "generic_concept"
+          ]
+        }
+      ]
+    }
+  ],
+  "vocabulary": [
+    "volunteer",
+    "community",
+    "bench",
+    "complaint",
+    "admit",
+    "double",
+    "pride",
+    "resident",
+    "various",
+    "improve"
+  ]
+}

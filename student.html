@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <script>
+        if (!sessionStorage.getItem('isLoggedIn')) {
+            alert("로그인 페이지를 거치지 않았습니다. 로그인 페이지로 이동합니다.");
+            window.location.href = 'index.html';
+        }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문장투시경 (G-ray) v13</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link rel="stylesheet" href="css/style_v13.css">
+    <script src="js/curriculum_v13.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        const Header = ({ sub, isTeacher, onBack }) => (
+            <div style={{ background: "#1a3a5c", color: "white", padding: "16px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", position: "sticky", top: 0, zIndex: 100, boxShadow: "0 2px 10px rgba(0,0,0,0.1)" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+                    {onBack && <button onClick={onBack} style={{ background: "transparent", color: "white", fontSize: 24, padding: "0 8px" }}>←</button>}
+                    <span style={{ fontWeight: 800, fontSize: 20 }}>🔍 문장투시경</span>
+                    {sub && <span style={{ padding: "4px 12px", background: "rgba(255,255,255,0.15)", borderRadius: 8, fontSize: 12, marginLeft: 8 }}>{sub}</span>}
+                </div>
+                {isTeacher && <span style={{ background: "#e67e22", borderRadius: 20, padding: "6px 16px", fontSize: 12, fontWeight: 700 }}>🧑‍🏫 교사 모드</span>}
+            </div>
+        );
+
+        const Badge = ({ children, color = "#eef2ff", text = "#4f46e5" }) => (
+            <span style={{ background: color, color: text, borderRadius: 6, padding: "4px 10px", fontSize: 11, fontWeight: 700 }}>{children}</span>
+        );
+
+        function App() {
+            const [screen, setScreen] = useState("HOME");
+            const [loginStep, setLoginStep] = useState("SELECTION"); // SELECTION, TEACHER, STUDENT
+            const units = CURRICULUM.units.map((u, i) => ({
+                id: u.unit_id,
+                unit: `Unit ${i+1}`,
+                title: u.title,
+                tags: u.origin_tags,
+                sentences: u.sentences
+            }));
+
+            const [isTeacher, setIsTeacher] = useState(false);
+            const [homeTab, setHomeTab] = useState("TRAINING"); // TRAINING, UNIT_SELECT, PROBLEM_MANAGE, STUDENT_MANAGE
+            const [selectedUnit, setSelectedUnit] = useState(null);
+            const [dragRange, setDragRange] = useState({ start: null, end: null });
+            const [isDragging, setIsDragging] = useState(false);
+            
+            // 교사용 설정 상태
+            const [selectedClass, setSelectedClass] = useState("3학년 1반");
+            const [activeUnits, setActiveUnits] = useState(units.slice(0, 10).map(u => u.id)); // 기본 10단원 활성
+            const [unitProblemSettings, setUnitProblemSettings] = useState({}); // { unitId: { sentenceId: [types] } }
+
+            // 활동 상태
+            const [tries, setTries] = useState(0);
+            const [showHint, setShowHint] = useState(false);
+            const [hintText, setHintText] = useState("");
+            const [activityStatus, setActivityStatus] = useState("IDLE"); // IDLE, WRONG, SUCCESS
+
+            // Similar questions states
+            const [qIndex, setQIndex] = useState(0);
+            const [qStatus, setQStatus] = useState("IDLE");
+            const [qTries, setQTries] = useState(0);
+            const [showConcept, setShowConcept] = useState(false);
+            const [reorderPool, setReorderPool] = useState([]);
+            const [reorderAnswer, setReorderAnswer] = useState([]);
+            const [selectedOption, setSelectedOption] = useState(null);
+            
+            const [writeAnswer, setWriteAnswer] = useState("");
+            const [showQ3Translation, setShowQ3Translation] = useState(false);
+            const [visibleChunks, setVisibleChunks] = useState([]);
+            const [q3ReadingDone, setQ3ReadingDone] = useState(false);
+            const [q2Options, setQ2Options] = useState([]);
+            const [q2CorrectOptionIndex, setQ2CorrectOptionIndex] = useState(0);
+
+            const simulateChunkReading = (sentenceObj) => {
+                if (!sentenceObj) return;
+                // V2 syntax_chunks check
+                const chunks = (sentenceObj.syntax_chunks && sentenceObj.syntax_chunks.length > 0)
+                    ? sentenceObj.syntax_chunks.map(c => c.kor)
+                    : (sentenceObj.korean ? sentenceObj.korean.split(' ') : []);
+                
+                let currentIdx = 0;
+                setVisibleChunks([]);
+                const interval = setInterval(() => {
+                    if (currentIdx < chunks.length) {
+                        setVisibleChunks(prev => [...prev, chunks[currentIdx] + " "]);
+                        currentIdx++;
+                    } else {
+                        clearInterval(interval);
+                        setQ3ReadingDone(true);
+                    }
+                }, 550);
+            };
+
+            useEffect(() => {
+                if (qIndex === 1 && currentSentence) {
+                    const words = currentSentence.english.split(' ');
+                    const blankIdx = Math.floor(words.length / 2);
+                    const correctWord = words[blankIdx].replace(/[^a-zA-Z]/g, '');
+                    const decoys = ["what", "how", "who", "when", "where", "which", "if", "that", "in", "on", "at", "for", "to"].filter(d => d !== correctWord.toLowerCase()).sort(() => 0.5 - Math.random()).slice(0, 3);
+                    const opts = [...decoys, correctWord].sort(() => 0.5 - Math.random());
+                    setQ2Options(opts);
+                    setQ2CorrectOptionIndex(opts.indexOf(correctWord) + 1);
+                }
+            }, [qIndex, currentSentence]);
+    
+
+// CURRICULUM data is now loaded from js/curriculum_v13.js moved up
+
+            const currentSentence = selectedUnit && selectedUnit.sentences && selectedUnit.sentences.length > (screen === "SIMILAR" ? qIndex : 0) ? selectedUnit.sentences[screen === "SIMILAR" ? qIndex : 0] : (selectedUnit?.sentences?.[0] || null);
+            const words = currentSentence ? currentSentence.english.split(' ') : [];
+
+            const translations = {};
+            
+            const generateStructure = (sentence) => {
+                if (!sentence || !sentence.english) return { eng: "", kor: "", target: "", targetEnd: 1, ceng: "", v: "", obj: "" };
+                
+                // V2: Use pre-defined syntax_chunks if they look manually curated (at least 2 chunks)
+                if (sentence.syntax_chunks && sentence.syntax_chunks.length >= 2 && sentence.id && sentence.id.startsWith("REF-")) {
+                    const firstChunkWords = sentence.syntax_chunks[0].eng.trim().split(/\s+/).length;
+                    return {
+                        eng: sentence.english,
+                        kor: sentence.korean,
+                        target: sentence.syntax_chunks[0].eng,
+                        targetEnd: firstChunkWords - 1,
+                        ceng: '',
+                        v: sentence.syntax_chunks[1].eng,
+                        obj: sentence.syntax_chunks.slice(2).map(c => c.eng).join(' ')
+                    };
+                }
+
+                // Fallback heuristic for auto-generated data
+                const w = sentence.english.split(' ');
+                const mid = Math.floor(w.length/2);
+                return { eng: sentence.english, kor: sentence.korean, target: w.slice(0, mid).join(' '), targetEnd: mid - 1, ceng: '', v: w.length>1 ? w[mid] : '', obj: w.slice(mid+1).join(' ') };
+            };
+            const structData = generateStructure(currentSentence);
+
+            // 의미 단위(Chunk) 데이터 정의 - 교과서 예문 기준
+            const CHUNK_DATA = {
+                "L01-15": [
+                    {"en": "Thanks to Antonio,", "ko": "Antonio 덕분에,"},
+                    {"en": "the islanders", "ko": "섬 주민들은"},
+                    {"en": "could get", "ko": "얻을 수 있었다"},
+                    {"en": "what they needed.", "ko": "그들이 필요로 했던 것을.", "isTarget": true}
+                ],
+                "L01-17": [
+                    {"en": "What the islanders here need", "ko": "여기 섬 주민들에게 필요한 것은", "isTarget": true},
+                    {"en": "is", "ko": "이다"},
+                    {"en": "not tools or books,", "ko": "도구나 책이 아니라,"},
+                    {"en": "but cats.", "ko": "고양이다."}
+                ],
+                "L01-23": [
+                    {"en": "That’s", "ko": "그것이 ~이다"},
+                    {"en": "what I want", "ko": "내가 원하는 것", "isTarget": true},
+                    {"en": "to show you.", "ko": "당신에게 보여주고 싶은."}
+                ],
+                "L01-28": [
+                    {"en": "I visited", "ko": "나는 방문했다"},
+                    {"en": "a local hospital", "ko": "지역 병원을"},
+                    {"en": "last Sunday", "ko": "지난주 일요일에"},
+                    {"en": "to help children.", "ko": "아이들을 돕기 위해.", "isTarget": true}
+                ],
+                "L01-29": [
+                    {"en": "While I was there,", "ko": "내가 그곳에 있는 동안,"},
+                    {"en": "I saw some people", "ko": "나는 몇몇 사람들이 ~하는 것을 보았다", "isTarget": true},
+                    {"en": "helping each other.", "ko": "서로 돕고 있는."}
+                ],
+                "L01-30": [
+                    {"en": "That’s what I want", "ko": "그것이 내가 원하는 것입니다", "isTarget": true},
+                    {"en": "to show you today.", "ko": "오늘 당신에게 보여드리고 싶은."}
+                ]
+            };
+
+            // 정답 범위 지정 로직 (Chunk 기반)
+            const getAnswerRange = () => {
+                const chunks = CHUNK_DATA[currentSentence?.id];
+                if (!chunks) return { start: 0, end: structData.targetEnd };
+                
+                let currentPos = 0;
+                for (const chunk of chunks) {
+                    const chunkWords = chunk.en.trim().split(/\s+/).length;
+                    if (chunk.isTarget) {
+                        return { start: currentPos, end: currentPos + chunkWords - 1 };
+                    }
+                    currentPos += chunkWords;
+                }
+                return { start: 0, end: structData.targetEnd };
+            };
+            
+            const answerRange = getAnswerRange();
+
+            const getTranslation = (s, e) => {
+                if (s === null) return "드래그를 통해 문장 덩어리(구문)를 선택해주세요.";
+                const start = Math.min(s, e);
+                const end = Math.max(s, e);
+                const selectedText = words.slice(start, end + 1).join(' ').replace(/[^a-zA-Z\s]/g, '').trim().toLowerCase();
+                
+                const sentenceChunks = CHUNK_DATA[currentSentence?.id];
+                if (!sentenceChunks) return `[해석 미리보기] "${words.slice(start, end + 1).join(' ')}"`; // 데이터 미정의 시 기본 표시
+
+                // 선택 영역이 하나 이상의 완전한 청크와 일치하는지 확인
+                let matchedChunks = [];
+                let currentPos = 0;
+                
+                for (const chunk of sentenceChunks) {
+                    const chunkNormalized = chunk.en.replace(/[^a-zA-Z\s]/g, '').trim().toLowerCase();
+                    const chunkWords = chunk.en.trim().split(/\s+/).length;
+                    
+                    // 청크의 시작 위치와 끝 위치 계산
+                    const chunkStart = currentPos;
+                    const chunkEnd = currentPos + chunkWords - 1;
+                    
+                    // 사용자의 선택 영역(start~end)이 청크 경계 내에 혹은 완전히 포함되는지 체크
+                    if (start <= chunkStart && end >= chunkEnd) {
+                        matchedChunks.push(chunk);
+                    } else if ((start >= chunkStart && start <= chunkEnd) || (end >= chunkStart && end <= chunkEnd)) {
+                        // 청크의 일부만 선택된 경우 (파편)
+                        return <span style={{ opacity: 0.6 }}>[구조 분석 중...] 덩어리(Chunk)를 완성해보세요.</span>;
+                    }
+                    
+                    currentPos += chunkWords;
+                }
+                
+                if (matchedChunks.length > 0) {
+                    const engCombined = matchedChunks.map(c => c.en).join(' ');
+                    const korCombined = matchedChunks.map(c => c.ko).join(' ');
+                    return `[해석 미리보기] "${engCombined}" ➔ ${korCombined}`;
+                }
+                
+                return <span style={{ opacity: 0.6 }}>[구조 분석 중...] 덩어리(Chunk)를 완성해보세요.</span>;
+            };
+
+            const handleWordAction = (i) => {
+                if (activityStatus === "SUCCESS") return;
+                if (dragRange.start === i && dragRange.end === i) {
+                    setDragRange({ start: null, end: null });
+                } else if (dragRange.start === null) {
+                    setDragRange({ start: i, end: i });
+                } else {
+                    setDragRange(prev => ({ ...prev, end: i }));
+                }
+                if (activityStatus === "WRONG") setActivityStatus("IDLE");
+            };
+
+            const handleCheck = () => {
+                if (dragRange.start === null) return;
+                const s = Math.min(dragRange.start, dragRange.end);
+                const e = Math.max(dragRange.start, dragRange.end);
+
+                if (s === answerRange.start && e === answerRange.end) {
+                    setActivityStatus("SUCCESS");
+                    setScreen("RESULT");
+                    return;
+                }
+
+                
+                let hint = `✨ [AI 피드백] 이 문장에서 <${selectedUnit.title}> 핵심 패턴이 적용된 곳을 덩어리로 묶어야 합니다.`;
+                if (currentSentence && currentSentence.variation_flags) {
+                    if (currentSentence.variation_flags.includes("is_noun_clause")) hint += " " + "여기서는 'if/whether'가 이끄는 명사절 전체가 목적어 역할을 하고 있어요.";
+                    if (currentSentence.variation_flags.includes("too_to_structure")) hint += " " + "too + 형용사와 to + 동사원형 사이의 경계를 잘 살펴보세요.";
+                }
+    
+                
+                setHintText(hint);
+                setTries(prev => {
+                    const nextTries = prev + 1;
+                    if (nextTries === 1) {
+                        setActivityStatus("WRONG_1");
+                        setShowHint(false); // 처음 틀렸을 때는 힌트 박스 숨김
+                    } else if (nextTries >= 2) {
+                        setActivityStatus("WRONG_2");
+                        setDragRange({ start: answerRange.start, end: answerRange.end }); // 정답 범위 강제 표시
+                        setTimeout(() => {
+                            setScreen("RESULT");
+                        }, 3500);
+                    }
+                    return nextTries;
+                });
+            };
+
+            
+            useEffect(() => {
+                const sIndex = screen === "SIMILAR" ? qIndex : 0;
+                if (selectedUnit && selectedUnit.sentences && selectedUnit.sentences.length > sIndex) {
+                    const s = selectedUnit.sentences[sIndex];
+                    if (s && s.english) {
+                        if (qIndex === 0) {
+                            const wordsArr = s.english.split(' ');
+                            const shuffled = [...wordsArr].sort(() => Math.random() - 0.5);
+                            setReorderPool(shuffled);
+                            setReorderAnswer([]);
+                        }
+                        setWriteAnswer("");
+                        setSelectedOption(null);
+                        setActivityStatus("IDLE");
+                        setTries(0);
+                        setDragRange({start:null, end:null});
+                    }
+                }
+            }, [selectedUnit, qIndex, screen]);
+            
+            const handleQCheck = () => {
+                const nextTries = qTries + 1;
+                setQTries(nextTries);
+                
+                let isCorrect = false;
+                if (qIndex === 0) {
+                    isCorrect = currentSentence && reorderAnswer.join(" ") === currentSentence.english;
+                } else if (qIndex === 1) {
+                    // Unit 1의 2번 문항 정답은 1번(what)
+                    isCorrect = selectedOption === 1;
+                } else if (qIndex === 2) {
+                    isCorrect = writeAnswer.length > 5;
+                }
+
+                if (isCorrect) {
+                    setQStatus("SUCCESS");
+                } else {
+                    setQStatus("WRONG");
+                    if (nextTries >= 2) {
+                        // 2번 틀리면 답안 공개
+                        if (qIndex === 0) {
+                            setReorderAnswer(currentSentence.english.split(' '));
+                            setReorderPool([]);
+                        } else if (qIndex === 1) {
+                            setSelectedOption(q2CorrectOptionIndex);
+                        } else if (qIndex === 2) {
+                            setWriteAnswer(currentSentence.english);
+                        }
+                        // 2회 오답 시 3초 후 다음 화면으로 자동 이동
+                        setTimeout(() => {
+                            nextAction();
+                        }, 3500);
+                    }
+                }
+            };
+
+            const grammarConcepts = {
+                "관계대명사 what": { rule: "what + 주어 + 동사 = '~하는 것' (명사절)", sub: "= the thing which[that] + S + V", points: ["✔ 선행사 포함 (what 앞에 명사 X)", "✔ 주어/목적어/보어 역할", "✔ 불완전한 문장 수반", "✔ 단수 취급 유의"] },
+                "현재완료 진행(형)": { rule: "have/has + been + v-ing = '계속 ~하고 있다'", sub: "= 현재완료 + 진행형", points: ["✔ 과거부터 현재도 진행 중", "✔ for, since와 자주 쓰임", "✔ 동작의 계속성 강조", "✔ 상태동사는 불가"] },
+                "to부정사의 의미상 주어": { rule: "for/of + 목적격 + to부정사", sub: "= to부정사의 행위 주체 명시", points: ["✔ 일반적: for + 목적격", "✔ 사람성격 형용사: of + 목적격", "✔ 문장의 주어와 다를 때 사용", "✔ 위치 주의"] },
+                "과거완료": { rule: "had + p.p.", sub: "= 과거의 어느 시점보다 더 이전", points: ["✔ 기준 과거 시점 필수", "✔ 시간의 선후관계 명확", "✔ 완료, 경험, 계속, 결과", "✔ after/before 구문과 쓰임"] },
+                "명사를 수식하는 분사": { rule: "명사 + v-ing / p.p.", sub: "= 분사가 형용사 역할", points: ["✔ v-ing 능동/진행", "✔ p.p 수동/완료", "✔ 길면 뒤에서 수식", "✔ 감정유발 vs 감정느낌"] },
+                "분사구문": { rule: "접속사+S+V... -> V-ing...", sub: "= 부사절을 구로 축약", points: ["✔ 접속사, 주어 생략", "✔ 동사원형+ing", "✔ Being 생략 가능", "✔ 부정어는 분사 바로 앞"] },
+                "접속사 if / whether": { rule: "if / whether + S + V = '~인지 아닌지'", sub: "= 명사절 접속사", points: ["✔ or not 결합 가능", "✔ 주어나 전치사 뒤는 whether만", "✔ 목적어 자리는 둘 다", "✔ 만약~조건과 구별"] },
+                "too ~ to ...": { rule: "too + 형/부 + to V", sub: "= 너무 ~해서 ...할 수 없다", points: ["✔ 부정어 없이 부정의미", "✔ 의미상 주어 추가 가능", "✔ so ~ that ~ can't 전환", "✔ 시제 일치 주의"] },
+                "가정법 과거": { rule: "If + S + 과거동사, S + 조동사과거 + V", sub: "= 현재 사실의 반대", points: ["✔ be동사는 were", "✔ 현재로 해석", "✔ 직설법 변환 연습", "✔ if생략시 도치"] },
+                "접속사 so that": { rule: "so that + S + can + V", sub: "= ~하기 위해서", points: ["✔ 목적 부사절", "✔ in order to 전환", "✔ so 형 that과 구별", "✔ ,(콤마) so that은 결과"] }
+            };
+
+            const nextAction = () => {
+                if (qIndex < 2) {
+                    setQIndex(prev => prev + 1);
+                    setQStatus("IDLE");
+                    setQTries(0);
+                    setShowConcept(false);
+                    setShowQ3Translation(false);
+                    setVisibleChunks([]);
+                    setQ3ReadingDone(false);
+                    setWriteAnswer("");
+                    setSelectedOption(null);
+                } else {
+                    setScreen("DASHBOARD");
+                }
+            };
+
+
+
+            const TeacherDashboard = () => (
+                <div style={{ padding: "0 24px 80px", maxWidth: "1200px", margin: "0 auto" }}>
+                    <h2 style={{ fontSize: "24px", fontWeight: 900, color: "#1e293b", margin: "32px 0 24px" }}>📚 선생님 대시보드</h2>
+                    <div className="dashboard-grid">
+                        <div className="card">
+                            <div className="stat-value">78%</div>
+                            <div className="stat-label">학급 평균 완료율</div>
+                            <div className="stat-delta delta-up">▲ 5% vs 지난주</div>
+                        </div>
+                        <div className="card">
+                            <div className="stat-value">64%</div>
+                            <div className="stat-label">영작 정답률</div>
+                            <div className="stat-delta">변동 없음</div>
+                        </div>
+                        <div className="card">
+                            <div className="stat-value">3</div>
+                            <div className="stat-label">진행 중인 수업</div>
+                            <div className="stat-delta">2개 완료 예정</div>
+                        </div>
+                        <div className="card">
+                            <div className="stat-value" style={{color:"#ef4444"}}>7</div>
+                            <div className="stat-label">미도달 학생</div>
+                            <div className="stat-delta delta-dn">▼ 2명 감소</div>
+                        </div>
+                    </div>
+
+                    <div style={{ display: "grid", gridTemplateColumns: "1.2fr 0.8fr", gap: "24px", marginBottom: "24px" }}>
+                        <div className="card">
+                            <h3 style={{ fontSize: "18px", fontWeight: 800, marginBottom: "16px" }}>📢 공지 사항</h3>
+                            <textarea style={{ width: "100%", height: "100px", padding: "16px", border: "1.5px solid #e2e8f0", borderRadius: "12px", boxSizing: "border-box", fontSize: "14px" }} placeholder="학급에 전달할 공지를 작성하세요..."></textarea>
+                            <button className="login-submit" style={{ width: "fit-content", padding: "12px 32px", marginTop: "16px" }}>발송하기</button>
+                        </div>
+                        <div className="card">
+                            <h3 style={{ fontSize: "18px", fontWeight: 800, marginBottom: "8px" }}>🤖 G-ray 분석</h3>
+                            <p style={{ fontSize: "13px", color: "#64748b", marginBottom: "24px" }}>새로운 영어 지문을 AI로 즉시 분석하여 핵심 문법과 난이도를 추출합니다.</p>
+                            <button className="login-submit" style={{ background: "#4f46e5" }}>AI 분석기 열기</button>
+                        </div>
+                    </div>
+
+                    <h3 style={{ fontSize: "16px", fontWeight: 800, color: "#64748b", marginBottom: "16px" }}>⚡ 퀵 액션</h3>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))", gap: "16px" }}>
+                        <button className="qa-btn" onClick={() => setScreen("HOME")}>
+                            <span className="qa-icon">📖</span>
+                            <span className="qa-label">전체 유닛 관리</span>
+                            <span className="qa-desc">16개 단원 통합 커리큘럼</span>
+                        </button>
+                        <button className="qa-btn">
+                            <span className="qa-icon">📋</span>
+                            <span className="qa-label">학급 관리</span>
+                            <span className="qa-desc">학생 명단 및 개별 진도</span>
+                        </button>
+                        <button className="qa-btn">
+                            <span className="qa-icon">📊</span>
+                            <span className="qa-label">심화 리포트</span>
+                            <span className="qa-desc">유형별 취약점 분석</span>
+                        </button>
+                    </div>
+                </div>
+            );
+
+            if (screen === "LOGIN") return <LoginScreen />;
+            if (screen === "DASHBOARD") return (
+                <div>
+                    <Header sub="Teacher Desktop" isTeacher={true} />
+                    <TeacherDashboard />
+                </div>
+            );
+
+            const ProblemSettingView = ({ unit, onClose }) => {
+                const [selectedTypes, setSelectedTypes] = useState({}); // { sId: [types] }
+                const [isAllSelected, setIsAllSelected] = useState(false);
+                const types = ["문장 분석", "빈칸 채우기", "재배열", "영작"];
+
+                const toggleType = (sId, type) => {
+                    setSelectedTypes(prev => {
+                        const current = prev[sId] || [];
+                        if (current.includes(type)) {
+                            return { ...prev, [sId]: current.filter(t => t !== type) };
+                        } else {
+                            return { ...prev, [sId]: [...current, type] };
+                        }
+                    });
+                };
+
+                const toggleAll = () => {
+                    if (isAllSelected) {
+                        setSelectedTypes({});
+                    } else {
+                        const all = {};
+                        unit.sentences.forEach(s => {
+                            all[s.id] = [...types];
+                        });
+                        setSelectedTypes(all);
+                    }
+                    setIsAllSelected(!isAllSelected);
+                };
+
+                return (
+                    <div style={{ position: "fixed", top: 0, left: 0, right: 0, bottom: 0, background: "rgba(0,0,0,0.5)", zIndex: 1000, display: "flex", justifyContent: "center", alignItems: "center" }}>
+                        <div style={{ background: "white", width: "360px", height: "80vh", borderRadius: "20px", overflow: "hidden", display: "flex", flexDirection: "column", border: "2px solid #000" }}>
+                            <div style={{ padding: "20px", borderBottom: "1px solid #000" }}>
+                                <div style={{ fontSize: "20px", fontWeight: 900, marginBottom: "16px" }}>문제세팅하기</div>
+                                <div style={{ border: "2px solid #000", padding: "8px", fontWeight: 900, fontSize: "18px", marginBottom: "8px" }}>
+                                    반 (fix)
+                                </div>
+                                <div style={{ border: "2px solid #000", padding: "8px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                    <span style={{ fontWeight: 900 }}>단원</span>
+                                    <span style={{ fontSize: "12px", cursor: "pointer" }} onClick={toggleAll}>전체선택</span>
+                                </div>
+                                <div style={{ border: "2px solid #000", borderTop: "none", padding: "8px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                                    <span style={{ fontWeight: 900 }}>{unit.unit}</span>
+                                    <input type="checkbox" checked={isAllSelected} onChange={toggleAll} style={{ width: "20px", height: "20px" }} />
+                                </div>
+                            </div>
+                            
+                            <div style={{ flex: 1, overflowY: "auto", padding: "20px" }}>
+                                <div style={{ border: "2px solid #000", padding: "16px" }}>
+                                    {unit.sentences.map((s, idx) => (
+                                        <div key={s.id} style={{ marginBottom: idx === unit.sentences.length - 1 ? 0 : "24px" }}>
+                                            <div style={{ border: "2px solid #000", padding: "10px", fontWeight: 900, marginBottom: "12px", background: "#f8fafc" }}>예문{idx + 1}</div>
+                                            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", padding: "0 4px" }}>
+                                                {types.map(t => (
+                                                    <label key={t} style={{ display: "flex", alignItems: "center", gap: "8px", fontSize: "14px", fontWeight: 800, cursor: "pointer" }}>
+                                                        <input 
+                                                            type="checkbox" 
+                                                            checked={(selectedTypes[s.id] || []).includes(t)} 
+                                                            onChange={() => toggleType(s.id, t)}
+                                                            style={{ width: "16px", height: "16px", accentColor: "#000" }}
+                                                        />
+                                                        {t}
+                                                    </label>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            
+                            <div style={{ padding: "20px", display: "flex", gap: "10px" }}>
+                                <button onClick={onClose} style={{ flex: 1, padding: "12px", background: "#f1f5f9", border: "1px solid #000", fontWeight: 900 }}>취소</button>
+                                <button onClick={() => { setUnitProblemSettings(prev => ({ ...prev, [unit.id]: selectedTypes })); onClose(); }} style={{ flex: 1, padding: "12px", background: "#1a3a5c", color: "white", border: "1px solid #000", fontWeight: 900 }}>저장</button>
+                            </div>
+                        </div>
+                    </div>
+                );
+            };
+
+            const StudentManagementView = () => (
+                <div style={{ padding: "20px", background: "white", borderRadius: "16px", border: "1.5px solid #e2e8f0" }}>
+                    <h3 style={{ fontWeight: 900, marginBottom: "20px" }}>학생 관리</h3>
+                    <div style={{ marginBottom: "24px" }}>
+                        <h4 style={{ fontSize: "14px", color: "#64748b", marginBottom: "12px" }}>반 관리 (단원별 클래스 완료율)</h4>
+                        <div style={{ height: "10px", background: "#f1f5f9", borderRadius: "5px", overflow: "hidden", display: "flex" }}>
+                            <div style={{ width: "70%", background: "#4f46e5" }}></div>
+                        </div>
+                        <div style={{ display: "flex", justifyContent: "space-between", fontSize: "12px", marginTop: "4px", color: "#4f46e5", fontWeight: 700 }}>
+                            <span>현재 진행률</span>
+                            <span>70%</span>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style={{ fontSize: "14px", color: "#64748b", marginBottom: "12px" }}>오답 관리 (학생별)</h4>
+                        {[
+                            { name: "김철수", wrong: 3, parts: "Unit 1 (관계대명사), Unit 3 (분사)" },
+                            { name: "이영희", wrong: 1, parts: "Unit 2 (현재완료)" },
+                            { name: "박지민", wrong: 5, parts: "Unit 1, 2, 3, 4" }
+                        ].map(s => (
+                            <div key={s.name} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "12px", borderBottom: "1px solid #f1f5f9" }}>
+                                <div>
+                                    <div style={{ fontWeight: 800 }}>{s.name}</div>
+                                    <div style={{ fontSize: "11px", color: "#ef4444" }}>틀린 부분: {s.parts}</div>
+                                </div>
+                                <div style={{ fontSize: "14px", fontWeight: 900, color: "#ef4444" }}>{s.wrong}개</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            );
+
+
+
+            if (screen === "HOME") return (
+                <div>
+                    <Header isTeacher={isTeacher} sub={isTeacher ? "김수현 교사 (3학년 1반)" : "박지훈 학생"} />
+                    <div style={{ maxWidth: 900, margin: "40px auto", padding: "0 24px" }}>
+                        <div className="home-tabs">
+                            {!isTeacher ? (
+                                <button onClick={() => setHomeTab("TRAINING")} className={`tab-item ${homeTab === "TRAINING" ? 'active' : ''}`}>투시경 훈련</button>
+                            ) : (
+                                <>
+                                    <button onClick={() => setHomeTab("UNIT_SELECT")} className={`tab-item ${homeTab === "UNIT_SELECT" ? 'active' : ''}`}>1-1. 단원 선택</button>
+                                    <button onClick={() => setHomeTab("PROBLEM_MANAGE")} className={`tab-item ${homeTab === "PROBLEM_MANAGE" ? 'active' : ''}`}>1-2. 문제 관리</button>
+                                    <button onClick={() => setHomeTab("STUDENT_MANAGE")} className={`tab-item ${homeTab === "STUDENT_MANAGE" ? 'active' : ''}`}>1-3. 학생 관리</button>
+                                </>
+                            )}
+                        </div>
+
+                        {homeTab === "STUDENT_MANAGE" ? <StudentManagementView /> : (
+                            <div className={homeTab === "PROBLEM_MANAGE" ? "" : "unit-grid"}>
+                                {homeTab === "PROBLEM_MANAGE" ? (
+                                    <div style={{ background: "white", borderRadius: "16px", border: "1.5px solid #e2e8f0", padding: "24px" }}>
+                                        <h3 style={{ fontWeight: 900, marginBottom: "20px" }}>단원별 문제 관리</h3>
+                                        <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                                            {units.slice(0, 10).map((u, idx) => (
+                                                <div key={u.id} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "16px 20px", border: "1.5px solid #f1f5f9", borderRadius: "12px", background: "#f8fafc" }}>
+                                                    <div>
+                                                        <span style={{ fontSize: "12px", color: "#64748b", fontWeight: 800, marginRight: "12px" }}>{u.unit}</span>
+                                                        <span style={{ fontSize: "16px", fontWeight: 900, color: "#1a3a5c" }}>{u.title}</span>
+                                                    </div>
+                                                    <button 
+                                                        onClick={() => setSelectedUnit(u)}
+                                                        style={{ background: "#4f46e5", color: "white", border: "none", borderRadius: "8px", padding: "10px 20px", fontSize: "14px", fontWeight: 800, cursor: "pointer" }}
+                                                    >
+                                                        단원 선택
+                                                    </button>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                ) : (
+                                    units.filter(u => isTeacher || activeUnits.includes(u.id)).map((u, idx) => (
+                                        <div key={u.id} className="unit-card" style={{ opacity: isTeacher && homeTab === "UNIT_SELECT" && !activeUnits.includes(u.id) ? 0.5 : 1 }}>
+                                            <div onClick={() => { if(!isTeacher || homeTab === "TRAINING") { setSelectedUnit(u); setScreen("ANALYSIS"); } }}>
+                                                <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start" }}>
+                                                    <div style={{ fontSize: 11, color: "#94a3b8", fontWeight: 800, marginBottom: 8, letterSpacing: "1px" }}>{u.unit}</div>
+                                                    {isTeacher && homeTab === "UNIT_SELECT" && (
+                                                        <input 
+                                                            type="checkbox" 
+                                                            checked={activeUnits.includes(u.id)} 
+                                                            onChange={(e) => {
+                                                                if (e.target.checked) setActiveUnits([...activeUnits, u.id]);
+                                                                else setActiveUnits(activeUnits.filter(id => id !== u.id));
+                                                            }}
+                                                            style={{ width: "18px", height: "18px" }}
+                                                        />
+                                                    )}
+                                                </div>
+                                                <div style={{ fontSize: 17, fontWeight: 900, color: "#1a3a5c", lineHeight: 1.4, marginBottom: 12 }}>{u.title}</div>
+                                                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                                                    {u.tags.map(t => <Badge key={t}>{t}</Badge>)}
+                                                </div>
+                                            </div>
+                                            <div style={{ textAlign: "right", fontSize: 13, fontWeight: 800, color: "#4f46e5", marginTop: 20, cursor: "pointer" }} onClick={() => { setSelectedUnit(u); setScreen("ANALYSIS"); }}>
+                                                시작하기 →
+                                            </div>
+                                        </div>
+                                    ))
+                                )}
+                                {isTeacher && homeTab === "PROBLEM_MANAGE" && (
+                                    <div style={{ marginTop: "20px", textAlign: "center" }}>
+                                        <button style={{ background: "transparent", border: "2px dashed #cbd5e1", borderRadius: "12px", padding: "16px 40px", color: "#64748b", fontWeight: 700, cursor: "pointer", width: "100%" }}>
+                                            + 새로운 문제 추가
+                                        </button>
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                        
+                        {selectedUnit && isTeacher && homeTab === "PROBLEM_MANAGE" && (
+                            <ProblemSettingView unit={selectedUnit} onClose={() => setSelectedUnit(null)} />
+                        )}
+                    </div>
+                </div>
+            );
+
+            if (screen === "ANALYSIS") return (
+                <div>
+                    <Header sub={selectedUnit.title} onBack={() => setScreen("HOME")} />
+                    <div style={{ maxWidth: 740, margin: "32px auto", padding: "0 20px" }}>
+                        <div style={{ background: "white", borderRadius: 24, padding: "32px", border: "1.5px solid #e2e8f0", marginBottom: 20, textAlign: "center", boxShadow: "0 4px 20px rgba(0,0,0,0.03)" }}>
+                            <div style={{ fontSize: 22, fontWeight: 900, color: "#1a3a5c", lineHeight: 1.5, marginBottom: 12 }}>{currentSentence ? currentSentence.english : ""}</div>
+                            <div style={{ fontSize: 15, color: "#64748b", fontWeight: 500 }}>{currentSentence ? currentSentence.korean : ""}</div>
+                        </div>
+                        <details open>
+                            <summary>🔍 문장 구조 투시</summary>
+                            <div className="details-content" style={{ textAlign: "center", padding: "24px" }}>
+                                <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 20 }}>
+                                    <div style={{ flex: 3, border: "2.5px solid #4f46e5", borderRadius: 12, background: "#eef2ff", padding: "15px 5px", textAlign: "center" }}>
+                                        <div style={{ fontWeight: 800, color: "#4f46e5", fontSize: 14 }}>{structData.target}</div>
+                                        <div style={{ fontSize: 10, color: "#4f46e5", marginTop: 4 }}>Subject (S)</div>
+                                    </div>
+                                    <div style={{ flex: 1, border: "2.5px solid #64748b", borderRadius: 12, background: "#f8fafc", padding: "15px 5px", textAlign: "center" }}>
+                                        <div style={{ fontWeight: 800, color: "#64748b", fontSize: 15 }}>{structData.v}</div>
+                                        <div style={{ fontSize: 10, color: "#64748b", marginTop: 4 }}>Verb (V)</div>
+                                    </div>
+                                    <div style={{ flex: 2, border: "2.5px solid #b45309", borderRadius: 12, background: "#fffbeb", padding: "15px 5px", textAlign: "center" }}>
+                                        <div style={{ fontWeight: 800, color: "#b45309", fontSize: 14 }}>{structData.obj}</div>
+                                        <div style={{ fontSize: 10, color: "#b45309", marginTop: 4 }}>Complement (C)</div>
+                                    </div>
+                                </div>
+                                <svg width="100%" height="80" viewBox="0 0 500 80" style={{ display: "block", overflow: "visible" }}>
+                                    <defs>
+                                        <marker id="arrowhead-s" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                            <polygon points="0 0, 10 3.5, 0 7" fill="#4f46e5" />
+                                        </marker>
+                                        <marker id="arrowhead-c" markerWidth="10" markerHeight="7" refX="0" refY="3.5" orient="auto">
+                                            <polygon points="0 0, 10 3.5, 0 7" fill="#b45309" />
+                                        </marker>
+                                    </defs>
+                                    <path d="M 250 5 Q 180 50 110 5" stroke="#4f46e5" strokeWidth="2" fill="none" markerEnd="url(#arrowhead-s)" />
+                                    <text x="180" y="70" textAnchor="middle" fontSize="11" fill="#4f46e5" fontWeight="800">주어</text>
+                                    <path d="M 270 5 Q 330 50 400 5" stroke="#b45309" strokeWidth="2" fill="none" markerEnd="url(#arrowhead-c)" />
+                                    <text x="330" y="70" textAnchor="middle" fontSize="11" fill="#b45309" fontWeight="800">보어</text>
+                                </svg>
+                                
+                                <div style={{marginTop: 24, textAlign:"left", background:"#f8fafc", padding:"16px", borderRadius:12, border:"1px solid #e2e8f0"}}>
+                                    <div style={{fontWeight: 800, color:"#1e293b", marginBottom: 8, fontSize: 15}}>📝 단어 설명 (Voca)</div>
+                                    <div style={{fontSize: 14, color:"#475569", lineHeight: 1.6}}>
+                                        <div><strong style={{color:"#4f46e5"}}>say</strong> (말하다) - 과거형: said</div>
+                                        <div><strong style={{color:"#4f46e5"}}>meeting</strong> (회의, 모임)</div>
+                                        <div><strong style={{color:"#4f46e5"}}>important</strong> (중요한)</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </details>
+                        <details open>
+                            <summary>📚 핵심 문법 개념 정리</summary>
+                            <div className="details-content" style={{ padding: "24px" }}>
+                                {grammarConcepts[selectedUnit.title] ? (
+                                    <>
+                                        <div style={{ background: "#f0f7ff", borderRadius: 16, padding: "20px", marginBottom: "24px", textAlign: "center", border: "1px solid #dbeafe" }}>
+                                            <div style={{ fontSize: 16, color: "#1e40af", lineHeight: 1.8, fontWeight: 800 }}>
+                                                {grammarConcepts[selectedUnit.title].rule}<br />
+                                                <small style={{ color: "#64748b", fontWeight: 500, fontSize: 13 }}>{grammarConcepts[selectedUnit.title].sub}</small>
+                                            </div>
+                                        </div>
+                                        <div style={{ fontSize: 13, color: "#475569", lineHeight: 2.2, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10 }}>
+                                            {grammarConcepts[selectedUnit.title].points.map((p, idx) => (
+                                                <div key={idx} style={{ background: "#f8fafc", padding: "10px", borderRadius: 8, fontWeight: 700 }}>{p}</div>
+                                            ))}
+                                        </div>
+                                    </>
+                                ) : (
+                                    <div style={{ textAlign: "center", color: "#64748b", padding: "20px" }}>선택된 단원의 개념 정리가 준비 중입니다.</div>
+                                )}
+                            </div>
+                        </details>
+                        <button onClick={() => setScreen("ACTIVITY")} style={{ width: "100%", padding: "22px", background: "#1a3a5c", color: "white", borderRadius: 20, fontWeight: 900, fontSize: 19, marginTop: 12, boxShadow: "0 6px 16px rgba(26,58,92,0.25)" }}>직접 한번 해보기 (투시 시작) →</button>
+                    </div>
+                </div>
+            );
+
+            if (screen === "ACTIVITY") return (
+                <div>
+                    <Header sub={selectedUnit.title} onBack={() => { setScreen("ANALYSIS"); setTries(0); setActivityStatus("IDLE"); setShowHint(false); setDragRange({start:null, end:null}); }} />
+                    <div style={{ maxWidth: 680, margin: "40px auto", padding: "0 20px" }}>
+                        <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 12px 30px rgba(0,0,0,0.06)" }}>
+                            <div style={{ background: "#f1f5ff", padding: "20px", borderRadius: 16, fontSize: 16, marginBottom: 24, textAlign: "center", fontWeight: 800, color: "#2563eb", border: "1px solid #dbeafe" }}>
+                                📌 <strong>{selectedUnit.title}</strong>에 해당하는 구문(덩어리) 전체를 찾아 마우스로 드래그하세요.
+                            </div>
+                            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center", padding: "12px 0 24px 0" }} onMouseDown={() => { if (activityStatus !== "SUCCESS") setIsDragging(true); }} onMouseUp={() => setIsDragging(false)}>
+                                {words.map((w, i) => {
+                                    const isInRange = dragRange.start !== null && i >= Math.min(dragRange.start, dragRange.end) && i <= Math.max(dragRange.start, dragRange.end);
+                                    return (
+                                        <div key={i} className={`word-btn ${isInRange ? 'word-selected' : ''}`} onClick={() => handleWordAction(i)} onMouseEnter={() => { if (isDragging) setDragRange(prev => ({ ...prev, end: i })); }}>{w}</div>
+                                    );
+                                })}
+                            </div>
+
+                            <div style={{ background: dragRange.start !== null ? "#1e293b" : "#f1f5f9", color: dragRange.start !== null ? "#fff" : "#94a3b8", transition: "0.3s", padding: "16px", borderRadius: 12, textAlign: "center", fontSize: 16, fontWeight: 800, minHeight: "24px", marginBottom: "32px", boxShadow: dragRange.start !== null ? "0 4px 12px rgba(0,0,0,0.15)" : "none" }}>
+                                {getTranslation(dragRange.start, dragRange.end)}
+                            </div>
+
+                            <div style={{ minHeight: "60px" }}>
+                                {tries === 1 && <div style={{ background: "#fef2f2", borderRadius: 14, padding: "18px", marginBottom: 16, textAlign: "center", color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>❌ 아쉽네요. 다시 한번 찾아볼까요?</div>}
+                                {tries >= 2 && (
+                                    <>
+                                        <div style={{ background: "#fef2f2", borderRadius: 14, padding: "18px", marginBottom: 16, textAlign: "center", color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>❌ 아쉽네요! 정답을 공개합니다.</div>
+                                        <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "20px", color: "#92400e", fontSize: 15, marginBottom: 16 }}>
+                                            💡 <strong>오답 가이드</strong>: '{selectedUnit.title}'의 핵심은 정답에 해당하는 구문(chunk) 전체를 하나의 의미 마디로 포착하는 것입니다. ({hintText})
+                                        </div>
+                                    </>
+                                )}
+                                
+                                {tries === 1 && !showHint && (
+                                    <div style={{ textAlign: "center", marginBottom: 16 }}>
+                                        <button 
+                                            onClick={() => setShowHint(true)}
+                                            style={{ background: "#fff", border: "1.5px solid #d1d5db", borderRadius: 10, padding: "8px 20px", fontSize: 14, fontWeight: 600, color: "#4b5563", cursor: "pointer", boxShadow: "0 2px 4px rgba(0,0,0,0.05)" }}
+                                        >
+                                            💡 힌트 보기
+                                        </button>
+                                    </div>
+                                )}
+                                {showHint && tries <= 1 && <div style={{ background: "#fffbeb", border: "1.5px solid #fde68a", borderRadius: 14, padding: "24px", color: "#92400e", fontSize: 15, lineHeight: 1.6 }}>💡 <strong>힌트</strong>: {hintText}</div>}
+                            </div>
+                            <div style={{ display: "flex", gap: 14, marginTop: 12 }}>
+                                {tries > 0 && activityStatus !== "SUCCESS" && !showHint && <button onClick={() => setShowHint(true)} style={{ flex: 1, padding: "20px", borderRadius: 18, background: "white", border: "2.5px solid #1a3a5c", fontWeight: 900, color: "#1a3a5c" }}>힌트 보기</button>}
+                                <button onClick={handleCheck} style={{ flex: 2, padding: "20px", borderRadius: 18, background: "#1a3a5c", color: "white", fontWeight: 900, fontSize: 18, boxShadow: "0 4px 12px rgba(26,58,92,0.2)" }}>{activityStatus === "SUCCESS" ? "결과 보기" : "투시 확인하기"}</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            if (screen === "RESULT") return (
+                <div>
+                    <Header sub="결과 분석" onBack={() => { setScreen("HOME"); setTries(0); }} />
+                    <div style={{ maxWidth: 700, margin: "40px auto", padding: "0 20px" }}>
+                        <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
+                            <div style={{ fontSize: 18, fontWeight: 900, marginBottom: 32, textAlign: "center", color: "#1a3a5c" }}>📊 우리 반 친구들의 포착 현황</div>
+                            <div style={{ display: "flex", flexWrap: "wrap", gap: 12, justifyContent: "center", marginBottom: 40 }}>
+                                {words.map((w, i) => {
+                                    // 청크 데이터를 기반으로 더욱 정교한 히트맵 수치 계산
+                                    let percentage = 12; // 기본값 (동사/연결구 등)
+                                    const chunks = CHUNK_DATA[currentSentence?.id] || [];
+                                    
+                                    let currentPos = 0;
+                                    let chunkIndex = -1;
+                                    for (let j = 0; j < chunks.length; j++) {
+                                        const chunkWords = chunks[j].en.trim().split(/\s+/).length;
+                                        if (i >= currentPos && i < currentPos + chunkWords) {
+                                            chunkIndex = j;
+                                            break;
+                                        }
+                                        currentPos += chunkWords;
+                                    }
+
+                                    const isCorrect = i >= answerRange.start && i <= answerRange.end;
+                                    
+                                    // 청크 위치별 전략적 수치 부여
+                                    if (isCorrect) {
+                                        percentage = 92;
+                                    } else if (chunkIndex === 0) {
+                                        percentage = 28; // 도입부 (Thanks to...)
+                                    } else if (chunkIndex !== -1) {
+                                        // 정답 바로 앞 청크(보통 동사구)는 낮게, 그 앞(주어)은 높게 설정
+                                        const targetChunkIndex = chunks.findIndex(c => c.isTarget);
+                                        if (chunkIndex === targetChunkIndex - 1) {
+                                            percentage = 12; // 동사/연결구 (could get)
+                                        } else if (chunkIndex < targetChunkIndex) {
+                                            percentage = 65; // 주어 (the islanders)
+                                        }
+                                    }
+
+                                    return (
+                                        <div key={i} style={{ textAlign: "center" }}>
+                                            <div style={{ padding: "14px 18px", borderRadius: 12, border: "1px solid #e2e8f0", background: isCorrect ? "#4f46e5" : "#fff", color: isCorrect ? "#fff" : "#334155", fontWeight: 900, fontSize: 18, boxShadow: isCorrect ? "0 4px 10px rgba(79,70,229,0.3)" : "none" }}>{w}</div>
+                                            <div style={{ fontSize: 11, color: "#94a3b8", marginTop: 4, fontWeight: 700 }}>{percentage}%</div>
+                                        </div>
+                                    );
+                                })}
+                            </div>
+                            <div style={{ background: "#fffbeb", padding: "20px", borderRadius: 14, fontSize: 14, color: "#92400e", border: "1px solid #fde68a", marginBottom: 24 }}>
+                                💡 <strong>오답 가이드</strong>: <br />
+                                '{selectedUnit.title}'의 핵심은 해당 구문(chunk) 전체를 하나의 의미 마디로 포착하는 것입니다. 수식어구나 목적어가 문법 구조 안에 포함되어 있는지 꼭 확인하세요.
+                            </div>
+                            <div style={{ background: "#f8fafc", padding: "24px", borderRadius: 20, fontSize: 14, color: "#475569", border: "1px solid #e2e8f0" }}>
+                                <div style={{ fontWeight: 900, color: "#1a3a5c", marginBottom: 12, fontSize: 16 }}>💬 수업 마무리 토론 포인트</div>
+                                <div>Q1. 학생들이 왜 '{words.slice(0, answerRange.start).join(' ')}' 같은 앞부분을 정답으로 많이 선택했을까요?</div>
+                                <div style={{ marginTop: 8 }}>Q2. '{words.slice(answerRange.start, answerRange.end + 1).join(' ')}' 부분이 왜 하나의 묶음인지 문법적으로 설명할 수 있는 사람?</div>
+                            </div>
+                            <div style={{ display: "flex", gap: 14, marginTop: 32 }}>
+                                <button 
+                                    onClick={() => { setScreen("HOME"); setTries(0); setActivityStatus("IDLE"); setDragRange({start:null, end:null}); }} 
+                                    style={{ flex: 1, padding: "20px", background: "#fff", border: "2.5px solid #1a3a5c", borderRadius: 20, fontWeight: 900, color: "#1a3a5c", cursor: "pointer", fontSize: 16 }}
+                                >
+                                    🏠 초기로 돌아가기
+                                </button>
+                                <button 
+                                    onClick={() => setScreen("SIMILAR")} 
+                                    style={{ flex: 2, padding: "20px", background: "#4f46e5", color: "white", borderRadius: 20, fontWeight: 900, fontSize: 18, boxShadow:"0 4px 10px rgba(79,70,229,0.3)", cursor: "pointer" }}
+                                >
+                                    다음: 비슷한 예문 →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            if (screen === "SIMILAR") return (
+                <div>
+                    <Header sub={`문제 풀이 (${qIndex + 1}/3)`} color="#1a3a5c" />
+                    <div style={{ maxWidth: 650, margin: "40px auto", padding: "0 20px" }}>
+                        <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
+                            
+                            <div style={{ display: "flex", justifyContent: "flex-end", marginBottom: 24 }}>
+                                <span style={{ color: "#94a3b8", fontWeight: 800 }}>Unit 1 - 관계대명사 what</span>
+                            </div>
+
+                            {qIndex === 0 && (
+                                <div>
+                                    <div style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>📝 한글에 맞게 영단어를 올바르게 재배치하세요.</div>
+                                    <div style={{ fontSize: 16, color: "#64748b", marginBottom: 24 }}>{currentSentence ? currentSentence.korean : ""}</div>
+
+                                    <div className="dropzone" onClick={() => { if(qStatus==="SUCCESS") return; setReorderPool([...reorderPool, ...reorderAnswer]); setReorderAnswer([]); }}>
+                                        {reorderAnswer.map((w,i) => <div key={i} className="word-btn" style={{borderColor:"#4f46e5", padding:"8px 14px", fontSize:"16px"}}>{w}</div>)}
+                                        {reorderAnswer.length === 0 && <span style={{ color: "#94a3b8", display: "flex", alignItems: "center", marginLeft: 10 }}>이곳을 눌러 단어를 해제하세요</span>}
+                                    </div>
+                                    <div className="word-pool">
+                                        {reorderPool.map((w,i) => (
+                                            <div key={i} className="word-btn" style={{padding:"8px 14px", fontSize:"16px"}} 
+                                                 onClick={() => { if(qStatus!=="SUCCESS"){ setReorderAnswer([...reorderAnswer, w]); setReorderPool(reorderPool.filter((_,idx)=>idx!==i)); } }}>{w}</div>
+                                        ))}
+                                    </div>
+                                </div>
+                            )}
+
+                            {qIndex === 1 && (
+                                <div>
+                                    <div style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>🧐 빈칸에 들어갈 알맞은 관계대명사를 고르세요.</div>
+                                    <div style={{ fontSize: 16, color: "#64748b", marginBottom: 16 }}>나는 그가 말한 것을 이해하지 못해.</div>
+                                    <div style={{ fontSize: 24, color: "#0f172a", marginBottom: 24, marginTop: 12, textAlign: "center", fontWeight: 700 }}>
+                                        I don’t understand <span style={{ borderBottom: "3px solid #1a3a5c", padding:"0 20px", display:"inline-block" }}></span> he said.
+                                    </div>
+                                    <button className={`option-btn ${selectedOption === 1 ? 'selected' : ''}`} onClick={() => {if(qStatus!=="SUCCESS") setSelectedOption(1)}}>1. what</button>
+                                    <button className={`option-btn ${selectedOption === 2 ? 'selected' : ''}`} onClick={() => {if(qStatus!=="SUCCESS") setSelectedOption(2)}}>2. that</button>
+                                    <button className={`option-btn ${selectedOption === 3 ? 'selected' : ''}`} onClick={() => {if(qStatus!=="SUCCESS") setSelectedOption(3)}}>3. who</button>
+                                </div>
+                            )}
+
+                            {qIndex === 2 && (
+                                <div>
+                                    <div style={{ fontSize: 19, fontWeight: 800, color: "#1e293b", marginBottom: 8 }}>⌨️ 해석을 보고 영어 문장을 완성하세요.</div>
+                                    <div style={{ fontSize: 16, color: "#64748b", marginBottom: 24 }}>{currentSentence ? currentSentence.korean : ""}</div>
+                                    <div style={{ fontSize: 18, color: "#0f172a", marginBottom: 12, fontWeight: 700 }}>_______ _______ _______ ______?</div>
+                                    <input type="text" className="text-input" placeholder="빈칸에 들어갈 영문을 작성하세요 (예: What makes)" value={writeAnswer} onChange={(e) => setWriteAnswer(e.target.value)} disabled={qStatus==="SUCCESS"} />
+                                </div>
+                            )}
+
+                            <div style={{ marginTop: 32, minHeight: 90 }}>
+                                {qStatus === "WRONG" && (
+                                    <div style={{ background: "#fef2f2", borderRadius: 14, padding: "16px", color: "#dc2626", fontWeight: 800, border: "1px solid #fee2e2" }}>
+                                        <div style={{ marginBottom: 12 }}>{qTries >= 2 ? "❌ 아쉽네요! 정답을 공개합니다." : "❌ 아쉽네요! 힌트를 참고하세요."}</div>
+                                        <div style={{ fontSize: 14, fontWeight: 500 }}>
+                                            {qTries >= 2 ? (
+                                                <div style={{ marginTop: 10, color: "#991b1b" }}>
+                                                    💡 <strong>오답 가이드</strong>: {selectedUnit.title} 패턴에 유의하세요. {qIndex === 1 ? "알맞은 접속사나 관계대명사 형태를 확인해보세요." : "문장의 전체적인 흐름을 다시 한번 파악하는 것이 중요합니다."}
+                                                </div>
+                                            ) : (
+                                                qIndex===0 ? "'to부정사' 구문이 문장 끝에 붙을 수 있어요." : 
+                                                qIndex===1 ? "'그가 말한 것'처럼 명사절을 만드는 단어가 필요해요. 선행사가 없을 때 쓰는 표현을 찾아보세요." : 
+                                                "5형식 사역동사 make를 사용해야 합니다."
+                                            )}
+                                        </div>
+                                        {qTries < 2 && (
+                                            <div style={{ marginTop: 12 }}>
+                                                <button className="concept-btn" onClick={() => setShowConcept(!showConcept)}>📚 개념설명 다시보기</button>
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+                                {qStatus === "SUCCESS" && (
+                                    <div style={{ background: "#ecfdf5", borderRadius: 14, padding: "20px", color: "#059669", fontWeight: 900, border: "1.5px solid #a7f3d0", fontSize: 16, textAlign: "center" }}>
+                                        {qIndex===1 ? "🎉 잘했어요! what은 '-하는 것'이라는 뜻으로, 문장에서 명사 역할을 해요." : "🎉 정답입니다! 아주 잘하셨어요."}
+                                    </div>
+                                )}
+                                {showConcept && (
+                                    <div style={{ background: "#f8fafc", border: "1px solid #cbd5e1", borderRadius: 12, padding: "16px", marginTop: 12, fontSize: 14, color: "#334155" }}>
+                                        <strong>[핵심 개념 복습]</strong><br/>
+                                        {qIndex===0 ? "to부정사는 목적 '~하기 위해'라는 뜻으로 부사적 용법으로 쓰일 수 있습니다." : 
+                                         qIndex===1 ? "관계대명사 what은 the thing which로 바꿀 수 있으며, 앞선 명사(선행사)를 포함하고 있습니다." : 
+                                         "사역동사 make는 'make + 목적어(O) + 형용사(보어)' 구조를 가집니다."}
+                                    </div>
+                                )}
+                            </div>
+
+                            <button onClick={qStatus === "SUCCESS" ? nextAction : handleQCheck} style={{ width: "100%", padding: "20px", background: qStatus === "SUCCESS" ? "#0f172a" : "#1a3a5c", color: "white", borderRadius: 20, fontWeight: 900, fontSize: 18, marginTop: 12 }}>
+                                {qStatus === "SUCCESS" ? (qIndex === 2 ? "최종 제출 완료하기" : "다음 문제") : "정답 확인하기"}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            );
+
+            if (screen === "DASHBOARD") return (
+                <div>
+                    <Header sub="10분 학습 써머리" color="#0f172a" />
+                    <div style={{ maxWidth: 700, margin: "40px auto", padding: "0 20px" }}>
+                        <div style={{ background: "white", borderRadius: 28, padding: "40px", border: "1.5px solid #e2e8f0", boxShadow: "0 10px 25px rgba(0,0,0,0.05)" }}>
+                            <div style={{ textAlign: "center", marginBottom: 32 }}>
+                                <div style={{ fontSize: 56, marginBottom: 10 }}>🏅</div>
+                                <div style={{ fontSize: 28, fontWeight: 900, color: "#1e293b" }}>수업 10분 마스터 완료!</div>
+                            </div>
+                            <div style={{ background: "#f8fafc", borderRadius: 20, padding: "24px", marginBottom: 24 }}>
+                                <div style={{ fontSize: 15, fontWeight: 800, color: "#1a3a5c", marginBottom: 16 }}>📈 나의 학습 리포트</div>
+                                <div style={{ display: "flex", gap: 16, marginBottom: 12 }}>
+                                    <div style={{ flex: 1, background: "white", padding: "16px", borderRadius: 12, border: "1px solid #e2e8f0", textAlign: "center" }}>
+                                        <div style={{ fontSize: 12, color: "#64748b", fontWeight: 700 }}>총 해결 문항</div>
+                                        <div style={{ fontSize: 24, fontWeight: 900, color: "#4f46e5", marginTop: 4 }}>4개</div>
+                                    </div>
+                                    <div style={{ flex: 1, background: "white", padding: "16px", borderRadius: 12, border: "1px solid #e2e8f0", textAlign: "center" }}>
+                                        <div style={{ fontSize: 12, color: "#64748b", fontWeight: 700 }}>주요 오답 개념</div>
+                                        <div style={{ fontSize: 16, fontWeight: 900, color: "#dc2626", marginTop: 8 }}>관계절 수식 범위</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <button onClick={() => { setScreen("HOME"); setQIndex(0); setQStatus("IDLE"); setQTries(0); setActivityStatus("IDLE"); setTries(0);}} style={{ width: "100%", padding: "22px", background: "#1a3a5c", color: "white", borderRadius: 20, fontWeight: 900, fontSize: 19 }}>홈으로 돌아가기</button>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+
+    </script>
+</body>
+</html>
