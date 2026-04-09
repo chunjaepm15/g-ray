@@ -200,34 +200,32 @@ h3 { font-size: 20px; font-weight: 900; color: var(--t1); margin: 20px 0 12px; }
     line-height: 2.2;
 }
 .sentence-word {
-    font-size: 28px;
+    font-size: 32px; /* 가독성을 위해 크기 상향 */
     font-weight: 800;
     color: var(--navy);
-    padding: 4px 6px;
-    border-radius: 4px;
+    padding: 2px 0; /* 세로 패딩만 약간 유지 */
     cursor: pointer;
     transition: background 0.15s, color 0.15s;
     user-select: none;
-    border: 2px solid transparent; /* 레이아웃 틀어짐 방지 */
+    border-bottom: 3px solid transparent; /* 하단 밑줄 효과용 */
 }
 .sentence-word:hover {
-    background: var(--sky-pale);
     color: var(--sky);
 }
 .sentence-word.selected {
-    background: var(--sky);
-    color: #fff;
-    border-radius: 0; /* 연속적인 느낌을 위해 각진 모서리 */
+    background: var(--sky-lt); /* 부드러운 하이라이트 배경 */
+    color: var(--navy);
+    border-radius: 0;
 }
 .sentence-word.selected.start {
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
-    padding-left: 10px;
+    padding-left: 8px;
 }
 .sentence-word.selected.end {
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    padding-right: 10px;
+    padding-right: 8px;
 }
 
 .word-pool { 
@@ -401,9 +399,9 @@ h3 { font-size: 20px; font-weight: 900; color: var(--t1); margin: 20px 0 12px; }
 .grammar-rule-sub { font-size: 14px; color: var(--t4); font-family: 'JetBrains Mono', 'Cascadia Code', monospace; background: rgba(255,255,255,0.5); padding: 4px 12px; border-radius: 8px; display: inline-block; margin-top: 8px; }
 
 .grammar-details-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 32px; padding: 0 10px; }
-.grammar-detail-item { display: flex; gap: 14px; alignItems: flex-start; }
+.grammar-detail-item { display: flex; gap: 14px; align-items: flex-start; }
 .grammar-detail-num { width: 24px; height: 24px; border-radius: 50%; background: var(--sky-pale); color: var(--sky); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 900; flex-shrink: 0; margin-top: 1px; border: 1.5px solid var(--sky-lt); }
-.grammar-detail-text { font-size: 16px; color: var(--t2); lineHeight: 1.6; font-weight: 500; }
+.grammar-detail-text { font-size: 16px; color: var(--t2); line-height: 1.6; font-weight: 500; }
 
 .grammar-examples-section { margin-top: 24px; }
 .grammar-example-card { background: var(--surf); border: 1.5px solid var(--bd); border-radius: 16px; padding: 18px 20px; margin-bottom: 12px; transition: all 0.2s; }
