@@ -17,25 +17,33 @@
 
 ## 📦 폴더 구조
 ```text
-g-ray-hrkang/
-├── index.html           (통합 로그인: 학생/교사 선택 입구)
-├── student.html         (학생용 앱: 문장 투시 및 구문 훈련)
-├── teacher.html         (교사용 앱: 대시보드 및 학급 관리)
-├── back_index.html      (기존 인덱스 백업 파일)
-├── README.md            (본 문서)
-├── css/                 (스타일시트)
-│   └── style_v13.css    (v13 프리미엄 스타일)
-├── js/                  (애플리케이션 로직)
-│   ├── app_v13.js            (학생용 React 로직 및 상호작용)
-│   ├── curriculum_v13.js     (통합 커리큘럼 및 EBS Chunking 데이터)
-│   └── teacher_admin_v13.js (교사용 관리자 모듈 전용)
-├── data/                (원천 및 정제 데이터셋)
-│   └── processed/       (정제된 교과서 및 문법 데이터)
-├── docs/                (프로젝트 문서화 및 설계도)
+g-ray-main/
+├── index.html           (초기 로그인 및 앱 진입 페이지)
+├── main.html            (어플리케이션 메인 홈 화면)
+├── student.html         (학생용 앱: 문장 투시 및 구문 훈련 등)
+├── teacher.html         (교사용 앱: 메인 대시보드)
+├── teacher_problem.html (교사용 앱: 문제 설정 및 단원 관리)
+├── teacher_student.html (교사용 앱: 학생 모니터링/데이터 관리)
+├── back_index.html      (기존 인덱스 페이지 백업 파일)
+├── README.md            (현재 읽고 있는 문서)
+├── css/                 (스타일시트 리소스)
+│   ├── style_v13.css    (v13 프리미엄 메인 스타일)
+│   └── style_v13-min.css 
+├── js/                  (프론트엔드 자바스크립트 로직)
+│   ├── components/      (재사용 가능한 공통 UI 및 로직: common.js 등)
+│   ├── pages/           (페이지별 개별 스크립트: main.js, teacher_*.js 등)
+│   ├── app_v13.js       (학생용 React 로직 및 상호작용)
+│   ├── curriculum_v13.js(표준 커리큘럼 및 EBS Chunking 데이터셋)
+│   └── teacher_admin_v13.js (기존 교사용 통합 로직 백업)
+├── data/                (앱에서 사용하는 정형/비정형 데이터셋 폴더)
+│   └── processed/       (교과서 및 문법 등 주요 정제 데이터 - 이재영/정사열 분리)
+├── docs/                (프로젝트 관련 기획 및 구조 문서 모음)
 │   ├── architecture_proposal.md
 │   ├── data_pipeline_rules.md
-│   └── history.md
-└── scripts/             (데이터 자동화 유틸리티)
+│   ├── history.md
+│   └── v13_0.md
+├── md/                  (개발 과정 중 발생한 마크다운 문서 및 로그 폴더)
+└── scripts/             (데이터 구조화, 변환 자동화 스크립트)
     └── data_rebuild_tool.py (데이터 빌드 및 재구성 도구)
 ```
 

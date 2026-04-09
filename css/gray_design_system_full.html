@@ -1,0 +1,827 @@
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --sky:#4A9FE0;--sky-lt:#C8E4F8;--sky-pale:#EEF6FF;--sky-mid:#74BCF5;
+  --navy:#2C3A5E;--white:#fff;--bg:#E8F3FB;
+  --t1:#1a2744;--t2:#334155;--t3:#475569;--t4:#64748b;--t5:#94a3b8;
+  --bd:#DCE8F5;--bd2:#B8D4EE;--surf:#F7FBFF;
+  --miss:#F25B5B;--prog:#F59E0B;--ok:#10B981;--purple:#9B8FD4;--yellow:#F5C842;
+}
+body{font-family:'Noto Sans KR',system-ui,sans-serif}
+.wrap{padding:0 0 48px}
+.nav{display:flex;gap:4px;padding:10px 0 16px;border-bottom:1.5px solid var(--bd);margin-bottom:22px;flex-wrap:wrap}
+.nav button{padding:6px 13px;border-radius:20px;font-size:12px;font-weight:700;border:none;cursor:pointer;background:transparent;color:var(--t4);transition:all 0.15s}
+.nav button.on{background:var(--sky);color:#fff}
+.nav button:hover:not(.on){background:var(--sky-pale);color:var(--sky)}
+.sec{display:none}.sec.on{display:block}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:16px}
+.card{background:#fff;border:1.5px solid var(--bd);border-radius:16px;padding:16px}
+h2{font-size:11px;font-weight:900;color:var(--t5);text-transform:uppercase;letter-spacing:2px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
+h3{font-size:11px;font-weight:900;color:var(--t4);text-transform:uppercase;letter-spacing:1.5px;margin:18px 0 10px}
+.ct{font-size:10px;font-weight:900;color:var(--t5);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
+
+/* MODAL */
+.modal-scene{background:var(--bg);border-radius:20px;padding:20px;margin-bottom:16px}
+.modal-box{background:#fff;border-radius:24px;max-width:520px;margin:0 auto;overflow:hidden}
+.modal-header{display:flex;align-items:center;padding:24px 28px 0;gap:8px}
+.modal-title{font-size:21px;font-weight:900;color:var(--t1);text-align:center;flex:1}
+.modal-close{width:32px;height:32px;border-radius:50%;background:var(--surf);border:1.5px solid var(--bd);cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.modal-close svg{width:12px;height:12px;stroke:var(--t4);stroke-width:2.2;fill:none}
+.modal-body{padding:20px 28px 28px}
+.modal-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.mcard{background:var(--sky-pale);border:2px solid var(--sky-lt);border-radius:18px;padding:20px 16px 16px;cursor:pointer;transition:all 0.2s;display:flex;flex-direction:column;gap:8px}
+.mcard:hover,.mcard.on{border-color:var(--sky);background:#DFF0FF;transform:translateY(-2px)}
+.mcard-title{font-size:20px;font-weight:900;color:#1A6FB5}
+.mcard-desc{font-size:13px;color:#4A6FA8;line-height:1.8;flex:1}
+.mcard-foot{display:flex;justify-content:flex-end;margin-top:4px}
+.icon-chip{width:44px;height:44px;border-radius:12px;background:var(--sky-lt);display:flex;align-items:center;justify-content:center;transition:all 0.2s}
+.mcard.on .icon-chip{background:var(--sky)}
+.icon-chip svg{width:22px;height:22px;stroke:var(--sky);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.mcard.on .icon-chip svg{stroke:#fff}
+.modal-check{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px}
+.chk{width:16px;height:16px;border:1.5px solid var(--bd2);border-radius:3px;cursor:pointer;display:flex;align-items:center;justify-content:center;background:#fff;flex-shrink:0}
+.chk.on{background:var(--sky);border-color:var(--sky)}
+.chk.on::after{content:'✓';font-size:9px;color:#fff;font-weight:900}
+.modal-hint{text-align:center;font-size:12px;color:var(--t5)}
+.modal-hint b{color:var(--sky)}
+
+/* TYPOGRAPHY */
+.type-row{display:flex;align-items:baseline;gap:12px;padding:11px 0;border-bottom:1px solid var(--bd)}
+.type-row:last-child{border-bottom:none}
+.tlabel{font-size:10px;font-weight:700;color:var(--t5);width:76px;flex-shrink:0}
+.tspec{font-size:10px;font-family:monospace;color:var(--t4);width:120px;flex-shrink:0}
+
+/* SWATCHES */
+.sw-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:14px}
+.sw{border-radius:12px;overflow:hidden;border:1.5px solid var(--bd);min-width:86px}
+.sw-c{height:46px}
+.sw-i{padding:6px 8px;background:#fff}
+.sw-n{font-size:11px;font-weight:700;color:var(--t2)}
+.sw-h{font-size:9px;font-family:monospace;color:var(--t4);margin-top:1px}
+.sw-r{font-size:9px;font-weight:700;margin-top:1px}
+
+/* BUTTONS */
+.btn-sky{background:var(--sky);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-navy{background:var(--navy);color:#fff;border:none;border-radius:8px;padding:10px 18px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-outline{background:#fff;color:var(--sky);border:2px solid var(--sky);border-radius:8px;padding:9px 18px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-ghost{background:var(--sky-pale);color:var(--sky);border:none;border-radius:8px;padding:10px 18px;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit}
+.btn-full{width:100%;background:var(--sky);color:#fff;border:none;border-radius:14px;padding:14px;font-size:16px;font-weight:900;cursor:pointer;font-family:inherit}
+
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:700}
+.b-done{background:#DBEAFE;color:#1D4ED8}
+.b-ok{background:#D1FAE5;color:#065F46}
+.b-miss{background:#FEE2E2;color:#B91C1C}
+.b-prog{background:#FEF3C7;color:#92400E}
+.b-wait{background:#F3F4F6;color:#374151}
+.bdot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+
+/* TABLE */
+.stbl{width:100%;border-collapse:collapse;font-size:13px}
+.stbl th{text-align:left;padding:8px 12px;background:var(--surf);font-size:11px;font-weight:800;color:var(--t4);border-bottom:1px solid var(--bd)}
+.stbl td{padding:9px 12px;border-bottom:1px solid var(--bd);color:var(--t2);vertical-align:middle}
+.stbl tr:last-child td{border-bottom:none}
+.av{width:32px;height:32px;border-radius:50%;border:2px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;flex-shrink:0}
+.arrow-btn{width:28px;height:28px;border-radius:50%;background:#EEE9FF;border:none;cursor:pointer;color:#9B8FD4;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center}
+
+/* INPUTS */
+.inp{width:100%;padding:12px 14px;border:2px solid var(--bd2);border-radius:12px;font-size:15px;font-family:inherit;color:var(--t2);background:#fff;outline:none;transition:border-color 0.2s}
+.inp:focus{border-color:var(--sky);box-shadow:0 0 0 3px rgba(74,159,224,0.12)}
+.inp-label{font-size:13px;font-weight:700;color:var(--t3);margin-bottom:6px;display:block}
+
+/* UNIT CARD */
+.unit-card{background:#fff;border:1.5px solid var(--bd);border-radius:16px;padding:16px;cursor:pointer;transition:all 0.15s;display:flex;flex-direction:column;gap:8px}
+.unit-card:hover{border-color:var(--sky);transform:translateY(-2px)}
+
+/* RADIUS */
+.rbox{height:44px;background:var(--sky-pale);border:2px solid var(--sky);display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--sky)}
+
+/* STUDENT UI */
+.s-header{background:var(--navy);padding:10px 16px;display:flex;align-items:center;gap:8px}
+.q-badge{display:inline-block;background:var(--sky-pale);color:var(--sky);border:1.5px solid var(--sky-mid);border-radius:8px;font-size:11px;font-weight:900;padding:3px 10px}
+.fill-box{background:#fff;border:1.5px solid var(--bd2);border-radius:10px;padding:12px 14px;font-size:14px;color:var(--t2);line-height:1.8}
+.blank{display:inline-block;border-bottom:2.5px solid var(--sky);color:var(--sky);font-weight:700;padding:0 4px;min-width:40px;text-align:center}
+.ans-panel{background:var(--surf);border:1px solid var(--bd);border-radius:10px;padding:10px 12px}
+.ans-row{display:flex;gap:8px;padding:5px 0;border-bottom:1px solid var(--bd);font-size:11px;align-items:flex-start}
+.ans-row:last-child{border-bottom:none}
+.ans-lbl{background:var(--sky-pale);color:var(--sky);font-size:10px;font-weight:900;padding:2px 8px;border-radius:4px;flex-shrink:0;min-width:46px;text-align:center}
+
+/* QTYPE */
+.qtype{background:#fff;border:1.5px solid var(--bd);border-radius:14px;padding:14px}
+.qtype-lbl{display:inline-block;background:var(--sky);color:#fff;font-size:10px;font-weight:900;padding:3px 10px;border-radius:20px;margin-bottom:10px}
+.q-circle{width:26px;height:26px;border-radius:50%;background:var(--sky);color:#fff;font-size:11px;font-weight:900;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.word-chip{display:inline-block;border:1.5px solid var(--sky);color:var(--sky);background:var(--sky-pale);border-radius:6px;padding:4px 10px;font-size:12px;font-weight:700;margin:2px}
+.word-chip.sel{background:var(--sky);color:#fff}
+.drop-zone{background:#F0F7FF;border:2px dashed var(--sky-mid);border-radius:10px;min-height:34px;padding:6px 10px;display:flex;flex-wrap:wrap;gap:4px;align-items:center;font-size:11px;color:var(--t5)}
+
+/* REPORT */
+.score-big{font-size:26px;font-weight:900;color:var(--t1)}
+.grade-badge{display:inline-block;background:var(--sky);color:#fff;font-size:10px;font-weight:900;padding:3px 10px;border-radius:6px;margin-left:6px}
+.pct-bar{height:10px;background:var(--sky-pale);border-radius:10px;overflow:hidden;margin:4px 0 2px}
+.pct-fill{height:100%;background:var(--sky);border-radius:10px}
+.ai-panel{background:#F8F6FF;border:1px solid #DDD9F8;border-radius:12px;padding:12px}
+.mascot{width:32px;height:32px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:900;flex-shrink:0}
+
+/* PRINCIPLE */
+.principle{border-left:3px solid var(--sky);padding:10px 14px;background:var(--sky-pale);border-radius:0 10px 10px 0;margin-bottom:10px}
+.p-title{font-size:13px;font-weight:900;color:var(--navy);margin-bottom:3px}
+.p-sub{font-size:11px;color:var(--t3);line-height:1.7}
+
+/* Multiple Choice (Sync from style_v14.css) */
+.q-sentence {
+    background: var(--surf); border: 2px solid var(--bd2); border-radius: 12px;
+    padding: 16px 18px; font-size: 17px; color: var(--t2);
+    line-height: 1.9; margin-bottom: 16px; font-weight: 700; text-align: center;
+}
+.opt {
+    width: 100%; padding: 15px 18px; text-align: left; background: #fff; 
+    border: 2px solid var(--bd2); border-radius: 14px; font-size: 17px; 
+    font-weight: 700; color: var(--t2); margin-bottom: 10px; cursor: pointer; 
+    display: flex; align-items: center; gap: 14px; transition: all 0.15s;
+}
+.opt:last-child { margin-bottom: 0; }
+.opt:hover { border-color: var(--sky); background: var(--sky-pale); color: var(--sky); }
+.opt-num {
+    width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--bd2); 
+    display: flex; align-items: center; justify-content: center; font-size: 13px; 
+    font-weight: 900; color: var(--t4); flex-shrink: 0; transition: all 0.15s;
+}
+.opt.selected { border-color: var(--sky); background: var(--sky-pale); color: var(--sky); }
+.opt.selected .opt-num { border-color: var(--sky); background: var(--sky); color: #fff; }
+.opt.correct { border-color: var(--ok); background: #ECFDF5; color: #065F46; }
+.opt.correct .opt-num { border-color: var(--ok); background: var(--ok); color: #fff; }
+.opt.wrong { border-color: var(--miss); background: #FFF1F1; color: #991B1B; }
+.opt.wrong .opt-num { border-color: var(--miss); background: var(--miss); color: #fff; }
+.opt.dim { opacity: 0.45; }
+.opt-result { margin-left: auto; font-size: 13px; font-weight: 900; flex-shrink: 0; }
+
+.feedback {
+    border-radius: 12px; padding: 16px; font-size: 15px; font-weight: 700; 
+    display: flex; align-items: flex-start; gap: 12px; margin-bottom: 24px;
+}
+.feedback-content { display: flex; flex-direction: column; gap: 4px; }
+.feedback-title { font-size: 16px; font-weight: 900; }
+.feedback-desc { font-size: 14px; font-weight: 400; opacity: 0.9; }
+.feedback.correct { background: #ECFDF5; border: 1.5px solid #6EE7B7; color: #065F46; }
+.feedback.wrong { background: #FFF1F1; border: 1.5px solid #FCA5A5; color: #991B1B; }
+.fb-icon {
+    width: 26px; height: 26px; border-radius: 50%; display: flex; 
+    align-items: center; justify-content: center; font-size: 14px; 
+    font-weight: 900; flex-shrink: 0; margin-top: 2px;
+}
+.feedback.correct .fb-icon { background: var(--ok); color: #fff; }
+.feedback.wrong .fb-icon { background: var(--miss); color: #fff; }
+.feedback.correct .fb-icon { background: var(--ok); color: #fff; }
+.feedback.wrong .fb-icon { background: var(--miss); color: #fff; }
+
+/* Subjective Input (Sync from style_v14.css) */
+.subjective-input {
+    width: 100%; padding: 24px 20px; background: var(--surf);
+    border: 2.5px solid var(--bd2); border-radius: 16px; font-size: 22px;
+    font-weight: 700; color: var(--navy); outline: none; transition: all 0.2s;
+    text-align: center; box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
+}
+.subjective-input:focus {
+    border-color: var(--sky); background: #fff;
+    box-shadow: 0 0 0 4px rgba(74, 159, 224, 0.15);
+}
+</style>
+
+<div class="wrap">
+<div class="nav" id="nav">
+  <button class="on" onclick="go('modal',this)">모달</button>
+  <button onclick="go('type',this)">타이포</button>
+  <button onclick="go('color',this)">컬러</button>
+  <button onclick="go('btn',this)">버튼</button>
+  <button onclick="go('badge',this)">배지·상태</button>
+  <button onclick="go('form',this)">폼·인풋</button>
+  <button onclick="go('card',this)">카드</button>
+  <button onclick="go('radius',this)">반경·간격</button>
+  <button onclick="go('teacher',this)">교사 UI</button>
+  <button onclick="go('student',this)">학생 UI</button>
+  <button onclick="go('qtypes',this)">문항 타입</button>
+  <button onclick="go('report',this)">리포트</button>
+  <button onclick="go('ux',this)">UX 원칙</button>
+  <button onclick="go('analysis',this)">문장 분석</button>
+  <button onclick="go('catch',this)">그레이 캐치</button>
+  <button onclick="go('objective',this)">객관식 문항</button>
+  <button onclick="go('writing',this)">서술형 문항</button>
+</div>
+
+<!-- ① 모달 -->
+<div class="sec on" id="sec-modal">
+  <h2>교사 로그인 모달</h2>
+  <div class="modal-scene">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div style="width:32px;flex-shrink:0"></div>
+        <div class="modal-title">선생님, 원하는 수업 방식을 선택해 주세요.</div>
+        <button class="modal-close"><svg viewBox="0 0 12 12"><line x1="1" y1="1" x2="11" y2="11"/><line x1="11" y1="1" x2="1" y2="11"/></svg></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-cards">
+          <div class="mcard on" onclick="sel(this)">
+            <div class="mcard-title">수업 시작하기 ›</div>
+            <div class="mcard-desc">학생들과 연결되며,<br>양방향 수업을<br>시작할 수 있어요.</div>
+            <div class="mcard-foot"><div class="icon-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div></div>
+          </div>
+          <div class="mcard" onclick="sel(this)">
+            <div class="mcard-title">교과서 둘러보기 ›</div>
+            <div class="mcard-desc">학생들과 연결 없이,<br>간단히 교과서만<br>볼 수 있어요.</div>
+            <div class="mcard-foot"><div class="icon-chip"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="10" y1="9" x2="16" y2="9"/><line x1="10" y1="13" x2="14" y2="13"/></svg></div></div>
+          </div>
+        </div>
+        <div class="modal-check"><div class="chk" onclick="this.classList.toggle('on')"></div><span style="font-size:13px;color:var(--t4)">다음부터 다시 보지 않기</span></div>
+        <div class="modal-hint">오른쪽 상단의 <b>수업 시작</b> 버튼을 통해 언제든 수업을 시작하실 수 있습니다.</div>
+      </div>
+    </div>
+  </div>
+  <div class="g3">
+    <div class="card"><div class="ct">헤더 구조</div><div style="font-size:12px;color:var(--t2);line-height:2">spacer(32px) + title(flex:1) + close(32px)<br>타이틀 시각 중앙 정렬</div></div>
+    <div class="card"><div class="ct">카드 타이틀</div><div style="font-size:20px;font-weight:900;color:#1A6FB5">20px / 900</div><div style="font-size:11px;color:var(--t4);margin-top:4px">color #1A6FB5</div></div>
+    <div class="card"><div class="ct">설명 텍스트</div><div style="font-size:13px;color:#4A6FA8;line-height:1.8">13px · line-height 1.8<br>color #4A6FA8</div></div>
+  </div>
+</div>
+
+<!-- ② 타이포 -->
+<div class="sec" id="sec-type">
+  <h2>타이포그래피 스케일</h2>
+  <div class="card">
+    <div class="type-row"><div class="tlabel">Display</div><div class="tspec">28px · 900</div><div style="font-size:28px;font-weight:900;color:var(--navy)">문장투시경.</div></div>
+    <div class="type-row"><div class="tlabel">Heading 1</div><div class="tspec">24px · 900</div><div style="font-size:24px;font-weight:900;color:var(--t1)">모의고사 리포트</div></div>
+    <div class="type-row"><div class="tlabel">Modal Title</div><div class="tspec">22px · 900</div><div style="font-size:22px;font-weight:900;color:var(--t1)">수업 방식을 선택해 주세요.</div></div>
+    <div class="type-row"><div class="tlabel">Card Title</div><div class="tspec">20px · 900</div><div style="font-size:20px;font-weight:900;color:var(--sky)">수업 시작하기 ›</div></div>
+    <div class="type-row"><div class="tlabel">Heading 2</div><div class="tspec">18px · 900</div><div style="font-size:18px;font-weight:900;color:var(--t1)">Unit 03 현재완료</div></div>
+    <div class="type-row"><div class="tlabel">Body Large</div><div class="tspec">16px · 700</div><div style="font-size:16px;font-weight:700;color:var(--t2)">She has lived here for ten years.</div></div>
+    <div class="type-row"><div class="tlabel">Body</div><div class="tspec">15px · 400</div><div style="font-size:15px;color:var(--t2)">정답을 선택하고 다음 단계로 이동하세요.</div></div>
+    <div class="type-row"><div class="tlabel">Card Desc</div><div class="tspec">13px · 400 · 1.8</div><div style="font-size:13px;color:#4A6FA8;line-height:1.8">학생들과 연결 없이,<br>간단히 교과서만 볼 수 있어요.</div></div>
+    <div class="type-row"><div class="tlabel">Label</div><div class="tspec">12px · 700</div><div style="font-size:12px;font-weight:700;color:var(--t3)">진행 현황 · UNIT 01</div></div>
+    <div class="type-row"><div class="tlabel">Caption</div><div class="tspec">11px · 700</div><div style="font-size:11px;font-weight:700;color:var(--t4)">2024.05.19 · 정답률 87%</div></div>
+  </div>
+</div>
+
+<!-- ③ 컬러 -->
+<div class="sec" id="sec-color">
+  <h2>컬러 토큰</h2>
+  <h3>Primary — Sky Blue</h3>
+  <div class="sw-row">
+    <div class="sw"><div class="sw-c" style="background:#EEF6FF"></div><div class="sw-i"><div class="sw-n">Pale</div><div class="sw-h">#EEF6FF</div><div class="sw-r" style="color:#0C447C">Card BG</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#C8E4F8"></div><div class="sw-i"><div class="sw-n">Light</div><div class="sw-h">#C8E4F8</div><div class="sw-r" style="color:#0C447C">Border</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#74BCF5"></div><div class="sw-i"><div class="sw-n">Mid</div><div class="sw-h">#74BCF5</div><div class="sw-r" style="color:#0C447C">Focus</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#4A9FE0"></div><div class="sw-i"><div class="sw-n">Sky</div><div class="sw-h">#4A9FE0</div><div class="sw-r" style="color:#fff;background:#4A9FE0;padding:1px 4px;border-radius:2px;display:inline-block;font-size:8px">Primary</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#1A6FB5"></div><div class="sw-i"><div class="sw-n">Dark</div><div class="sw-h">#1A6FB5</div><div class="sw-r" style="color:#042C53">Card Text</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#4A6FA8"></div><div class="sw-i"><div class="sw-n">Muted</div><div class="sw-h">#4A6FA8</div><div class="sw-r" style="color:#042C53">Desc</div></div></div>
+  </div>
+  <h3>Brand · Neutral</h3>
+  <div class="sw-row">
+    <div class="sw"><div class="sw-c" style="background:#2C3A5E"></div><div class="sw-i"><div class="sw-n">Navy</div><div class="sw-h">#2C3A5E</div><div class="sw-r" style="color:#fff;background:#2C3A5E;padding:1px 4px;border-radius:2px;display:inline-block;font-size:8px">Header</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#E8F3FB"></div><div class="sw-i"><div class="sw-n">Page BG</div><div class="sw-h">#E8F3FB</div><div class="sw-r" style="color:#0C447C">Scene</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#F5C842"></div><div class="sw-i"><div class="sw-n">Yellow</div><div class="sw-h">#F5C842</div><div class="sw-r" style="color:#633806">G-RAY</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#9B8FD4"></div><div class="sw-i"><div class="sw-n">Purple</div><div class="sw-h">#9B8FD4</div><div class="sw-r" style="color:#26215C">AI 마스코트</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#F7FBFF"></div><div class="sw-i"><div class="sw-n">Surface</div><div class="sw-h">#F7FBFF</div><div class="sw-r" style="color:#0C447C">패널 BG</div></div></div>
+  </div>
+  <h3>Status</h3>
+  <div class="sw-row">
+    <div class="sw"><div class="sw-c" style="background:#4A9FE0"></div><div class="sw-i"><div class="sw-n">완료</div><div class="sw-h">#4A9FE0</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#F25B5B"></div><div class="sw-i"><div class="sw-n">미배부</div><div class="sw-h">#F25B5B</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#9CA3AF"></div><div class="sw-i"><div class="sw-n">시작전</div><div class="sw-h">#9CA3AF</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#F59E0B"></div><div class="sw-i"><div class="sw-n">진행중</div><div class="sw-h">#F59E0B</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#10B981"></div><div class="sw-i"><div class="sw-n">정답</div><div class="sw-h">#10B981</div></div></div>
+    <div class="sw"><div class="sw-c" style="background:#F25B5B"></div><div class="sw-i"><div class="sw-n">오답</div><div class="sw-h">#F25B5B</div></div></div>
+  </div>
+  <h3>Text Highlights</h3>
+  <div class="sw-row">
+    <div class="card"><div class="ct">Highlight Utility</div><span class="ds-highlight">주요 구문 강조</span><div style="font-size:10px;color:var(--t4);margin-top:8px">bg #4A9FE0 / color #fff</div></div>
+  </div>
+</div>
+
+<!-- ④ 버튼 -->
+<div class="sec" id="sec-btn">
+  <h2>버튼 시스템</h2>
+  <div class="g2">
+    <div class="card"><div class="ct">Primary</div><button class="btn-sky">수업 시작하기</button><div style="font-size:11px;color:var(--t4);margin-top:8px">bg #4A9FE0 · 15px/700 · r-8px</div></div>
+    <div class="card"><div class="ct">Navy</div><button class="btn-navy">로그인</button><div style="font-size:11px;color:var(--t4);margin-top:8px">bg #2C3A5E · 15px/700 · r-8px</div></div>
+    <div class="card"><div class="ct">Outline</div><button class="btn-outline">교과서 둘러보기</button><div style="font-size:11px;color:var(--t4);margin-top:8px">border 2px sky · 15px/700</div></div>
+    <div class="card"><div class="ct">Ghost</div><button class="btn-ghost">개념 보기</button><div style="font-size:11px;color:var(--t4);margin-top:8px">bg sky-pale · 15px/700</div></div>
+  </div>
+  <div class="card"><div class="ct">Full Width CTA</div><button class="btn-full">학습 시작하기</button><div style="font-size:11px;color:var(--t4);margin-top:8px">w-full · 16px/900 · r-14px</div></div>
+</div>
+
+<!-- ⑤ 배지·상태 -->
+<div class="sec" id="sec-badge">
+  <h2>배지 · 상태 시스템</h2>
+  <div class="card" style="margin-bottom:14px">
+    <div class="ct">Status Badges</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:14px">
+      <span class="badge b-done"><span class="bdot" style="background:#4A9FE0"></span>완료</span>
+      <span class="badge b-miss"><span class="bdot" style="background:#F25B5B"></span>미배부</span>
+      <span class="badge b-wait"><span class="bdot" style="background:#9CA3AF"></span>시작전</span>
+      <span class="badge b-prog"><span class="bdot" style="background:#F59E0B"></span>진행중</span>
+      <span class="badge b-ok"><span class="bdot" style="background:#10B981"></span>정답</span>
+    </div>
+    <div class="ct">Grade Badges</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">
+      <span style="background:#4A9FE0;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:6px">1등급 예상</span>
+      <span style="background:#10B981;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:6px">2등급</span>
+      <span style="background:#F59E0B;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:6px">3등급</span>
+      <span style="background:#F25B5B;color:#fff;font-size:12px;font-weight:700;padding:4px 12px;border-radius:6px">미달</span>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct">학생 진행현황 테이블</div>
+    <table class="stbl">
+      <thead><tr><th></th><th>이름</th><th>진행 현황</th><th>정답 수</th><th>완료 시간</th><th></th></tr></thead>
+      <tbody>
+        <tr><td><div class="av" style="background:#EEF6FF;color:#1A6FB5">가</div></td><td style="font-weight:700">김가영</td><td><span class="badge b-done"><span class="bdot" style="background:#4A9FE0"></span>완료</span></td><td style="font-weight:700">12개</td><td style="font-size:11px;color:var(--t3)">05.19 11:05</td><td><button class="arrow-btn">›</button></td></tr>
+        <tr><td><div class="av" style="background:#FEE2E2;color:#B91C1C">민</div></td><td style="font-weight:700">김민선</td><td><span class="badge b-miss"><span class="bdot" style="background:#F25B5B"></span>미배부</span></td><td style="color:var(--t5)">—</td><td style="color:var(--t5)">—</td><td><button class="arrow-btn">›</button></td></tr>
+        <tr><td><div class="av" style="background:#FEF3C7;color:#92400E">정</div></td><td style="font-weight:700">이정민</td><td><span class="badge b-prog"><span class="bdot" style="background:#F59E0B"></span>진행중</span></td><td style="font-weight:700">3개</td><td style="font-size:11px;color:var(--t3)">05.19 11:08</td><td><button class="arrow-btn">›</button></td></tr>
+        <tr><td><div class="av" style="background:#F3F4F6;color:#6B7280">지</div></td><td style="font-weight:700">박지훈</td><td><span class="badge b-wait"><span class="bdot" style="background:#9CA3AF"></span>시작전</span></td><td style="color:var(--t5)">—</td><td style="color:var(--t5)">—</td><td><button class="arrow-btn">›</button></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ⑥ 폼·인풋 -->
+<div class="sec" id="sec-form">
+  <h2>폼 · 인풋</h2>
+  <div class="g2">
+    <div class="card"><label class="inp-label">학번</label><input class="inp" placeholder="학번을 입력하세요"></div>
+    <div class="card"><label class="inp-label">비밀번호 (Focus)</label><input class="inp" style="border-color:var(--sky);box-shadow:0 0 0 3px rgba(74,159,224,0.12)" placeholder="비밀번호"></div>
+    <div class="card"><div class="ct">정답 빈칸 입력</div><div class="fill-box">She <span class="blank">has</span> lived here for ten years.</div></div>
+    <div class="card"><div class="ct">체크박스</div>
+      <div style="display:flex;flex-direction:column;gap:10px;margin-top:4px">
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t2)"><div class="chk on" style="width:18px;height:18px"></div>Unit 03 현재완료</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t2)"><div class="chk" style="width:18px;height:18px"></div>Unit 04 관계대명사</div>
+        <div style="display:flex;align-items:center;gap:8px;font-size:14px;color:var(--t5)"><div class="chk" style="width:18px;height:18px;border-color:#E2E8F0"></div>다음부터 다시 보지 않기</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑦ 카드 -->
+<div class="sec" id="sec-card">
+  <h2>카드 시스템</h2>
+  <h3>유닛 카드</h3>
+  <div class="g3">
+    <div class="unit-card"><div style="font-size:11px;font-weight:700;color:var(--t5)">UNIT 03</div><div style="font-size:16px;font-weight:900;color:var(--t1)">현재완료</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px"><span class="badge b-done" style="font-size:11px">완료</span><span style="font-size:13px;font-weight:700;color:var(--t4)">92%</span></div></div>
+    <div class="unit-card" style="border-color:var(--sky);background:var(--sky-pale)"><div style="font-size:11px;font-weight:700;color:var(--sky)">UNIT 04</div><div style="font-size:16px;font-weight:900;color:#1A6FB5">관계대명사</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px"><span class="badge b-prog" style="font-size:11px">진행중</span></div></div>
+    <div class="unit-card"><div style="font-size:11px;font-weight:700;color:var(--t5)">UNIT 05</div><div style="font-size:16px;font-weight:900;color:var(--t1)">수동태</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px"><span class="badge b-wait" style="font-size:11px">시작전</span></div></div>
+  </div>
+  <h3>모달 선택 카드</h3>
+  <div class="g2">
+    <div class="mcard on" style="cursor:default"><div class="mcard-title">수업 시작하기 ›</div><div class="mcard-desc">학생들과 연결되며, 양방향 수업을 시작할 수 있어요.</div><div class="mcard-foot"><div class="icon-chip"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div></div></div>
+    <div class="mcard" style="cursor:default"><div class="mcard-title">교과서 둘러보기 ›</div><div class="mcard-desc">학생들과 연결 없이, 간단히 교과서만 볼 수 있어요.</div><div class="mcard-foot"><div class="icon-chip"><svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="10" y1="9" x2="16" y2="9"/><line x1="10" y1="13" x2="14" y2="13"/></svg></div></div></div>
+  </div>
+</div>
+
+<!-- ⑧ 반경·간격 -->
+<div class="sec" id="sec-radius">
+  <h2>반경 · 간격 토큰</h2>
+  <h3>Border Radius</h3>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px">
+    <div style="text-align:center"><div class="rbox" style="border-radius:6px;width:52px">6px</div><div style="font-size:10px;color:var(--t4);margin-top:6px">배지</div></div>
+    <div style="text-align:center"><div class="rbox" style="border-radius:8px;width:58px">8px</div><div style="font-size:10px;color:var(--t4);margin-top:6px">버튼·인풋</div></div>
+    <div style="text-align:center"><div class="rbox" style="border-radius:12px;width:64px">12px</div><div style="font-size:10px;color:var(--t4);margin-top:6px">아이콘칩</div></div>
+    <div style="text-align:center"><div class="rbox" style="border-radius:16px;width:70px">16px</div><div style="font-size:10px;color:var(--t4);margin-top:6px">카드</div></div>
+    <div style="text-align:center"><div class="rbox" style="border-radius:18px;width:76px">18px</div><div style="font-size:10px;color:var(--t4);margin-top:6px">모달카드</div></div>
+    <div style="text-align:center"><div class="rbox" style="border-radius:24px;width:82px">24px</div><div style="font-size:10px;color:var(--t4);margin-top:6px">모달박스</div></div>
+    <div style="text-align:center"><div class="rbox" style="border-radius:999px;width:52px">pill</div><div style="font-size:10px;color:var(--t4);margin-top:6px">배지·아바타</div></div>
+  </div>
+  <h3>Spacing Scale</h3>
+  <div class="card">
+    <div style="display:grid;grid-template-columns:48px 72px 1fr;font-size:10px;font-weight:900;color:var(--t5);padding:6px 0;border-bottom:1px solid var(--bd);text-transform:uppercase;letter-spacing:1px"><span>토큰</span><span>값</span><span>시각</span></div>
+    <div style="display:grid;grid-template-columns:48px 72px 1fr;padding:8px 0;border-bottom:1px solid var(--bd);align-items:center"><span style="font-size:11px;font-weight:700;color:var(--sky)">xs</span><span style="font-size:11px;font-family:monospace;color:var(--t3)">4px</span><div style="height:10px;width:4px;background:var(--sky-lt);border:1px solid var(--sky-mid);border-radius:2px"></div></div>
+    <div style="display:grid;grid-template-columns:48px 72px 1fr;padding:8px 0;border-bottom:1px solid var(--bd);align-items:center"><span style="font-size:11px;font-weight:700;color:var(--sky)">sm</span><span style="font-size:11px;font-family:monospace;color:var(--t3)">8px</span><div style="height:10px;width:8px;background:var(--sky-lt);border:1px solid var(--sky-mid);border-radius:2px"></div></div>
+    <div style="display:grid;grid-template-columns:48px 72px 1fr;padding:8px 0;border-bottom:1px solid var(--bd);align-items:center"><span style="font-size:11px;font-weight:700;color:var(--sky)">md</span><span style="font-size:11px;font-family:monospace;color:var(--t3)">12px</span><div style="height:10px;width:12px;background:var(--sky-lt);border:1px solid var(--sky-mid);border-radius:2px"></div></div>
+    <div style="display:grid;grid-template-columns:48px 72px 1fr;padding:8px 0;border-bottom:1px solid var(--bd);align-items:center"><span style="font-size:11px;font-weight:700;color:var(--sky)">base</span><span style="font-size:11px;font-family:monospace;color:var(--t3)">16px</span><div style="height:10px;width:16px;background:var(--sky-lt);border:1px solid var(--sky-mid);border-radius:2px"></div></div>
+    <div style="display:grid;grid-template-columns:48px 72px 1fr;padding:8px 0;border-bottom:1px solid var(--bd);align-items:center"><span style="font-size:11px;font-weight:700;color:var(--sky)">lg</span><span style="font-size:11px;font-family:monospace;color:var(--t3)">24px</span><div style="height:10px;width:24px;background:var(--sky-lt);border:1px solid var(--sky-mid);border-radius:2px"></div></div>
+    <div style="display:grid;grid-template-columns:48px 72px 1fr;padding:8px 0;align-items:center"><span style="font-size:11px;font-weight:700;color:var(--sky)">xl</span><span style="font-size:11px;font-family:monospace;color:var(--t3)">32px</span><div style="height:10px;width:32px;background:var(--sky-lt);border:1px solid var(--sky-mid);border-radius:2px"></div></div>
+  </div>
+</div>
+
+<!-- ⑨ 교사 UI -->
+<div class="sec" id="sec-teacher">
+  <h2>교사 UI — 진행 현황 대시보드</h2>
+  <div style="background:var(--bg);border-radius:16px;padding:16px;margin-bottom:16px">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:16px">
+        <span style="font-size:17px;font-weight:900;color:var(--t1)">진행 현황</span>
+        <div style="display:flex;gap:12px;align-items:center">
+          <svg width="56" height="56" viewBox="0 0 56 56">
+            <circle cx="28" cy="28" r="20" fill="none" stroke="#C8E4F8" stroke-width="9"/>
+            <circle cx="28" cy="28" r="20" fill="none" stroke="#4A9FE0" stroke-width="9" stroke-dasharray="63 63" stroke-dashoffset="0" transform="rotate(-90 28 28)"/>
+            <circle cx="28" cy="28" r="20" fill="none" stroke="#F59E0B" stroke-width="9" stroke-dasharray="25 101" stroke-dashoffset="-63" transform="rotate(-90 28 28)"/>
+            <circle cx="28" cy="28" r="20" fill="none" stroke="#F25B5B" stroke-width="9" stroke-dasharray="21 105" stroke-dashoffset="-88" transform="rotate(-90 28 28)"/>
+          </svg>
+          <div style="font-size:11px;display:flex;flex-direction:column;gap:3px">
+            <div style="display:flex;align-items:center;gap:5px;font-weight:700;color:var(--t2)"><span style="width:8px;height:8px;border-radius:50%;background:#F25B5B;display:inline-block"></span>미배부 5</div>
+            <div style="display:flex;align-items:center;gap:5px;font-weight:700;color:var(--t2)"><span style="width:8px;height:8px;border-radius:50%;background:#9CA3AF;display:inline-block"></span>시작전 4</div>
+            <div style="display:flex;align-items:center;gap:5px;font-weight:700;color:var(--t2)"><span style="width:8px;height:8px;border-radius:50%;background:#F59E0B;display:inline-block"></span>진행중 6</div>
+            <div style="display:flex;align-items:center;gap:5px;font-weight:700;color:var(--t2)"><span style="width:8px;height:8px;border-radius:50%;background:#4A9FE0;display:inline-block"></span>완료 15</div>
+          </div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:40px 1fr 80px 48px 96px 36px;font-size:11px;font-weight:700;color:var(--t5);padding:0 4px 8px;border-bottom:1px solid var(--bd)">
+        <span></span><span></span><span>진행 현황</span><span>정답</span><span>완료 시간</span><span></span>
+      </div>
+      <div style="display:grid;grid-template-columns:40px 1fr 80px 48px 96px 36px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--bd)">
+        <div class="av" style="background:var(--sky);color:#fff;border-color:var(--sky)">가</div>
+        <span style="font-size:14px;font-weight:900;color:var(--t1)">김가영</span>
+        <span class="badge b-done" style="font-size:11px;background:var(--sky);color:#fff"><span class="bdot" style="background:#fff"></span>완료</span>
+        <span style="font-size:13px;font-weight:700">12개</span>
+        <span style="font-size:11px;color:var(--t3)">05.19 11:05</span>
+        <button class="arrow-btn" style="background:var(--sky);color:#fff">›</button>
+      </div>
+      <div style="display:grid;grid-template-columns:40px 1fr 80px 48px 96px 36px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--bd)">
+        <div class="av" style="background:#FEE2E2;color:#B91C1C">민</div>
+        <span style="font-size:14px;font-weight:900;color:var(--t1)">김민선</span>
+        <span class="badge b-miss" style="font-size:11px"><span class="bdot" style="background:#F25B5B"></span>미배부</span>
+        <span style="font-size:13px;color:var(--t5)">—</span>
+        <span style="font-size:11px;color:var(--t5)">—</span>
+        <button class="arrow-btn">›</button>
+      </div>
+      <div style="display:grid;grid-template-columns:40px 1fr 80px 48px 96px 36px;align-items:center;padding:10px 4px;border-bottom:1px solid var(--bd)">
+        <div class="av" style="background:#F3F4F6;color:#6B7280">지</div>
+        <span style="font-size:14px;font-weight:900;color:var(--t1)">박지훈</span>
+        <span class="badge b-wait" style="font-size:11px"><span class="bdot" style="background:#9CA3AF"></span>시작전</span>
+        <span style="font-size:13px;color:var(--t5)">—</span>
+        <span style="font-size:11px;color:var(--t5)">—</span>
+        <button class="arrow-btn">›</button>
+      </div>
+      <div style="display:grid;grid-template-columns:40px 1fr 80px 48px 96px 36px;align-items:center;padding:10px 4px">
+        <div class="av" style="background:#FEF3C7;color:#92400E">정</div>
+        <span style="font-size:14px;font-weight:900;color:var(--t1)">이정민</span>
+        <span class="badge b-prog" style="font-size:11px"><span class="bdot" style="background:#F59E0B"></span>진행중</span>
+        <span style="font-size:13px;font-weight:700">3개</span>
+        <span style="font-size:11px;color:var(--t3)">05.19 11:08</span>
+        <button class="arrow-btn">›</button>
+      </div>
+    </div>
+  </div>
+  <div class="g3">
+    <div class="card"><div class="ct">아바타 규칙</div><div style="display:flex;gap:6px;flex-wrap:wrap;margin-top:4px"><div class="av" style="background:#EEF6FF;color:#1A6FB5">가</div><div class="av" style="background:#FEE2E2;color:#B91C1C">민</div><div class="av" style="background:#FEF3C7;color:#92400E">정</div><div class="av" style="background:#F3F4F6;color:#6B7280">지</div></div><div style="font-size:10px;color:var(--t4);margin-top:8px">이름 첫 글자 · 상태 컬러 연동</div></div>
+    <div class="card"><div class="ct">Arrow Button</div><button class="arrow-btn" style="margin-top:4px">›</button><div style="font-size:10px;color:var(--t4);margin-top:8px">Purple Tint #EEE9FF<br>학생 상세 뷰 진입</div></div>
+    <div class="card"><div class="ct">도넛 차트</div><div style="font-size:11px;color:var(--t2);line-height:1.8;margin-top:4px">배경링: #C8E4F8<br>완료링: #4A9FE0<br>진행중: #F59E0B<br>미배부: #F25B5B</div></div>
+  </div>
+</div>
+
+<!-- ⑩ 학생 UI -->
+<div class="sec" id="sec-student">
+  <h2>학생 UI — 학습 화면</h2>
+  <div style="background:var(--bg);border-radius:16px;overflow:hidden;border:1px solid var(--bd);margin-bottom:16px">
+    <div class="s-header">
+      <span style="color:rgba(255,255,255,0.5);font-size:13px">←</span>
+      <span style="color:#fff;font-size:12px;font-weight:700">1. Enjoy Your Days — Grammar · AI 맞춤 학습</span>
+    </div>
+    <div style="padding:16px">
+      <div style="background:#fff;border:1px solid var(--bd);border-radius:8px;padding:8px 12px;margin-bottom:14px;font-size:11px;color:var(--t2);display:flex;align-items:center;gap:6px">
+        <span style="font-weight:700">Grammar</span><span style="color:var(--t5)">(1/6개 영역 학습중)</span><span style="margin-left:auto;color:var(--t5)">▾</span>
+      </div>
+      <div style="margin-bottom:8px"><span class="q-badge">문제 1</span></div>
+      <div style="font-size:13px;font-weight:700;color:var(--t1);margin-bottom:10px">괄호 안의 단어를 알맞은 형태로 바꾸어 빈칸에 알맞은 말을 쓰시오.</div>
+      <div class="fill-box" style="margin-bottom:10px">She showed <span class="blank">me</span> her new paintings in the gallery. <span style="color:var(--t4)">(I)</span></div>
+      <div style="font-size:13px;color:var(--t4);margin-bottom:12px">( <span style="color:var(--sky);font-weight:700">me</span> )</div>
+      <div class="ans-panel">
+        <div class="ans-row"><span class="ans-lbl">풀이시간</span><span style="font-weight:700;color:var(--t2)">03:17</span></div>
+        <div class="ans-row"><span class="ans-lbl">정답</span><span style="font-weight:900;color:var(--sky)">me</span></div>
+        <div class="ans-row"><span class="ans-lbl">해설</span><span style="color:var(--t2);line-height:1.6">수여동사는 뒤에 목적어가 두 개 올 수 있으며, 주어진 I를 간접목적어 me로 바꿔 씁니다.</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="g3">
+    <div class="card"><div class="ct">헤더 크롬</div><div style="background:var(--navy);border-radius:8px;padding:8px 10px;font-size:11px;color:rgba(255,255,255,0.8);margin-top:4px">← 단원명 · 학습 영역</div><div style="font-size:10px;color:var(--t4);margin-top:8px">Navy #2C3A5E</div></div>
+    <div class="card"><div class="ct">정답 블랭크</div><div class="fill-box" style="font-size:13px;margin-top:4px">She <span class="blank">has</span> lived here.</div><div style="font-size:10px;color:var(--t4);margin-top:8px">border-bottom 2.5px sky</div></div>
+    <div class="card"><div class="ct">해설 패널 구조</div><div style="font-size:11px;color:var(--t2);line-height:1.8;margin-top:4px">풀이시간 → 정답 → 해설<br>3단 고정 구조<br>bg: #F7FBFF</div></div>
+  </div>
+</div>
+
+<!-- ⑪ 문항 타입 -->
+<div class="sec" id="sec-qtypes">
+  <h2>문항 타입 시스템</h2>
+  <div class="g2">
+    <div class="qtype">
+      <span class="qtype-lbl">주관식 빈칸</span>
+      <div style="display:flex;align-items:flex-start;gap:8px">
+        <div class="q-circle">Q1</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.7">괄호 안 단어를 이용해 글을 완성하세요<br><span style="background:#fff;border:1.5px solid var(--sky-mid);border-radius:6px;padding:2px 8px;font-size:12px;font-weight:700;color:var(--sky);display:inline-block;margin-top:6px">goe|s</span></div>
+      </div>
+    </div>
+    <div class="qtype">
+      <span class="qtype-lbl">구문분석 · 오류수정</span>
+      <div style="display:flex;align-items:flex-start;gap:8px">
+        <div class="q-circle">Q2</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.7">틀린 부분을 선택하고 고쳐쓰세요<br>
+          <div style="margin-top:6px"><span class="word-chip">I</span><span class="word-chip sel">has</span><span class="word-chip">three</span><span class="word-chip">brothers</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="qtype">
+      <span class="qtype-lbl">객관식 빈칸</span>
+      <div style="display:flex;align-items:flex-start;gap:8px">
+        <div class="q-circle">Q3</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.7">보기에서 알맞은 것을 고르세요<br>
+          <div style="margin-top:6px;display:flex;align-items:center;gap:4px;font-size:12px">
+            I <select style="border:1.5px solid var(--sky);border-radius:6px;padding:3px 8px;font-size:12px;font-weight:700;color:var(--sky);background:var(--sky-pale)"><option>loves</option><option>love</option></select> chocolate
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="qtype">
+      <span class="qtype-lbl">어순배열 · Drag & Drop</span>
+      <div style="display:flex;align-items:flex-start;gap:8px">
+        <div class="q-circle">Q4</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.7;width:100%">우리말에 맞게 배열하세요<br>
+          <div class="drop-zone" style="margin-top:6px">→ 드래그해서 배열</div>
+          <div style="display:flex;gap:4px;margin-top:6px;flex-wrap:wrap"><span class="word-chip">They</span><span class="word-chip">Seoul</span><span class="word-chip">live</span><span class="word-chip">in</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="qtype">
+      <span class="qtype-lbl">품사 선택</span>
+      <div style="display:flex;align-items:flex-start;gap:8px">
+        <div class="q-circle">Q5</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.7">문장에서 동사를 선택하세요<br>
+          <div style="margin-top:6px"><span class="word-chip">My</span><span class="word-chip">brother</span><span class="word-chip sel">cleans</span><span class="word-chip">our</span><span class="word-chip">room</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="qtype">
+      <span class="qtype-lbl">서술형 직접 쓰기</span>
+      <div style="display:flex;align-items:flex-start;gap:8px">
+        <div class="q-circle">Q6</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.7;width:100%">빈칸에 알맞은 말을 쓰세요<br>
+          <input type="text" placeholder="have" style="margin-top:6px;width:100%;border:1.5px solid var(--sky);border-radius:8px;padding:6px 10px;font-size:12px;color:var(--sky);font-weight:700;background:var(--sky-pale);font-family:inherit;outline:none">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="ct">문항 타입 분류표</div>
+    <table class="stbl" style="margin-top:6px">
+      <thead><tr><th>유형</th><th>인터랙션</th><th>자동채점</th><th>Stage 연결</th></tr></thead>
+      <tbody>
+        <tr><td style="font-weight:700">주관식빈칸</td><td>직접 입력</td><td><span style="color:var(--ok);font-weight:700">자동</span></td><td>Stage 3</td></tr>
+        <tr><td style="font-weight:700">구문분석</td><td>클릭 선택</td><td><span style="color:var(--ok);font-weight:700">자동</span></td><td>Stage 1</td></tr>
+        <tr><td style="font-weight:700">객관식</td><td>드롭다운</td><td><span style="color:var(--ok);font-weight:700">자동</span></td><td>Stage 2</td></tr>
+        <tr><td style="font-weight:700">어순배열</td><td>Drag & Drop</td><td><span style="color:var(--ok);font-weight:700">자동</span></td><td>Stage 4</td></tr>
+        <tr><td style="font-weight:700">서술형</td><td>직접 입력</td><td><span style="color:var(--prog);font-weight:700">AI 채점</span></td><td>Stage 3+</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ⑫ 리포트 -->
+<div class="sec" id="sec-report">
+  <h2>리포트 UI</h2>
+  <div class="g2">
+    <div style="background:var(--bg);border-radius:16px;padding:14px">
+      <div class="card">
+        <div style="font-size:14px;font-weight:900;color:var(--t1);margin-bottom:14px">모의고사 리포트</div>
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:14px">
+          <svg width="68" height="68" viewBox="0 0 68 68">
+            <circle cx="34" cy="34" r="26" fill="none" stroke="#C8E4F8" stroke-width="12"/>
+            <circle cx="34" cy="34" r="26" fill="none" stroke="#4A9FE0" stroke-width="12" stroke-dasharray="149 14" stroke-dashoffset="41" transform="rotate(-90 34 34)"/>
+          </svg>
+          <div><div style="font-size:11px;color:var(--t4)">원점수</div><div class="score-big">97점<span class="grade-badge">1등급 예상</span></div></div>
+        </div>
+        <div style="font-size:11px;color:var(--t4);margin-bottom:4px">예상 백분위</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <span style="font-size:10px;color:var(--t5)">0</span>
+          <div style="flex:1"><div class="pct-bar"><div class="pct-fill" style="width:97%"></div></div><div style="font-size:9px;color:var(--sky);text-align:right;margin-top:2px">▲ 내 위치</div></div>
+          <span style="font-size:10px;color:var(--t5)">100</span>
+        </div>
+        <div style="border-top:1px solid var(--bd);padding-top:10px">
+          <div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--bd);font-size:12px"><span style="color:var(--t4)">정답 수</span><span style="font-weight:900;color:var(--t1)">20개 / 20개</span></div>
+          <div style="display:flex;justify-content:space-between;padding:5px 0;font-size:12px"><span style="color:var(--t4)">풀이시간</span><span style="font-weight:900;color:var(--t1)">71분 39초</span></div>
+        </div>
+        <div class="ai-panel" style="margin-top:12px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px"><div class="mascot">AI</div><span style="font-size:12px;font-weight:900;color:var(--t1)">AI 총평</span></div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.7">예상 등급은 <b>1등급</b>이에요. 전체 문항 완벽히 맞혔어요. 풀이 시간도 지난번보다 단축됐어요!</div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>리포트 컴포넌트 스펙</h3>
+      <div class="card" style="margin-bottom:10px"><div class="ct">Donut Chart</div><div style="font-size:11px;color:var(--t2);line-height:1.8;margin-top:4px">배경링: #C8E4F8<br>점수링: #4A9FE0<br>stroke-width: 12<br>크기: 68×68px</div></div>
+      <div class="card" style="margin-bottom:10px"><div class="ct">Grade Badge</div><div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px"><span style="background:#4A9FE0;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px">1등급</span><span style="background:#10B981;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px">2등급</span><span style="background:#F59E0B;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:6px">3등급</span></div></div>
+      <div class="card"><div class="ct">AI 마스코트</div><div style="display:flex;align-items:center;gap:10px;margin-top:4px"><div class="mascot" style="width:40px;height:40px;font-size:14px">AI</div><div style="font-size:11px;color:var(--t2);line-height:1.6">Purple #9B8FD4<br>총평·힌트·격려 전용</div></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑬ UX 원칙 -->
+<div class="sec" id="sec-ux">
+  <h2>UX 원칙 · 방향성</h2>
+  <h3>핵심 원칙</h3>
+  <div class="principle"><div class="p-title">자동채점 + 즉각 피드백</div><div class="p-sub">제출 즉시 정답·오답 표시. 해설은 풀이시간→정답→해설 3단 구조 고정. 오답 시 AI 힌트 단계적 노출.</div></div>
+  <div class="principle"><div class="p-title">다양한 인터랙션 = 지루하지 않아요</div><div class="p-sub">같은 문법도 빈칸/선택/드래그/서술형으로 변주. 동일 UI 패턴 반복을 피하고 유형 다양성 확보.</div></div>
+  <div class="principle" style="border-color:var(--yellow)"><div class="p-title">교사 대시보드 — 한눈에 파악</div><div class="p-sub">반 전체 상태를 도넛+테이블로 동시 표시. 개별 학생 드릴다운은 arrow btn → 상세 뷰.</div></div>
+  <div class="principle" style="border-color:var(--purple)"><div class="p-title">AI 총평은 캐릭터가 전달</div><div class="p-sub">숫자·등급만 보여주면 차갑다. 보라빛 마스코트 캐릭터가 말하는 형식으로 부드럽게 전달.</div></div>
+  <h3>문장투시경 v13 연결 매핑</h3>
+  <div class="card">
+    <table class="stbl">
+      <thead><tr><th>레퍼런스 패턴</th><th>문장투시경 대응</th></tr></thead>
+      <tbody>
+        <tr><td>교사 진행현황 대시보드</td><td style="color:var(--sky);font-weight:700">Teacher Dashboard (v8+)</td></tr>
+        <tr><td>어순배열 Drag & Drop</td><td style="color:var(--sky);font-weight:700">Stage 4 Chunking</td></tr>
+        <tr><td>구문분석 단어 선택</td><td style="color:var(--sky);font-weight:700">Stage 1 품사 태깅</td></tr>
+        <tr><td>AI 총평 · 마스코트</td><td style="color:var(--sky);font-weight:700">🐰 래빗 플로팅 메모 (v9)</td></tr>
+        <tr><td>도넛 차트 정답률</td><td style="color:var(--sky);font-weight:700">Dashboard 정답률 트렌드</td></tr>
+        <tr><td>3단 해설 패널</td><td style="color:var(--sky);font-weight:700">Stage 힌트 3단계 (v8)</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <h3>컬러 방향성 비교</h3>
+  <div class="g2">
+    <div class="card" style="border-color:var(--sky)">
+      <div class="ct" style="color:var(--sky)">레퍼런스 시스템</div>
+      <div style="display:flex;gap:6px;margin-bottom:8px"><div style="width:18px;height:18px;border-radius:4px;background:#4A9FE0"></div><div style="width:18px;height:18px;border-radius:4px;background:#F5C842"></div><div style="width:18px;height:18px;border-radius:4px;background:#9B8FD4"></div><div style="width:18px;height:18px;border-radius:4px;background:#2C3A5E"></div></div>
+      <div style="font-size:11px;color:var(--t2);line-height:1.7">Sky Blue primary · Yellow G-RAY accent<br>밝고 열린 에듀테크 무드</div>
+    </div>
+    <div class="card">
+      <div class="ct">문장투시경 v13</div>
+      <div style="display:flex;gap:6px;margin-bottom:8px"><div style="width:18px;height:18px;border-radius:4px;background:#1a3a5c"></div><div style="width:18px;height:18px;border-radius:4px;background:#4f46e5"></div><div style="width:18px;height:18px;border-radius:4px;background:#2E90FA"></div><div style="width:18px;height:18px;border-radius:4px;background:#f8f9fc"></div></div>
+      <div style="font-size:11px;color:var(--t2);line-height:1.7">Navy primary · Indigo accent<br>신뢰·권위 있는 학습 도구 무드</div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑭ 문장 분석 -->
+<div class="sec" id="sec-analysis">
+  <h2>문장투시경 — 문장 구조 분석</h2>
+  <div style="background:var(--bg); border-radius:20px; padding:20px; margin-bottom:20px">
+    <div class="s-header">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <span class="s-header-title">🔍 문장투시경</span>
+      <span class="s-header-badge">Stage 2 · 구조 분석</span>
+    </div>
+    <div style="padding:20px 0">
+      <div class="sentence-card">
+        <div class="sentence-en">The judge was impressed by what she said<br>and finally gave her permission.</div>
+        <div class="sentence-divider"></div>
+        <div class="sentence-ko">판사는 그녀가 한 말에 감명받았고 마침내 그녀에게 허가를 내주었다.</div>
+      </div>
+      <div class="section-header">
+        <button class="section-toggle">▼</button>
+        <span class="section-label">🔎 문장 구조 투시</span>
+      </div>
+      <div class="structure-wrap">
+        <div class="structure-grid">
+          <div class="struct-box subject">
+            <div class="struct-text">The judge</div>
+            <div class="struct-label">Subject (S)</div>
+          </div>
+          <div class="struct-box verb">
+            <div class="struct-text">was impressed</div>
+            <div class="struct-label">Verb (V)</div>
+          </div>
+          <div class="struct-box complement">
+            <div class="struct-text">by what she said and finally gave her permission.</div>
+            <div class="struct-label">Complement (C)</div>
+          </div>
+        </div>
+      </div>
+      <div class="section-header">
+        <button class="section-toggle">▼</button>
+        <span class="section-label">📊 핵심 문법 개념 정리</span>
+      </div>
+      <div class="grammar-wrap">
+        <div class="grammar-rule-box">
+          <div class="grammar-rule-main"><span>what</span> + 주어 + 동사 = '<span>~하는 것</span>' (명사절)</div>
+          <div class="grammar-rule-sub">= the thing which[that] + S + V</div>
+        </div>
+        <div class="check-grid">
+          <div class="check-item"><div class="check-dot">✓</div><div><div class="check-text">선행사 포함</div><div class="check-sub">what 앞에 명사 X</div></div></div>
+          <div class="check-item"><div class="check-dot">✓</div><div><div class="check-text">주어/목적어/보어 역할</div><div class="check-sub">문장 내 명사처럼 기능</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑮ 그레이 캐치 -->
+<div class="sec" id="sec-catch">
+  <h2>그레이 캐치 — 결과 분석</h2>
+  <div style="background:var(--bg); border-radius:20px; padding:20px">
+    <div class="result-card">
+      <div class="card-title-res">
+        <div class="title-icon">
+          <svg viewBox="0 0 16 16"><rect x="1" y="9" width="3" height="6"/><rect x="5" y="6" width="3" height="9"/><rect x="9" y="3" width="3" height="12"/><rect x="13" y="1" width="3" height="14"/></svg>
+        </div>
+        우리 반 친구들의 포착 현황
+      </div>
+      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-bottom:28px">
+        <div style="display:flex; flex-direction:column; align-items:center; gap:5px">
+          <div class="word-chip normal" style="padding:10px 15px; border-radius:12px; font-weight:700">judge</div>
+          <div class="word-pct">12%</div>
+        </div>
+        <div style="display:flex; flex-direction:column; align-items:center; gap:5px">
+          <div class="word-chip high" style="padding:10px 15px; border-radius:12px; font-weight:700">what</div>
+          <div class="word-pct high">92%</div>
+        </div>
+      </div>
+      <div class="btn-row">
+        <button class="btn-home">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z"/><polyline points="9,21 9,12 15,12 15,21"/></svg>
+          홈으로
+        </button>
+        <button class="btn-next-res">
+          다음: 비슷한 예문
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="13,6 19,12 13,18"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑯ 객관식 문항 -->
+<div class="sec" id="sec-objective">
+  <h2>객관식 문항 (QType Objective V3)</h2>
+  <div style="background:var(--bg); border-radius:20px; padding:20px">
+    <div class="card" style="margin-bottom:16px">
+      <div class="ct">4지선다 · 정답 선택 후 제출</div>
+      <div style="font-size:17px; font-weight:700; color:var(--t1); margin-bottom:14px">다음 빈칸에 들어갈 알맞은 것을 고르시오.</div>
+      <div class="q-sentence">
+        She <span class="blank">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> her new paintings in the gallery yesterday.
+      </div>
+      <div id="demo-opts">
+        <button class="opt selected"><span class="opt-num">2</span>showed</button>
+        <button class="opt dim"><span class="opt-num">1</span>show</button>
+        <button class="opt dim"><span class="opt-num">3</span>shows</button>
+        <button class="opt dim"><span class="opt-num">4</span>has show</button>
+      </div>
+      <button class="btn-full" style="margin-top:12px">정답 확인하기</button>
+    </div>
+    
+    <div class="g2">
+      <div class="card">
+        <div class="ct">정답 피드백</div>
+        <div class="feedback correct" style="margin-bottom:0">
+          <div class="fb-icon">✓</div>
+          <div class="feedback-content">
+            <div class="feedback-title">정답이에요!</div>
+            <div class="feedback-desc">과거형 동사 showed를 사용합니다.</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ct">오답 피드백</div>
+        <div class="feedback wrong" style="margin-bottom:0">
+          <div class="fb-icon">✕</div>
+          <div class="feedback-content">
+            <div class="feedback-title">다시 생각해봐요!</div>
+            <div class="feedback-desc">yesterday가 있으면 과거형을 써야 해요.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <h3 style="margin-top:20px">선택지 상태</h3>
+    <div class="g2">
+        <div class="card"><div class="ct">정답 (Correct)</div><button class="opt correct" style="margin-bottom:0"><span class="opt-num">2</span>showed<span class="opt-result">✓ 정답</span></button></div>
+        <div class="card"><div class="ct">오답 (Wrong)</div><button class="opt wrong" style="margin-bottom:0"><span class="opt-num">3</span>shows<span class="opt-result">✕ 오답</span></button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑰ 서술형 문항 -->
+<div class="sec" id="sec-writing">
+  <h2>서술형 문항 (Writing Stage)</h2>
+  <div style="background:var(--bg); border-radius:20px; padding:20px">
+    <div class="card" style="margin-bottom:16px">
+      <div class="ct">문장 전체 작성 · 직접 쓰기</div>
+      <div style="font-size:17px; font-weight:700; color:var(--t1); margin-bottom:14px">우리말 해석을 보고 영문장을 완성하세요.</div>
+      <div style="font-size: 16px; color: var(--t4); margin-bottom: 24px; padding: 16px; background: var(--surf); border-radius: 12px; border: 1.5px solid var(--bd);">
+        판사는 그녀가 한 말에 감명받았고 마침내 그녀에게 허가를 내주었다.
+      </div>
+      <input type="text" class="subjective-input" placeholder="이곳에 영문을 작성하세요..." value="The judge was impressed by what she said..." />
+      <button class="btn-full" style="margin-top:12px">정답 확인하기</button>
+    </div>
+    
+    <div class="card">
+        <div class="ct">입력 필드 스펙</div>
+        <div style="font-size:12px; color:var(--t2); line-height:2">
+            padding: 24px 20px (대형)<br />
+            font-size: 22px / font-weight: 700 (가독성 가독성)<br />
+            border: 2.5px solid sky (Focus 강조)<br />
+            text-align: center
+        </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+function go(id,btn){
+  document.querySelectorAll('.sec').forEach(s=>s.classList.remove('on'));
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('on'));
+  document.getElementById('sec-'+id).classList.add('on');
+  btn.classList.add('on');
+}
+function sel(el){
+  document.querySelectorAll('.mcard').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+}
+</script>
